@@ -74,18 +74,13 @@ enum { SWITCHES_OFF = 0, SWITCH1 = 1, SWITCH2 = 2 };
 volatile uint8_t switches_toggled = 0;
 volatile uint8_t led_request = 0;
 volatile uint8_t timer1_carry = 0;
-
-// Tapper state
-uint8_t tapping = 0;
-uint16_t cur_interval = 0;
-uint32_t next_interval_sum = 0;
-uint8_t next_interval_count = 0;
 volatile uint8_t output_state = 0;
 
 // Helpers
 #define OCR_FOR_INTERVAL(intv) ((intv + 8) / 16)
 #define CALC_INTERVAL(time, count) ((time + count/2) / count)
 
+#define MIN_INTERVAL 1024
 
 // ==============================================================================
 // - External Interrupt (V-Sync)
@@ -146,7 +141,13 @@ int main(void)
 	GICR |= _BV(INT0);
 	
 	sei();
+	
 	// ------------------------- Main Loop
+	uint8_t tapping = 0;
+	uint16_t cur_interval = 0;
+	uint32_t next_interval_sum = 0;
+	uint8_t next_interval_count = 0;
+	
 	while(1) {
 		// Turn off interrupts while getting values from interrupt handlers
 		uint8_t next_switches;
@@ -177,10 +178,13 @@ int main(void)
 			next_interval_count = 0;
 		}
 		// check switch 2 = tap
-		if (tapping && (next_switches & SWITCH2) != 0) {
+		else if (tapping && (next_switches & SWITCH2) != 0 && timer1_val > MIN_INTERVAL) {
 			++next_interval_count;
 			next_interval_sum = timer1_val;
-			cur_interval = CALC_INTERVAL(next_interval_sum, next_interval_count);
+			uint16_t new_interval = CALC_INTERVAL(next_interval_sum, next_interval_count);
+			if (new_interval > MIN_INTERVAL) {
+				cur_interval = new_interval;
+			}
 			OCR1A = next_interval_sum + OCR_FOR_INTERVAL(cur_interval);
 		}
 		// check Timer 1 Compare Match = tick
@@ -193,10 +197,7 @@ int main(void)
 			
 			led_request = old_outstate & ~output_state;
 			
-			if (tapping && next_interval_count > 0)
-				cur_interval = CALC_INTERVAL(next_interval_sum, next_interval_count);
-			
-			if (tapping && timer1_val && cur_interval != 0) {
+			if (tapping && timer1_val && cur_interval > MIN_INTERVAL) {
 				uint32_t since_last_tap = timer1_val - next_interval_sum;
 				if (
 					(next_interval_count > 0 && (since_last_tap > 2*cur_interval))
