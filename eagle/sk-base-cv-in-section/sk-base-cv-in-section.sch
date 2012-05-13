@@ -7062,7 +7062,7 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <instance part="R15" gate="G$1" x="-43.18" y="38.1" rot="R270"/>
 <instance part="BUF" gate="G$1" x="-25.4" y="66.04"/>
 <instance part="BUF" gate="G$2" x="-25.4" y="25.4"/>
-<instance part="BUF" gate="G$3" x="-27.94" y="-5.08"/>
+<instance part="BUF" gate="G$3" x="-22.86" y="-2.54"/>
 <instance part="R16" gate="G$1" x="-12.7" y="66.04"/>
 <instance part="R17" gate="G$1" x="-12.7" y="25.4"/>
 <instance part="MIX" gate="G$1" x="7.62" y="40.64"/>
@@ -7075,14 +7075,14 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <instance part="R20" gate="G$1" x="30.48" y="25.4"/>
 <instance part="GND16" gate="1" x="22.86" y="43.18" rot="R270"/>
 <instance part="MIX" gate="G$3" x="7.62" y="-2.54"/>
-<instance part="P+6" gate="1" x="-27.94" y="5.08"/>
-<instance part="P-8" gate="1" x="-27.94" y="-15.24"/>
+<instance part="P+6" gate="1" x="-22.86" y="7.62"/>
+<instance part="P-8" gate="1" x="-22.86" y="-12.7"/>
 <instance part="P+7" gate="1" x="7.62" y="7.62"/>
 <instance part="P-9" gate="1" x="7.62" y="-12.7"/>
-<instance part="C1" gate="G$1" x="-22.86" y="2.54" rot="R270"/>
-<instance part="C2" gate="G$1" x="-22.86" y="-12.7" rot="R270"/>
-<instance part="GND2" gate="1" x="-17.78" y="2.54" rot="R90"/>
-<instance part="GND3" gate="1" x="-17.78" y="-12.7" rot="R90"/>
+<instance part="C1" gate="G$1" x="-17.78" y="5.08" rot="R270"/>
+<instance part="C2" gate="G$1" x="-17.78" y="-10.16" rot="R270"/>
+<instance part="GND2" gate="1" x="-12.7" y="5.08" rot="R90"/>
+<instance part="GND3" gate="1" x="-12.7" y="-10.16" rot="R90"/>
 <instance part="C3" gate="G$1" x="12.7" y="5.08" rot="R270"/>
 <instance part="C4" gate="G$1" x="12.7" y="-10.16" rot="R270"/>
 <instance part="GND4" gate="1" x="17.78" y="5.08" rot="R90"/>
