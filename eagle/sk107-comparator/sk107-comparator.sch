@@ -13635,8 +13635,8 @@ NS Package M08A</description>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="CV-IN" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="P-5" library="supply1" deviceset="-5V" device=""/>
-<part name="R14" library="rcl" deviceset="R-EU_" device="R1206" value="200k"/>
-<part name="R15" library="rcl" deviceset="R-EU_" device="R1206" value="200k"/>
+<part name="R14" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
+<part name="R15" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
 <part name="BUF" library="anyma-lib" deviceset="MAX4392ESA" device=""/>
 <part name="R16" library="rcl" deviceset="R-EU_" device="R1206" value="6k8"/>
 <part name="R17" library="rcl" deviceset="R-EU_" device="R1206" value="6k8"/>
@@ -13705,7 +13705,7 @@ NS Package M08A</description>
 <part name="C12" library="rcl" deviceset="CPOL-EU" device="E2.5-7"/>
 <part name="P-3" library="supply1" deviceset="-5V" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
-<part name="R21" library="pot" deviceset="TRIM_EU-" device="CIP20C-6MM" value="100k"/>
+<part name="R21" library="pot" deviceset="TRIM_EU-" device="CIP20C-6MM" value="10k"/>
 <part name="OUT" library="anyma-lib" deviceset="MAX4392ESA" device=""/>
 <part name="P+12" library="supply1" deviceset="+5V" device=""/>
 <part name="P-10" library="supply1" deviceset="-5V" device=""/>
@@ -13979,10 +13979,10 @@ NS Package M08A</description>
 <net name="N$13" class="0">
 <segment>
 <pinref part="BUF" gate="G$2" pin="OUT"/>
-<wire x1="38.1" y1="25.4" x2="38.1" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="25.4" x2="38.1" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="BUF" gate="G$2" pin="-IN"/>
-<wire x1="38.1" y1="20.32" x2="22.86" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="20.32" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="17.78" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="17.78" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="R17" gate="G$1" pin="1"/>
 <junction x="38.1" y="25.4"/>
 </segment>
