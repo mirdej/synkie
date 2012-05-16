@@ -13705,8 +13705,8 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <wire x1="-1.7643" y1="-1.0082" x2="0" y2="-2.032" width="0.254" layer="21" curve="60.255215"/>
 <wire x1="-2.032" y1="0" x2="-1.7891" y2="0.9634" width="0.254" layer="51" curve="-28.301701"/>
 <wire x1="-2.032" y1="0" x2="-1.7306" y2="-1.065" width="0.254" layer="51" curve="31.60822"/>
-<pad name="A" x="-1.27" y="0" drill="0.8128" shape="octagon"/>
-<pad name="K" x="1.27" y="0" drill="0.8128" shape="octagon"/>
+<pad name="A" x="-1.27" y="0" drill="0.8128" diameter="1.778" shape="octagon"/>
+<pad name="K" x="1.27" y="0" drill="0.8128" diameter="1.778" shape="octagon"/>
 <text x="1.905" y="0.381" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="1.905" y="-1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
@@ -14574,6 +14574,84 @@ Source: http://www.kingbright.com/manager/upload/pdf/KA-3528ASYC(Ver1189474662.1
 <vertex x="0.825" y="-1.35"/>
 </polygon>
 </package>
+<package name="SML0805">
+<description>&lt;b&gt;SML0805-2CW-TR (0805 PROFILE)&lt;/b&gt; COOL WHITE&lt;p&gt;
+Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
+<wire x1="-0.95" y1="-0.55" x2="0.95" y2="-0.55" width="0.1016" layer="51"/>
+<wire x1="0.95" y1="-0.55" x2="0.95" y2="0.55" width="0.1016" layer="51"/>
+<wire x1="0.95" y1="0.55" x2="-0.95" y2="0.55" width="0.1016" layer="51"/>
+<wire x1="-0.95" y1="0.55" x2="-0.95" y2="-0.55" width="0.1016" layer="51"/>
+<wire x1="-0.175" y1="-0.025" x2="0" y2="0.15" width="0.0634" layer="21"/>
+<wire x1="0" y1="0.15" x2="0.15" y2="0" width="0.0634" layer="21"/>
+<wire x1="0.15" y1="0" x2="-0.025" y2="-0.175" width="0.0634" layer="21"/>
+<wire x1="-0.025" y1="-0.175" x2="-0.175" y2="-0.025" width="0.0634" layer="21"/>
+<circle x="-0.275" y="0.4" radius="0.125" width="0" layer="21"/>
+<smd name="C" x="-1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
+<smd name="A" x="1.05" y="0" dx="1.2" dy="1.2" layer="1"/>
+<text x="-1.5" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.5" y="-2" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="SML1206">
+<description>&lt;b&gt;SML10XXKH-TR (HIGH INTENSITY) LED&lt;/b&gt;&lt;p&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;SML10R3KH-TR&lt;/td&gt;&lt;td&gt;ULTRA RED&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10E3KH-TR&lt;/td&gt;&lt;td&gt;SUPER REDSUPER BLUE&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10O3KH-TR&lt;/td&gt;&lt;td&gt;SUPER ORANGE&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10PY3KH-TR&lt;/td&gt;&lt;td&gt;PURE YELLOW&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10OY3KH-TR&lt;/td&gt;&lt;td&gt;ULTRA YELLOW&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10AG3KH-TR&lt;/td&gt;&lt;td&gt;AQUA GREEN&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10BG3KH-TR&lt;/td&gt;&lt;td&gt;BLUE GREEN&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10PB1KH-TR&lt;/td&gt;&lt;td&gt;SUPER BLUE&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SML10CW1KH-TR&lt;/td&gt;&lt;td&gt;WHITE&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+Source: http://www.ledtronics.com/ds/smd-1206/dstr0094.PDF</description>
+<wire x1="-1.5" y1="0.5" x2="-1.5" y2="-0.5" width="0.2032" layer="51" curve="-180"/>
+<wire x1="1.5" y1="-0.5" x2="1.5" y2="0.5" width="0.2032" layer="51" curve="-180"/>
+<wire x1="-1.55" y1="0.75" x2="1.55" y2="0.75" width="0.1016" layer="51"/>
+<wire x1="1.55" y1="-0.75" x2="-1.55" y2="-0.75" width="0.1016" layer="51"/>
+<circle x="-0.725" y="0.525" radius="0.125" width="0" layer="21"/>
+<smd name="C" x="-1.75" y="0" dx="1.5" dy="1.5" layer="1"/>
+<smd name="A" x="1.75" y="0" dx="1.5" dy="1.5" layer="1"/>
+<text x="-1.5" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.5" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.6" y1="0.4" x2="-1.15" y2="0.8" layer="51"/>
+<rectangle x1="-1.6" y1="-0.8" x2="-1.15" y2="-0.4" layer="51"/>
+<rectangle x1="-1.175" y1="-0.6" x2="-1" y2="-0.275" layer="51"/>
+<rectangle x1="1.15" y1="-0.8" x2="1.6" y2="-0.4" layer="51" rot="R180"/>
+<rectangle x1="1.15" y1="0.4" x2="1.6" y2="0.8" layer="51" rot="R180"/>
+<rectangle x1="1" y1="0.275" x2="1.175" y2="0.6" layer="51" rot="R180"/>
+<rectangle x1="-0.1" y1="-0.1" x2="0.1" y2="0.1" layer="21"/>
+</package>
+<package name="SML0603">
+<description>&lt;b&gt;SML0603-XXX (HIGH INTENSITY) LED&lt;/b&gt;&lt;p&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;AG3K&lt;/td&gt;&lt;td&gt;AQUA GREEN&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B1K&lt;/td&gt;&lt;td&gt;SUPER BLUE&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R1K&lt;/td&gt;&lt;td&gt;SUPER RED&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R3K&lt;/td&gt;&lt;td&gt;ULTRA RED&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;O3K&lt;/td&gt;&lt;td&gt;SUPER ORANGE&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;O3KH&lt;/td&gt;&lt;td&gt;SOFT ORANGE&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y3KH&lt;/td&gt;&lt;td&gt;SUPER YELLOW&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y3K&lt;/td&gt;&lt;td&gt;SUPER YELLOW&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2CW&lt;/td&gt;&lt;td&gt;WHITE&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+Source: http://www.ledtronics.com/ds/smd-0603/Dstr0092.pdf</description>
+<wire x1="-0.75" y1="0.35" x2="0.75" y2="0.35" width="0.1016" layer="51"/>
+<wire x1="0.75" y1="0.35" x2="0.75" y2="-0.35" width="0.1016" layer="51"/>
+<wire x1="0.75" y1="-0.35" x2="-0.75" y2="-0.35" width="0.1016" layer="51"/>
+<wire x1="-0.75" y1="-0.35" x2="-0.75" y2="0.35" width="0.1016" layer="51"/>
+<wire x1="-0.45" y1="0.3" x2="-0.45" y2="-0.3" width="0.1016" layer="51"/>
+<wire x1="0.45" y1="0.3" x2="0.45" y2="-0.3" width="0.1016" layer="51"/>
+<wire x1="-0.2" y1="0.35" x2="0.2" y2="0.35" width="0.1016" layer="21"/>
+<wire x1="-0.2" y1="-0.35" x2="0.2" y2="-0.35" width="0.1016" layer="21"/>
+<smd name="C" x="-0.75" y="0" dx="0.8" dy="0.8" layer="1"/>
+<smd name="A" x="0.75" y="0" dx="0.8" dy="0.8" layer="1"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.4" y1="0.175" x2="0" y2="0.4" layer="51"/>
+<rectangle x1="-0.25" y1="0.175" x2="0" y2="0.4" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="LED">
@@ -14989,6 +15067,33 @@ Source: www.kingbright.com</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="SML0805" package="SML0805">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SML1206" package="SML1206">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SML0603" package="SML0603">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 </devicesets>
@@ -15053,10 +15158,6 @@ Source: www.kingbright.com</description>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="P-1" library="supply1" deviceset="-5V" device=""/>
-<part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="C3" library="rcl" deviceset="CPOL-EU" device="CT3528" value="2u2tantal"/>
-<part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="C4" library="rcl" deviceset="CPOL-EU" device="CT3528" value="2u2tantal"/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C1206"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C1206"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
@@ -15158,16 +15259,6 @@ Source: www.kingbright.com</description>
 <instance part="P+1" gate="1" x="38.1" y="-27.94" rot="R270"/>
 <instance part="GND1" gate="1" x="38.1" y="-30.48" rot="R90"/>
 <instance part="P-1" gate="1" x="38.1" y="-33.02" rot="R90"/>
-<instance part="GND9" gate="1" x="33.02" y="-43.18"/>
-<instance part="C3" gate="G$1" x="33.02" y="-20.32" smashed="yes" rot="MR180">
-<attribute name="NAME" x="34.163" y="-20.8026" size="1.778" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="30.5054" y="-15.3229" size="1.778" layer="96" rot="MR270"/>
-</instance>
-<instance part="GND10" gate="1" x="33.02" y="-12.7" rot="MR180"/>
-<instance part="C4" gate="G$1" x="33.02" y="-38.1" smashed="yes" rot="MR180">
-<attribute name="NAME" x="34.163" y="-38.5826" size="1.778" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="30.5054" y="-33.1029" size="1.778" layer="96" rot="MR270"/>
-</instance>
 <instance part="C1" gate="G$1" x="78.74" y="48.26" rot="R90"/>
 <instance part="C2" gate="G$1" x="71.12" y="33.02" rot="R90"/>
 <instance part="GND4" gate="1" x="86.36" y="48.26" rot="MR270"/>
@@ -15273,11 +15364,9 @@ Source: www.kingbright.com</description>
 <segment>
 <wire x1="27.94" y1="-27.94" x2="33.02" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="-27.94" x2="35.56" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="-22.86" x2="33.02" y2="-27.94" width="0.1524" layer="91"/>
 <junction x="33.02" y="-27.94"/>
 <pinref part="JP2" gate="A" pin="3"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
-<pinref part="C3" gate="G$1" pin="+"/>
 </segment>
 <segment>
 <junction x="76.2" y="48.26"/>
@@ -15327,14 +15416,6 @@ Source: www.kingbright.com</description>
 <wire x1="27.94" y1="-30.48" x2="35.56" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="A" pin="2"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="C3" gate="G$1" pin="-"/>
-<pinref part="GND10" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND9" gate="1" pin="GND"/>
-<pinref part="C4" gate="G$1" pin="+"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="2"/>
@@ -15416,7 +15497,6 @@ Source: www.kingbright.com</description>
 <junction x="33.02" y="-33.02"/>
 <pinref part="JP2" gate="A" pin="1"/>
 <pinref part="P-1" gate="1" pin="-5V"/>
-<pinref part="C4" gate="G$1" pin="-"/>
 </segment>
 <segment>
 <junction x="76.2" y="33.02"/>
@@ -15567,6 +15647,9 @@ Source: www.kingbright.com</description>
 <pinref part="R2" gate="1" pin="E"/>
 <pinref part="IC2" gate="B" pin="-IN"/>
 <pinref part="C9" gate="G$1" pin="-"/>
+<pinref part="Q5" gate="G$1" pin="E"/>
+<wire x1="116.84" y1="-10.16" x2="114.3" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-10.16" x2="114.3" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -15583,6 +15666,9 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="B" pin="OUT"/>
 <pinref part="R13" gate="G$1" pin="1"/>
 <pinref part="R11" gate="G$1" pin="2"/>
+<pinref part="Q5" gate="G$1" pin="C"/>
+<wire x1="127" y1="-10.16" x2="134.62" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-10.16" x2="134.62" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -15637,6 +15723,9 @@ Source: www.kingbright.com</description>
 <pinref part="R3" gate="1" pin="E"/>
 <pinref part="IC3" gate="B" pin="-IN"/>
 <pinref part="C13" gate="G$1" pin="-"/>
+<pinref part="Q6" gate="G$1" pin="E"/>
+<wire x1="119.38" y1="-71.12" x2="116.84" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-71.12" x2="116.84" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$25" class="0">
@@ -15653,6 +15742,9 @@ Source: www.kingbright.com</description>
 <pinref part="R17" gate="G$1" pin="2"/>
 <pinref part="R19" gate="G$1" pin="1"/>
 <pinref part="R20" gate="G$1" pin="1"/>
+<pinref part="Q6" gate="G$1" pin="C"/>
+<wire x1="129.54" y1="-71.12" x2="137.16" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="-71.12" x2="137.16" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$27" class="0">
@@ -15772,49 +15864,21 @@ Source: www.kingbright.com</description>
 <pinref part="RST_1" gate="1" pin="P"/>
 </segment>
 </net>
-<net name="N$31" class="0">
-<segment>
-<pinref part="Q5" gate="G$1" pin="E"/>
-<wire x1="114.3" y1="-2.54" x2="114.3" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="-10.16" x2="116.84" y2="-10.16" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$32" class="0">
-<segment>
-<pinref part="Q5" gate="G$1" pin="C"/>
-<wire x1="134.62" y1="-2.54" x2="134.62" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="-10.16" x2="127" y2="-10.16" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$33" class="0">
 <segment>
-<pinref part="Q5" gate="G$1" pin="B"/>
 <pinref part="R30" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="-15.24" x2="121.92" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="R31" gate="G$1" pin="1"/>
 <wire x1="121.92" y1="-17.78" x2="121.92" y2="-20.32" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="-17.78" x2="121.92" y2="-17.78" width="0.1524" layer="91"/>
 <junction x="121.92" y="-17.78"/>
+<pinref part="Q5" gate="G$1" pin="B"/>
+<wire x1="121.92" y1="-15.24" x2="121.92" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$36" class="0">
 <segment>
 <pinref part="R31" gate="G$1" pin="2"/>
 <pinref part="RST_2" gate="1" pin="P"/>
-</segment>
-</net>
-<net name="N$37" class="0">
-<segment>
-<pinref part="Q6" gate="G$1" pin="E"/>
-<wire x1="116.84" y1="-63.5" x2="116.84" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="-71.12" x2="119.38" y2="-71.12" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$38" class="0">
-<segment>
-<pinref part="Q6" gate="G$1" pin="C"/>
-<wire x1="137.16" y1="-63.5" x2="137.16" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="-71.12" x2="129.54" y2="-71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$39" class="0">
