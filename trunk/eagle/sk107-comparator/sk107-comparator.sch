@@ -13797,8 +13797,8 @@ NS Package M08A</description>
 <instance part="X1" gate="-1" x="93.98" y="0"/>
 <instance part="X1" gate="-2" x="93.98" y="-2.54"/>
 <instance part="X1" gate="-3" x="93.98" y="-5.08"/>
-<instance part="P+1" gate="1" x="88.9" y="0" rot="R90"/>
-<instance part="P-1" gate="1" x="88.9" y="-5.08" rot="R270"/>
+<instance part="P+1" gate="1" x="88.9" y="-5.08" rot="R90"/>
+<instance part="P-1" gate="1" x="88.9" y="0" rot="R270"/>
 <instance part="GND18" gate="1" x="88.9" y="-2.54" rot="R270"/>
 <instance part="P+4" gate="1" x="109.22" y="7.62"/>
 <instance part="C10" gate="G$1" x="109.22" y="2.54"/>
@@ -13869,10 +13869,6 @@ NS Package M08A</description>
 <pinref part="P+10" gate="1" pin="+5V"/>
 </segment>
 <segment>
-<pinref part="X1" gate="-1" pin="S"/>
-<pinref part="P+1" gate="1" pin="+5V"/>
-</segment>
-<segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
 <pinref part="C10" gate="G$1" pin="+"/>
 </segment>
@@ -13881,6 +13877,10 @@ NS Package M08A</description>
 <pinref part="P+12" gate="1" pin="+5V"/>
 <pinref part="C13" gate="G$1" pin="2"/>
 <pinref part="C13" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-3" pin="S"/>
+<pinref part="P+1" gate="1" pin="+5V"/>
 </segment>
 </net>
 <net name="-5V" class="0">
@@ -13924,10 +13924,6 @@ NS Package M08A</description>
 <pinref part="C6" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="X1" gate="-3" pin="S"/>
-<pinref part="P-1" gate="1" pin="-5V"/>
-</segment>
-<segment>
 <pinref part="C12" gate="G$1" pin="-"/>
 <pinref part="P-3" gate="1" pin="-5V"/>
 </segment>
@@ -13936,6 +13932,10 @@ NS Package M08A</description>
 <pinref part="P-10" gate="1" pin="-5V"/>
 <pinref part="C14" gate="G$1" pin="2"/>
 <pinref part="C14" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-1" pin="S"/>
+<pinref part="P-1" gate="1" pin="-5V"/>
 </segment>
 </net>
 <net name="N$10" class="0">
