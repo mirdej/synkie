@@ -2,6 +2,7 @@
 #include <avr/io.h>				// include I/O definitions (port names, pin names, etc)
 #include <avr/interrupt.h>		// include interrupt support
 #include <avr/wdt.h>			// include watchdog timer support
+#include <util/atomic.h>
 
 
 // From AVRLIB by Pascal Stang 
@@ -36,28 +37,65 @@
 
 // Arrays of keep track of sampled sensors and what data has already been sent via MIDI
 
-static unsigned int		ad_values[5];			// sampled analog input values
-static unsigned char 	ad_idx;										// sensor currently being sampled
+static volatile uint16_t ad_values[5];			// sampled analog input values
 
-static uint8_t value = 0;
-static int error = 0;
-static int dvalue = 0;
-static int dtime = 0;
-static int step = 0;
+static volatile struct {
+	uint8_t value;
+	int16_t error;
+	int dvalue;
+	int dtime;
+	int step;
+} ramp;
 
-static void start_ramp(uint8_t end, uint16_t time) {
-	uint8_t start = OCR2A;
-	if(end > start) {
-		dvalue = end - start;
-		step = 1;
+static inline void init_ramp(void) {
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+		ramp.value = 0;
+		ramp.error = 0;
+		ramp.dvalue = 0;
+		ramp.dtime = 0;
+		ramp.step = 0;
 	}
-	else {
-		dvalue = start - end;
-		step = -1;
+}
+
+static inline void start_ramp(uint8_t end, uint16_t time) {
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+		uint8_t const start = ramp.value;
+		if(end > start) {
+			ramp.dvalue = end - start;
+			ramp.step = 1;
+		}
+		else {
+			ramp.dvalue = start - end;
+			ramp.step = -1;
+		}
+		ramp.dtime = time*4;
+		ramp.value = start;
+		ramp.error = ramp.dtime / 2;
 	}
-	dtime = time*4;
-	value = start;
-	error = dtime / 2;
+}
+
+static inline uint8_t step_ramp() {
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+		if (ramp.step != 0) {
+			ramp.error -= ramp.dvalue;
+			while (ramp.error < 0) {
+				if (ramp.step > 0) {
+					if (ramp.value < 255 - ramp.step)
+						ramp.value += ramp.step;
+					else
+						ramp.value = 255;
+				}
+				else {
+					if (ramp.value > -ramp.step)
+						ramp.value += ramp.step;
+					else
+						ramp.value = 0;
+				}
+				ramp.error += ramp.dtime;
+			}
+		}
+		return ramp.value;
+	}
 }
 
 typedef enum {
@@ -71,7 +109,13 @@ typedef enum {
 static phase_t phase = idle;
 
 
-void statusLedToggle(void)	{PORTB ^= 1 << 1;}
+inline void statusLedToggle(void) { PORTB ^= 1 << 1; }
+inline void statusLedOn(void) { PORTB |= 1 << 1; }
+inline void statusLedOff(void) { PORTB &= ~(1 << 1); }
+
+inline uint16_t calcDelay(uint16_t adc_value) {
+	return (adc_value << 3) + 16;
+}
 
 // ------------------------------------------------------------------------------
 // - ADC Utilities
@@ -120,6 +164,7 @@ void adInit(void){
 // ------------------------------------------------------------------------------
 
 void checkAnalogPorts (void) {
+	static uint8_t ad_idx;											// sensor currently being sampled
 
 	if ( adConversionComplete() ) {									// see if last AD-Conversion is complete
 			
@@ -138,13 +183,13 @@ void checkAnalogPorts (void) {
 
 ISR(INT1_vect) {
 	phase = attack;
-	PORTB |= 1<<1;
+	statusLedOn();
 	
-	uint16_t dt = ad_values[0];	// set timer 1 overflow to pot value
-	if (dt < 1) dt = 1;
 	TCCR1B |= (1 << CS12) | (1 << CS10);	// clk / 1024
+	uint16_t dt = calcDelay(ad_values[0]);
 	start_ramp(255, dt);
 	OCR1A = dt;
+	TCNT1 = 0;
 }	
 
 
@@ -158,32 +203,30 @@ ISR(TIMER1_COMPA_vect) {
 		
 		case attack:
 			phase = decay;
-			dt = ad_values[1];
-			if (dt < 1) dt = 1;
+			dt = calcDelay(ad_values[1]);
 			OCR1A = dt;
 			start_ramp(ad_values[2] >> 2, dt);
 			break;
 			
 		case decay:
 			phase = sustain;
-			OCR1A = ad_values[3];	// sustain time is set by fourth pot 
-			step = 0;
+			OCR1A = calcDelay(ad_values[3]);
+			ramp.step = 0;
 			break;
 			
 		case sustain:
 			phase = release;
-			dt = ad_values[4];
-			if (dt < 1) dt = 1;
+			dt = calcDelay(ad_values[4]);
 			OCR1A = dt;
 			start_ramp(0, dt);
 			break;
 		
 		case release:
 			phase = idle;
-			step = 0;
+			ramp.step = 0;
 			OCR2A = 0;
 			TCCR1B &= ~0x7;	// stop timer 1
-			PORTB &= ~1<<1;
+			statusLedOff();
 			break;
 			
 		default:
@@ -193,25 +236,7 @@ ISR(TIMER1_COMPA_vect) {
 
 
 ISR(TIMER2_OVF_vect) {
-	if (step != 0) {
-		error -= dvalue;
-		while (error < 0) {
-			if (step > 0) {
-				if (value < 255 - step)
-					value += step;
-				else
-					value = 255;
-			}
-			else {
-				if (value > -step)
-					value += step;
-				else
-					value = 0;
-			}
-			error += dtime;
-		}
-		OCR2A = value;
-	}
+	OCR2A = step_ramp();
 }
 
 
@@ -245,6 +270,7 @@ int main(void) {
 	TCCR2A = 0x83; 	// Fast PWM, non-inverting
 	TCCR2B = 0x01;	// clk / 1
 	OCR2A = 0;
+	init_ramp();
 	TIMSK2 |= (1 << TOIE2);
 	
 	
