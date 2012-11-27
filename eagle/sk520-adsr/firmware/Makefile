@@ -10,7 +10,7 @@ FUSEOPT = -U lfuse:w:0xe2:m -U hfuse:w:0xdf:m -U efuse:w:0xf9:m
 # Choose your favorite programmer and interface above.
 
 
-COMPILE = avr-gcc -Wall -Os -I.  -mmcu=$(DEVICE) -DF_CPU=$(F_CPU)#-DDEBUG_LEVEL=2
+COMPILE = avr-gcc -Wall --std=c99 -Os -I.  -mmcu=$(DEVICE) -DF_CPU=$(F_CPU)#-DDEBUG_LEVEL=2
 # NEVER compile the final product with debugging! Any debug output will
 # distort timing so that the specs can't be met.
 
