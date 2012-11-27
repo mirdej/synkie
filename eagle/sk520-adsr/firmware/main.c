@@ -30,12 +30,6 @@
 
 #define AD_SMOOTHING			6	// smoothing level of ad samples (0 -  15)
 
-// AVR Libc (see http://www.nongnu.org/avr-libc/)
-#include <avr/io.h>				// include I/O definitions (port names, pin names, etc)
-#include <avr/interrupt.h>		// include interrupt support
-#include <avr/wdt.h>			// include watchdog timer support
-#include "atm88lib.h"
-
 // ==============================================================================
 // Global variables
 // ------------------------------------------------------------------------------
@@ -45,8 +39,26 @@
 static unsigned int		ad_values[5];			// sampled analog input values
 static unsigned char 	ad_idx;										// sensor currently being sampled
 
-static unsigned char target_value, actual_value;
+static uint8_t value = 0;
+static int error = 0;
+static int dvalue = 0;
+static int dtime = 0;
+static int step = 0;
 
+static void start_ramp(uint8_t end, uint16_t time) {
+	uint8_t start = OCR2A;
+	if(end > start) {
+		dvalue = end - start;
+		step = 1;
+	}
+	else {
+		dvalue = start - end;
+		step = -1;
+	}
+	dtime = time*4;
+	value = start;
+	error = dtime / 2;
+}
 
 typedef enum {
 	idle = 0,
@@ -125,20 +137,14 @@ void checkAnalogPorts (void) {
 // ------------------------------------------------------------------------------
 
 ISR(INT1_vect) {
-	
-
 	phase = attack;
+	PORTB |= 1<<1;
 	
-	OCR1A = ad_values[0];						// set timer 1 overflow to pot value
-	target_value = 255;							// we'll have to climb to full swing
-	actual_value = 0;				
-
-	OCR2A = 0;
-	StartPWM2(PRESC1, PWMA_SET, PWMB_NONE); 	// start PWM
-
-
-//	TCCR1B |= (1 << CS10); 						// start timer 1 , no prescaler
-	TCCR1B |= (1 << CS10) | (1 << CS10); 						// start timer 1 , 64 prescaler
+	uint16_t dt = ad_values[0];	// set timer 1 overflow to pot value
+	if (dt < 1) dt = 1;
+	TCCR1B |= (1 << CS12) | (1 << CS10);	// clk / 1024
+	start_ramp(255, dt);
+	OCR1A = dt;
 }	
 
 
@@ -147,68 +153,66 @@ ISR(INT1_vect) {
 // ------------------------------------------------------------------------------
 
 ISR(TIMER1_COMPA_vect) {
-
-
-	if (actual_value < target_value) {
-		actual_value++;
-	} else if (actual_value > target_value) {
-		actual_value--;
-	}
-	
-	
-	if (actual_value == target_value) {		// end of current phase
-	
-		statusLedToggle();
-		switch(phase) {
-			
-			case attack:
-
-
-				phase = decay;
-				target_value = (unsigned char)(ad_values[2] >> 2);	// S height is defined by third pot
-				OCR1A = ad_values[1];							// decay time is set by second pot 
-
-				break;
-				
-			case decay:
-
-				phase = sustain;
-				OCR1A = ad_values[4];							// sustain time is set by fourth pot 
-				actual_value = 0;
-				target_value = 255;
-				
-				break;
-				
-			case sustain:
-						//statusLedToggle();
-				phase = release;
-				OCR1A = ad_values[5];							// release time is set by fifth pot
-				actual_value = (unsigned char)(ad_values[2] >> 2);
-				target_value = 0;
-				break;
-			
-			case release:
-				statusLedToggle();
-				phase = idle;
-				TCCR1B &= 0xF8; 			// stop timer 1
-				break;
-				
-			default:
-				break;
-
-
-		}
+	uint16_t dt;
+	switch(phase) {
 		
+		case attack:
+			phase = decay;
+			dt = ad_values[1];
+			if (dt < 1) dt = 1;
+			OCR1A = dt;
+			start_ramp(ad_values[2] >> 2, dt);
+			break;
+			
+		case decay:
+			phase = sustain;
+			OCR1A = ad_values[3];	// sustain time is set by fourth pot 
+			step = 0;
+			break;
+			
+		case sustain:
+			phase = release;
+			dt = ad_values[4];
+			if (dt < 1) dt = 1;
+			OCR1A = dt;
+			start_ramp(0, dt);
+			break;
+		
+		case release:
+			phase = idle;
+			step = 0;
+			OCR2A = 0;
+			TCCR1B &= ~0x7;	// stop timer 1
+			PORTB &= ~1<<1;
+			break;
+			
+		default:
+			break;
 	}
-	
-	if (phase == sustain) {
-		OCR2A = (unsigned char)(ad_values[2] >> 2);
-	} else {
-		OCR2A = actual_value;					// set PWM frequency
-	} 
 }
 
 
+ISR(TIMER2_OVF_vect) {
+	if (step != 0) {
+		error -= dvalue;
+		while (error < 0) {
+			if (step > 0) {
+				if (value < 255 - step)
+					value += step;
+				else
+					value = 255;
+			}
+			else {
+				if (value > -step)
+					value += step;
+				else
+					value = 0;
+			}
+			error += dtime;
+		}
+		OCR2A = value;
+	}
+}
 
 
 
@@ -225,11 +229,11 @@ int main(void) {
 
 	DDRB |= (1 << 3);
 	DDRB |= (1 << 1); // test led
-	
+		
 
 	// initialise 16bit timer
-	TCCR1B = (1 << WGM12); //	CTC mode
-	TIMSK1 = (1 << OCIE1A); // 	enable interrupt
+	TCCR1B = (1 << WGM12); //	CTC mode, clk stopped
+	TIMSK1 = (1 << OCIE1A); // 	enable output Timer 1 output compare A interrupt
 
 
 	// enable external interrupt on INT1
@@ -237,7 +241,11 @@ int main(void) {
 	EIMSK = (1 << INT1); 					// enable interrupt
 	
 	
+	// set up PWM on timer 2
+	TCCR2A = 0x83; 	// Fast PWM, non-inverting
+	TCCR2B = 0x01;	// clk / 1
 	OCR2A = 0;
+	TIMSK2 |= (1 << TOIE2);
 	
 	
 	wdt_enable(WDTO_1S);	// enable watchdog timer
@@ -246,7 +254,6 @@ int main(void) {
 	while(1) {
 		wdt_reset();
 		checkAnalogPorts();
-
 	}
 		
 }
