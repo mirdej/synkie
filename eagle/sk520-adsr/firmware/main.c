@@ -181,7 +181,7 @@ void checkAnalogPorts (void) {
 // - Trigger Interrupt
 // ------------------------------------------------------------------------------
 
-ISR(INT1_vect) {
+ISR(ANALOG_COMP_vect) {
 	phase = attack;
 	statusLedOn();
 	
@@ -261,9 +261,9 @@ int main(void) {
 	TIMSK1 = (1 << OCIE1A); // 	enable output Timer 1 output compare A interrupt
 
 
-	// enable external interrupt on INT1
-	EICRA = (1 << ISC11) | (1 << ISC10);	// rising edge
-	EIMSK = (1 << INT1); 					// enable interrupt
+	// enable analog comparator interrupt
+	ACSR = (1 << ACIE) | (1 << ACIS1) | (1 << ACIS0);	// on rising edge
+	DIDR1 = (1 << AIN1D) | (1 << AIN0D); // "When an analog signal is applied to the AIN1/0 pin and the digital input from this pin is not needed, this bit should be writ- ten logic one to reduce power consumption in the digital input buffer."
 	
 	
 	// set up PWM on timer 2
