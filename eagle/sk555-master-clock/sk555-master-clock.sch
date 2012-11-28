@@ -19114,6 +19114,9 @@ NS Package M08A</description>
 <part name="OUT-1-INV1" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="OUT2" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="C13" library="rcl" deviceset="CPOL-EU" device="CT3528" value="2u2"/>
+<part name="GND33" library="supply1" deviceset="GND" device=""/>
+<part name="C14" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="R22" library="rcl" deviceset="R-EU_" device="R1206" value="47k"/>
 </parts>
 <sheets>
 <sheet>
@@ -19279,6 +19282,9 @@ NS Package M08A</description>
 <attribute name="NAME" x="100.457" y="-126.5174" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="104.1146" y="-131.9971" size="1.778" layer="96" rot="MR90"/>
 </instance>
+<instance part="GND33" gate="1" x="5.08" y="-25.4" rot="MR0"/>
+<instance part="C14" gate="G$1" x="12.7" y="-15.24" rot="R270"/>
+<instance part="R22" gate="G$1" x="10.16" y="-20.32"/>
 </instances>
 <busses>
 </busses>
@@ -19419,6 +19425,15 @@ NS Package M08A</description>
 <segment>
 <pinref part="C12" gate="G$1" pin="1"/>
 <pinref part="GND32" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C14" gate="G$1" pin="2"/>
+<pinref part="R22" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="-15.24" x2="5.08" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="-15.24" x2="5.08" y2="-20.32" width="0.1524" layer="91"/>
+<pinref part="GND33" gate="1" pin="GND"/>
+<wire x1="5.08" y1="-20.32" x2="5.08" y2="-22.86" width="0.1524" layer="91"/>
+<junction x="5.08" y="-20.32"/>
 </segment>
 </net>
 <net name="N$38" class="0">
@@ -19944,7 +19959,15 @@ NS Package M08A</description>
 <wire x1="55.88" y1="-50.8" x2="50.8" y2="-50.8" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="-50.8" x2="17.78" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="D3" gate="G$1" pin="C"/>
-<wire x1="17.78" y1="-17.78" x2="17.78" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-17.78" x2="17.78" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="R22" gate="G$1" pin="2"/>
+<wire x1="17.78" y1="-15.24" x2="17.78" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="-20.32" x2="17.78" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-20.32" x2="17.78" y2="-17.78" width="0.1524" layer="91"/>
+<junction x="17.78" y="-17.78"/>
+<pinref part="C14" gate="G$1" pin="1"/>
+<wire x1="15.24" y1="-15.24" x2="17.78" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="17.78" y="-15.24"/>
 </segment>
 </net>
 <net name="N$20" class="0">
