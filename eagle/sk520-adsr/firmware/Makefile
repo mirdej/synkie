@@ -4,7 +4,7 @@ F_CPU		= 8000000
 
 PROGRAMMER 	= -c usbasp -P usb
 AVRDUDE 	= avrdude $(PROGRAMMER) -p $(DEVICE) -e
-FUSEOPT = -U lfuse:w:0xe2:m -U hfuse:w:0xdf:m -U efuse:w:0xf9:m
+FUSEOPT = -U lfuse:w:0xe2:m -U hfuse:w:0xdf:m  #-U efuse:w:0xf9:m
 
 
 # Choose your favorite programmer and interface above.
