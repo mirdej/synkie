@@ -11584,7 +11584,7 @@ body 3.9 mm/JEDEC MS-012AA</description>
 </classes>
 <parts>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
-<part name="C5" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R1206" value="4k7"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R1206" value="100k"/>
@@ -11601,8 +11601,8 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="P-8" library="supply1" deviceset="-5V" device=""/>
-<part name="C1" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C2" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GAIN-POT10K" library="anyma-lib" deviceset="ALPS_RK09K111_H" device="OHNE-FüSSE" value="10k"/>
@@ -11630,8 +11630,8 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="R18" library="rcl" deviceset="R-EU_" device="R1206" value="1k6"/>
 <part name="P-1" library="supply1" deviceset="-5V" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
-<part name="C6" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C7" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C6" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C7" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="C8" library="rcl" deviceset="CPOL-EU" device="CT6032" value="2u2tantal"/>
@@ -11658,7 +11658,7 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="R24" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="R25" library="rcl" deviceset="R-EU_" device="R1206" value="4k7"/>
 <part name="R26" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="R27" library="rcl" deviceset="R-EU_" device="R1206" value="100k"/>
@@ -11685,8 +11685,8 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="R38" library="rcl" deviceset="R-EU_" device="R1206" value="1M"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="C11" library="rcl" deviceset="C-EU" device="C1206" value="50p"/>
-<part name="C13" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C14" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C13" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C14" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
