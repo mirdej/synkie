@@ -11586,7 +11586,7 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="P-5" library="supply1" deviceset="-5V" device=""/>
 <part name="R506" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
 <part name="R505" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
-<part name="IC5-BUF" library="anyma-lib" deviceset="MAX4392ESA" device=""/>
+<part name="IC5-BUF" library="anyma-lib" deviceset="MAX4392ESA" device="" value="LMH6643MA"/>
 <part name="R504" library="rcl" deviceset="R-EU_" device="R1206" value="4k7"/>
 <part name="R507" library="rcl" deviceset="R-EU_" device="R1206" value="4k7"/>
 <part name="IC6-MIX" library="anyma-lib" deviceset="MAX4392ESA" device=""/>
@@ -11630,7 +11630,7 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="P-11" library="supply1" deviceset="-5V" device=""/>
 <part name="R706" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
 <part name="R705" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
-<part name="IC7-BUF" library="anyma-lib" deviceset="MAX4392ESA" device=""/>
+<part name="IC7-BUF" library="anyma-lib" deviceset="MAX4392ESA" device="" value="LMH6643MA"/>
 <part name="R704" library="rcl" deviceset="R-EU_" device="R1206" value="4k7"/>
 <part name="R707" library="rcl" deviceset="R-EU_" device="R1206" value="4k7"/>
 <part name="IC8-MIX" library="anyma-lib" deviceset="MAX4392ESA" device=""/>
