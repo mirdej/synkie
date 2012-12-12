@@ -11832,16 +11832,16 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <instance part="R209" gate="G$1" x="-55.88" y="38.1" rot="R270"/>
 <instance part="IC2" gate="G$1" x="-25.4" y="66.04"/>
 <instance part="IC2" gate="G$2" x="-17.78" y="25.4"/>
-<instance part="IC2" gate="G$3" x="-58.42" y="-30.48"/>
+<instance part="IC2" gate="G$3" x="76.2" y="137.16"/>
 <instance part="R207" gate="G$1" x="-7.62" y="66.04"/>
 <instance part="GND1" gate="1" x="-48.26" y="17.78"/>
 <instance part="GND5" gate="1" x="-68.58" y="55.88"/>
-<instance part="P+6" gate="1" x="-58.42" y="-20.32"/>
-<instance part="P-8" gate="1" x="-58.42" y="-40.64"/>
-<instance part="C201" gate="G$1" x="-53.34" y="-22.86" rot="R270"/>
-<instance part="C200" gate="G$1" x="-53.34" y="-38.1" rot="R270"/>
-<instance part="GND2" gate="1" x="-48.26" y="-22.86" rot="R90"/>
-<instance part="GND3" gate="1" x="-48.26" y="-38.1" rot="R90"/>
+<instance part="P+6" gate="1" x="76.2" y="147.32"/>
+<instance part="P-8" gate="1" x="76.2" y="127"/>
+<instance part="C201" gate="G$1" x="81.28" y="144.78" rot="R270"/>
+<instance part="C200" gate="G$1" x="81.28" y="129.54" rot="R270"/>
+<instance part="GND2" gate="1" x="86.36" y="144.78" rot="R90"/>
+<instance part="GND3" gate="1" x="86.36" y="129.54" rot="R90"/>
 <instance part="GAIN-POT10K" gate="G$1" x="-55.88" y="27.94"/>
 <instance part="IC3" gate="G$1" x="78.74" y="55.88"/>
 <instance part="GND7" gate="1" x="43.18" y="55.88" rot="R270"/>
@@ -11890,40 +11890,40 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <instance part="R308" gate="G$1" x="147.32" y="53.34" rot="R90"/>
 <instance part="R309" gate="G$1" x="152.4" y="40.64"/>
 <instance part="OUT-" gate="1" x="162.56" y="40.64" rot="R180"/>
-<instance part="X1" gate="-1" x="-15.24" y="-33.02"/>
-<instance part="X1" gate="-2" x="-15.24" y="-30.48"/>
-<instance part="X1" gate="-3" x="-15.24" y="-27.94"/>
-<instance part="P+2" gate="1" x="-20.32" y="-27.94" rot="R90"/>
-<instance part="P-2" gate="1" x="-20.32" y="-33.02" rot="R270"/>
-<instance part="GND18" gate="1" x="-20.32" y="-30.48" rot="R270"/>
-<instance part="P+4" gate="1" x="0" y="-20.32"/>
-<instance part="C10" gate="G$1" x="0" y="-25.4"/>
-<instance part="C12" gate="G$1" x="0" y="-33.02"/>
-<instance part="P-3" gate="1" x="0" y="-40.64"/>
-<instance part="GND19" gate="1" x="-2.54" y="-30.48" rot="R270"/>
+<instance part="X1" gate="-1" x="119.38" y="134.62"/>
+<instance part="X1" gate="-2" x="119.38" y="137.16"/>
+<instance part="X1" gate="-3" x="119.38" y="139.7"/>
+<instance part="P+2" gate="1" x="114.3" y="139.7" rot="R90"/>
+<instance part="P-2" gate="1" x="114.3" y="134.62" rot="R270"/>
+<instance part="GND18" gate="1" x="114.3" y="137.16" rot="R270"/>
+<instance part="P+4" gate="1" x="134.62" y="147.32"/>
+<instance part="C10" gate="G$1" x="134.62" y="142.24"/>
+<instance part="C12" gate="G$1" x="134.62" y="134.62"/>
+<instance part="P-3" gate="1" x="134.62" y="127"/>
+<instance part="GND19" gate="1" x="132.08" y="137.16" rot="R270"/>
 <instance part="R304" gate="G$1" x="50.8" y="55.88"/>
 <instance part="P+5" gate="1" x="-55.88" y="124.46"/>
 <instance part="C103" gate="G$1" x="-48.26" y="101.6" rot="R180"/>
-<instance part="R101" gate="G$1" x="-68.58" y="142.24" rot="R270"/>
-<instance part="R102" gate="G$1" x="-60.96" y="147.32"/>
-<instance part="R103" gate="G$1" x="-38.1" y="147.32"/>
-<instance part="D101" gate="-B1" x="-50.8" y="147.32" rot="R270"/>
-<instance part="P-4" gate="1" x="-50.8" y="139.7"/>
-<instance part="P+7" gate="1" x="-50.8" y="154.94"/>
-<instance part="BIAS-IN" gate="1" x="-76.2" y="147.32"/>
+<instance part="R101" gate="G$1" x="-68.58" y="137.16" rot="R270"/>
+<instance part="R102" gate="G$1" x="-60.96" y="142.24"/>
+<instance part="R103" gate="G$1" x="-38.1" y="142.24"/>
+<instance part="D101" gate="-B1" x="-50.8" y="142.24" rot="R270"/>
+<instance part="P-4" gate="1" x="-50.8" y="134.62"/>
+<instance part="P+7" gate="1" x="-50.8" y="149.86"/>
+<instance part="BIAS-IN" gate="1" x="-76.2" y="142.24"/>
 <instance part="P-9" gate="1" x="-55.88" y="88.9"/>
 <instance part="R108" gate="G$1" x="-55.88" y="96.52" rot="R270"/>
 <instance part="R109" gate="G$1" x="-55.88" y="116.84" rot="R270"/>
-<instance part="IC1" gate="G$1" x="-25.4" y="144.78"/>
+<instance part="IC1" gate="G$1" x="-25.4" y="139.7"/>
 <instance part="IC1" gate="G$2" x="-17.78" y="104.14"/>
-<instance part="R107" gate="G$1" x="-7.62" y="144.78"/>
+<instance part="R107" gate="G$1" x="-7.62" y="139.7"/>
 <instance part="GND16" gate="1" x="-48.26" y="96.52"/>
-<instance part="GND17" gate="1" x="-68.58" y="134.62"/>
+<instance part="GND17" gate="1" x="-68.58" y="129.54"/>
 <instance part="BIAS-POT10K" gate="G$1" x="-55.88" y="106.68"/>
-<instance part="R104" gate="G$1" x="-22.86" y="154.94"/>
-<instance part="R106" gate="G$1" x="-17.78" y="139.7" rot="R90"/>
-<instance part="R105" gate="G$1" x="-38.1" y="134.62" rot="R180"/>
-<instance part="GND20" gate="1" x="-45.72" y="134.62" rot="R270"/>
+<instance part="R104" gate="G$1" x="-22.86" y="149.86"/>
+<instance part="R106" gate="G$1" x="-17.78" y="134.62" rot="R90"/>
+<instance part="R105" gate="G$1" x="-38.1" y="129.54" rot="R180"/>
+<instance part="GND20" gate="1" x="-45.72" y="129.54" rot="R270"/>
 <instance part="R113" gate="G$1" x="-30.48" y="106.68"/>
 <instance part="R117" gate="G$1" x="0" y="104.14"/>
 <instance part="R114" gate="G$1" x="-15.24" y="114.3"/>
@@ -12335,9 +12335,9 @@ body 3.9 mm/JEDEC MS-012AA</description>
 </net>
 <net name="N$13" class="0">
 <segment>
-<wire x1="-73.66" y1="147.32" x2="-66.04" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="-73.66" y1="147.32" x2="-68.58" y2="147.32" width="0.1524" layer="91"/>
-<junction x="-73.66" y="147.32"/>
+<wire x1="-73.66" y1="142.24" x2="-66.04" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="142.24" x2="-68.58" y2="142.24" width="0.1524" layer="91"/>
+<junction x="-73.66" y="142.24"/>
 <pinref part="R102" gate="G$1" pin="1"/>
 <pinref part="R101" gate="G$1" pin="1"/>
 <pinref part="BIAS-IN" gate="1" pin="P"/>
@@ -12345,10 +12345,10 @@ body 3.9 mm/JEDEC MS-012AA</description>
 </net>
 <net name="N$23" class="0">
 <segment>
-<wire x1="-43.18" y1="147.32" x2="-48.26" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="-50.8" y1="147.32" x2="-55.88" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="-48.26" y1="147.32" x2="-50.8" y2="147.32" width="0.1524" layer="91"/>
-<junction x="-50.8" y="147.32"/>
+<wire x1="-43.18" y1="142.24" x2="-48.26" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="142.24" x2="-55.88" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="142.24" x2="-50.8" y2="142.24" width="0.1524" layer="91"/>
+<junction x="-50.8" y="142.24"/>
 <pinref part="R102" gate="G$1" pin="2"/>
 <pinref part="R103" gate="G$1" pin="1"/>
 <pinref part="D101" gate="-B1" pin="AC"/>
@@ -12359,8 +12359,8 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="R103" gate="G$1" pin="2"/>
 <pinref part="IC1" gate="G$1" pin="+IN"/>
 <pinref part="R104" gate="G$1" pin="1"/>
-<wire x1="-33.02" y1="147.32" x2="-33.02" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="154.94" x2="-27.94" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="142.24" x2="-33.02" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="149.86" x2="-27.94" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$25" class="0">
@@ -12369,7 +12369,7 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="R107" gate="G$1" pin="1"/>
 <pinref part="R106" gate="G$1" pin="2"/>
 <pinref part="R106" gate="G$1" pin="2"/>
-<wire x1="-12.7" y1="144.78" x2="-17.78" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="139.7" x2="-17.78" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$27" class="0">
@@ -12397,8 +12397,8 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="R106" gate="G$1" pin="1"/>
 <pinref part="IC1" gate="G$1" pin="-IN"/>
-<wire x1="-17.78" y1="134.62" x2="-33.02" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="134.62" x2="-33.02" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="129.54" x2="-33.02" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="129.54" x2="-33.02" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="R105" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -12437,14 +12437,14 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="R107" gate="G$1" pin="2"/>
 <pinref part="R104" gate="G$1" pin="2"/>
-<wire x1="-17.78" y1="154.94" x2="-2.54" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="-2.54" y1="154.94" x2="-2.54" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="149.86" x2="-2.54" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="149.86" x2="-2.54" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="R117" gate="G$1" pin="2"/>
 <pinref part="R114" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="114.3" x2="5.08" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="114.3" x2="5.08" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="-2.54" y1="144.78" x2="5.08" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="144.78" x2="5.08" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="139.7" x2="5.08" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="139.7" x2="5.08" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="104.14" x2="63.5" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="104.14" x2="63.5" y2="63.5" width="0.1524" layer="91"/>
 <junction x="5.08" y="104.14"/>
