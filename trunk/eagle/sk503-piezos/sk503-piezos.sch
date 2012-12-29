@@ -14617,17 +14617,17 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="CV1" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
 <part name="R12" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R13" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R14" library="rcl" deviceset="R-EU_" device="R1206" value="470k"/>
+<part name="R13" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
+<part name="R14" library="rcl" deviceset="R-EU_" device="R1206" value="47k"/>
 <part name="R15" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="P-1" library="supply1" deviceset="-5V" device=""/>
-<part name="C11" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C12" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C13" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C11" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C12" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C13" library="rcl" deviceset="C-EU" device="C1206" value="1u"/>
 <part name="D1" library="diode" deviceset="DIODE-" device="MELF-MLL41"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="X1" library="con-molex" deviceset="22-23-2031" device=""/>
@@ -14643,34 +14643,34 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="CV2" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="R21" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
 <part name="R22" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R23" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R24" library="rcl" deviceset="R-EU_" device="R1206" value="470k"/>
+<part name="R23" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
+<part name="R24" library="rcl" deviceset="R-EU_" device="R1206" value="47k"/>
 <part name="R25" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="P-4" library="supply1" deviceset="-5V" device=""/>
-<part name="C21" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C22" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C23" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C21" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C22" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C23" library="rcl" deviceset="C-EU" device="C1206" value="1u"/>
 <part name="D2" library="diode" deviceset="DIODE-" device="MELF-MLL41"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="IC3" library="linear" deviceset="LM833" device="D"/>
 <part name="CV3" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="R31" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
 <part name="R32" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R33" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R34" library="rcl" deviceset="R-EU_" device="R1206" value="470k"/>
+<part name="R33" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
+<part name="R34" library="rcl" deviceset="R-EU_" device="R1206" value="47k"/>
 <part name="R35" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="P-5" library="supply1" deviceset="-5V" device=""/>
-<part name="C31" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C32" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C33" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C31" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C32" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C33" library="rcl" deviceset="C-EU" device="C1206" value="1u"/>
 <part name="D3" library="diode" deviceset="DIODE-" device="MELF-MLL41"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="PIEZOS" library="con-molex" deviceset="22-23-2051" device=""/>
@@ -14678,17 +14678,17 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="CV4" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="R41" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
 <part name="R42" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R43" library="rcl" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="R44" library="rcl" deviceset="R-EU_" device="R1206" value="470k"/>
+<part name="R43" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
+<part name="R44" library="rcl" deviceset="R-EU_" device="R1206" value="47k"/>
 <part name="R45" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="P-6" library="supply1" deviceset="-5V" device=""/>
-<part name="C41" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C42" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C43" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C41" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C42" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C43" library="rcl" deviceset="C-EU" device="C1206" value="1u"/>
 <part name="D4" library="diode" deviceset="DIODE-" device="MELF-MLL41"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 </parts>
