@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8,8 +8,8 @@
 </settings>
 <grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -444,9 +444,18 @@ design rules under a new name.</description>
 </element>
 <element name="C1" library="rcl" package="C1206" value="" x="36.83" y="75.565" rot="R180"/>
 <element name="C2" library="rcl" package="C1206" value="" x="34.29" y="67.945"/>
-<element name="R201" library="rcl" package="R1206" value="6k8" x="21.59" y="73.025" rot="R90"/>
-<element name="D1" library="diode" package="SOT23" value="BAT54S-L44" x="28.575" y="73.66" rot="R270"/>
-<element name="D2" library="diode" package="MINIMELF" value="" x="24.13" y="73.025" rot="R270"/>
+<element name="R201" library="rcl" package="R1206" value="6k8" x="21.59" y="73.025" smashed="yes" rot="R90">
+<attribute name="NAME" x="22.86" y="75.565" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="21.59" y="74.295" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="D1" library="diode" package="SOT23" value="BAT54S-L44" x="28.575" y="73.66" smashed="yes" rot="R270">
+<attribute name="NAME" x="30.48" y="75.565" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="27.94" y="71.755" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="D2" library="diode" package="MINIMELF" value="" x="24.13" y="73.025" smashed="yes" rot="R270">
+<attribute name="NAME" x="24.003" y="69.596" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="21.717" y="74.676" size="1.27" layer="27" rot="R270"/>
+</element>
 <element name="R301" library="rcl" package="R1206" value="6k8" x="44.45" y="73.025" rot="R270"/>
 <element name="R302" library="rcl" package="R1206" value="6k8" x="41.275" y="71.755" rot="R90"/>
 <element name="R401" library="rcl" package="R1206" value="75" x="49.53" y="73.025"/>
@@ -511,13 +520,13 @@ design rules under a new name.</description>
 <wire x1="7.62" y1="60.095" x2="13.97" y2="60.095" width="0.6096" layer="1"/>
 <wire x1="13.97" y1="60.095" x2="20.32" y2="60.095" width="0.6096" layer="1"/>
 <wire x1="13.97" y1="62.865" x2="13.97" y2="60.095" width="0.6096" layer="1"/>
-<polygon width="0.6096" layer="1">
+<polygon width="0.6096" layer="1" isolate="0.8128">
 <vertex x="1.27" y="58.42"/>
 <vertex x="57.15" y="58.42"/>
 <vertex x="57.15" y="79.375"/>
 <vertex x="1.27" y="79.375"/>
 </polygon>
-<polygon width="0.6096" layer="16">
+<polygon width="0.6096" layer="16" isolate="0.8128">
 <vertex x="1.27" y="79.375"/>
 <vertex x="57.15" y="79.375"/>
 <vertex x="57.15" y="58.42"/>
@@ -616,9 +625,6 @@ design rules under a new name.</description>
 <wire x1="50.952" y1="73.025" x2="54.61" y2="73.025" width="0.6096" layer="1"/>
 </signal>
 </signals>
-<errors>
-<approved hash="3,1,a08796c7e91edf5e"/>
-</errors>
 </board>
 </drawing>
 </eagle>
