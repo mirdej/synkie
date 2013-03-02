@@ -13781,7 +13781,7 @@ In this library the device names are the same as the pin names of the symbols, t
 </classes>
 <parts>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
-<part name="C503" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C503" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="R501" library="rcl" deviceset="R-EU_" device="R1206" value="47k"/>
 <part name="R502" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="R503" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
@@ -13840,8 +13840,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="P-2" library="supply1" deviceset="-5V" device=""/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
-<part name="C201" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C202" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C201" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C202" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="X1" library="con-molex" deviceset="22-23-2031" device=""/>
@@ -13867,8 +13867,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
 <part name="P-3" library="supply1" deviceset="-5V" device=""/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
-<part name="C401" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="C402" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C401" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
+<part name="C402" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="+UB" device=""/>
@@ -13888,10 +13888,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
 <part name="GND30" library="supply1" deviceset="GND" device=""/>
 <part name="P-4" library="supply1" deviceset="-5V" device=""/>
-<part name="C301" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C301" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
-<part name="C302" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C302" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
 <part name="R303" library="rcl" deviceset="R-EU_" device="R1206" value="1k5"/>
 <part name="GND33" library="supply1" deviceset="GND" device=""/>
@@ -13900,7 +13900,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="R302" library="rcl" deviceset="R-EU_" device="R1206" value="1k5"/>
 <part name="V-Q" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
-<part name="C703" library="rcl" deviceset="C-EU" device="C1206"/>
+<part name="C703" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="R701" library="rcl" deviceset="R-EU_" device="R1206" value="47k"/>
 <part name="R702" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="R703" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
