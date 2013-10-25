@@ -63,13 +63,10 @@ component Ram_Controller is
 		Clk    		: in  std_logic;
 		ResetN 		: in  std_logic;
 		Overflow		: out std_logic;
-				Oszi_Trig		: out std_logic;
 
---Loopthru	: in  std_logic;
+		Write_EnableN	: in std_logic;
 		Write_Data		: in std_logic_vector (7 downto 0);
-		Read_Data		: out std_logic_vector (7 downto 0);
-		
-		Reset_Counter	: in std_logic;
+		Read_Data		: out std_logic_vector (7 downto 0);		
 		
 		Ram_Address : out std_logic_vector(13 downto 0);  -- 12 bits Address / 2 bits BANK
 		Ram_RAS		: out std_logic;
@@ -110,9 +107,7 @@ begin
 		Clk    				=> Clk,
 		ResetN 				=> ResetN,
 		Overflow			=> LED2,
-		Oszi_Trig		 => 	LED1,
-		Reset_Counter	=> Encoder_C,
-	--		Loopthru			=> Switch1,
+		Write_EnableN		=> Encoder_C,
 		Write_Data			=> ad_buf,
 		Read_Data			=> da_buf,
 		Ram_Address 		=> Ram_Address,
@@ -124,7 +119,6 @@ begin
 		Ram_DQM				=> Ram_DQM
 	);
 -------------------------------------------------------------------------------  LEDs
-	--LED3 					<= '1';--very_slow_clk_int;
 	
 	Display_C <= "1111111";
 	LED3 <= Encoder_C;
