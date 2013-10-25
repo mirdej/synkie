@@ -55,25 +55,26 @@ end entity;
 --------------------------------------------------------------------------------------------
 architecture Ram_Control_arch of Ram_Control is
 	
-	constant CLOCK_PERIOD : positive := 13; -- in ns
+	constant CLOCK_PERIOD : positive := 8; -- in ns
 	-- timing constants in ns:
 	constant tRC  : positive := 75;
 	constant tRCD : positive := 20;
 	constant tRP  : positive := 20;
+	constant tMRD : positive := 15;
 	constant tREF : positive := 15000; -- for 1 row (for 4096 you need to divide number by 4096)        
 	constant tRFC : positive := 65; 
 	constant tWR  : positive := CLOCK_PERIOD + 7; 
 	
 	-- timing constants in cycles
 	-- actual cycles will be one cycle longer (every) because of state transition time (1 cycle time)
-	constant tRC_CYCLES  : natural := tRC  / CLOCK_PERIOD;	 -- tRC_time = tRC_CYCLES + 1
-	constant tRCD_CYCLES : natural := tRCD / CLOCK_PERIOD;	 --	tRCD_time = tRCD_CYCLES + 1
-	constant tRP_CYCLES  : natural := tRP  / CLOCK_PERIOD - 1;	 -- tRP_time = tRP_CYCLES + 1
-	constant tMRD_CYCLES : natural := 2; 					 -- tMRD_time = 2 tCK
-	constant tREF_CYCLES : natural := tREF / CLOCK_PERIOD;	 --	tREF_time = tREF_CYCLES + 1
-	constant tRFC_CYCLES : NATURAL := tRFC / CLOCK_PERIOD;	 -- tRFC_time = tRFC_CYCLES + 1
-	constant tWR_CYCLES  : natural := tWR / CLOCK_PERIOD; 	 --	tWR_time = tWR_CYCLES + 1
-	constant tSTARTUP_NOP_CYCLES : positive := 8000;
+	constant tRC_CYCLES  : natural := (tRC + CLOCK_PERIOD-1)  / CLOCK_PERIOD - 2;	 -- tRC_time = tRC_CYCLES + 1
+	constant tRCD_CYCLES : natural := (tRCD + CLOCK_PERIOD-1) / CLOCK_PERIOD - 2;	 --	tRCD_time = tRCD_CYCLES + 1
+	constant tRP_CYCLES  : natural := (tRP + CLOCK_PERIOD-1)  / CLOCK_PERIOD - 2;	 -- tRP_time = tRP_CYCLES + 1
+	constant tMRD_CYCLES : natural := (tMRD + CLOCK_PERIOD-1) / CLOCK_PERIOD - 2; 	 -- tMRD_time = 15 ns
+	constant tREF_CYCLES : natural := (tREF + CLOCK_PERIOD-1) / CLOCK_PERIOD - 2;	 --	tREF_time = tREF_CYCLES + 1
+	constant tRFC_CYCLES : NATURAL := (tRFC + CLOCK_PERIOD-1) / CLOCK_PERIOD - 2;	 -- tRFC_time = tRFC_CYCLES + 1
+	constant tWR_CYCLES  : natural := (tWR + CLOCK_PERIOD-1) / CLOCK_PERIOD - 2; 	 --	tWR_time = tWR_CYCLES + 1
+	constant tSTARTUP_NOP_CYCLES : positive := 12500;
 
 	constant CAS_LATENCY : positive := 3; 
 
@@ -107,7 +108,6 @@ signal v_sync_sync 						: std_logic;
 signal do_record_b						: std_logic;
 
 
-signal slow_clk							: std_logic;
 signal blink 							: std_logic;
 
 signal write_buf						: std_logic_vector (7 downto 0);
@@ -121,21 +121,8 @@ signal write_enable 					: std_logic;
 signal read_enable 						: std_logic; 
 
 begin
-	-- ----------------------------------------------------------------- MASTER CLOCK 
-	--																	@ half speed : 156.250 Mhz / 2 => 78.125 Mhz
-	--																						12.8 ns period
-	process(Clk, ResetN)
-	begin
-		  if (ResetN	= '0') then
-			  slow_clk <= '0';
-		  elsif ((Clk'event) and (Clk = '1')) then 
-			  slow_clk <= not slow_clk;
-		  end if;
-	end process;
-		
-		
 	-- ----------------------------------------------------------------- FINITE STATE MACHINE
-	process(slow_clk, ResetN,write_enable)
+	process(Clk, ResetN,write_enable)
 	begin
 		if (ResetN	= '0') then			
 			ram_state <= init;
@@ -150,7 +137,7 @@ begin
 			Ram_RAS <= '0';
 			Ram_WE <= '0';
 
-		elsif ((slow_clk'event) and (slow_clk = '1')) then 
+		elsif ((Clk'event) and (Clk = '1')) then 
 	
 			case ram_state is
 				---------------------------------
@@ -277,7 +264,7 @@ begin
 						Ram_RAS <= '1';		Ram_CAS <= '1';		Ram_WE <= '1';			-- nop
 					end if;
 					Ram_DQM <= '0';
-					ram_nops <= 1;
+					ram_nops <= 0;
 					ram_state <= nop;
 					ram_next_state <= precharge;
 	
@@ -298,9 +285,9 @@ begin
 	   end if;
 	end process;
 ------------------------------------------------------------------------------Feed back Read data	
-	process(slow_clk, load_enable)
+	process(Clk, load_enable)
 	begin
-		if ((slow_clk'event) and (slow_clk = '0')) then
+		if ((Clk'event) and (Clk = '0')) then
 			if (load_enable = '1') then
 				if (read_enable = '0') then
 					Read_Data <= Write_Data;			-- show live out when recording
@@ -341,18 +328,18 @@ begin
 		end if;
 	end process;
 ------------------------------------------------------------------------------reset counter on falling Rec
-  process(slow_clk)
+  process(Clk)
     begin
-         if (rising_edge(slow_clk)) then
+         if (rising_edge(Clk)) then
                do_record_b<=do_record;
          end if;
     end process;
     reset_counter_sync<= ((not do_record_b) and do_record ) or (not ResetN); 
 
 ------------------------------------------------------------------------------synchronize Vsync to clock
-	sync_sync : process (slow_clk,ResetN) 
+	sync_sync : process (Clk,ResetN) 
 	begin
-		if (rising_edge(slow_clk)) then
+		if (rising_edge(Clk)) then
 			v_sync_sync <= V_Sync;
 		end if;
 	end process;
@@ -360,12 +347,14 @@ begin
 ------------------------------------------------------------------------------synchronize record button signal to v_sync_sync
 	sync_record_button : process (v_sync_sync,ResetN) 
 	begin
-	if (rising_edge(v_sync_sync)) then
+	if (ResetN = '0') then
+		do_record <= '0';
+	elsif (rising_edge(v_sync_sync)) then
 			do_record <= not Rec;
 		end if;
 	end process;
 
-	Ram_clk <= not slow_clk;
+	Ram_clk <= not Clk;
 	Ram_Address <= address_temp;
 	write_buf <= Write_Data;
 	write_enable <= do_record;
