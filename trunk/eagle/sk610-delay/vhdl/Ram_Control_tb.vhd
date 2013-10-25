@@ -82,29 +82,23 @@ end process;
 always: process
 begin
 	loop 
-	Clk <= '0'; wait for 3200 ps;
-	Clk <= '1'; wait for 3200 ps;
+	Clk <= '0'; wait for 4000 ps;
+	Clk <= '1'; wait for 4000 ps;
 	end loop;
 	WAIT;        
 end process;
 
-vsync: process 
+set_rec: process
 begin
-	wait for 20 us;
-	loop 
-	V_Sync <= '0'; wait for 48 us;
-	V_Sync <= '1'; wait for 2 us;
-	end loop;
-	WAIT;        
-end process;
-
-button : process
-begin
+	V_Sync <= '0';
 	Rec <= '0';
-	wait for 34 us;
+	wait for 70 ns;
 	Rec <= '1';
-	wait for 258 us;
+	wait for 20 ns;
 	Rec <= '0';
+	wait for 10 ns;
+	V_Sync <= '1'; wait for 20 ns;
+	V_Sync <= '0';
 	wait;
 end process;
 
