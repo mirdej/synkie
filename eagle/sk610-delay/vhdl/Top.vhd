@@ -15,8 +15,11 @@ entity Top is
 	(
 		Clk				: in std_logic;
 		ResetN			: in std_logic;
-		Display_C  		: out std_logic_vector(6 downto 0);
-		Display_A  		: out std_logic_vector(2 downto 0);
+		V_Sync			: in std_logic;
+		Rec				: in std_logic;
+		Overdub			: in std_logic;
+		Freeze			: in std_logic;
+		Looper			: in std_logic;
 		Encoder_A		: in std_logic;
 		Encoder_B		: in std_logic;
 		Encoder_C		: in std_logic;
@@ -58,16 +61,18 @@ port (
 );
 end component;
 -------------------------------------------------------------------------------  SDRAM
-component Ram_Controller is
+component Ram_Control is
 	port(
 		Clk    		: in  std_logic;
 		ResetN 		: in  std_logic;
 		Overflow		: out std_logic;
-
-		Write_EnableN	: in std_logic;
+		V_Sync			: in std_logic;
+		Rec				: in std_logic;
+		Overdub			: in std_logic;
+		Freeze			: in std_logic;
+		Looper			: in std_logic;
 		Write_Data		: in std_logic_vector (7 downto 0);
 		Read_Data		: out std_logic_vector (7 downto 0);		
-		
 		Ram_Address : out std_logic_vector(13 downto 0);  -- 12 bits Address / 2 bits BANK
 		Ram_RAS		: out std_logic;
 		Ram_CAS 	: out std_logic;
@@ -102,12 +107,16 @@ begin
 		DA_Out				=> DA_Data
 	);
 -------------------------------------------------------------------------------  SDRAM
-	Ram_Controller_Inst : Ram_Controller
+	Ram_Control_Inst : Ram_Control
 	port map(
 		Clk    				=> Clk,
 		ResetN 				=> ResetN,
 		Overflow			=> LED2,
-		Write_EnableN		=> Encoder_C,
+		V_Sync			 => 		V_Sync			,
+		Rec				 => 		Encoder_C				,
+		Overdub			 => 		Overdub			,
+		Freeze			 => 		Freeze			,
+		Looper			 => 		Looper			,
 		Write_Data			=> ad_buf,
 		Read_Data			=> da_buf,
 		Ram_Address 		=> Ram_Address,
@@ -120,7 +129,6 @@ begin
 	);
 -------------------------------------------------------------------------------  LEDs
 	
-	Display_C <= "1111111";
 	LED3 <= Encoder_C;
 	
 end Top_Arch;
