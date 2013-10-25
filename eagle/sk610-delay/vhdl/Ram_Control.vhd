@@ -336,7 +336,8 @@ begin
 		if (ResetN = '0') then
 			byte_counter_top <= (others => '1');
 		elsif (falling_edge(do_record)) then
-			byte_counter_top <= byte_counter;
+		--	byte_counter_top <= std_logic_vector(unsigned(byte_counter) - 1);	
+		byte_counter_top <= byte_counter;
 		end if;
 	end process;
 ------------------------------------------------------------------------------reset counter on falling Rec

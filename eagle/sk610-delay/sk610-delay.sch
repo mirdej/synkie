@@ -18807,7 +18807,7 @@ Source: www.pletronics.com .. sm77h%203.3v.pdf</description>
 <junction x="119.38" y="172.72"/>
 </segment>
 </net>
-<net name="G" class="0">
+<net name="V_SYNC" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="B2/73"/>
 <pinref part="7SEG-C" gate="A" pin="1"/>
