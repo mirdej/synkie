@@ -1,0 +1,141 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# Date created = 01:40:33  October 18, 2013
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		controller_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM240T100C5
+set_global_assignment -name TOP_LEVEL_ENTITY Top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:40:33  OCTOBER 18, 2013"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_12 -to Clk
+set_location_assignment PIN_19 -to Led1
+set_location_assignment PIN_20 -to Led2
+set_location_assignment PIN_21 -to Led3
+set_location_assignment PIN_6 -to ResetN
+set_location_assignment PIN_36 -to AD_Clk
+set_location_assignment PIN_26 -to AD_Data[7]
+set_location_assignment PIN_27 -to AD_Data[6]
+set_location_assignment PIN_28 -to AD_Data[5]
+set_location_assignment PIN_29 -to AD_Data[4]
+set_location_assignment PIN_30 -to AD_Data[3]
+set_location_assignment PIN_33 -to AD_Data[2]
+set_location_assignment PIN_34 -to AD_Data[1]
+set_location_assignment PIN_35 -to AD_Data[0]
+set_location_assignment PIN_47 -to DA_Clk
+set_location_assignment PIN_37 -to DA_Data[7]
+set_location_assignment PIN_38 -to DA_Data[6]
+set_location_assignment PIN_39 -to DA_Data[5]
+set_location_assignment PIN_40 -to DA_Data[4]
+set_location_assignment PIN_41 -to DA_Data[3]
+set_location_assignment PIN_42 -to DA_Data[2]
+set_location_assignment PIN_43 -to DA_Data[1]
+set_location_assignment PIN_44 -to DA_Data[0]
+set_location_assignment PIN_87 -to Ram_Address[13]
+set_location_assignment PIN_88 -to Ram_Address[12]
+set_location_assignment PIN_86 -to Ram_Address[11]
+set_location_assignment PIN_85 -to Ram_Address[10]
+set_location_assignment PIN_84 -to Ram_Address[9]
+set_location_assignment PIN_83 -to Ram_Address[8]
+set_location_assignment PIN_82 -to Ram_Address[7]
+set_location_assignment PIN_81 -to Ram_Address[6]
+set_location_assignment PIN_92 -to Ram_Address[5]
+set_location_assignment PIN_91 -to Ram_Address[4]
+set_location_assignment PIN_90 -to Ram_Address[3]
+set_location_assignment PIN_89 -to Ram_Address[2]
+set_location_assignment PIN_96 -to Ram_CAS
+set_location_assignment PIN_98 -to Ram_Data[3]
+set_location_assignment PIN_99 -to Ram_Data[2]
+set_location_assignment PIN_100 -to Ram_Data[1]
+set_location_assignment PIN_1 -to Ram_Data[0]
+set_location_assignment PIN_75 -to Ram_Data[7]
+set_location_assignment PIN_76 -to Ram_Data[6]
+set_location_assignment PIN_77 -to Ram_Data[5]
+set_location_assignment PIN_78 -to Ram_Data[4]
+set_location_assignment PIN_95 -to Ram_RAS
+set_location_assignment PIN_97 -to Ram_WE
+set_location_assignment PIN_4 -to Ram_Clk
+set_location_assignment PIN_3 -to Ram_Address[1]
+set_location_assignment PIN_2 -to Ram_Address[0]
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Top_vhd_tst -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_location_assignment PIN_15 -to Ram_DQM
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to ResetN
+set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to Clk
+set_global_assignment -name EDA_TEST_BENCH_NAME Top_vhd_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Top_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Top_vhd_tst -section_id Top_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2 ms" -section_id Top_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE Testbench.vhd -section_id Top_vhd_tst
+set_location_assignment PIN_67 -to Display_A[0]
+set_location_assignment PIN_66 -to Display_A[1]
+set_location_assignment PIN_64 -to Display_A[2]
+set_location_assignment PIN_74 -to Display_C[0]
+set_location_assignment PIN_73 -to Display_C[1]
+set_location_assignment PIN_68 -to Display_C[2]
+set_location_assignment PIN_69 -to Display_C[3]
+set_location_assignment PIN_72 -to Display_C[6]
+set_location_assignment PIN_71 -to Display_C[5]
+set_location_assignment PIN_70 -to Display_C[4]
+set_location_assignment PIN_53 -to Encoder_A
+set_location_assignment PIN_54 -to Encoder_B
+set_location_assignment PIN_51 -to Encoder_C
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Encoder_A
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Encoder_B
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Encoder_C
+set_global_assignment -name SMART_RECOMPILE ON
+set_location_assignment PIN_18 -to Switch1
+set_global_assignment -name VHDL_FILE Ram_Control.vhd
+set_global_assignment -name VHDL_FILE AD_DA.vhd
+set_global_assignment -name VHDL_FILE Top.vhd
+set_global_assignment -name MAXII_OPTIMIZATION_TECHNIQUE AREA
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION ALWAYS
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to Encoder_C
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to Encoder_B
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to Encoder_A
