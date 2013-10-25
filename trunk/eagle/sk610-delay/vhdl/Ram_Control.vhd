@@ -24,14 +24,19 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Ram_Controller is
+entity Ram_Control is
 	port(
 		Clk    			: in  std_logic;
 		ResetN 			: in  std_logic;
 		
 		Overflow		: out std_logic;
 				
-		Write_EnableN	: in std_logic;
+		V_Sync			: in std_logic;
+		Rec				: in std_logic;
+		Overdub			: in std_logic;
+		Freeze			: in std_logic;
+		Looper			: in std_logic;
+
 		Write_Data		: in std_logic_vector (7 downto 0);
 		Read_Data		: out std_logic_vector (7 downto 0);
 		
@@ -48,7 +53,7 @@ end entity;
 --------------------------------------------------------------------------------------------
 --																			ARCHITECTURE
 --------------------------------------------------------------------------------------------
-architecture Ram_Controller_arch of Ram_Controller is
+architecture Ram_Control_arch of Ram_Control is
 	
 	constant CLOCK_PERIOD : positive := 13; -- in ns
 	-- timing constants in ns:
@@ -87,23 +92,33 @@ type ram_state_type is (
 		nop
 	);
 	
-signal another_refresh 		: std_logic;	
-signal ram_state 			: ram_state_type;
-signal ram_next_state		: ram_state_type;
-signal ram_nops				: integer range 0 to tSTARTUP_NOP_CYCLES + 1;
+signal another_refresh 					: std_logic;	
+signal ram_state 						: ram_state_type;
+signal ram_next_state					: ram_state_type;
+signal ram_nops							: integer range 0 to tSTARTUP_NOP_CYCLES + 1;
 
-signal address_temp			: std_logic_vector(13 downto 0);	-- 12 bits Address / 2 bits BANK--	
-signal byte_counter			: std_logic_vector(23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits
+signal address_temp						: std_logic_vector(13 downto 0);	-- 12 bits Address / 2 bits BANK--	
 
-signal slow_clk				: std_logic;
-signal blink 				: std_logic;
+signal byte_counter, byte_counter_top	: std_logic_vector(23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits
+signal reset_counter_sync 				: std_logic;
+signal counter_clock 					: std_logic;
+signal do_record 						: std_logic;
+signal v_sync_sync 						: std_logic;
+signal do_record_b						: std_logic;
 
-signal write_buf			: std_logic_vector (7 downto 0);
-signal OEn					: std_logic;
-signal load_enable			: std_logic;
 
-signal read_buf				: std_logic_vector (7 downto 0);
-signal reset_buf 			: std_logic_vector(1 downto 0);
+signal slow_clk							: std_logic;
+signal blink 							: std_logic;
+
+signal write_buf						: std_logic_vector (7 downto 0);
+signal OEn								: std_logic;
+signal load_enable						: std_logic;
+
+signal read_buf							: std_logic_vector (7 downto 0);
+signal reset_buf 						: std_logic_vector(1 downto 0);
+
+signal write_enable 					: std_logic; 
+signal read_enable 						: std_logic; 
 
 begin
 	-- ----------------------------------------------------------------- MASTER CLOCK 
@@ -120,18 +135,16 @@ begin
 		
 		
 	-- ----------------------------------------------------------------- FINITE STATE MACHINE
-	process(slow_clk, ResetN,Write_EnableN)
+	process(slow_clk, ResetN,write_enable)
 	begin
 		if (ResetN	= '0') then			
 			ram_state <= init;
 			address_temp <= (others => '0');
-			byte_counter <= (others => '0');
 
 			ram_state <= init; 
 			ram_nops <= 0;
 			OEn <= '1';
 			load_enable <= '0';
-			blink <= '0';
 			
 			Ram_CAS <= '0';
 			Ram_RAS <= '0';
@@ -146,6 +159,7 @@ begin
 				when nop =>
 					Ram_RAS <= '1'; 	Ram_CAS <= '1';		Ram_WE <= '1';	
 					Ram_DQM <= '1';
+					counter_clock <= '0';
 					
 					if (ram_nops = 0) then
 						ram_state <= ram_next_state;
@@ -162,7 +176,6 @@ begin
 					ram_state <= nop;
 					ram_nops <= tSTARTUP_NOP_CYCLES;
 					another_refresh <= '1';
-					blink <= '1';
 
 				---------------------------------
 				-- Precharge
@@ -176,16 +189,8 @@ begin
 						ram_next_state <= auto_refresh;
 					else
 						address_temp(12) <= '0'; 		
-					
 						-- count up
-						if (byte_counter = x"FFFFFF") then
-								byte_counter <= (others => '0');
-						elsif (reset_buf = "10") then
-								byte_counter <= (others => '0');
-						else
-								byte_counter <= std_logic_vector( unsigned(byte_counter) + 1);		
-						end if;
-						
+						counter_clock <= '1';
 						ram_next_state <= activate;
 					end if;
 					
@@ -266,7 +271,7 @@ begin
 				-- Write
 				---------------------------------			
 				when ram_write =>
-					if (Write_EnableN = '0') then
+					if (write_enable = '1') then
 						Ram_RAS <= '1';		Ram_CAS <= '0';		Ram_WE <= '0';
 					else
 						Ram_RAS <= '1';		Ram_CAS <= '1';		Ram_WE <= '1';			-- nop
@@ -292,12 +297,12 @@ begin
 		   read_buf <= Ram_Data;
 	   end if;
 	end process;
-	
+------------------------------------------------------------------------------Feed back Read data	
 	process(slow_clk, load_enable)
 	begin
 		if ((slow_clk'event) and (slow_clk = '0')) then
 			if (load_enable = '1') then
-				if (Write_EnableN = '0') then
+				if (read_enable = '0') then
 					Read_Data <= Write_Data;			-- show live out when recording
 				else
 					Read_Data <= read_buf;
@@ -306,10 +311,65 @@ begin
 		end if;
 	end process;
 	
+------------------------------------------------------------------------------byte counter for addressing ram
+	counter: process (Clk,reset_counter_sync) 
+	begin
+		if (reset_counter_sync = '1' ) then
+			byte_counter <= (others => '0');
+			blink <= '0';
+
+		elsif (rising_edge(counter_clock)) then
+			if (byte_counter = byte_counter_top) then 
+				if (do_record = '0') then
+					byte_counter <= (others => '0');
+					blink <= not blink;
+				end if;
+			else
+				byte_counter <= std_logic_vector(unsigned(byte_counter) + 1);
+			end if;
+		end if;
+	end process;
+	
+------------------------------------------------------------------------------set byte_counter top when record button is released
+	counter_top : process (do_record,ResetN) 
+	begin
+		if (ResetN = '0') then
+			byte_counter_top <= (others => '1');
+		elsif (falling_edge(do_record)) then
+			byte_counter_top <= byte_counter;
+		end if;
+	end process;
+------------------------------------------------------------------------------reset counter on falling Rec
+  process(slow_clk)
+    begin
+         if (rising_edge(slow_clk)) then
+               do_record_b<=do_record;
+         end if;
+    end process;
+    reset_counter_sync<= ((not do_record_b) and do_record ) or (not ResetN); 
+
+------------------------------------------------------------------------------synchronize Vsync to clock
+	sync_sync : process (slow_clk,ResetN) 
+	begin
+		if (rising_edge(slow_clk)) then
+			v_sync_sync <= V_Sync;
+		end if;
+	end process;
+	
+------------------------------------------------------------------------------synchronize record button signal to v_sync_sync
+	sync_record_button : process (v_sync_sync,ResetN) 
+	begin
+	if (rising_edge(v_sync_sync)) then
+			do_record <= not Rec;
+		end if;
+	end process;
+
 	Ram_clk <= not slow_clk;
 	Ram_Address <= address_temp;
 	write_buf <= Write_Data;
-
+	write_enable <= do_record;
+	read_enable <= not do_record;
+	 
 	Overflow <= blink;
 		
-end architecture Ram_Controller_arch;
+end architecture Ram_Control_arch;

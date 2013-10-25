@@ -112,16 +112,6 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Top_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Top_vhd_tst -section_id Top_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2 ms" -section_id Top_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbench.vhd -section_id Top_vhd_tst
-set_location_assignment PIN_67 -to Display_A[0]
-set_location_assignment PIN_66 -to Display_A[1]
-set_location_assignment PIN_64 -to Display_A[2]
-set_location_assignment PIN_74 -to Display_C[0]
-set_location_assignment PIN_73 -to Display_C[1]
-set_location_assignment PIN_68 -to Display_C[2]
-set_location_assignment PIN_69 -to Display_C[3]
-set_location_assignment PIN_72 -to Display_C[6]
-set_location_assignment PIN_71 -to Display_C[5]
-set_location_assignment PIN_70 -to Display_C[4]
 set_location_assignment PIN_53 -to Encoder_A
 set_location_assignment PIN_54 -to Encoder_B
 set_location_assignment PIN_51 -to Encoder_C
@@ -139,3 +129,6 @@ set_global_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION ALWAYS
 set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to Encoder_C
 set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to Encoder_B
 set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to Encoder_A
+set_location_assignment PIN_74 -to V_Sync
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to V_Sync
+set_instance_assignment -name IO_STANDARD "3.3V SCHMITT TRIGGER INPUT" -to V_Sync
