@@ -20,9 +20,6 @@ entity Top is
 		Overdub			: in std_logic;
 		Freeze			: in std_logic;
 		Looper			: in std_logic;
-		Encoder_A		: in std_logic;
-		Encoder_B		: in std_logic;
-		Encoder_C		: in std_logic;
 		Led1			: out std_logic;
 		Led2			: out std_logic;
 		Led3			: out std_logic;
@@ -46,10 +43,12 @@ end entity;
 --------------------------------------------------------------------------------------------
 architecture Top_Arch of Top is
 
+signal adda_clk : std_logic;
+
 -------------------------------------------------------------------------------  Analog Converters
 component AD_DA is
 port (
-		Clk    		: in  std_logic;
+		ADDA_Clk    : in  std_logic;
 		ResetN 		: in  std_logic;
 		Loopthru	: in  std_logic;
 		Data_from_AD 	: out  std_logic_vector (7 downto 0);
@@ -66,6 +65,7 @@ component Ram_Control is
 		Clk    		: in  std_logic;
 		ResetN 		: in  std_logic;
 		Overflow		: out std_logic;
+		ADDA_Clk		: out std_logic;
 		V_Sync			: in std_logic;
 		Rec				: in std_logic;
 		Overdub			: in std_logic;
@@ -96,9 +96,9 @@ begin
 	AD_DA_Inst : AD_DA
 	port map
 	(
-		Clk					=> Clk,			--156.25 MHz
 		ResetN				=> ResetN,
 		Loopthru			=> Switch1,
+		ADDA_Clk			=> adda_clk,
 		Data_from_AD		=> ad_buf,
 		Data_to_DA			=> da_buf, 
 		AD_Clk				=> AD_Clk,
@@ -112,8 +112,9 @@ begin
 		Clk    				=> Clk,
 		ResetN 				=> ResetN,
 		Overflow			=> LED2,
+		ADDA_Clk			=> adda_clk,
 		V_Sync			 => 		V_Sync			,
-		Rec				 => 		Encoder_C				,
+		Rec				 => 		Rec				,
 		Overdub			 => 		Overdub			,
 		Freeze			 => 		Freeze			,
 		Looper			 => 		Looper			,
@@ -129,6 +130,6 @@ begin
 	);
 -------------------------------------------------------------------------------  LEDs
 	
-	LED3 <= Encoder_C;
+	LED3 <= Rec;
 	
 end Top_Arch;

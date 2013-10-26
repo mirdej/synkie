@@ -30,6 +30,7 @@ entity Ram_Control is
 		ResetN 			: in  std_logic;
 		
 		Overflow		: out std_logic;
+		ADDA_Clk		: out std_logic;
 				
 		V_Sync			: in std_logic;
 		Rec				: in std_logic;
@@ -361,5 +362,6 @@ begin
 	read_enable <= not do_record;
 	 
 	Overflow <= blink;
+	ADDA_Clk <= OEn;
 		
 end architecture Ram_Control_arch;
