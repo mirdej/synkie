@@ -75,7 +75,7 @@ t1 : Ram_Control port map (
 
 init: process
 begin
-	ResetN <= '0'; wait for 50 ns;
+	ResetN <= '0'; wait for 250 ns;
 	ResetN <= '1'; wait;
 end process;
 
