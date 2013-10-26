@@ -40,7 +40,7 @@ signal ad_data, da_data 	: std_logic_vector (7 downto 0);
 begin
 
 --------------------------------------------------------generate slow ad and da clock
---																156.250 Mhz / 12 =  ca. 13 Mhz
+--																156.250 Mhz / 14 =  ca. 11.16 Mhz
 	process (Clk,ResetN) 
 		variable clk_div : integer range 0 to 6 := 0;
 	begin
