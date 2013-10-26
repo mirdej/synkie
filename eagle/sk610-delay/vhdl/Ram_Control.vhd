@@ -299,7 +299,7 @@ begin
 	end process;
 	
 ------------------------------------------------------------------------------byte counter for addressing ram
-	counter: process (Clk,reset_counter_sync) 
+	counter: process (counter_clock,reset_counter_sync) 
 	begin
 		if (reset_counter_sync = '1' ) then
 			byte_counter <= (others => '0');
