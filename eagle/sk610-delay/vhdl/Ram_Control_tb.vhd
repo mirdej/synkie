@@ -23,6 +23,7 @@ signal			Ram_WE			:  std_logic;
 signal			Ram_Data		:  std_logic_vector(7 downto 0);
 signal			Ram_Clk			:  std_logic;
 signal			Ram_DQM			:  std_logic;
+signal 					ADDA_Clk		:  std_logic;
 
 	component Ram_Control
 		port
@@ -30,6 +31,8 @@ signal			Ram_DQM			:  std_logic;
 			Clk    			: in  std_logic;
 			ResetN 			: in  std_logic;
 			Overflow		: out std_logic;
+					ADDA_Clk		: out std_logic;
+
 			V_Sync			: in std_logic;
 			Rec				: in std_logic;
 			Overdub			: in std_logic;
@@ -54,6 +57,7 @@ t1 : Ram_Control port map (
 			Clk    			=> Clk,
 			ResetN			=> ResetN,
 			Overflow		=> Overflow,
+			ADDA_Clk		=> ADDA_Clk,
 			V_Sync			=> V_Sync,
 			Rec				=> Rec,
 			Overdub			 => 				Overdub			,
@@ -88,17 +92,25 @@ begin
 	WAIT;        
 end process;
 
+
+always2: process
+begin
+	loop 
+	V_Sync <= '0'; wait for 50 ns;
+	V_Sync <= '1'; wait for 50 ns;
+	end loop;
+	WAIT;        
+end process;
+
 set_rec: process
 begin
-	V_Sync <= '0';
 	Rec <= '0';
 	wait for 70 ns;
 	Rec <= '1';
 	wait for 20 ns;
 	Rec <= '0';
 	wait for 10 ns;
-	V_Sync <= '1'; wait for 20 ns;
-	V_Sync <= '0';
+
 	wait;
 end process;
 

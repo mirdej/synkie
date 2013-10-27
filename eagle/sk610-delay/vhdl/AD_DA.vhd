@@ -59,7 +59,7 @@ begin
 
 
 	AD_Clk <= ADDA_Clk;
-	DA_Clk <= not ADDA_Clk;
+	DA_Clk <= ADDA_Clk;
 	
 	Data_from_AD <= ad_data;
 --	da_data <= Data_to_DA;
