@@ -121,6 +121,9 @@ signal reset_buf 						: std_logic_vector(1 downto 0);
 signal write_enable 					: std_logic; 
 signal read_enable 						: std_logic; 
 
+signal frame_count						: unsigned (7 downto 0);
+signal reset_done						: std_logic;
+
 begin
 	-- ----------------------------------------------------------------- FINITE STATE MACHINE
 	process(Clk, ResetN,write_enable)
@@ -290,53 +293,30 @@ begin
 	begin
 		if ((Clk'event) and (Clk = '0')) then
 			if (load_enable = '1') then
-				if (read_enable = '0') then
-					Read_Data <= Write_Data;			-- show live out when recording
-				else
 					Read_Data <= read_buf;
-				end if;
 			end if;
 		end if;
 	end process;
 	
 ------------------------------------------------------------------------------byte counter for addressing ram
-	counter: process (counter_clock,reset_counter_sync) 
+	counter: process (counter_clock,ResetN,frame_count) 
 	begin
-		if (reset_counter_sync = '1' ) then
+		if (ResetN = '0' ) then
 			byte_counter <= (others => '0');
+			reset_done <= '1';
 			blink <= '0';
 
 		elsif (rising_edge(counter_clock)) then
-			if (byte_counter = byte_counter_top) then 
-				if (do_record = '0') then
-					byte_counter <= (others => '0');
-					blink <= not blink;
-				end if;
+			if (byte_counter = x"2EF334") then
+				byte_counter <= (others => '0');
+				blink <= not blink;
 			else
 				byte_counter <= std_logic_vector(unsigned(byte_counter) + 1);
+				reset_done <= '0';
 			end if;
 		end if;
 	end process;
 	
-------------------------------------------------------------------------------set byte_counter top when record button is released
-	counter_top : process (do_record,ResetN) 
-	begin
-		if (ResetN = '0') then
-			byte_counter_top <= (others => '1');
-		elsif (falling_edge(do_record)) then
-		--	byte_counter_top <= std_logic_vector(unsigned(byte_counter) - 1);	
-		byte_counter_top <= byte_counter;
-		end if;
-	end process;
-------------------------------------------------------------------------------reset counter on falling Rec
-  process(Clk)
-    begin
-         if (rising_edge(Clk)) then
-               do_record_b<=do_record;
-         end if;
-    end process;
-    reset_counter_sync<= ((not do_record_b) and do_record ) or (not ResetN); 
-
 ------------------------------------------------------------------------------synchronize Vsync to clock
 	sync_sync : process (Clk,ResetN) 
 	begin
@@ -345,21 +325,25 @@ begin
 		end if;
 	end process;
 	
-------------------------------------------------------------------------------synchronize record button signal to v_sync_sync
-	sync_record_button : process (v_sync_sync,ResetN) 
+	
+	process (v_sync_sync,ResetN) 
 	begin
-	if (ResetN = '0') then
-		do_record <= '0';
-	elsif (rising_edge(v_sync_sync)) then
-			do_record <= not Rec;
+		if (ResetN = '0') then
+			frame_count <= (others => '0');
+		elsif (rising_edge(v_sync_sync)) then
+			if (frame_count = 24) then
+				frame_count <= (others => '0');
+			else 
+				frame_count <= frame_count + 1;
+			end if;
 		end if;
 	end process;
 
 	Ram_clk <= not Clk;
 	Ram_Address <= address_temp;
 	write_buf <= Write_Data;
-	write_enable <= do_record;
-	read_enable <= not do_record;
+	write_enable <= '1';
+	read_enable <= '1';
 	 
 	Overflow <= blink;
 	ADDA_Clk <= OEn;
