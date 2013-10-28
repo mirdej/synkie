@@ -114,9 +114,6 @@ set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2 ms" -section_id Top_vh
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbench.vhd -section_id Top_vhd_tst
 set_global_assignment -name SMART_RECOMPILE ON
 set_location_assignment PIN_18 -to Switch1
-set_global_assignment -name VHDL_FILE Ram_Control.vhd
-set_global_assignment -name VHDL_FILE AD_DA.vhd
-set_global_assignment -name VHDL_FILE Top.vhd
 set_global_assignment -name MAXII_OPTIMIZATION_TECHNIQUE AREA
 set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
 set_global_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION ALWAYS
@@ -129,3 +126,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rec
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
+set_global_assignment -name VHDL_FILE Address_Counter.vhd
+set_global_assignment -name VHDL_FILE Ram_Control.vhd
+set_global_assignment -name VHDL_FILE AD_DA.vhd
+set_global_assignment -name VHDL_FILE Top.vhd

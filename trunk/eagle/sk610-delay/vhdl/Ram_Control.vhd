@@ -15,7 +15,7 @@
 --COL											X	0	C9	C8	C7	C6	C5	C4	C3	C2	C1	C0	BA1	BA0
 
 ------------------------------------------------------------------------------------------------------------------
---byte_counter																								
+--address_buf																								
 --Bit		23	22	21	20	19	18	17	16	15	14	13	12	11	10	9	8	7	6	5	4	3	2	1	0
 --			A11	A10	A9	A8	A7	A6	A5	A4	A3	A2	A1	A0	C9	C8	C7	C6	C5	C4	C3	C2	C1	C0	BA1	BA0
 ------------------------------------------------------------------------------------------------------------------
@@ -28,22 +28,14 @@ entity Ram_Control is
 	port(
 		Clk    			: in  std_logic;
 		ResetN 			: in  std_logic;
-		
-		Overflow		: out std_logic;
-		ADDA_Clk		: out std_logic;
-				
-		V_Sync			: in std_logic;
-		Rec				: in std_logic;
-		Overdub			: in std_logic;
-		Freeze			: in std_logic;
-		Looper			: in std_logic;
-		
-		Counter_Max		: in std_logic_vector (23 downto 0);
-		Counter			: out std_logic_vector (23 downto 0);
 
+		Write_Enable	: in std_logic;
 		Write_Data		: in std_logic_vector (7 downto 0);
 		Read_Data		: out std_logic_vector (7 downto 0);
+		Address			: in std_logic_vector (23 downto 0);
 		
+		FSM_State		: out std_logic_vector(3 downto 0);
+
 		Ram_Address 	: out std_logic_vector(13 downto 0);  -- 12 bits Address / 2 bits BANK
 		Ram_RAS			: out std_logic;
 		Ram_CAS 		: out std_logic;
@@ -103,32 +95,17 @@ signal ram_next_state					: ram_state_type;
 signal ram_nops							: integer range 0 to tSTARTUP_NOP_CYCLES + 1;
 
 signal address_temp						: std_logic_vector(13 downto 0);	-- 12 bits Address / 2 bits BANK--	
-
-signal byte_counter, byte_counter_max	: std_logic_vector(23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits
-signal reset_counter_sync 				: std_logic;
-signal counter_clock 					: std_logic;
-signal do_record 						: std_logic;
-signal v_sync_sync 						: std_logic;
-signal do_record_b						: std_logic;
-
-
-signal blink 							: std_logic;
+signal address_buf						: std_logic_vector(23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits
 
 signal write_buf						: std_logic_vector (7 downto 0);
 signal OEn								: std_logic;
 signal load_enable						: std_logic;
 
 signal read_buf							: std_logic_vector (7 downto 0);
-signal reset_buf 						: std_logic_vector(1 downto 0);
-
-signal write_enable 					: std_logic; 
-signal read_enable 						: std_logic; 
-
-
 
 begin
 	-- ----------------------------------------------------------------- FINITE STATE MACHINE
-	process(Clk, ResetN,write_enable)
+	process(Clk, ResetN)
 	begin
 		if (ResetN	= '0') then			
 			ram_state <= init;
@@ -152,7 +129,6 @@ begin
 				when nop =>
 					Ram_RAS <= '1'; 	Ram_CAS <= '1';		Ram_WE <= '1';	
 					Ram_DQM <= '1';
-					counter_clock <= '0';
 					
 					if (ram_nops = 0) then
 						ram_state <= ram_next_state;
@@ -182,8 +158,7 @@ begin
 						ram_next_state <= auto_refresh;
 					else
 						address_temp(12) <= '0'; 		
-						-- count up
-						counter_clock <= '1';
+						address_buf <= Address;
 						ram_next_state <= activate;
 					end if;
 					
@@ -222,7 +197,7 @@ begin
 
 
 					-- prepare Row for next read
-					address_temp (13 downto 0) 		<= byte_counter(23 downto 12) & byte_counter(1 downto 0);		-- Row Address
+					address_temp (13 downto 0) 		<= address_buf(23 downto 12) & address_buf(1 downto 0);		-- Row Address
 					ram_nops <= tRCD_CYCLES;
 					ram_state <= nop;
 					ram_next_state <= ram_read;
@@ -234,7 +209,7 @@ begin
 					Ram_RAS <= '1';		Ram_CAS <= '0';		Ram_WE <= '1';
 					Ram_DQM <= '0';
 					OEn <= '1';		-- disable output on data bus
-					address_temp (13 downto 0) <= "00" & byte_counter (11 downto 0) ;						-- 9 Column bits + 2 Bank bits
+					address_temp (13 downto 0) <= "00" & address_buf (11 downto 0) ;						-- 9 Column bits + 2 Bank bits
 					ram_state <= nop_dqm_down;
 					
 				---------------------------------
@@ -264,7 +239,7 @@ begin
 				-- Write
 				---------------------------------			
 				when ram_write =>
-					if (write_enable = '1') then
+					if (Write_Enable = '1') then
 						Ram_RAS <= '1';		Ram_CAS <= '0';		Ram_WE <= '0';
 					else
 						Ram_RAS <= '1';		Ram_CAS <= '1';		Ram_WE <= '1';			-- nop
@@ -300,35 +275,23 @@ begin
 		end if;
 	end process;
 	
-------------------------------------------------------------------------------byte counter for addressing ram
-	counter: process (counter_clock,ResetN,frame_count) 
-	begin
-		if (ResetN = '0' ) then
-			byte_counter <= (others => '0');
-			byte_counter_max	<= x"92B808";
-			blink <= '0';
-
-		elsif (rising_edge(counter_clock)) then
-			if (byte_counter >= byte_counter_max) then
-				byte_counter <= (others => '0');
-				blink <= not blink;
-			else
-				byte_counter <= std_logic_vector(unsigned(byte_counter) + 1);
-				reset_done <= '0';
-			end if;
-		end if;
-	end process;
-	
 
 	Ram_clk <= not Clk;
 	Ram_Address <= address_temp;
 	write_buf <= Write_Data;
 	
-	write_enable <= '1';
-	read_enable <= '1';
-	 
-	Overflow <= blink;
-	ADDA_Clk <= OEn;
-	
-	Counter <= byte_counter;		
+	with ram_state select
+	FSM_State <= 	"0000"	when nop,
+					"0001"	when init,
+					"0010"	when set_mode_register,
+					"0011"	when precharge,
+					"0100"	when auto_refresh,
+					"0101"	when activate,
+					"0110"	when ram_read,
+					"0111"	when ram_get_data,
+					"1000"	when toggle_OE,
+					"1001"	when nop_dqm_down,
+					"1010"	when ram_write,
+					"1111"  when others;
+										
 end architecture Ram_Control_arch;
