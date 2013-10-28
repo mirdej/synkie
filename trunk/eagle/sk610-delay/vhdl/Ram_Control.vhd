@@ -37,6 +37,9 @@ entity Ram_Control is
 		Overdub			: in std_logic;
 		Freeze			: in std_logic;
 		Looper			: in std_logic;
+		
+		Counter_Max		: in std_logic_vector (23 downto 0);
+		Counter			: out std_logic_vector (23 downto 0);
 
 		Write_Data		: in std_logic_vector (7 downto 0);
 		Read_Data		: out std_logic_vector (7 downto 0);
@@ -101,7 +104,7 @@ signal ram_nops							: integer range 0 to tSTARTUP_NOP_CYCLES + 1;
 
 signal address_temp						: std_logic_vector(13 downto 0);	-- 12 bits Address / 2 bits BANK--	
 
-signal byte_counter, byte_counter_top	: std_logic_vector(23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits
+signal byte_counter, byte_counter_max	: std_logic_vector(23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits
 signal reset_counter_sync 				: std_logic;
 signal counter_clock 					: std_logic;
 signal do_record 						: std_logic;
@@ -121,8 +124,7 @@ signal reset_buf 						: std_logic_vector(1 downto 0);
 signal write_enable 					: std_logic; 
 signal read_enable 						: std_logic; 
 
-signal frame_count						: unsigned (7 downto 0);
-signal reset_done						: std_logic;
+
 
 begin
 	-- ----------------------------------------------------------------- FINITE STATE MACHINE
@@ -303,11 +305,11 @@ begin
 	begin
 		if (ResetN = '0' ) then
 			byte_counter <= (others => '0');
-			reset_done <= '1';
+			byte_counter_max	<= x"92B808";
 			blink <= '0';
 
 		elsif (rising_edge(counter_clock)) then
-			if (byte_counter = x"2EF334") then
+			if (byte_counter >= byte_counter_max) then
 				byte_counter <= (others => '0');
 				blink <= not blink;
 			else
@@ -317,35 +319,16 @@ begin
 		end if;
 	end process;
 	
-------------------------------------------------------------------------------synchronize Vsync to clock
-	sync_sync : process (Clk,ResetN) 
-	begin
-		if (rising_edge(Clk)) then
-			v_sync_sync <= V_Sync;
-		end if;
-	end process;
-	
-	
-	process (v_sync_sync,ResetN) 
-	begin
-		if (ResetN = '0') then
-			frame_count <= (others => '0');
-		elsif (rising_edge(v_sync_sync)) then
-			if (frame_count = 24) then
-				frame_count <= (others => '0');
-			else 
-				frame_count <= frame_count + 1;
-			end if;
-		end if;
-	end process;
 
 	Ram_clk <= not Clk;
 	Ram_Address <= address_temp;
 	write_buf <= Write_Data;
+	
 	write_enable <= '1';
 	read_enable <= '1';
 	 
 	Overflow <= blink;
 	ADDA_Clk <= OEn;
-		
+	
+	Counter <= byte_counter;		
 end architecture Ram_Control_arch;
