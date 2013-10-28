@@ -42,82 +42,109 @@ end entity;
 --																			ARCHITECTURE
 --------------------------------------------------------------------------------------------
 architecture Top_Arch of Top is
-
-signal adda_clk : std_logic;
-
+ 
+-------------------------------------------------------------------------------  Byte Counter
+component Address_Counter is
+	port(
+		ResetN 			: in std_logic;		
+		FSM_State		: in std_logic_vector(3 downto 0);
+		Counter_Max		: in std_logic_vector (23 downto 0);
+		Load_Enable		: in std_logic;
+		
+		Carry			: out std_logic;
+		Count			: out std_logic_vector (23 downto 0)
+	);
+end component;
 -------------------------------------------------------------------------------  Analog Converters
 component AD_DA is
 port (
-		ADDA_Clk    : in  std_logic;
-		ResetN 		: in  std_logic;
-		Loopthru	: in  std_logic;
+		FSM_State		: in std_logic_vector(3 downto 0);
+
+		ResetN 			: in  std_logic;
+ 		Loop_Through	: in  std_logic;
+		
 		Data_from_AD 	: out  std_logic_vector (7 downto 0);
 		Data_to_DA 		: in  std_logic_vector (7 downto 0);
-		AD_Clk		: out std_logic;
-		AD_Input 	: in  std_logic_vector (7 downto 0);
-		DA_Clk 		: out std_logic;
-		DA_Out	 	: out std_logic_vector (7 downto 0)
+
+ 		AD_Clk			: out std_logic;
+		AD_Input 		: in  std_logic_vector (7 downto 0);
+		
+		DA_Clk	 		: out std_logic;
+		DA_Out		 	: out std_logic_vector (7 downto 0) 
 );
 end component;
 -------------------------------------------------------------------------------  SDRAM
 component Ram_Control is
-	port(
-		Clk    		: in  std_logic;
-		ResetN 		: in  std_logic;
-		Overflow		: out std_logic;
-		ADDA_Clk		: out std_logic;
-		V_Sync			: in std_logic;
-		Rec				: in std_logic;
-		Overdub			: in std_logic;
-		Freeze			: in std_logic;
-		Looper			: in std_logic;
+	port (
+		Clk    			: in  std_logic;
+		ResetN 			: in  std_logic;
+
+		Write_Enable	: in std_logic;
 		Write_Data		: in std_logic_vector (7 downto 0);
-		Read_Data		: out std_logic_vector (7 downto 0);		
-		Ram_Address : out std_logic_vector(13 downto 0);  -- 12 bits Address / 2 bits BANK
-		Ram_RAS		: out std_logic;
-		Ram_CAS 	: out std_logic;
-		Ram_WE		: out std_logic;
-		Ram_Data	: inout std_logic_vector(7 downto 0);
-		Ram_Clk		: out std_logic;
-		Ram_DQM		: out std_logic
+		Read_Data		: out std_logic_vector (7 downto 0);
+		Address			: in std_logic_vector (23 downto 0);
+		
+		FSM_State		: out std_logic_vector(3 downto 0);
+
+		Ram_Address 	: out std_logic_vector(13 downto 0);  -- 12 bits Address / 2 bits BANK
+		Ram_RAS			: out std_logic;
+		Ram_CAS 		: out std_logic;
+		Ram_WE			: out std_logic;
+		Ram_Data		: inout std_logic_vector(7 downto 0);
+		Ram_Clk			: out std_logic;
+		Ram_DQM			: out std_logic
 	);
 end component;
 
 --------------------------------------------------------------------------------------------
 --																			Implementation
 --------------------------------------------------------------------------------------------
-
-signal ad_buf,da_buf				: std_logic_vector(7 downto 0);
-signal counter_int: std_logic_vector(7 downto 0);
-signal enc_step,enc_dir 			: std_logic;
+signal fsm_state 			: std_logic_vector (3 downto 0);
+signal addr			 		: std_logic_vector (23 downto 0);
+signal addr_max			 		: std_logic_vector (23 downto 0);
+signal we					: std_logic;
+signal loe					: std_logic;
+signal ad_buf, da_buf		: std_logic_vector (7 downto 0);
 
 begin
--------------------------------------------------------------------------------  AD-DA
-	AD_DA_Inst : AD_DA
-	port map
-	(
-		ResetN				=> ResetN,
-		Loopthru			=> Switch1,
-		ADDA_Clk			=> adda_clk,
+
+-------------------------------------------------------------------------------  Byte Counter
+ Address_Counter_Inst : Address_Counter
+	port map(
+		ResetN 				=> ResetN,
+		FSM_State			=> fsm_state,
+		Counter_Max			=> addr_max,
+		Load_Enable			=> loe,
+		
+		Carry				=> Led1,
+		Count				=> addr
+	);
+
+-------------------------------------------------------------------------------  Analog Converters
+ AD_DA_Inst : AD_DA
+port map (
+		FSM_State			=> fsm_state,
+
+		ResetN 				=> ResetN,
+ 		Loop_Through		=> Switch1,
+		
 		Data_from_AD		=> ad_buf,
 		Data_to_DA			=> da_buf, 
 		AD_Clk				=> AD_Clk,
 		AD_Input			=> AD_Data,
 		DA_Clk 				=> DA_Clk,
 		DA_Out				=> DA_Data
-	);
+);
+
 -------------------------------------------------------------------------------  SDRAM
-	Ram_Control_Inst : Ram_Control
+ Ram_Control_Inst : Ram_Control
 	port map(
 		Clk    				=> Clk,
 		ResetN 				=> ResetN,
-		Overflow			=> LED2,
-		ADDA_Clk			=> adda_clk,
-		V_Sync			 => 		V_Sync			,
-		Rec				 => 		Rec				,
-		Overdub			 => 		Overdub			,
-		Freeze			 => 		Freeze			,
-		Looper			 => 		Looper			,
+		FSM_State			=> fsm_state,
+		Address				=> addr,
+
+		Write_Enable		=> we,
 		Write_Data			=> ad_buf,
 		Read_Data			=> da_buf,
 		Ram_Address 		=> Ram_Address,
@@ -128,8 +155,11 @@ begin
 		Ram_Clk				=> Ram_Clk,
 		Ram_DQM				=> Ram_DQM
 	);
--------------------------------------------------------------------------------  LEDs
+
 	
+	we <= '1';
+	loe <= '1';
+	addr_max <= x"92B808";
 	LED3 <= Rec;
 	
 end Top_Arch;
