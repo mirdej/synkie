@@ -53,16 +53,17 @@ begin
 	end process;
 	
 	Count	<= std_logic_vector(counter_count);
-
+	Carry	<= counter_carry;
 ------------------------------------------------------------------------------Asynchronous Set
-	counter_set: process (Load_Enable,ResetN) 
-	begin
-		if (ResetN = '0' ) then
-				counter_count_max		<= x"92B808";			-- ca 1s with 125Mhz Clock
-		elsif (rising_edge(Load_Enable)) then
+--	counter_set: process (ResetN) 
+--	begin
+--		if (ResetN = '0' ) then
+--				counter_count_max		<= x"92B808";			-- ca 1s with 125Mhz Clock
+--		elsif (rising_edge(Load_Enable)) then
+--		else
 				counter_count_max		<= unsigned(Counter_Max);
-		end if;
-	end process;
+--		end if;
+--	end process;
 	
 		
 	--------------------------------------------------------Generate Clock from ram controller state
