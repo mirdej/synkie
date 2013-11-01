@@ -21242,28 +21242,28 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <wire x1="160.02" y1="228.6" x2="116.84" y2="228.6" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$56" class="0">
+<net name="SCK" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="B2/57"/>
 <pinref part="JP1" gate="A" pin="1"/>
 <wire x1="172.72" y1="190.5" x2="116.84" y2="190.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$67" class="0">
+<net name="MISO" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="B2/56"/>
 <pinref part="JP1" gate="A" pin="2"/>
 <wire x1="172.72" y1="187.96" x2="116.84" y2="187.96" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$68" class="0">
+<net name="MOSI" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="B2/55"/>
 <pinref part="JP1" gate="A" pin="3"/>
 <wire x1="172.72" y1="185.42" x2="116.84" y2="185.42" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$69" class="0">
+<net name="SS" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="B2/54"/>
 <pinref part="JP1" gate="A" pin="4"/>

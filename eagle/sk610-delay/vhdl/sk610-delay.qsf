@@ -126,7 +126,13 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rec
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
+set_global_assignment -name VHDL_FILE RX_TX.vhd
 set_global_assignment -name VHDL_FILE Address_Counter.vhd
 set_global_assignment -name VHDL_FILE Ram_Control.vhd
 set_global_assignment -name VHDL_FILE AD_DA.vhd
 set_global_assignment -name VHDL_FILE Top.vhd
+set_location_assignment PIN_57 -to MISO
+set_location_assignment PIN_56 -to MOSI
+set_location_assignment PIN_58 -to SCK
+set_location_assignment PIN_55 -to CSn
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to CSn

@@ -34,7 +34,11 @@ entity Top is
 		Ram_WE			: out std_logic;
 		Ram_Data		: inout std_logic_vector(7 downto 0);
 		Ram_Clk			: out std_logic;
-		Ram_DQM			: out std_logic
+		Ram_DQM			: out std_logic;
+		MISO			: out std_logic;
+		MOSI			: in std_logic;
+		SCK				: in std_logic;
+		CSn				: in std_logic
 	);
 end entity;
 
@@ -42,6 +46,22 @@ end entity;
 --																			ARCHITECTURE
 --------------------------------------------------------------------------------------------
 architecture Top_Arch of Top is
+-------------------------------------------------------------------------------  Serial Interface
+
+component RX_TX is
+	port(
+		Clk    			: in  std_logic;
+		ResetN 			: in  std_logic;
+		
+		MISO			: out std_logic;
+		MOSI			: in std_logic;
+		SCK				: in std_logic;
+		CSn				: in std_logic;
+		Strobe			: out std_logic;
+--		Send_Data		: in std_logic_vector(23 downto 0);
+		Receive_Data	: out std_logic_vector(23 downto 0)
+	);
+end component;
  
 -------------------------------------------------------------------------------  Byte Counter
 component Address_Counter is
@@ -103,7 +123,7 @@ signal fsm_state 			: std_logic_vector (3 downto 0);
 signal addr			 		: std_logic_vector (23 downto 0);
 signal addr_max			 		: std_logic_vector (23 downto 0);
 signal we					: std_logic;
-signal loe					: std_logic;
+signal load_max					: std_logic;
 signal ad_buf, da_buf		: std_logic_vector (7 downto 0);
 
 begin
@@ -114,9 +134,9 @@ begin
 		ResetN 				=> ResetN,
 		FSM_State			=> fsm_state,
 		Counter_Max			=> addr_max,
-		Load_Enable			=> loe,
+		Load_Enable			=> load_max,
 		
-		Carry				=> Led1,
+		Carry				=> Led2,
 		Count				=> addr
 	);
 
@@ -156,10 +176,23 @@ port map (
 		Ram_DQM				=> Ram_DQM
 	);
 
-	
+
+ RX_TX_Inst :  RX_TX
+	port map(
+		Clk    				=> Clk,
+		ResetN 				=> ResetN,
+		
+		MISO			=> MISO,
+		MOSI			=> MOSI,
+		SCK				=> SCK,
+		CSn				=> CSn,
+		Strobe			=> load_max,
+--		Send_Data		=> addr_max,
+		Receive_Data	=> addr_max
+	);
+
 	we <= '1';
-	loe <= '1';
-	addr_max <= x"92B808";
 	LED3 <= Rec;
+	--LED1 <= load_max;
 	
 end Top_Arch;
