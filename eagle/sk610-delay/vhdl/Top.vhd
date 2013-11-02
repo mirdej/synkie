@@ -121,9 +121,10 @@ end component;
 --------------------------------------------------------------------------------------------
 signal fsm_state 			: std_logic_vector (3 downto 0);
 signal addr			 		: std_logic_vector (23 downto 0);
-signal addr_max			 		: std_logic_vector (23 downto 0);
+signal addr_max			 	: std_logic_vector (23 downto 0);
 signal we					: std_logic;
-signal load_max					: std_logic;
+signal load_max				: std_logic;
+signal loopt				: std_logic;
 signal ad_buf, da_buf		: std_logic_vector (7 downto 0);
 
 begin
@@ -146,7 +147,7 @@ port map (
 		FSM_State			=> fsm_state,
 
 		ResetN 				=> ResetN,
- 		Loop_Through		=> Switch1,
+ 		Loop_Through		=> loopt,
 		
 		Data_from_AD		=> ad_buf,
 		Data_to_DA			=> da_buf, 
@@ -191,8 +192,9 @@ port map (
 		Receive_Data	=> addr_max
 	);
 
+	loopt <= '0';
 	we <= '1';
 	LED3 <= Rec;
-	--LED1 <= load_max;
+	LED1 <= load_max;
 	
 end Top_Arch;

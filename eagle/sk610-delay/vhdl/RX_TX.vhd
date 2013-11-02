@@ -52,7 +52,7 @@ begin
 	begin
 		if(ResetN = '0') then
 			SCKIntOld <= '0';
-			Rx_Buf 	<= x"92B808"; -- ca 1s @ 125 Mhz
+			Rx_Buf 	<= x"000808"; 
 			SCK_f <= '0';
 			SCK_ff <= '0';
 			CSn_f <= '0';
@@ -74,18 +74,18 @@ begin
 			CSIntOld <= CSn_ff;
 			
 			if((SCK_ff = '1') and (SCKIntOld = '0')) then
-				if(CSn_ff = '1') then
+				if(CSn_ff = '0') then
 					Rx_Buf <= Rx_Buf(22 downto 0) & MOSI_ff;			-- MSB first
 					MISO <= TX_Buf(23);
 					TX_Buf <= TX_Buf(22 downto 0) & "0";
 				end if;
 			end if;
 			
-			Strobe <= '0';
+			Strobe <= not CSn_ff; --'0';
 
 			if((CSn_ff = '1') and (CSIntOld = '0')) then
 				Receive_Data 		<= Rx_Buf;
-				Strobe <='1';
+--				Strobe <='1';
 			end if;
 		end if;
 	end process;
