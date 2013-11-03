@@ -24,6 +24,7 @@ entity Top is
 		DA_Data 		: out std_logic_vector (7 downto 0);
 		Rec_Switch			: in std_logic;
 		Rec_Button			: in std_logic;
+		V_Sync			: in std_logic;
 		Ram_Address 	: out std_logic_vector(13 downto 0);  -- 12 bits Address / 2 bits BANK
 		Ram_RAS			: out std_logic;
 		Ram_CAS 		: out std_logic;
@@ -188,8 +189,17 @@ port map (
 		Receive_Data	=> addr_max
 	);
 
-	bypass <= not Rec_Button;
-	we <= not (Rec_Button and Rec_Switch);
+	process (V_Sync, ResetN)
+	begin
+		if (ResetN = '0' ) then
+			bypass <=  '0';
+			we <= '1';
+		elsif (rising_Edge(V_Sync)) then
+			bypass <= not Rec_Button;
+			we <= not (Rec_Button and Rec_Switch);
+		end if;
+	end process;
+	
 	LED3 <= Rec_Button;
 	LED1 <= Rec_Switch;
 	

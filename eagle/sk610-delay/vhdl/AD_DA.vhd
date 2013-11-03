@@ -36,27 +36,25 @@ end entity;
 architecture AD_DA_Arch of AD_DA is
 
 signal ad_data, da_data 	: std_logic_vector (7 downto 0);
-signal adda_clk				: std_logic;
 
 begin
-	--------------------------------------------------------sample/latch AD Converter on falling AD Clock
-	process (adda_clk)
+	process (FSM_State)
 	begin
-		if (adda_clk'EVENT and adda_clk = '0') then
-			ad_data <= AD_Input;
-		end if;
+		case FSM_State is
+			when  "0110" =>
+				ad_data <= AD_Input;
+				DA_Out <= da_data;
+			when "0111" =>
+				DA_Clk <= '1';
+				AD_Clk <= '1';
+			when "0101" =>
+				DA_Clk <= '0';
+				AD_Clk <= '0';
+			when others => null;
+		end case;
 	end process;
 
-	--------------------------------------------------------prepare Data for DA_Converter on falling DA Clock
-	process (adda_clk)
-	begin
-		if (adda_clk'EVENT and adda_clk = '1') then
-			DA_Out <= da_data;
-		end if;
-	end process;
 
-	AD_Clk <= adda_clk;
-	DA_Clk <= adda_clk;
 	
 	Data_from_AD <= ad_data;
 	
@@ -66,9 +64,5 @@ begin
 						Data_to_DA when '0',
 						"11111111" when others;
 
-	--------------------------------------------------------Generate Clock from ram controller state
-	with FSM_State select
-			adda_clk <= 	'1' when "0110", -- ram_read
-						 	'0' when others;
 			
 end AD_DA_Arch;
