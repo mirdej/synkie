@@ -15,11 +15,6 @@ entity Top is
 	(
 		Clk				: in std_logic;
 		ResetN			: in std_logic;
-		V_Sync			: in std_logic;
-		Rec				: in std_logic;
-		Overdub			: in std_logic;
-		Freeze			: in std_logic;
-		Looper			: in std_logic;
 		Led1			: out std_logic;
 		Led2			: out std_logic;
 		Led3			: out std_logic;
@@ -27,7 +22,8 @@ entity Top is
 		AD_Data 		: in  std_logic_vector (7 downto 0);
 		DA_Clk 			: out std_logic;
 		DA_Data 		: out std_logic_vector (7 downto 0);
-		Switch1			: in std_logic;
+		Rec_Switch			: in std_logic;
+		Rec_Button			: in std_logic;
 		Ram_Address 	: out std_logic_vector(13 downto 0);  -- 12 bits Address / 2 bits BANK
 		Ram_RAS			: out std_logic;
 		Ram_CAS 		: out std_logic;
@@ -124,7 +120,7 @@ signal addr			 		: std_logic_vector (23 downto 0);
 signal addr_max			 	: std_logic_vector (23 downto 0);
 signal we					: std_logic;
 signal load_max				: std_logic;
-signal loopt				: std_logic;
+signal bypass				: std_logic;
 signal ad_buf, da_buf		: std_logic_vector (7 downto 0);
 
 begin
@@ -147,7 +143,7 @@ port map (
 		FSM_State			=> fsm_state,
 
 		ResetN 				=> ResetN,
- 		Loop_Through		=> loopt,
+ 		Loop_Through		=> bypass,
 		
 		Data_from_AD		=> ad_buf,
 		Data_to_DA			=> da_buf, 
@@ -192,9 +188,9 @@ port map (
 		Receive_Data	=> addr_max
 	);
 
-	loopt <= '0';
-	we <= '1';
-	LED3 <= Rec;
-	LED1 <= load_max;
+	bypass <= not Rec_Button;
+	we <= not (Rec_Button and Rec_Switch);
+	LED3 <= Rec_Button;
+	LED1 <= Rec_Switch;
 	
 end Top_Arch;

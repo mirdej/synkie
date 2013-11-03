@@ -56,7 +56,7 @@ set_location_assignment PIN_12 -to Clk
 set_location_assignment PIN_19 -to Led1
 set_location_assignment PIN_20 -to Led2
 set_location_assignment PIN_21 -to Led3
-set_location_assignment PIN_6 -to ResetN
+set_location_assignment PIN_14 -to ResetN
 set_location_assignment PIN_36 -to AD_Clk
 set_location_assignment PIN_26 -to AD_Data[7]
 set_location_assignment PIN_27 -to AD_Data[6]
@@ -105,7 +105,6 @@ set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -sectio
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH Top_vhd_tst -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
 set_location_assignment PIN_77 -to Ram_DQM
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to ResetN
 set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to Clk
 set_global_assignment -name EDA_TEST_BENCH_NAME Top_vhd_tst -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Top_vhd_tst
@@ -113,16 +112,12 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Top_vhd_tst -section_id T
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "2 ms" -section_id Top_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbench.vhd -section_id Top_vhd_tst
 set_global_assignment -name SMART_RECOMPILE ON
-set_location_assignment PIN_18 -to Switch1
 set_global_assignment -name MAXII_OPTIMIZATION_TECHNIQUE AREA
 set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
 set_global_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION ALWAYS
 set_location_assignment PIN_72 -to V_Sync
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to V_Sync
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to V_Sync
-set_location_assignment PIN_14 -to Rec
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Rec
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rec
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
@@ -136,3 +131,9 @@ set_location_assignment PIN_56 -to MOSI
 set_location_assignment PIN_58 -to SCK
 set_location_assignment PIN_54 -to CSn
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to CSn
+set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to ResetN
+set_location_assignment PIN_51 -to Rec_Switch
+set_location_assignment PIN_52 -to Rec_Button
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Rec_Button
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rec_Button
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Rec_Switch
