@@ -115,7 +115,7 @@ set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name MAXII_OPTIMIZATION_TECHNIQUE AREA
 set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
 set_global_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION ALWAYS
-set_location_assignment PIN_72 -to V_Sync
+set_location_assignment PIN_5 -to V_Sync
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to V_Sync
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to V_Sync
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
@@ -126,13 +126,13 @@ set_global_assignment -name VHDL_FILE Address_Counter.vhd
 set_global_assignment -name VHDL_FILE Ram_Control.vhd
 set_global_assignment -name VHDL_FILE AD_DA.vhd
 set_global_assignment -name VHDL_FILE Top.vhd
-set_location_assignment PIN_57 -to MISO
-set_location_assignment PIN_56 -to MOSI
-set_location_assignment PIN_58 -to SCK
-set_location_assignment PIN_54 -to CSn
+set_location_assignment PIN_70 -to MISO
+set_location_assignment PIN_69 -to MOSI
+set_location_assignment PIN_71 -to SCK
+set_location_assignment PIN_72 -to CSn
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to CSn
 set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to ResetN
-set_location_assignment PIN_71 -to Rec_Switch
-set_location_assignment PIN_52 -to Rec_Button
+set_location_assignment PIN_68 -to Rec_Button
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Rec_Button
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to Rec_Switch
+set_location_assignment PIN_67 -to Led_Front

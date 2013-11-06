@@ -18,6 +18,7 @@ entity Top is
 		Led1			: out std_logic;
 		Led2			: out std_logic;
 		Led3			: out std_logic;
+		Led_Front		: out std_logic;
 		AD_Clk			: out std_logic;
 		AD_Data 		: in  std_logic_vector (7 downto 0);
 		DA_Clk 			: out std_logic;
@@ -202,5 +203,6 @@ port map (
 	
 	LED3 <= Rec_Button;
 	LED1 <= Rec_Switch;
-	
+	--LED2 <= '0';	
 end Top_Arch;
+

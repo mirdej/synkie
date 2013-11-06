@@ -57,6 +57,7 @@ unsigned char Debounced_State;
 unsigned char Debounce_State[DEBOUNCE_MAX_CHECKS];
 unsigned char Debounce_Index;
 unsigned char last_encoder_state;
+unsigned char write_enable;
 
 void recalculate_delay(void) {
 	double temp;
@@ -149,7 +150,7 @@ void debounce_switches(){
 	if (ticks % 4 > 0) return; // ca all 4 ms
 		
     unsigned char i,j;
-    Debounce_State[Debounce_Index] =	PINC & 0x1F;
+    Debounce_State[Debounce_Index] =	PINC & 0x3F;
     ++Debounce_Index;
     j=0xff;
     for(i=0; i<DEBOUNCE_MAX_CHECKS;i++)	j=j & Debounce_State[i];
@@ -208,7 +209,7 @@ void check_rotary(void) {
 }
 
 void check_buttons() {
-	unsigned char m = ~(Debounced_State >> 2) & 0x07;
+	unsigned char m = ~(Debounced_State >> 2) & 0x0F;
 	if (m == 0) return;
 	if (m == last_buttons) return;
 	
@@ -218,6 +219,11 @@ void check_buttons() {
 	last_ticks_seconds = ticks;
 
 	switch (m) {
+		case 8: 
+			mode 				= next_mode;
+			if (write_enable == 0) { write_enable = 0x03; }
+			else {write_enable = 0x00;}
+			break;				
 		case 4: next_mode = 0; break;	// frames
 		case 2: next_mode = 1; break;
 		case 1: next_mode = 2; break;
@@ -225,6 +231,7 @@ void check_buttons() {
 	}
 	
 	update_display_buffer();
+	PORTB &= ~write_enable;
 }
 
 void check_spi(void) {
@@ -260,9 +267,9 @@ int main(void)
 {
 	// ------------------------- Initialize Hardware
 	
-	DDRB = 0xC0;
+	DDRB = 0xC3;
 	DDRC = 0x00;
-	PORTC = 0x1F;	//pullups
+	PORTC = 0x3F;	//pullups
 	
 	DDRD = 0xff; 			// 7 segement display
 	PORTD = (1 << 1);
@@ -284,6 +291,8 @@ int main(void)
 	
 	mode 		= state_init;
 	next_mode 	= state_undef;
+	write_enable = 0x00;
+	
 	update_display_buffer();
 
 	values_max[0] = 42;			// frames 
