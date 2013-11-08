@@ -23,6 +23,8 @@
 #define DISP_PORTB_MASK 0x3F
 #define DISP_PORTD_MASK 0x80
 #define DISPLAY_REFRESH	10
+// Set Display Brightness 0-100
+#define DISPLAY_BRIGHTNESS	85	
 
 #define SAMPLE_FREQUENCY	9615384.61538462			//samples per second
 
@@ -162,7 +164,7 @@ void refresh_display(void){
 	display_last_ticks = ticks;
 	
 	display_idx++;
-	display_idx %= 3;
+	display_idx %= 103-DISPLAY_BRIGHTNESS;
 	
 	PORTB &= DISP_PORTB_MASK; 
 	PORTD = display_buf[display_idx] & 0x7F;
@@ -210,11 +212,11 @@ void check_rotary(void) {
 
 void check_buttons() {
 	unsigned char m = ~(Debounced_State >> 2) & 0x0F;
-	if (m == 0) return;
 	if (m == last_buttons) return;
 	
 	last_buttons = m;
-	
+	if (m == 0) return;
+
 	mode = state_change_mode;
 	last_ticks_seconds = ticks;
 
@@ -231,7 +233,8 @@ void check_buttons() {
 	}
 	
 	update_display_buffer();
-	PORTB &= ~write_enable;
+	
+	PORTB = (PORTB & ~0x03) | write_enable;
 }
 
 void check_spi(void) {
@@ -314,6 +317,7 @@ int main(void)
 			mode 				= next_mode;
 			update_display_buffer();
 			spi_idx = 3;
+			
 		}
 
  	}
