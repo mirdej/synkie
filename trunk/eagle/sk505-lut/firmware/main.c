@@ -24,7 +24,7 @@ uint8_t 	table [256];
 volatile uint16_t	ref_in;
 volatile uint8_t 	x_in, y_in;
 uint8_t 	ad_idx;
-uint8_t 	is_recording;
+volatile uint8_t 	is_recording;
 uint8_t		test;
 
 
@@ -83,7 +83,19 @@ void check_ad(void){
 }
 
 void check_btn(void){
-	is_recording = ~PINB & (1 << 2);
+	is_recording = ~PINB & (1 << 0);
+}
+
+void pwm_on(void) {
+	// setup timer 0 PWM on OC0B (pin pb1)
+	TCCR0A = (1 << COM0B1) | (1 << WGM01) | (1 << WGM00);		// fast pwm, clear oc0b on compare match
+	TCCR0B = (1 << CS00);		// start timer no prescaler -> 8Mhz / 256 -> 32 khz PWM
+}
+
+
+void pwm_off(void) {
+	TCCR0A = 0;
+	TCCR0B = 0;
 }
 
 // ------------------------------------------------------------------------------
@@ -104,9 +116,6 @@ void init (void) {
 	ad_set_channel(ad_idx);
 	ad_start_conversion();
 
-	// setup timer 0 PWM on OC0B (pin pb1)
-	TCCR0A = (1 << COM0B1) | (1 << WGM01) | (1 << WGM00);		// fast pwm, clear oc0b on compare match
-	TCCR0B = (1 << CS01);										// 8 prescaler -> 1Mhz / 256 -> 3.9 khz PWM
 	
 	// setup timer 1 for debouncing stuff
     TCCR1 = (1<<CTC1)|(7<<CS10);   // CTC  mode, div64 
@@ -124,23 +133,33 @@ int main (void) {
 	
 	unsigned int last_millis;
 	unsigned int now;
+	unsigned char y_out;
 	
 	while(1) {
 	
 		check_ad();	
 		now = millis();
 		
-		if (now - last_millis > 10) {
+		if (now - last_millis > 4) {
 			last_millis = now;
-			OCR0B = x_in;
+			check_btn();
+			
+			if (is_recording) { 
+				table[x_in] = y_in;
+			}
+			y_out = table[x_in];
+			
+			if (y_out == 0) {
+				pwm_off();
+				PORTB &= ~(1 << 1);			// turn off pin
+			} else if (y_out == 255) {
+				pwm_off();
+				PORTB |= (1 << 1);			// turn on pin
+			} else {
+				OCR0B = y_out;
+				pwm_on();
+			}
 		}
-		//check_btn();
-	//	is_recording = 1;
-	//	if (is_recording) { 
-//			table[x_in] = y_in;
-//		}
-		//OCR0B = table[y_in];
-		
 	}
 	return 0;
 }
