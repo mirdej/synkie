@@ -13414,7 +13414,7 @@ NS Package M08A</description>
 <part name="C2" library="rcl" deviceset="C-EU" device="C1206" value="100n"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="R1206" value="680"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="R1206" value="1k5"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="Y-OUT" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X6" device=""/>
@@ -13422,7 +13422,7 @@ NS Package M08A</description>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="IC2" library="linear" deviceset="LM833" device="D"/>
-<part name="C3" library="rcl" deviceset="CPOL-EU" device="CT3528" value="2u2tantal"/>
+<part name="C3" library="rcl" deviceset="CPOL-EU" device="CT3528" value="1u"/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="C5" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
