@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------
-//	SK505 CV-Looper
+//	SK506 CV-Looper 														ATTINY85 firmware
 //
 // 	Part of the Synkie Project: www.synkie.net
 //
@@ -11,10 +11,8 @@
 // ------------------------------------------------------------------------------
 // AVR Libc (see http://www.nongnu.org/avr-libc/)
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
-#include <avr/pgmspace.h> 	
 #include <avr/wdt.h>		// include watchdog timer support
-#include <avr/interrupt.h>
-#include <util/delay.h>
+#include <avr/interrupt.h>	// include interrupt support
 
 // ==============================================================================
 // Globals
@@ -25,6 +23,7 @@ volatile uint16_t	reference;
 volatile uint8_t 	x_in, y_in;
 uint8_t 			ad_idx;
 volatile uint8_t 	is_recording;
+volatile uint8_t 	is_dubbing;
 volatile uint8_t 	was_recording;
 volatile uint8_t	framecount;
 volatile uint8_t	endcount;
@@ -72,14 +71,15 @@ void check_ad(void){
 }
 
 ISR(INT0_vect){
-	is_recording = ~PINB & (1 << 0);
+	is_recording 	= ~PINB & (1 << 0);
+	is_dubbing 		= ~PINB & (1 << 3);
 	
 	if (is_recording != was_recording) {
 	
 		if (was_recording) { 
 			endcount = framecount + 1;
 		} else {
-			end_count = 251;
+			endcount = 251;
 		}
 		framecount = 0;
 		was_recording = is_recording;
@@ -116,10 +116,10 @@ void pwm_off(void) {
 void init (void) {
 	// setup Ports
 	// 	PB5 	PB4		PB3		PB2		PB1		PB0
-	//	RESET	Y-IN	X-IN	Sync	Y-OUT	BTN
+	//	RESET	Y-IN	ODUB	Sync	Y-OUT	BTN
 	
 	DDRB = 	(1 << 1);	// output for PWM
-	PORTB = (1 << 0); 	// pullup on Button
+	PORTB = (1 << 3) | (1 << 0); 	// pullup on Buttons
 	
 	// setup analog converter. 
 	ADCSRA 	= (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1); 		// enable adc, prescaler 64
@@ -132,6 +132,8 @@ void init (void) {
 	MCUCR = (1 << ISC01) | (1 << ISC00); // rising edge of odd/even generates interrupt
 	GIMSK = (1 << INT0);				// enable interrupt
 	sei();
+	
+	wdt_enable(WDTO_30MS);			// enable watchdog timer
 }
 
 // ==============================================================================
@@ -147,13 +149,13 @@ int main (void) {
 	reference = 930; 	// voltage reference is 1.1V - cv-max is 1V
 	
 	while(1) {
-	
+		wdt_reset();
 		check_ad();	
 		
 		if (frameout != framecount) {
 			cli();
 			frameout = framecount;
-			if (is_recording) { 
+			if (is_recording | is_dubbing) { 
 				table[framecount] = y_in;
 			}
 			y_out = table[framecount];
