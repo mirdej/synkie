@@ -16749,10 +16749,6 @@ NS Package M08A</description>
 <part name="R20" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="OUT-1-INV" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="OUT1" library="wirepad" deviceset="3,17/1,1" device=""/>
-<part name="C4" library="rcl" deviceset="C-EU" device="C1206"/>
-<part name="R12" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
-<part name="R13" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
-<part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="AUDIO" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="X2" library="con-molex" deviceset="22-23-2041" device=""/>
 <part name="L1" library="rcl" deviceset="L-EU" device="L5038P"/>
@@ -16779,7 +16775,6 @@ NS Package M08A</description>
 <part name="P+6" library="supply1" deviceset="VCC" device=""/>
 <part name="P+8" library="supply1" deviceset="VCC" device=""/>
 <part name="P+10" library="supply1" deviceset="VCC" device=""/>
-<part name="P+11" library="supply1" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16857,11 +16852,7 @@ NS Package M08A</description>
 <instance part="R20" gate="G$1" x="193.04" y="109.22" rot="MR180"/>
 <instance part="OUT-1-INV" gate="1" x="200.66" y="109.22" rot="MR0"/>
 <instance part="OUT1" gate="1" x="185.42" y="83.82" rot="MR0"/>
-<instance part="C4" gate="G$1" x="-2.54" y="-10.16" rot="R90"/>
-<instance part="R12" gate="G$1" x="-5.08" y="-15.24" rot="R90"/>
-<instance part="R13" gate="G$1" x="-5.08" y="-5.08" rot="R90"/>
-<instance part="GND4" gate="1" x="-5.08" y="-22.86"/>
-<instance part="AUDIO" gate="1" x="5.08" y="-10.16" rot="MR0"/>
+<instance part="AUDIO" gate="1" x="-22.86" y="-10.16" rot="MR0"/>
 <instance part="X2" gate="-1" x="91.44" y="185.42" rot="R180"/>
 <instance part="X2" gate="-2" x="91.44" y="187.96" rot="R180"/>
 <instance part="X2" gate="-3" x="91.44" y="190.5" rot="R180"/>
@@ -16896,7 +16887,6 @@ NS Package M08A</description>
 <instance part="P+6" gate="VCC" x="2.54" y="205.74"/>
 <instance part="P+8" gate="VCC" x="104.14" y="-25.4" rot="R270"/>
 <instance part="P+10" gate="VCC" x="177.8" y="22.86"/>
-<instance part="P+11" gate="VCC" x="-5.08" y="2.54"/>
 </instances>
 <busses>
 </busses>
@@ -17028,10 +17018,6 @@ NS Package M08A</description>
 <pinref part="GND22" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="R12" gate="G$1" pin="1"/>
-<pinref part="GND4" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="LED-BEAT" gate="G$1" pin="C"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="68.58" y1="157.48" x2="71.12" y2="157.48" width="0.1524" layer="91"/>
@@ -17114,10 +17100,6 @@ NS Package M08A</description>
 <pinref part="C7" gate="G$1" pin="2"/>
 <pinref part="P+10" gate="VCC" pin="VCC"/>
 <pinref part="P+10" gate="VCC" pin="VCC"/>
-</segment>
-<segment>
-<pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="P+11" gate="VCC" pin="VCC"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -17477,19 +17459,9 @@ NS Package M08A</description>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="C4" gate="G$1" pin="1"/>
-<pinref part="R12" gate="G$1" pin="2"/>
-<pinref part="R13" gate="G$1" pin="1"/>
-<pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="-5.08" y1="-10.16" x2="-25.4" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="-10.16" x2="-25.4" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="ATMEGA88" gate="G$1" pin="(ADC7)"/>
 <wire x1="-25.4" y1="30.48" x2="-27.94" y2="30.48" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="AUDIO" gate="1" pin="P"/>
 </segment>
 </net>
