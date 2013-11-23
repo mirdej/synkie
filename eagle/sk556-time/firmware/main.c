@@ -18,17 +18,20 @@
 // Globals
 // ------------------------------------------------------------------------------
 volatile uint32_t	ticks;
-volatile uint8_t	bpm;
-volatile uint8_t	beats_per_bar;
-volatile uint8_t	beat_count;
+uint16_t			display_value;
+uint8_t				beats_per_bar;
+uint8_t				beat_count;
+uint8_t 			allow_audio;
 
 volatile uint8_t	did_tick;
-volatile uint16_t 	beat_time;
-volatile uint16_t 	wait_until_next_beat;
-volatile uint16_t 	wait_until_next_bar;
-volatile uint16_t 	wait_until_free_running;
-volatile uint8_t	beat_pulse;
-volatile uint8_t	bar_pulse;
+uint16_t 			beat_time;
+uint16_t			beat_time_minimum;
+uint16_t			beat_time_maximum;
+uint16_t		 	wait_until_next_beat;
+uint16_t 			wait_until_next_bar;
+uint16_t 			wait_until_free_running;
+uint8_t				beat_pulse;
+uint8_t				bar_pulse;
 
 #define 			PULSE_LENGTH 100
 
@@ -68,15 +71,24 @@ void ad_start_conversion(void) {
 		ADCSRA |= (1 << ADSC);			// start conversion
 }
 
-void ad_set_channel(uint8_t chan) {
-	ADMUX 	= (1 << REFS1) | (chan & 0x03); 			// Internal 1.1V Voltage Reference.
-														// Cannot use external reference (must be min 2 Volts)
-}
-
 uint16_t ad_Read10bit (void) {
  	return (ADCL | ADCH << 8);
  }
 
+
+uint32_t millis()
+{
+	uint32_t m;
+	uint8_t oldSREG = SREG;
+
+	// disable interrupts while we read timer0_millis or we might get an
+	// inconsistent value (e.g. in the middle of a write to timer0_millis)
+	cli();
+	m = ticks;
+	SREG = oldSREG;
+
+	return m;
+}
 // ------------------------------------------------------------------------------
 // Init
 // ------------------------------------------------------------------------------
@@ -126,8 +138,8 @@ void init (void) {
 	TCCR1B = (1 << CS10) 	| (1 << WGM12);			// start timer no prescaler -> 8Mhz / 256 -> 32 khz PWM
 
 	// setup analog converter. 
-	ADCSRA 	= (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1); 		// enable adc, prescaler 64
-	ad_set_channel(7);
+	ADCSRA 	= (1 << ADEN) | (1 << ADPS2); 		// enable adc, prescaler 16
+	ADMUX 	= 0x07;
 	ad_start_conversion();
 
 	wdt_enable(WDTO_30MS);			// enable watchdog timer
@@ -160,15 +172,28 @@ unsigned char numTo7Seg (unsigned char n) {
 		return 0;
 }
 void update_display_buffer(void) {
+	
+	unsigned char i;
 
-	if (mode == 0) {
-		unsigned char i;
+	switch (mode){
 		
-		bpm = 60000 / beat_time;
-		for (i = 0; i < 3; i++) {
-			display_buf[i] = numTo7Seg(getDigit(i,bpm));
-		}
-	} 
+		case 0:	
+			display_value = 60000 / beat_time;
+			break;
+		case 1: 
+			display_value = beat_time;
+			break;
+		case 2:
+			display_value = beat_count;
+			break;		
+		default:
+			display_value = 0;
+	}
+		
+	for (i = 0; i < 3; i++) {
+			display_buf[i] = numTo7Seg(getDigit(i,display_value));
+	}
+	
 }
 
 uint16_t bpm_to_ms (uint8_t b) {
@@ -181,11 +206,17 @@ uint16_t bpm_to_ms (uint8_t b) {
 }
 
 void set_beat_here(void) {
-		wait_until_next_beat = 0;
+
 		wait_until_free_running = 2000;					// stay in tapping mode
+
+		// check if we're not just behind a beat
+		if (beat_time - wait_until_next_beat < 10) return;
+		wait_until_next_beat = 0;
 }
+
 void debounce_switches(){
-	if (ticks % 4 > 0) return; // continue below ca all 4 ms
+	uint32_t m = millis();
+	if (m % 4 > 0) return; // continue below ca all 4 ms
 		
     unsigned char i,j;
     Debounce_State[Debounce_Index] =	(PINC & 0x3F) | ((PINB & 0x20) << 1);
@@ -197,6 +228,7 @@ void debounce_switches(){
 }
 
 void refresh_display(void){
+
 	display_idx++;
 	display_idx %= 103-DISPLAY_BRIGHTNESS;
 	
@@ -216,7 +248,11 @@ void check_rotary(void) {
 
 	unsigned char n;
 	unsigned char encoder_state = Debounced_State & 0x03;
+	uint16_t bpm;
+	static uint8_t isinitialized;
 	
+	if (!isinitialized) {last_encoder_state = encoder_state; isinitialized = 1; return;}
+
 	if (encoder_state == last_encoder_state) return;
 	
 	
@@ -226,15 +262,24 @@ void check_rotary(void) {
 		n = 1;
 	}
 	
+	if ( mode == 0) bpm = 60000 / beat_time;
+	
      if (encoder_state & 1) {
          if (~last_encoder_state & 1) {
-             if (encoder_state & 2) beat_time -= n;
-             else beat_time +=n;
+             if (encoder_state & 2) {
+             	if (mode == 1) beat_time -= n;
+             	else if ( mode == 0) bpm++;
+             } else {
+             	if (mode == 1) beat_time +=n;
+             	else if ( mode == 0) bpm--;
+             }
          } 
      }
 
-	if (beat_time < 240)	beat_time = 240;
-	if (beat_time > 1500) 	beat_time = 1500;
+	if ( mode == 0) beat_time = 60000 / bpm;
+
+	if (beat_time < beat_time_minimum)	beat_time = beat_time_minimum;
+	if (beat_time > beat_time_maximum) 	beat_time = beat_time_maximum;
 
     last_encoder_state = encoder_state;
     update_display_buffer();
@@ -245,71 +290,96 @@ void check_rotary(void) {
 
 
 void check_buttons() {
+	static uint8_t isinitialized;
 	unsigned char m = ~(Debounced_State >> 2) & 0x1F;
 	if (m == last_buttons) return;
 	
 	last_buttons = m;
+	if (!isinitialized) {isinitialized = 1; return;}
+	
 	if (m == 0) return;
 	
 	if (m & (1 << 4)) {
 		if (wait_until_free_running) {
 		
-			tap_time = ticks - tap_start_time;
+			tap_time = millis() - tap_start_time;
 			tap_count++;
 			
 			beat_time = tap_time / tap_count;
 			update_display_buffer();
 
 		} else {
-			tap_start_time = ticks;
+			tap_start_time = millis();
 			tap_count = 0;
 			beat_count = beats_per_bar;  								// force beat pulse output
 		}
 		set_beat_here();
 	}
+	
+	if (m & (1 << 3)) {
+		if (wait_until_free_running) {
+			wait_until_free_running = 0;
+			allow_audio = 0;
+		} else {
+			allow_audio = 1;
+			wait_until_free_running = 2000;
+		}
+	}
+	
+	if (m & (1 << 0)) {
+		mode++;
+		mode %= 2;
+	}
+	if (m & (1 << 2)) {
+		if (mode  < 2) mode = 2;
+		else mode = 0;
+	}
+
 }
 
+
+uint16_t lopass(uint16_t new, uint16_t old, uint16_t factor) {
+	uint32_t temp;
+	
+	temp = (factor - 1) * old + new;
+	temp = temp / factor;
+	return (uint16_t)temp;
+} 
 // ------------------------------------------------------------------------------
 // Audio input
 
 void check_ad(void) {
-	static uint32_t ad_samplecount;
-	static uint32_t ad_mean;
+
+	static uint16_t ad_mean;
 	static uint16_t ad_peak;
 	static uint32_t ad_last_peak_time;
 		
 	if ((ADCSRA & (1 << ADSC))) return; // not finished with last conversion
-		
+
+
 	uint16_t temp;
 	temp = ad_Read10bit();
 	ad_start_conversion();
-
-	if (temp < 511 ) return; // disregard negative side of audio
-
-
-	temp -= 511;
-	if (ad_samplecount >= 0x1FFFDFF) ad_samplecount = 0xFF; 	// leave room in 32 bit calculation
-																/* idea: ad_samplecount * ad_mean + temp below should not roll around 32 bit value
-																	ad_mean is probably not bigger than 128 (should tend to be 0), temp could be 511, so 0xFFFFFFFF / 128 - 512 
-																	i dont set it to 0 so we keep a small sample pool for running mean */ 
-	ad_mean = ad_samplecount * ad_mean;
-	ad_mean += temp;
-	ad_samplecount++;
-	ad_mean /= ad_samplecount;
-		
 	
-	if (temp > (3 * ad_mean)) {
-		ad_peak = (15 * ad_peak + temp ) / 16;		// a bit of lowpass filtering..
-		if (ad_peak > (10 * ad_mean)) {
+	ad_mean = lopass(temp,ad_mean,1000);		
+	
+	if (!allow_audio) return;
 		
-			//seems like a peak. constrain beats to max 255 bpm 
-			if ((ticks - ad_last_peak_time) > 240) {
+	if (temp > (2 * (ad_mean + 2))) {
+		
+		//seems like a peak. constrain beats to max 255 bpm 
+		if ((millis() - ad_last_peak_time) > beat_time_minimum) {
+
+			ad_peak = lopass(temp,ad_peak,5);
+			if (ad_peak > (10 * (ad_mean+1))) {
+		
 				set_beat_here();
 
-				beat_time = ticks - ad_last_peak_time;
-				if (beat_time > 1500) beat_time = 1500; // minimum 40 bpm				
-				ad_last_peak_time = ticks;
-				
+				beat_time = millis() - ad_last_peak_time;
+				if (beat_time > beat_time_maximum) beat_time = beat_time_maximum; // minimum 40 bpm				
+				ad_last_peak_time = millis();
+				ad_peak = 0;				
+
 				update_display_buffer();
 			}
 		}
@@ -329,6 +399,8 @@ ISR(TIMER0_COMPA_vect)
 	did_tick = 1;
 	refresh_display();
 }
+
+
 // ==============================================================================
 // main
 // ------------------------------------------------------------------------------
@@ -338,13 +410,17 @@ int main (void) {
 	uint32_t	ramp_pos;
 	
 	init();
-	beat_time = 500;			// 120 bpm
+	beat_time = 499;			// 120 bpm
 	beats_per_bar = 4;
 
 	mode = 0;
 	update_display_buffer();
 	
-	PORTB |= (1 << 1);
+	//PORTB |= (1 << 1);
+	
+	beat_time_minimum = 240;
+	beat_time_maximum = 1500;
+	allow_audio = 1;
 
 	while(1) {
 		wdt_reset();
@@ -352,6 +428,7 @@ int main (void) {
 		debounce_switches();
 		check_buttons();
 		check_rotary();
+		check_ad();
 		
 		if (did_tick) {			// happens every millisecond
 			did_tick = 0;
@@ -370,7 +447,7 @@ int main (void) {
 				if (beat_count >= beats_per_bar) {
 					beat_count = 0;
 					bar_pulse = PULSE_LENGTH;
-					ramp_start = ticks;
+					ramp_start = millis();
 					ramp_length = beats_per_bar * beat_time;
 				}
 				
@@ -393,12 +470,13 @@ int main (void) {
 				PORTB &= ~(1 << 0);	
 			}
 			
-		}
+			update_display_buffer();
 		
-		ramp_pos = (ticks - ramp_start) * 0xFF;
-		ramp_pos = ramp_pos / ramp_length;
-//		OCR1A = (uint16_t)ramp_pos;
-		OCR1AL = (uint8_t) 255 - ramp_pos;
+		  ramp_pos = (millis() - ramp_start) * 0xFF;
+		  ramp_pos = ramp_pos / ramp_length;
+		  OCR1AL = (uint8_t) 255 - ramp_pos;
+
+		}
 
 	}
 	return 0;

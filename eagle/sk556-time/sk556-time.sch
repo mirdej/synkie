@@ -16801,7 +16801,7 @@ NS Package M08A</description>
 <instance part="GND1" gate="1" x="-73.66" y="58.42"/>
 <instance part="P+2" gate="VCC" x="-76.2" y="63.5" rot="R90"/>
 <instance part="GND2" gate="1" x="-76.2" y="68.58" rot="R270"/>
-<instance part="P+3" gate="VCC" x="-76.2" y="73.66" rot="R90"/>
+<instance part="P+3" gate="VCC" x="-86.36" y="73.66" rot="R90"/>
 <instance part="P+4" gate="VCC" x="-76.2" y="71.12" rot="R90"/>
 <instance part="GND3" gate="1" x="-22.86" y="124.46" rot="R270"/>
 <instance part="P+5" gate="VCC" x="-22.86" y="121.92" rot="R90"/>
@@ -17072,6 +17072,7 @@ NS Package M08A</description>
 <segment>
 <pinref part="ATMEGA88" gate="G$1" pin="AREF"/>
 <pinref part="P+3" gate="VCC" pin="VCC"/>
+<wire x1="-83.82" y1="73.66" x2="-73.66" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="ATMEGA88" gate="G$1" pin="AVCC"/>
