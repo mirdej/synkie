@@ -1,16 +1,22 @@
 #---------------------------------------------------------------------------------------------
-#--	VIDEO DELAY - Makefile
-#--
-#-- Part of the Synkie Project: www.synkie.net
-#--
-#-- © 2013 Michael Egger, Licensed under GNU GPLv3
-#--
+#	MAKEFILE: SK56 Time module
+#
+# 	Part of the Synkie Project: www.synkie.net
+#
+# 	© 2013 Michael Egger, Licensed under GNU GPLv3
+#
 #--------------------------------------------------------------------------------------------
 
+# Configure the following variables according to your AVR.
+# Program the device with
+#     make fuse    			# to set the clock generator, boot section size etc.
+#     make flash   			# to load the boot loader into flash
+#     make lock    			# to protect the boot loader from overwriting
+#     make disablereset		# for ATtiny85 target - to use external reset line for IO (CAUTION: this is not easy to enable again, see README) 
 
-#------------------------- ATMEGA 88, internal 8mhz rc / div 8
-DEVICE     		= atmega88
-F_CPU			= 1000000
+F_CPU = 8000000
+DEVICE = atmega88
+
 
 PROGRAMMER 	= -c usbasp -P usb
 AVRDUDE 	= avrdude $(PROGRAMMER) -p $(DEVICE)
