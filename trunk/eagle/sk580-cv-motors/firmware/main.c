@@ -30,12 +30,33 @@ volatile uint8_t 	was_recording;
 volatile uint8_t	framecount;
 volatile uint8_t	endcount;
 
-#define led_toggle()	PORTD ^= (1 << 2)
+uint8_t did_tick;
+
+uint16_t			has_sync;
+volatile uint32_t	last_beat_time;
+volatile uint8_t 	beat_interrupt_flag;
+
+#define led_toggle()	PORTB ^= (1 << 7)
+#define led_on()		PORTB |= (1 << 7)
+#define led_off()		PORTB &= ~(1 << 7)
 
 // ==============================================================================
 // Functions
 // ------------------------------------------------------------------------------
 
+uint32_t millis()
+{
+	uint32_t m;
+	uint8_t oldSREG = SREG;
+
+	// disable interrupts while we read timer0_millis or we might get an
+	// inconsistent value (e.g. in the middle of a write to timer0_millis)
+	cli();
+	m = ticks;
+	SREG = oldSREG;
+
+	return m;
+}
 void ad_start_conversion() {
  		ADCSRA |= (1 << ADIF);			// clear hardware "conversion complete" flag 
 		ADCSRA |= (1 << ADSC);			// start conversion
@@ -74,8 +95,10 @@ void check_ad(void){
 }
 
 void capture (void){
-	is_recording 	= ~PIND & (1 << 0);
-	is_dubbing 		= ~PIND & (1 << 7);
+	if (! has_sync) {
+		is_recording 	= ~PIND & (1 << 0);
+		is_dubbing 		= ~PIND & (1 << 7);
+	}
 	
 	if (is_recording != was_recording) {
 	
@@ -121,9 +144,23 @@ void pwm1_off(void) {
 ISR(TIMER0_COMPA_vect)
 {
 	ticks++;
+	did_tick = 1;
 	if (ticks % 50) return;
 	else capture();
 }
+
+// ------------------------------------------------------------------------------
+// Beat input
+
+ISR (INT0_vect) {
+	last_beat_time	= millis();
+	beat_interrupt_flag = 1;
+	has_sync = 2000;
+	led_toggle();
+	is_recording 	= ~PIND & (1 << 0);
+	is_dubbing 		= ~PIND & (1 << 7);
+}
+
 
 // ------------------------------------------------------------------------------
 // Init
@@ -133,9 +170,9 @@ void init (void) {
 	// PWM output on pb1, pb2, pb3
 	
 	DDRB = 	(1 << 1) | (1 << 2) | (1 << 3) ;	// output for PWM
+	DDRB |= (1 << 7); // LED
 	
-	DDRD = (1 << 2); // LED
-	PORTD = (1 << 7) | (1 << 6) | (1 << 5) | (1 << 0);		// pullups
+	PORTD = (1 << 7) | (1 << 6) | (1 << 5) | (1 << 2) | (1 << 0);		// pullups
 
 
 	// timer 0	-> ticking clock
@@ -147,7 +184,9 @@ void init (void) {
 	OCR0A	= 124;											// 1000 Hz -> Milliseconds
 	sei();
 
-	
+	// INT0 is sync input
+	EICRA = (1 << ISC01) | (1 << ISC00);	// rising edge
+	EIMSK = (1 << INT0);					// enable interrupt
 	
 	// setup analog converter. 
 	ADCSRA 	= (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1); 		// enable adc, prescaler 64
@@ -169,9 +208,6 @@ int main (void) {
 
 	init();
 				
-
-
-
 	uint8_t		 	y_out;
 	uint16_t		frameout;
 	
@@ -182,14 +218,17 @@ int main (void) {
 	while(1) {
 		wdt_reset();
 		
-
-		if (ticks - last_ticks >= 1000) {
-			last_ticks 	= ticks;
-			led_toggle();
-		}
-
 		check_ad();	
 		
+/*	if (millis()-last_ticks >= 1000) {
+		led_toggle();
+		last_ticks = millis();
+	}*/
+		if (did_tick) {								// happens every 1 millisecond
+			if (has_sync) 	has_sync--;
+			else 			led_off();
+			did_tick = 0;
+		}
 		
 		if (frameout != framecount) {
 			cli();
