@@ -24,11 +24,9 @@ uint8_t	ad_idx;
 
 uint8_t 			table [250];	// 250 samples @ 50Hz -> 10 seconds
 
-volatile uint8_t 	is_recording;
 volatile uint8_t 	is_dubbing;
 volatile uint8_t 	was_recording;
-volatile uint8_t	framecount;
-volatile uint8_t	endcount;
+volatile uint8_t	x_in;
 
 uint8_t did_tick;
 
@@ -63,7 +61,7 @@ void ad_start_conversion() {
 }
 
 void ad_set_channel(uint8_t chan) {
-	ADMUX 	= (1 << REFS1) | (chan & 0x03); 			// Internal 1.1V Voltage Reference.
+	ADMUX 	= (1 << REFS1) | chan ; 			// Internal 1.1V Voltage Reference.
 														// Cannot use external reference (must be min 2 Volts)
 }
 
@@ -88,41 +86,18 @@ void check_ad(void){
 		uint16_t temp;
 		temp = ad_Read10bit();
 		
-		y_in = to_scale(temp);
-		
+
+		if (ad_idx == 2) { 
+			y_in = to_scale(temp);
+			ad_idx = 7;
+		} else {
+			x_in = to_scale(temp);
+			ad_idx = 2;
+		}
 		ad_set_channel(ad_idx);
 		ad_start_conversion();
 }
 
-void capture (void){
-	if (! has_sync) {
-		is_recording 	= ~PIND & (1 << 0);
-		is_dubbing 		= ~PIND & (1 << 7);
-	}
-	
-	if (is_recording != was_recording) {
-	
-		if (was_recording) { 
-			endcount = framecount + 1;
-		} else {
-			endcount = 251;
-		}
-		framecount = 0;
-		was_recording = is_recording;
-	
-	} else {
-		framecount++;
-			
-		if (framecount >= endcount){
-			if (is_recording) {
-				is_recording = 0;
-				was_recording = 0;
-				endcount = framecount;
-			} 
-			framecount = 0;
-		}
-	}
-}
 
 void pwm1_on(void) {
 	// setup timer 1 PWM on OC1A (pin pb1)
@@ -145,21 +120,8 @@ ISR(TIMER0_COMPA_vect)
 {
 	ticks++;
 	did_tick = 1;
-	if (ticks % 50) return;
-	else capture();
 }
 
-// ------------------------------------------------------------------------------
-// Beat input
-
-ISR (INT0_vect) {
-	last_beat_time	= millis();
-	beat_interrupt_flag = 1;
-	has_sync = 2000;
-	led_toggle();
-	is_recording 	= ~PIND & (1 << 0);
-	is_dubbing 		= ~PIND & (1 << 7);
-}
 
 
 // ------------------------------------------------------------------------------
@@ -183,10 +145,6 @@ void init (void) {
 	TIMSK0 	= (1 << OCIE0A);								// enable interrupt
 	OCR0A	= 124;											// 1000 Hz -> Milliseconds
 	sei();
-
-	// INT0 is sync input
-	EICRA = (1 << ISC01) | (1 << ISC00);	// rising edge
-	EIMSK = (1 << INT0);					// enable interrupt
 	
 	// setup analog converter. 
 	ADCSRA 	= (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1); 		// enable adc, prescaler 64
@@ -220,24 +178,17 @@ int main (void) {
 		
 		check_ad();	
 		
-/*	if (millis()-last_ticks >= 1000) {
-		led_toggle();
-		last_ticks = millis();
-	}*/
-		if (did_tick) {								// happens every 1 millisecond
-			if (has_sync) 	has_sync--;
-			else 			led_off();
-			did_tick = 0;
+		is_dubbing 		= ~PIND & (1 << 7);
+	
+		
+		if (is_dubbing) { 
+			table[x_in] = y_in;
+			led_on();
+		} else {
+			led_off();
 		}
 		
-		if (frameout != framecount) {
-			cli();
-			frameout = framecount;
-			if (is_recording | is_dubbing) { 
-				table[framecount] = y_in;
-			}
-			y_out = table[framecount];
-			sei();
+		y_out = table[x_in];
 			
 			if (y_out == 0) {
 				pwm1_off();
@@ -249,7 +200,7 @@ int main (void) {
 				OCR1AL = y_out;
 				pwm1_on();
 			}
-		}
+		
 
 	}
 	return 0;
