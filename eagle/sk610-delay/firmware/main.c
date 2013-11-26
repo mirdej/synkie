@@ -1,9 +1,9 @@
 //---------------------------------------------------------------------------------------------
-//	VIDEO DELAY - Delay Time Controller
+//	VIDEO DELAY - Delay Time Controller
 //
 // Part of the Synkie Project: www.synkie.net
 //
-// © 2013 Michael Egger, Licensed under GNU GPLv3
+// Â© 2013 Michael Egger, Licensed under GNU GPLv3
 //
 //--------------------------------------------------------------------------------------------
 // ==============================================================================
@@ -54,7 +54,12 @@ unsigned long delay_time;
 unsigned char spi_idx;
 
 
-<unsigned char write_enable;
+#define DEBOUNCE_MAX_CHECKS 10
+unsigned char Debounced_State;
+unsigned char Debounce_State[DEBOUNCE_MAX_CHECKS];
+unsigned char Debounce_Index;
+unsigned char last_encoder_state;
+unsigned char write_enable;
 
 void recalculate_delay(void) {
 	double temp;
@@ -172,6 +177,7 @@ void refresh_display(void){
 		default: break;
 	}
 }
+
 void check_rotary(void) {
 	if (mode > state_change_mode) return;
 	unsigned char n;
@@ -254,7 +260,8 @@ void check_spi(void) {
 ISR(SIG_OUTPUT_COMPARE0A)		// gets called more or less 8 times per millisecond
 {
 	ticks++;
-6}
+	refresh_display();
+}
 
 // ==============================================================================
 // - main
@@ -316,4 +323,3 @@ int main(void)
  	}
 	return 0;
 }
-
