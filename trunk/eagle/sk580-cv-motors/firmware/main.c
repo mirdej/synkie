@@ -18,21 +18,18 @@
 // Globals
 // ------------------------------------------------------------------------------
 volatile uint32_t	ticks,last_ticks;
-uint16_t reference;
-uint8_t	y_in;
-uint8_t	ad_idx;
+uint16_t 			reference;
+uint8_t				y_in[3];
+uint8_t				ad_idx;
 
-uint8_t 			table [250];	// 250 samples @ 50Hz -> 10 seconds
+uint8_t 			table [3][256];	// 250 samples @ 50Hz -> 10 seconds
 
 volatile uint8_t 	is_dubbing;
-volatile uint8_t 	was_recording;
+
 volatile uint8_t	x_in;
 
 uint8_t did_tick;
 
-uint16_t			has_sync;
-volatile uint32_t	last_beat_time;
-volatile uint8_t 	beat_interrupt_flag;
 
 #define led_toggle()	PORTB ^= (1 << 7)
 #define led_on()		PORTB |= (1 << 7)
@@ -42,8 +39,7 @@ volatile uint8_t 	beat_interrupt_flag;
 // Functions
 // ------------------------------------------------------------------------------
 
-uint32_t millis()
-{
+uint32_t millis() {
 	uint32_t m;
 	uint8_t oldSREG = SREG;
 
@@ -55,6 +51,7 @@ uint32_t millis()
 
 	return m;
 }
+
 void ad_start_conversion() {
  		ADCSRA |= (1 << ADIF);			// clear hardware "conversion complete" flag 
 		ADCSRA |= (1 << ADSC);			// start conversion
@@ -86,32 +83,69 @@ void check_ad(void){
 		uint16_t temp;
 		temp = ad_Read10bit();
 		
-
-		if (ad_idx == 2) { 
-			y_in = to_scale(temp);
-			ad_idx = 7;
-		} else {
-			x_in = to_scale(temp);
-			ad_idx = 2;
+		if ( ad_idx < 3) {
+			y_in[ad_idx] = to_scale(temp);
+			ad_idx ++;
 		}
+		
+		if (ad_idx == 7) {
+			x_in = to_scale(temp);
+			ad_idx = 0;
+		}
+
+		if (ad_idx >= 3) { 
+			ad_idx = 7;
+		} 
 		ad_set_channel(ad_idx);
 		ad_start_conversion();
 }
 
 
-void pwm1_on(void) {
-	// setup timer 1 PWM on OC1A (pin pb1)
-	TCCR1A = (1 << COM1A1)  | (1 << WGM10);			// fast pwm 8bit, clear OC1A on compare match
-	TCCR1B = (1 << CS10) 	| (1 << WGM12);			// start timer no prescaler -> 8Mhz / 256 -> 32 khz PWM
+void pwm_1(uint8_t outval) {
+
+		if (outval == 0) {
+			// setup timer 1 PWM on OC1A (pin pb1)
+				TCCR1A &= ~(1 << COM1A1);
+				PORTB &= ~(1 << 1);			// turn off pin
+			} else if (outval == 255) {
+				TCCR1A &= ~(1 << COM1A1);
+				PORTB |= (1 << 1);			// turn on pin
+			} else {
+				OCR1AL = outval;
+				TCCR1A |= (1 << COM1A1);
+			}
 }
 
+void pwm_2(uint8_t outval) {
 
-void pwm1_off(void) {
-	TCCR1A = 0;
-	TCCR1B = 0;
+		if (outval == 0) {
+			// setup timer 1 PWM on OC1B (pin pb2)
+				TCCR1A &= ~(1 << COM1B1);
+				PORTB &= ~(1 << 2);			// turn off pin
+			} else if (outval == 255) {
+				TCCR1A &= ~(1 << COM1B1);
+				PORTB |= (1 << 2);			// turn on pin
+			} else {
+				OCR1BL = outval;
+				TCCR1A |= (1 << COM1B1);
+			}
 }
 
+void pwm_3(uint8_t outval) {
 
+		if (outval == 0) {
+			// setup timer 2 PWM on OC2A (pin pb3)
+				TCCR2A &= ~(1 << COM2A1);
+				PORTB &= ~(1 << 3);			// turn off pin
+			} else if (outval == 255) {
+				TCCR2A &= ~(1 << COM2A1);
+				PORTB |= (1 << 3);			// turn on pin
+			} else {
+				OCR2A = outval;
+				TCCR2A |= (1 << COM2A1);
+			}
+
+}
 
 // ------------------------------------------------------------------------------
 // Count Milliseconds
@@ -146,10 +180,20 @@ void init (void) {
 	OCR0A	= 124;											// 1000 Hz -> Milliseconds
 	sei();
 	
+	
+	// setup timer 1 PWM
+	TCCR1A = (1 << WGM10);							// fast pwm 8bit
+	TCCR1B = (1 << CS10) 	| (1 << WGM12);			// start timer no prescaler -> 8Mhz / 256 -> 32 khz PWM
+
+
+	// setup timer 2 PWM
+	TCCR2A = (1 << WGM20) | (1 << WGM21);							// fast pwm 8bit
+	TCCR2B = (1 << CS22) | (1 << CS21);			// start timer no prescaler -> 8Mhz / 256 -> 32 khz PWM
+
 	// setup analog converter. 
 	ADCSRA 	= (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1); 		// enable adc, prescaler 64
 
-	ad_idx = 2;
+	ad_idx = 0;
 	ad_set_channel(ad_idx);
 	ad_start_conversion();
 
@@ -165,42 +209,37 @@ void init (void) {
 int main (void) {
 
 	init();
-				
-	uint8_t		 	y_out;
+
+	uint8_t			old_x;
+	uint8_t			i;
 	uint16_t		frameout;
 	
-	reference = 930; 	// voltage reference is 1.1V - cv-max is 1V
-	pwm1_on();
-		
+	reference = 930; 	// voltage reference is 1.1V - cv-max is 1V		
 
 	while(1) {
 		wdt_reset();
 		
 		check_ad();	
 		
-		is_dubbing 		= ~PIND & (1 << 7);
-	
-		
-		if (is_dubbing) { 
-			table[x_in] = y_in;
-			led_on();
-		} else {
-			led_off();
-		}
-		
-		y_out = table[x_in];
+		if (old_x != x_in) {
+			old_x = x_in;
 			
-			if (y_out == 0) {
-				pwm1_off();
-				PORTB &= ~(1 << 1);			// turn off pin
-			} else if (y_out == 255) {
-				pwm1_off();
-				PORTB |= (1 << 1);			// turn on pin
-			} else {
-				OCR1AL = y_out;
-				pwm1_on();
-			}
+			led_off();
+
+			for (i = 0; i < 3 ; i++) {
+				is_dubbing 		= ~PIND & (1 << (7-i));
+	
+				if (is_dubbing) { 
+					table[i][x_in] = y_in[i];
+					led_on();
+				}
+			}	
 		
+			pwm_1 (table[0][x_in]);
+			pwm_2 (table[1][x_in]);
+			pwm_3 (table[2][x_in]);
+	
+		}
 
 	}
 	return 0;
