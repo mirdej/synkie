@@ -21425,7 +21425,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <wire x1="172.72" y1="213.36" x2="116.84" y2="213.36" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="NNNNN" class="0">
+<net name="REC" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="B2/65"/>
 <pinref part="JP2" gate="A" pin="7"/>

@@ -135,7 +135,7 @@ begin
 		Counter_Max			=> addr_max,
 		Load_Enable			=> load_max,
 		
-		Carry				=> Led2,
+		Carry				=> Led_Front,
 		Count				=> addr
 	);
 
@@ -203,6 +203,6 @@ port map (
 	
 	LED3 <= Rec_Button;
 	LED1 <= Rec_Switch;
-	--LED2 <= '0';	
+	LED2 <= '0';	
 end Top_Arch;
 

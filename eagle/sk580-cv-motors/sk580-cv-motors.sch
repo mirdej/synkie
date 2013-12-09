@@ -11520,7 +11520,6 @@ Source MOTOROLA / ON Semiconductor mjd32-d.pdf</description>
 <part name="IN-2" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="IN-1" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="X2" library="con-molex" deviceset="22-23-2041" device=""/>
-<part name="L1" library="rcl" deviceset="L-EU" device="L5038P"/>
 <part name="DUB-1" library="anyma-lib" deviceset="PRINTTASTER_SMD" device=""/>
 <part name="GND57" library="supply1" deviceset="GND" device=""/>
 <part name="DUB2" library="anyma-lib" deviceset="PRINTTASTER_SMD" device=""/>
@@ -11575,7 +11574,6 @@ Source MOTOROLA / ON Semiconductor mjd32-d.pdf</description>
 <instance part="X2" gate="-2" x="187.96" y="134.62" rot="R180"/>
 <instance part="X2" gate="-3" x="187.96" y="137.16" rot="R180"/>
 <instance part="X2" gate="-4" x="187.96" y="139.7" rot="R180"/>
-<instance part="L1" gate="G$1" x="198.12" y="132.08" rot="R90"/>
 <instance part="DUB-1" gate="G$1" x="134.62" y="50.8"/>
 <instance part="GND57" gate="1" x="144.78" y="50.8" rot="R90"/>
 <instance part="DUB2" gate="G$1" x="154.94" y="48.26"/>
@@ -11794,21 +11792,6 @@ Source MOTOROLA / ON Semiconductor mjd32-d.pdf</description>
 <wire x1="121.92" y1="60.96" x2="109.22" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="L1" gate="G$1" pin="2"/>
-<pinref part="ATMEGA88" gate="G$1" pin="(INT0)PD2"/>
-<wire x1="203.2" y1="38.1" x2="203.2" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="38.1" x2="203.2" y2="38.1" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="X2" gate="-1" pin="S"/>
-<pinref part="L1" gate="G$1" pin="1"/>
-<wire x1="193.04" y1="132.08" x2="190.5" y2="132.08" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="RESET" class="0">
 <segment>
 <pinref part="DUB-1" gate="G$1" pin="0@B"/>
@@ -11838,6 +11821,17 @@ Source MOTOROLA / ON Semiconductor mjd32-d.pdf</description>
 <pinref part="JP2" gate="G$1" pin="1"/>
 <wire x1="109.22" y1="33.02" x2="147.32" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="33.02" x2="147.32" y2="27.94" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="ATMEGA88" gate="G$1" pin="(ADC7)"/>
+<wire x1="109.22" y1="25.4" x2="137.16" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="25.4" x2="137.16" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="15.24" x2="195.58" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="15.24" x2="195.58" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="X2" gate="-1" pin="S"/>
+<wire x1="195.58" y1="132.08" x2="190.5" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
