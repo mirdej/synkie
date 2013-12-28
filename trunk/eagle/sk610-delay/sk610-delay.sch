@@ -19799,7 +19799,7 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <part name="P-3" library="supply1" deviceset="-5V" device=""/>
 <part name="R400" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
 <part name="R402" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
-<part name="R401" library="rcl" deviceset="R-EU_" device="R1206" value="4k7 (5k)"/>
+<part name="R401" library="rcl" deviceset="R-EU_" device="R1206" value="3k9"/>
 <part name="P-4" library="supply1" deviceset="-5V" device=""/>
 <part name="AGND30" library="supply1" deviceset="AGND" device=""/>
 <part name="AGND31" library="supply1" deviceset="AGND" device=""/>
