@@ -11746,7 +11746,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="R214" library="rcl" deviceset="R-EU_" device="R1206" value="1M"/>
 <part name="R216" library="rcl" deviceset="R-EU_" device="R1206" value="1M"/>
 <part name="R215" library="rcl" deviceset="R-EU_" device="R1206" value="1M"/>
-<part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="C202" library="rcl" deviceset="C-EU" device="C1206" value="50p"/>
 <part name="R218" library="rcl" deviceset="R-EU_" device="R1206" value="1k6"/>
 <part name="P-1" library="supply1" deviceset="-5V" device=""/>
@@ -11763,9 +11762,9 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="R306" library="rcl" deviceset="R-EU_" device="R1206" value="300"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="R307" library="rcl" deviceset="R-EU_" device="R1206" value="22"/>
+<part name="R307" library="rcl" deviceset="R-EU_" device="R1206" value="220"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="R308" library="rcl" deviceset="R-EU_" device="R1206" value="180"/>
+<part name="R308" library="rcl" deviceset="R-EU_" device="R1206" value="1k8"/>
 <part name="R309" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="OUT-" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="X1" library="con-molex" deviceset="22-23-2031" device=""/>
@@ -11827,8 +11826,8 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <instance part="P-6" gate="1" x="-50.8" y="60.96"/>
 <instance part="P+11" gate="1" x="-50.8" y="76.2"/>
 <instance part="GAIN-IN" gate="1" x="-76.2" y="68.58"/>
-<instance part="P-5" gate="1" x="-55.88" y="10.16"/>
-<instance part="R208" gate="G$1" x="-55.88" y="17.78" rot="R270"/>
+<instance part="P-5" gate="1" x="-55.88" y="2.54"/>
+<instance part="R208" gate="G$1" x="-55.88" y="10.16" rot="R270"/>
 <instance part="R209" gate="G$1" x="-55.88" y="38.1" rot="R270"/>
 <instance part="IC2" gate="G$1" x="-25.4" y="66.04"/>
 <instance part="IC2" gate="G$2" x="-17.78" y="25.4"/>
@@ -11862,7 +11861,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <instance part="R214" gate="G$1" x="-15.24" y="35.56"/>
 <instance part="R216" gate="G$1" x="-10.16" y="20.32" rot="R90"/>
 <instance part="R215" gate="G$1" x="-30.48" y="15.24" rot="R180"/>
-<instance part="GND6" gate="1" x="-38.1" y="15.24" rot="R270"/>
 <instance part="C202" gate="G$1" x="-5.08" y="20.32" rot="R180"/>
 <instance part="R218" gate="G$1" x="10.16" y="25.4"/>
 <instance part="P-1" gate="1" x="68.58" y="33.02"/>
@@ -12127,10 +12125,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="R215" gate="G$1" pin="2"/>
-<pinref part="GND6" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="C301" gate="G$1" pin="2"/>
 <pinref part="GND9" gate="1" pin="GND"/>
 </segment>
@@ -12212,6 +12206,9 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="R208" gate="G$1" pin="1"/>
 <pinref part="GAIN-POT10K" gate="G$1" pin="S"/>
+<wire x1="-55.88" y1="15.24" x2="-55.88" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="R215" gate="G$1" pin="2"/>
+<wire x1="-35.56" y1="15.24" x2="-55.88" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
