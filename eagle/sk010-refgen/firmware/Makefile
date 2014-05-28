@@ -34,6 +34,9 @@ build:
 	mkdir build
 
 
+build/%.o: %.S build
+	$(COMPILE) -c $< -o $@
+
 build/%.o: %.c build
 	$(COMPILE) -c $< -o $@
 
@@ -52,7 +55,7 @@ build/main.hex:	build/main.bin
 	avr-objcopy -j .text -j .data -O ihex $< $@
 	avr-size $@
 disasm:	build/main.bin
-	avr-objdump -d build/main.bin
+	avr-objdump -d build/main.bin > build/main_disasm.lst
 
 cpp:
 	$(COMPILE) -E main.c
