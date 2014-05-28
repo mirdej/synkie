@@ -18356,8 +18356,8 @@ Source: www.kingbright.com</description>
 <instance part="TXD5" gate="1" x="190.5" y="-30.48" rot="R180"/>
 <instance part="TXD6" gate="1" x="195.58" y="-40.64" rot="R180"/>
 <instance part="TXD7" gate="1" x="190.5" y="-45.72" rot="R180"/>
-<instance part="P+3" gate="VCC" x="76.2" y="-10.16" rot="R90"/>
-<instance part="P+8" gate="1" x="81.28" y="-10.16" rot="R270"/>
+<instance part="P+3" gate="VCC" x="83.82" y="-10.16" rot="R90"/>
+<instance part="P+8" gate="1" x="91.44" y="-10.16" rot="R270"/>
 <instance part="P+2" gate="VCC" x="83.82" y="5.08" rot="R90"/>
 <instance part="P+4" gate="1" x="134.62" y="-2.54" rot="R90"/>
 <instance part="P+14" gate="1" x="127" y="-10.16" rot="R90"/>
@@ -18523,6 +18523,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="P+3" gate="VCC" pin="VCC"/>
 <pinref part="P+8" gate="1" pin="+5V"/>
+<wire x1="88.9" y1="-10.16" x2="86.36" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="ATMEGA88" gate="G$1" pin="AVCC"/>
