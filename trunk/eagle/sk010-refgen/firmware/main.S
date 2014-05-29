@@ -6,7 +6,6 @@
 temp_reg = 0
 zero_reg = 1
 
-sync_state_reg = 16
 workl_reg = 24
 workh_reg = 25
 
@@ -25,14 +24,16 @@ black = 0x0
 ; -------------------------------------------------------------------------
 ; Constants
 ; -------------------------------------------------------------------------
+bporch_bit = 4
 hsync_bit = 3
 vsync_bit = 2
-bporch_bit = 1
+notsiff_bit = 1
 evenodd_bit = 0
 
+bporch_pin = 1 << bporch_bit
 hsync_pin = 1 << hsync_bit
 vsync_pin = 1 << vsync_bit
-bporch_pin = 1 << bporch_bit
+notsiff_pin = 1 << notsiff_bit
 evenodd_pin = 1 << evenodd_bit
 
 ; -------------------------------------------------------------------------
@@ -101,14 +102,12 @@ main:
 #ifdef SHOW_TIMER1
 	ldi workh_reg, 0x40	; toggle OCR1A pin on timer reset
 	sts _SFR_MEM_ADDR(TCCR1A), workh_reg
-#else
-	sts _SFR_MEM_ADDR(TCCR1A), zero_reg
-#endif
 	sts _SFR_MEM_ADDR(TCCR1B), workl_reg	; assuming workl_reg == 0x09!!
 	ldi workl_reg, 0x6e
 	ldi workh_reg, 0x04	; 0x046e == 1134
 	sts _SFR_MEM_ADDR(OCR1AH), workh_reg
 	sts _SFR_MEM_ADDR(OCR1AL), workl_reg
+#endif
 	
 	; initialize line counter
 	; start at first vblank line (line 5)
@@ -116,27 +115,38 @@ main:
 	ldi linel_reg, 5
 	
 	; PORTB: PB2-0=RGB out
-	ldi workl_reg, 0x07
+	ldi workl_reg, white
 	out _SFR_IO_ADDR(DDRB), workl_reg
-	; PORTC: PC3=SYNC, PC2=VSYNC, PC1=B-PORCH, PC0=ODD/EVEN
-	ldi sync_state_reg, hsync_pin | vsync_pin | bporch_pin | evenodd_pin
-	out _SFR_IO_ADDR(PORTC), sync_state_reg
-	out _SFR_IO_ADDR(DDRC), sync_state_reg
+	; PORTC: PC4=BACKPORCH, PC3=SYNC, PC2=VSYNC, PC1=NOT-SIFF, PC0=ODD/EVEN
+	ldi workl_reg, bporch_pin | hsync_pin | vsync_pin | notsiff_pin | evenodd_pin
+	out _SFR_IO_ADDR(PORTC), workl_reg
+	out _SFR_IO_ADDR(DDRC), workl_reg
 	; PORTD: PD5=Subcarrier (OC0B)
 	ldi workl_reg, 0x20
 	out _SFR_IO_ADDR(DDRD), workl_reg
-
+	
+	cbi _SFR_IO_ADDR(PORTC), notsiff_bit
 	; Start timers
 	out _SFR_IO_ADDR(GTCCR), zero_reg
 
 blank_line1:
 	HSYNC_PULSE_86CLK
 	; ck 86
+	cbi _SFR_IO_ADDR(PORTC), bporch_bit
+	DELAY_LOOP 32
+	sbi _SFR_IO_ADDR(PORTC), bporch_bit
+	sbi _SFR_IO_ADDR(PORTC), notsiff_bit
 	
+	; ck 188
 	DELAY_LOOP 255
-	DELAY_LOOP 93
+	DELAY_LOOP 52
 	nop
-	;ck 1131
+	; ck 1110
+	cbi _SFR_IO_ADDR(PORTC), notsiff_bit
+	; ck 1112
+	DELAY_LOOP 6
+	nop
+	; ck 1131
 	
 	; check for end of blanking
 	; at this point, line counter is always between 5 and 21 (inclusive)
@@ -148,7 +158,13 @@ blank_line1:
 halfblank_line1:
 	HSYNC_PULSE_86CLK
 	; ck 86
-	DELAY_LOOP 165
+	cbi _SFR_IO_ADDR(PORTC), bporch_bit
+	DELAY_LOOP 32
+	sbi _SFR_IO_ADDR(PORTC), bporch_bit
+	sbi _SFR_IO_ADDR(PORTC), notsiff_bit
+	
+	; ck 188
+	DELAY_LOOP 131
 	
 	; ck 581
 	COLOR_BAR_3L2CLK green
@@ -162,14 +178,25 @@ halfblank_line1:
 	ldi workl_reg, black
 	out _SFR_IO_ADDR(PORTB), workl_reg
 	; ck 1107
-	DELAY_LOOP 9
+	nop
+	nop
+	nop
+	; ck 1110
+	cbi _SFR_IO_ADDR(PORTC), notsiff_bit
+	; ck 1112
+	DELAY_LOOP 7
+	nop
+	
 	; at this point, line counter is always 22
 	inc linel_reg
 	
 image_line1:
 	HSYNC_PULSE_86CLK
 	; ck 86
-	DELAY_LOOP 34
+	cbi _SFR_IO_ADDR(PORTC), bporch_bit
+	DELAY_LOOP 32
+	sbi _SFR_IO_ADDR(PORTC), bporch_bit
+	sbi _SFR_IO_ADDR(PORTC), notsiff_bit
 	; ck 188
 	COLOR_BAR_3L2CLK white
 	; ck 319
@@ -188,8 +215,15 @@ image_line1:
 	ldi workl_reg, black
 	out _SFR_IO_ADDR(PORTB), workl_reg
 	; ck 1107
+	nop
+	nop
+	nop
+	cbi _SFR_IO_ADDR(PORTC), notsiff_bit
+	; ck 1112
 	
-	DELAY_LOOP 7
+	DELAY_LOOP 5
+	nop
+	
 	; ck 1128	
 	adiw linel_reg, 1
 	; stop at line 310 = 0x0136
@@ -223,14 +257,12 @@ eqvsync_line1:
 	EQ_PULSE_38CLK
 	; ck 38
 	DELAY_LOOP 176
-	nop
-	nop
+	cbi _SFR_IO_ADDR(PORTC), vsync_bit
 	; ck 568
 	VSYNC_PULSE_533CLK
 	; ck 1101
 	DELAY_LOOP 10
-	nop
-	nop
+	cbi _SFR_IO_ADDR(PORTC), evenodd_bit
 	
 	; ck 1133
 	adiw linel_reg, 1
@@ -245,15 +277,16 @@ vsync_line1:
 	VSYNC_PULSE_533CLK
 	; ck 1101
 	DELAY_LOOP 9
-	nop
-	nop
 	
-	; ck 1130
+	; ck 1128
 	adiw linel_reg, 1
 	; we know lineh_reg is 1 here
 	cpi linel_reg, 0x3b	; line 315 = 0x013b
-	brne vsync_line1
+	breq 1f
 	nop
+	rjmp vsync_line1
+1:
+	sbi _SFR_IO_ADDR(PORTC), vsync_bit
 	
 eqpulse_line1b:
 	EQ_PULSE_38CLK
@@ -286,11 +319,21 @@ eqhalfpulse_line1:
 blank_line2:
 	HSYNC_PULSE_86CLK
 	; ck 86
+	cbi _SFR_IO_ADDR(PORTC), bporch_bit
+	DELAY_LOOP 32
+	sbi _SFR_IO_ADDR(PORTC), bporch_bit
+	sbi _SFR_IO_ADDR(PORTC), notsiff_bit
+	; ck 188
 	
 	DELAY_LOOP 255
-	DELAY_LOOP 93
+	DELAY_LOOP 52
 	nop
-	;ck 1131
+	; ck 1110
+	cbi _SFR_IO_ADDR(PORTC), notsiff_bit
+	; ck 1112
+	DELAY_LOOP 6
+	nop
+	; ck 1131
 	
 	; check for end of blanking
 	; at this point, line counter is always between 318 and 334 (inclusive)
@@ -302,7 +345,10 @@ blank_line2:
 image_line2:
 	HSYNC_PULSE_86CLK
 	; ck 86
-	DELAY_LOOP 34
+	cbi _SFR_IO_ADDR(PORTC), bporch_bit
+	DELAY_LOOP 32
+	sbi _SFR_IO_ADDR(PORTC), bporch_bit
+	sbi _SFR_IO_ADDR(PORTC), notsiff_bit
 	; ck 188
 	COLOR_BAR_3L2CLK white
 	; ck 319
@@ -320,9 +366,16 @@ image_line2:
 	; ck 1105
 	ldi workl_reg, black
 	out _SFR_IO_ADDR(PORTB), workl_reg
-
 	; ck 1107
-	DELAY_LOOP 7
+	nop
+	nop
+	nop
+	cbi _SFR_IO_ADDR(PORTC), notsiff_bit
+	; ck 1112
+	
+	DELAY_LOOP 5
+	nop
+	
 	; ck 1128	
 	adiw linel_reg, 1
 	; stop at line 622 = 0x026e
@@ -335,19 +388,27 @@ image_line2:
 halfimage_line2:
 	HSYNC_PULSE_86CLK
 	; ck 86
-	DELAY_LOOP 34
-	; ck 188
+	cbi _SFR_IO_ADDR(PORTC), bporch_bit
+	DELAY_LOOP 32
+	sbi _SFR_IO_ADDR(PORTC), bporch_bit
+	sbi _SFR_IO_ADDR(PORTC), notsiff_bit
 	; ck 188
 	COLOR_BAR_3L2CLK white
 	; ck 319
 	COLOR_BAR_3L2CLK yellow
 	; ck 450
-	COLOR_BAR_3L2CLK cyan, 38
-	; ck 566
+	COLOR_BAR_3L2CLK cyan, 36
+	; ck 560
 	ldi workl_reg, 0x0
 	out _SFR_IO_ADDR(PORTB), workl_reg
-	; ck 568
+	; ck 562
+	nop
+	nop
+	nop
+	nop
+	cbi _SFR_IO_ADDR(PORTC), notsiff_bit
 	
+	; ck 568
 	EQ_PULSE_38CLK
 	; ck 606
 	DELAY_LOOP 175
@@ -366,17 +427,25 @@ eqpulse_line2a:
 	; ck 568
 	EQ_PULSE_38CLK
 	; ck 606
-	DELAY_LOOP 174
+	DELAY_LOOP 172
+	nop
+	nop
 	
-	; ck 1128
+	; ck 1124
 	adiw linel_reg, 1
 	cpi linel_reg, 0x71	; line 625 = 0x0271
 	breq 1f
+	nop
+	nop
+	nop
+	nop
 	nop
 	rjmp eqpulse_line2a
 1:
 	clr linel_reg
 	clr lineh_reg
+	sbi _SFR_IO_ADDR(PORTC), evenodd_bit
+	cbi _SFR_IO_ADDR(PORTC), vsync_bit
 	
 vsync_line2:
 	VSYNC_PULSE_533CLK
@@ -402,8 +471,8 @@ halfvsync_line2:
 	VSYNC_PULSE_533CLK
 	; ck 533
 	DELAY_LOOP 11
-	nop
-	nop
+	sbi _SFR_IO_ADDR(PORTC), vsync_bit
+	
 	; ck 568
 	EQ_PULSE_38CLK
 	; ck 606
