@@ -23,8 +23,7 @@ entity RX_TX is
 		
 		Strobe			: out std_logic;
 		
---		Send_Data		: in std_logic_vector(23 downto 0);
-		Receive_Data	: out std_logic_vector(23 downto 0)
+		Receive_Data	: out std_logic_vector(7 downto 0)
 	);
 end entity;
 
@@ -35,8 +34,7 @@ architecture RX_TX_arch of RX_TX is
 	
 signal SCKIntOld		: std_logic;
 signal CSIntOld		: std_logic;
-signal Rx_Buf		  	: std_logic_vector(23 downto 0);
-signal Tx_Buf		  	: std_logic_vector(23 downto 0);
+signal Rx_Buf		  	: std_logic_vector(7 downto 0);
 
 signal SCK_f			: std_logic;
 signal SCK_ff			: std_logic;
@@ -52,7 +50,7 @@ begin
 	begin
 		if(ResetN = '0') then
 			SCKIntOld <= '0';
-			Rx_Buf 	<= x"000808"; 
+			Rx_Buf 	<=  (others => '0');
 			SCK_f <= '0';
 			SCK_ff <= '0';
 			CSn_f <= '0';
@@ -75,9 +73,7 @@ begin
 			
 			if((SCK_ff = '1') and (SCKIntOld = '0')) then
 				if(CSn_ff = '0') then
-					Rx_Buf <= Rx_Buf(22 downto 0) & MOSI_ff;			-- MSB first
-					MISO <= TX_Buf(23);
-					TX_Buf <= TX_Buf(22 downto 0) & "0";
+					Rx_Buf <= Rx_Buf(6 downto 0) & MOSI_ff;			-- MSB first
 				end if;
 			end if;
 			

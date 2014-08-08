@@ -56,8 +56,7 @@ component RX_TX is
 		SCK				: in std_logic;
 		CSn				: in std_logic;
 		Strobe			: out std_logic;
---		Send_Data		: in std_logic_vector(23 downto 0);
-		Receive_Data	: out std_logic_vector(23 downto 0)
+		Receive_Data	: out std_logic_vector(7 downto 0)
 	);
 end component;
  
@@ -66,9 +65,9 @@ component Address_Counter is
 	port(
 		ResetN 			: in std_logic;		
 		FSM_State		: in std_logic_vector(3 downto 0);
-		Counter_Max		: in std_logic_vector (23 downto 0);
-		Load_Enable		: in std_logic;
-		
+		Frames_Max		: in std_logic_vector (7 downto 0);
+		V_Sync			: in std_logic;
+				
 		Carry			: out std_logic;
 		Count			: out std_logic_vector (23 downto 0)
 	);
@@ -119,11 +118,11 @@ end component;
 --------------------------------------------------------------------------------------------
 signal fsm_state 			: std_logic_vector (3 downto 0);
 signal addr			 		: std_logic_vector (23 downto 0);
-signal addr_max			 	: std_logic_vector (23 downto 0);
 signal we					: std_logic;
 signal load_max				: std_logic;
 signal bypass				: std_logic;
 signal ad_buf, da_buf		: std_logic_vector (7 downto 0);
+signal addr_max				: std_logic_vector (7 downto 0);
 
 begin
 
@@ -132,8 +131,8 @@ begin
 	port map(
 		ResetN 				=> ResetN,
 		FSM_State			=> fsm_state,
-		Counter_Max			=> addr_max,
-		Load_Enable			=> load_max,
+		Frames_Max			=> addr_max,
+		V_Sync				=> V_Sync,
 		
 		Carry				=> Led_Front,
 		Count				=> addr

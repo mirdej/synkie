@@ -15,8 +15,8 @@ entity Address_Counter is
 	port(
 		ResetN 			: in std_logic;		
 		FSM_State		: in std_logic_vector(3 downto 0);
-		Counter_Max		: in std_logic_vector (23 downto 0);
-		Load_Enable		: in std_logic;
+		Frames_Max		: in std_logic_vector (7 downto 0);
+		V_Sync			: in std_logic;
 		
 		Carry			: out std_logic;
 		Count			: out std_logic_vector (23 downto 0)
@@ -30,9 +30,10 @@ end entity;
 architecture Address_Counter_arch of Address_Counter is
 
 signal counter_count				: unsigned (23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits
-signal counter_count_max			: unsigned (23 downto 0);   -- 12 bits ROW / 10 bits COL / 2 bits BANK - Total 24 Bits		
+signal counter_frames_max			: unsigned (7 downto 0);   
+signal frame_count					: unsigned (7 downto 0);
 signal counter_clock 				: std_logic;
-signal counter_carry				: std_logic;
+signal counter_did_reset				: std_logic;
 
 begin
 ------------------------------------------------------------------------------byte counter for addressing ram
@@ -40,30 +41,36 @@ begin
 	begin
 		if (ResetN = '0' ) then
 			counter_count			<= (others => '0');
-			counter_carry 			<= '0';
+			counter_did_reset 			<= '0';
 
 		elsif (rising_edge(counter_clock)) then
-			if (counter_count >= counter_count_max) then
+			if (frame_count >= counter_frames_max) then
 				counter_count <= (others => '0');
-				counter_carry <= not counter_carry;
+				counter_did_reset <= '1';
 			else
 				counter_count <= counter_count + 1;
+				counter_did_reset <= '0';
 			end if;
 		end if;
 	end process;
 	
 	Count	<= std_logic_vector(counter_count);
-	Carry	<= counter_carry;
-------------------------------------------------------------------------------Asynchronous Set
-	counter_set: process (ResetN,Load_Enable) 
+	Carry	<= counter_did_reset;
+
+	counter_frames_max <= unsigned(Frames_Max);
+	
+	
+	framecounter : process (V_Sync ,ResetN,counter_did_reset) 
 	begin
 		if (ResetN = '0' ) then
-				counter_count_max		<= x"92B808";			-- ca 1s with 125Mhz Clock
-		elsif (rising_edge(Load_Enable)) then
-				counter_count_max		<= unsigned(Counter_Max);
+			frame_count			<= (others => '0');
+		elsif (rising_edge(V_Sync))	then
+			frame_count <= frame_count + 1;
+		end if;
+		if (counter_did_reset = '1') then
+			frame_count			<= (others => '0');
 		end if;
 	end process;
-	
 		
 	--------------------------------------------------------Generate Clock from ram controller state
 	with FSM_State select
