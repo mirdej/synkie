@@ -20,6 +20,7 @@
 volatile uint32_t	ticks,last_ticks;
 
 uint16_t 			reference;
+uint16_t			y_in_raw[3];
 uint8_t				y_in[3];
 uint8_t				ad_idx;
 
@@ -40,8 +41,8 @@ uint8_t did_tick;
 #define led_off()		PORTB &= ~(1 << 7)
 
 
-#define PULSE_MIN 	 750			// .75 ms
-#define PULSE_MAX 	2250			//	2.25 ms
+#define PULSE_MIN 	 500			// .75 ms
+#define PULSE_MAX 	2500			//	2.25 ms
 
 // ==============================================================================
 // Functions
@@ -97,7 +98,8 @@ void check_ad(void){
 		temp = ad_Read10bit();
 		
 		if ( ad_idx < 3) {
-			y_in[ad_idx] = to_scale(temp);
+			y_in_raw[ad_idx] = (7 * y_in_raw[ad_idx] + temp) / 8;
+			y_in[ad_idx] = to_scale(y_in_raw[ad_idx]);
 			ad_idx ++;
 		}
 		
@@ -186,10 +188,10 @@ ISR (TIMER1_COMPA_vect) {
 	
 	sei();
 	
-	if (TCNT1 >= 19999) { 
-		calc_time_points();
+	if (TCNT1 >= 19999) { 							// end of 20ms period
+		calc_time_points();							// recalculate all three pwm
 		
-		PORTD &= ~(1 << 2);
+		PORTD &= ~(1 << 2);						 	// start over	
 		TCNT1 = 0;
 		pulse_idx = 0;
 		PORTB = 1 << 1;
@@ -234,10 +236,11 @@ int main (void) {
 		
 		check_ad();	
 		
-		if ((millis() - lastMillis) > 500 ) { 	
+		if ((millis() - lastMillis) > 100 ) { 	
 			
-			PORTD ^= (1 << 3);
-			lastMillis = millis();
+			/*i++;
+			y_in[2] = to_scale(i*4);
+			lastMillis = millis();*/
 		}
 		
 
