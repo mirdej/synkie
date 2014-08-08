@@ -230,7 +230,7 @@ void debounce_switches(){
 void refresh_display(void){
 
 	display_idx++;
-	display_idx %= 103-DISPLAY_BRIGHTNESS;
+	display_idx %= 3;//103-DISPLAY_BRIGHTNESS;
 	
 	PORTB &= DISP_PORTB_MASK; 
 	PORTD = display_buf[display_idx] & 0x7F;
@@ -251,7 +251,7 @@ void check_rotary(void) {
 	uint16_t bpm;
 	static uint8_t isinitialized;
 	
-	if (!isinitialized) {last_encoder_state = encoder_state; isinitialized = 1; return;}
+	if (!isinitialized) {last_encoder_state = encoder_state;  isinitialized = 1; return;}
 
 	if (encoder_state == last_encoder_state) return;
 	

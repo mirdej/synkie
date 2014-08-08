@@ -52,6 +52,7 @@ unsigned char idx;
 unsigned long delay_time;
 
 unsigned char spi_idx;
+unsigned char sent_value;
 
 
 #define DEBOUNCE_MAX_CHECKS 10
@@ -238,8 +239,9 @@ void check_buttons() {
 }
 
 void check_spi(void) {
-	unsigned char temp;
-	if (spi_idx == 0) {
+
+	
+	if (sent_value == values[0]) {
 		PORTB |= (1 << DD_SS);		// deselect slave
 		return;
 	}
@@ -250,10 +252,9 @@ void check_spi(void) {
 */	
 	PORTB &= ~(1 << DD_SS);			// select slave
 
-	spi_idx--;
-	temp = (unsigned char)((delay_time >> (spi_idx * 8)) & 0xFF);
-	SPDR = temp;
+	SPDR = values[0];
 	while(!(SPSR & (1<<SPIF))){}
+	sent_value = values[0];
 }
 
 
