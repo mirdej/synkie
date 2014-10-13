@@ -45,8 +45,8 @@ build/main.hex:	build/main.bin
 	rm -f $@ build/main.eep.hex
 	avr-objcopy -j .text -j .data -O ihex $< $@
 	avr-size $@
-disasm:	main.bin
-	avr-objdump -d main.bin
+disasm:	build/main.bin
+	avr-objdump -d build/main.bin
 
 cpp:
 	$(COMPILE) -E main.c
