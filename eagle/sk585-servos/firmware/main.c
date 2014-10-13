@@ -178,9 +178,9 @@ void init (void) {
 
 
 void calc_time_points(void) {	
-	time_points[0] = map(y_in[0],0,255,PULSE_MIN,PULSE_MAX);
-	time_points[1] = time_points[0] + map(y_in[1],0,255,PULSE_MIN,PULSE_MAX);
-	time_points[2] = time_points[1] + map(y_in[2],0,255,PULSE_MIN,PULSE_MAX);
+	time_points[0] = map(table[0][x_in],0,255,PULSE_MIN,PULSE_MAX);
+	time_points[1] = time_points[0] + map(table[1][x_in],0,255,PULSE_MIN,PULSE_MAX);
+	time_points[2] = time_points[1] + map(table[2][x_in],0,255,PULSE_MIN,PULSE_MAX);
 }
 
 
@@ -236,11 +236,19 @@ int main (void) {
 		
 		check_ad();	
 		
-		if ((millis() - lastMillis) > 100 ) { 	
+		if (old_x != x_in) {
+			old_x = x_in;
 			
-			/*i++;
-			y_in[2] = to_scale(i*4);
-			lastMillis = millis();*/
+			led_off();
+
+			for (i = 0; i < 3 ; i++) {
+				is_dubbing 		= ~PIND & (1 << (7-i));
+	
+				if (is_dubbing) { 
+					table[2-i][x_in] = y_in[2-i];
+					led_on();
+				}
+			}		
 		}
 		
 

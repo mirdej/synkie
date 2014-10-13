@@ -227,7 +227,7 @@ int main (void) {
 			led_off();
 
 			for (i = 0; i < 3 ; i++) {
-				is_dubbing 		= ~PIND & (1 << (7-i));
+				is_dubbing 		= ~PIND & (1 << (7-(2-i)));
 	
 				if (is_dubbing) { 
 					table[i][x_in] = y_in[i];

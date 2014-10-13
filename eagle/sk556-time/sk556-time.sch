@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16775,6 +16775,9 @@ NS Package M08A</description>
 <part name="P+6" library="supply1" deviceset="VCC" device=""/>
 <part name="P+8" library="supply1" deviceset="VCC" device=""/>
 <part name="P+10" library="supply1" deviceset="VCC" device=""/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
+<part name="C4" library="rcl" deviceset="CPOL-EU" device="E5-8.5"/>
+<part name="GND4" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16887,6 +16890,9 @@ NS Package M08A</description>
 <instance part="P+6" gate="VCC" x="2.54" y="205.74"/>
 <instance part="P+8" gate="VCC" x="104.14" y="-25.4" rot="R270"/>
 <instance part="P+10" gate="VCC" x="177.8" y="22.86"/>
+<instance part="R12" gate="G$1" x="101.6" y="177.8"/>
+<instance part="C4" gate="G$1" x="114.3" y="175.26"/>
+<instance part="GND4" gate="1" x="116.84" y="170.18" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -17048,6 +17054,10 @@ NS Package M08A</description>
 <segment>
 <pinref part="GND19" gate="1" pin="GND"/>
 <pinref part="IC1" gate="P" pin="V-"/>
+</segment>
+<segment>
+<pinref part="C4" gate="G$1" pin="-"/>
+<pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -17465,10 +17475,14 @@ NS Package M08A</description>
 <net name="N$20" class="0">
 <segment>
 <pinref part="L1" gate="G$1" pin="2"/>
-<wire x1="106.68" y1="91.44" x2="106.68" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="91.44" x2="106.68" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="ATMEGA88" gate="G$1" pin="(SS/OC1B)PB2"/>
+<wire x1="106.68" y1="177.8" x2="106.68" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="-27.94" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="83.82" x2="106.68" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="C4" gate="G$1" pin="+"/>
+<wire x1="114.3" y1="177.8" x2="106.68" y2="177.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$21" class="0">
@@ -17476,6 +17490,8 @@ NS Package M08A</description>
 <pinref part="X2" gate="-1" pin="S"/>
 <pinref part="L1" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="185.42" x2="93.98" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="185.42" x2="96.52" y2="177.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$34" class="0">
