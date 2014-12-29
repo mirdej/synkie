@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16122,6 +16122,7 @@ drill 1.1 mm</description>
 <part name="LSP1" library="solpad" deviceset="SE11" device=""/>
 <part name="D1" library="diode" deviceset="DIODE-" device="MINIMELF"/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R1206" value="650"/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C1206"/>
 </parts>
 <sheets>
 <sheet>
@@ -16174,6 +16175,7 @@ drill 1.1 mm</description>
 <instance part="LSP1" gate="1" x="142.24" y="43.18" rot="R270"/>
 <instance part="D1" gate="G$1" x="71.12" y="45.72"/>
 <instance part="R5" gate="G$1" x="78.74" y="45.72"/>
+<instance part="C1" gate="G$1" x="86.36" y="40.64"/>
 </instances>
 <busses>
 </busses>
@@ -16285,6 +16287,9 @@ drill 1.1 mm</description>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="GND2" gate="1" pin="GND"/>
+<pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="86.36" y1="35.56" x2="93.98" y2="35.56" width="0.1524" layer="91"/>
+<junction x="93.98" y="35.56"/>
 </segment>
 <segment>
 <pinref part="TRIM1" gate="G$1" pin="E"/>
@@ -16308,6 +16313,13 @@ drill 1.1 mm</description>
 <pinref part="IC1" gate="B" pin="+IN"/>
 <wire x1="93.98" y1="45.72" x2="101.6" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="83.82" y1="45.72" x2="86.36" y2="45.72" width="0.1524" layer="91"/>
+<junction x="93.98" y="45.72"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="86.36" y1="45.72" x2="93.98" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="43.18" x2="86.36" y2="45.72" width="0.1524" layer="91"/>
+<junction x="86.36" y="45.72"/>
 </segment>
 </net>
 <net name="N$9" class="0">
