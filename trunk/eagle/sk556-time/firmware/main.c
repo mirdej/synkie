@@ -171,6 +171,15 @@ unsigned char numTo7Seg (unsigned char n) {
 		   }
 		return 0;
 }
+
+void display_int(uint16_t val)
+{
+	int i;
+	for (i = 0; i < 3; i++) {
+			display_buf[i] = numTo7Seg(getDigit(i,val));
+	}
+}
+
 void update_display_buffer(void) {
 	
 	unsigned char i;
@@ -210,7 +219,7 @@ void set_beat_here(void) {
 		wait_until_free_running = 2000;					// stay in tapping mode
 
 		// check if we're not just behind a beat
-		if (beat_time - wait_until_next_beat < 10) return;
+		if (beat_time - wait_until_next_beat < 20) return;
 		wait_until_next_beat = 0;
 }
 
@@ -349,43 +358,67 @@ uint16_t lopass(uint16_t new, uint16_t old, uint16_t factor) {
 // Audio input
 
 void check_ad(void) {
-
 	static uint16_t ad_mean;
-	static uint16_t ad_peak;
+	static uint32_t ad_first_peak_time;
 	static uint32_t ad_last_peak_time;
-		
+	static uint8_t tick_count;
+	static uint8_t in_peak;
+	
 	if ((ADCSRA & (1 << ADSC))) return; // not finished with last conversion
 
-
-	uint16_t temp;
-	temp = ad_Read10bit();
+	uint16_t temp = ad_Read10bit();
 	ad_start_conversion();
 	
-	ad_mean = lopass(temp,ad_mean,1000);		
+	if (ad_mean == 0)
+		ad_mean = temp;
 	
-	if (!allow_audio) return;
-		
-	if (temp > (2 * (ad_mean + 2))) {
-		
-		//seems like a peak. constrain beats to max 255 bpm 
-		if ((millis() - ad_last_peak_time) > beat_time_minimum) {
-
-			ad_peak = lopass(temp,ad_peak,5);
-			if (ad_peak > (10 * (ad_mean+1))) {
-		
+	ad_mean = lopass(temp, ad_mean, 256);
+	
+	if (!allow_audio) {
+		ad_first_peak_time = 0;
+		tick_count = 0;
+		in_peak = 0;
+		PORTB &= ~1;
+		return;
+	}
+	
+	if (temp > 2*(ad_mean+2)) {
+		if (!in_peak) {
+			PORTB |= 1;
+			in_peak = 1;
+			uint32_t peak_time = millis();
+			if (ad_first_peak_time > 0) {
+				++tick_count;
+				int32_t new_beat_time = (peak_time - ad_first_peak_time) / tick_count;
+				if (tick_count > 4) {
+					int32_t diff = new_beat_time - (peak_time - ad_last_peak_time);
+					if (diff < 0)
+						diff = -diff;
+					if (diff > new_beat_time >> 3) {
+						ad_first_peak_time = ad_last_peak_time;
+						tick_count = 1;
+						new_beat_time = peak_time - ad_last_peak_time;
+					}
+				}
 				set_beat_here();
-
-				beat_time = millis() - ad_last_peak_time;
-				if (beat_time > beat_time_maximum) beat_time = beat_time_maximum; // minimum 40 bpm				
-				ad_last_peak_time = millis();
-				ad_peak = 0;				
-
+				beat_time = new_beat_time;
+				if (beat_time > beat_time_maximum)
+					beat_time = beat_time_maximum;
 				update_display_buffer();
 			}
+			else {
+				beat_count = 0;
+				tick_count = 0;
+				ad_first_peak_time = peak_time;
+			}
+			ad_last_peak_time = peak_time;
 		}
-		
 	}
-		
+	else {
+		if (millis() - ad_last_peak_time > beat_time_minimum)
+			in_peak = 0;
+		PORTB &= ~1;
+	}
 }
 
 
@@ -428,10 +461,10 @@ int main (void) {
 		debounce_switches();
 		check_buttons();
 		check_rotary();
-		check_ad();
 		
 		if (did_tick) {			// happens every millisecond
 			did_tick = 0;
+			check_ad();
 			
 			if (beat_pulse) {
 				beat_pulse--;
@@ -464,13 +497,13 @@ int main (void) {
 			}
 
 			if (wait_until_free_running) {
-				PORTB |= (1 << 0);		
+				//PORTB |= (1 << 0);		
 				wait_until_free_running--;
 			} else {
-				PORTB &= ~(1 << 0);	
+				//PORTB &= ~(1 << 0);	
 			}
 			
-			update_display_buffer();
+			//update_display_buffer();
 		
 		  ramp_pos = (millis() - ramp_start) * 0xFF;
 		  ramp_pos = ramp_pos / ramp_length;
