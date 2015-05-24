@@ -15989,17 +15989,17 @@ Based on the following sources:
 <part name="T3" library="transistor" deviceset="BC847" device=""/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R1210"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R4" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R6" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R8" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R9" library="rcl" deviceset="R-EU_" device="R1210"/>
+<part name="R3" library="rcl" deviceset="R-EU_" device="R1210" value="2.2k"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="R1210" value="560"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="R1210" value="10k"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R1210" value="47k"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="R1210" value="47k"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="R1210" value="330"/>
+<part name="R9" library="rcl" deviceset="R-EU_" device="R1210" value="560"/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C1210"/>
-<part name="C2" library="rcl" deviceset="C-EU" device="C1210"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C1210"/>
-<part name="C4" library="rcl" deviceset="C-EU" device="C1210"/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C1210" value="4.7n?"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C1210" value="68p"/>
+<part name="C4" library="rcl" deviceset="C-EU" device="C1210" value="100p"/>
 <part name="C5" library="rcl" deviceset="C-EU" device="C1210"/>
 <part name="Q1" library="crystal" deviceset="CRYSTAL" device="HC49UP"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
@@ -16022,16 +16022,16 @@ Based on the following sources:
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="BURST" library="wirepad" deviceset="WIREPAD" device="3,17/1,1"/>
 <part name="C10" library="rcl" deviceset="C-EU" device="C1210"/>
-<part name="R10" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R11" library="rcl" deviceset="R-EU_" device="R1210"/>
+<part name="R10" library="rcl" deviceset="R-EU_" device="R1210" value="33k"/>
+<part name="R11" library="rcl" deviceset="R-EU_" device="R1210" value="15k"/>
 <part name="T4" library="transistor" deviceset="BC847" device=""/>
-<part name="R12" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R13" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="C11" library="rcl" deviceset="C-EU" device="C1210"/>
-<part name="C12" library="rcl" deviceset="C-EU" device="C1210"/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="R1210" value="10k"/>
+<part name="R13" library="rcl" deviceset="R-EU_" device="R1210" value="10k"/>
+<part name="C11" library="rcl" deviceset="C-EU" device="C1210" value="1n?"/>
+<part name="C12" library="rcl" deviceset="C-EU" device="C1210" value="1n?"/>
 <part name="D1" library="diode" deviceset="DIODE_2CACA-" device="SOT23"/>
-<part name="R14" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R15" library="rcl" deviceset="R-EU_" device="R1210"/>
+<part name="R14" library="rcl" deviceset="R-EU_" device="R1210" value="47k"/>
+<part name="R15" library="rcl" deviceset="R-EU_" device="R1210" value="47k"/>
 <part name="CTL_OUT" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="REF" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="P+3" library="supply1" deviceset="V+" device=""/>
@@ -16040,8 +16040,7 @@ Based on the following sources:
 <part name="X3" library="con-molex" deviceset="22-23-2021" device=""/>
 <part name="IC1" library="40xx" deviceset="4053" device="D"/>
 <part name="R16" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="R17" library="rcl" deviceset="R-EU_" device="R1210"/>
-<part name="V_OUT1" library="wirepad" deviceset="3,17/1,1" device=""/>
+<part name="BURST_OUT" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="C13" library="rcl" deviceset="C-EU" device="C0805"/>
@@ -16049,12 +16048,13 @@ Based on the following sources:
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" deviceset="V+" device=""/>
 <part name="P-4" library="supply1" deviceset="V-" device=""/>
-<part name="D2" library="diode" deviceset="BBY51" device=""/>
-<part name="C15" library="rcl" deviceset="C-EU" device="C1210"/>
+<part name="D2" library="diode" deviceset="BBY51" device="" value="BBY40"/>
+<part name="C15" library="rcl" deviceset="C-EU" device="C1210" value="10p?"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="134.62" y="22.86" size="1.778" layer="91">2015-05-24: see also paper schematic for values/changes!</text>
 </plain>
 <instances>
 <instance part="CTL_IN" gate="G$1" x="0" y="86.36" smashed="yes">
@@ -16127,8 +16127,7 @@ Based on the following sources:
 <instance part="IC1" gate="A" x="45.72" y="30.48"/>
 <instance part="IC1" gate="P" x="114.3" y="22.86"/>
 <instance part="R16" gate="G$1" x="25.4" y="45.72" rot="R180"/>
-<instance part="R17" gate="G$1" x="25.4" y="43.18" rot="R180"/>
-<instance part="V_OUT1" gate="1" x="66.04" y="45.72" rot="R180"/>
+<instance part="BURST_OUT" gate="1" x="66.04" y="45.72" rot="R180"/>
 <instance part="GND6" gate="1" x="33.02" y="10.16"/>
 <instance part="GND7" gate="1" x="17.78" y="38.1"/>
 <instance part="C13" gate="G$1" x="121.92" y="27.94"/>
@@ -16317,6 +16316,9 @@ Based on the following sources:
 <pinref part="GND7" gate="1" pin="GND"/>
 <pinref part="X3" gate="-1" pin="S"/>
 <wire x1="17.78" y1="40.64" x2="17.78" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="A" pin="X1"/>
+<wire x1="33.02" y1="43.18" x2="17.78" y2="43.18" width="0.1524" layer="91"/>
+<junction x="17.78" y="43.18"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="GND"/>
@@ -16543,21 +16545,11 @@ Based on the following sources:
 <wire x1="30.48" y1="45.72" x2="33.02" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$20" class="0">
-<segment>
-<pinref part="R17" gate="G$1" pin="1"/>
-<pinref part="IC1" gate="A" pin="X1"/>
-<wire x1="30.48" y1="43.18" x2="33.02" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$22" class="0">
 <segment>
 <pinref part="R16" gate="G$1" pin="2"/>
-<pinref part="R17" gate="G$1" pin="2"/>
-<wire x1="20.32" y1="45.72" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="X3" gate="-2" pin="S"/>
 <wire x1="17.78" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
-<junction x="20.32" y="45.72"/>
 </segment>
 </net>
 <net name="N$27" class="0">
@@ -16569,7 +16561,7 @@ Based on the following sources:
 </net>
 <net name="N$28" class="0">
 <segment>
-<pinref part="V_OUT1" gate="1" pin="P"/>
+<pinref part="BURST_OUT" gate="1" pin="P"/>
 <pinref part="IC1" gate="A" pin="X"/>
 <wire x1="63.5" y1="45.72" x2="58.42" y2="45.72" width="0.1524" layer="91"/>
 </segment>
