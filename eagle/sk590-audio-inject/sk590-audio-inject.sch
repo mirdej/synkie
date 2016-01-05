@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -11316,67 +11316,6 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="transformer-pulse">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-www.pulseeng.com</description>
-<packages>
-<package name="PE-65612">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
-www.pulseeng.com</description>
-<pad name="1" x="-5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<pad name="2" x="-5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="3" x="5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="4" x="5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<wire x1="-6.35" y1="-4.355" x2="6.35" y2="-4.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="-4.355" x2="6.35" y2="3.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="3.355" x2="5.35" y2="4.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="5.35" y1="4.355" x2="-5.35" y2="4.355" width="0.2032" layer="21"/>
-<wire x1="-5.35" y1="4.355" x2="-6.35" y2="3.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="-6.35" y1="3.355" x2="-6.35" y2="-4.355" width="0.2032" layer="21"/>
-<text x="-6.35" y="-6.35" size="1.27" layer="25">&gt;NAME</text>
-<text x="-5.08" y="-0.635" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="TRANSFORMER">
-<wire x1="1.27" y1="3.175" x2="1.27" y2="-3.175" width="0.254" layer="94"/>
-<circle x="-1.905" y="3.175" radius="0.254" width="0" layer="94"/>
-<circle x="4.445" y="3.175" radius="0.254" width="0" layer="94"/>
-<text x="-2.54" y="4.826" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-5.715" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-1.905" y1="-2.54" x2="0.127" y2="2.54" layer="94"/>
-<rectangle x1="2.413" y1="-2.54" x2="4.445" y2="2.54" layer="94"/>
-<pin name="P1" x="-5.08" y="2.54" visible="pad" length="middle" direction="pas"/>
-<pin name="P2" x="-5.08" y="-2.54" visible="pad" length="middle" direction="pas"/>
-<pin name="S1" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
-<pin name="S2" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PE-65612" prefix="TR">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
-www.pulseeng.com</description>
-<gates>
-<gate name="G$1" symbol="TRANSFORMER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="PE-65612">
-<connects>
-<connect gate="G$1" pin="P1" pad="1"/>
-<connect gate="G$1" pin="P2" pad="2"/>
-<connect gate="G$1" pin="S1" pad="3"/>
-<connect gate="G$1" pin="S2" pad="4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="linear">
 <description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
 Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
@@ -11588,6 +11527,12 @@ NS Package M08A</description>
 <wire x1="-4.5" y1="-8.5" x2="4.5" y2="-9.5" width="0.127" layer="21"/>
 <wire x1="-4.5" y1="-9.5" x2="2.5" y2="-10.5" width="0.127" layer="21"/>
 </package>
+<package name="AUDIOTRAFO">
+<pad name="P$1" x="-5" y="2.5" drill="0.8" shape="long"/>
+<pad name="P$2" x="-5" y="-2.5" drill="0.8" shape="long"/>
+<pad name="P$3" x="5" y="-2.5" drill="0.8" shape="long"/>
+<pad name="P$4" x="5" y="2.5" drill="0.8" shape="long"/>
+</package>
 </packages>
 <symbols>
 <symbol name="TPOT">
@@ -11605,6 +11550,21 @@ NS Package M08A</description>
 <pin name="S" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
 <pin name="E" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
 <pin name="W" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+</symbol>
+<symbol name="TRAFO">
+<wire x1="1.27" y1="7.747" x2="1.27" y2="-5.207" width="0.254" layer="94"/>
+<circle x="-2.921" y="-6.096" radius="0.127" width="0.3048" layer="94"/>
+<circle x="5.461" y="-3.302" radius="0.127" width="0.3048" layer="94"/>
+<text x="-2.54" y="9.906" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-8.255" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-3.175" y="0" size="1.27" layer="94" rot="R90">PRI</text>
+<text x="6.985" y="0" size="1.27" layer="94" rot="R90">SEC</text>
+<rectangle x1="-2.286" y1="-5.08" x2="0.254" y2="7.62" layer="94"/>
+<rectangle x1="2.286" y1="-2.54" x2="4.826" y2="5.08" layer="94"/>
+<pin name="P1" x="-5.08" y="7.62" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+<pin name="P2" x="-5.08" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+<pin name="S3" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="2" rot="R180"/>
+<pin name="S4" x="7.62" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="2" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -11645,6 +11605,24 @@ NS Package M08A</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="AUDIOTRAFO">
+<gates>
+<gate name="G$1" symbol="TRAFO" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="AUDIOTRAFO">
+<connects>
+<connect gate="G$1" pin="P1" pad="P$1"/>
+<connect gate="G$1" pin="P2" pad="P$2"/>
+<connect gate="G$1" pin="S3" pad="P$3"/>
+<connect gate="G$1" pin="S4" pad="P$4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -11665,7 +11643,6 @@ NS Package M08A</description>
 <part name="C7" library="rcl" deviceset="CPOL-EU" device="CT3528" value="10u"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="P-1" library="supply1" deviceset="-5V" device=""/>
-<part name="TR1" library="transformer-pulse" deviceset="PE-65612" device="" value="NTE1"/>
 <part name="AUDIO_IN" library="con-molex" deviceset="22-23-2021" device=""/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R1206" value="2k2"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R1206" value="20k"/>
@@ -11735,6 +11712,10 @@ NS Package M08A</description>
 <part name="R20" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="U$1" library="anyma-lib" deviceset="ALPS_RK09K111_H" device="OHNE-FüSSE"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
+<part name="C18" library="rcl" deviceset="C-EU" device="C1206" value="100p"/>
+<part name="C19" library="rcl" deviceset="C-EU" device="C1206" value="100p"/>
+<part name="C20" library="rcl" deviceset="C-EU" device="C1206" value="100p"/>
+<part name="U1" library="anyma-lib" deviceset="AUDIOTRAFO" device="" value="NTE1"/>
 </parts>
 <sheets>
 <sheet>
@@ -11757,9 +11738,8 @@ NS Package M08A</description>
 </instance>
 <instance part="GND11" gate="1" x="20.32" y="35.56" rot="MR0"/>
 <instance part="P-1" gate="1" x="25.4" y="45.72" rot="R90"/>
-<instance part="TR1" gate="G$1" x="20.32" y="81.28"/>
-<instance part="AUDIO_IN" gate="-1" x="7.62" y="81.28" rot="R180"/>
-<instance part="AUDIO_IN" gate="-2" x="7.62" y="83.82" rot="R180"/>
+<instance part="AUDIO_IN" gate="-1" x="7.62" y="86.36" rot="R180"/>
+<instance part="AUDIO_IN" gate="-2" x="7.62" y="73.66" rot="R180"/>
 <instance part="R1" gate="G$1" x="35.56" y="83.82"/>
 <instance part="R2" gate="G$1" x="73.66" y="83.82"/>
 <instance part="R3" gate="G$1" x="96.52" y="83.82"/>
@@ -11839,7 +11819,11 @@ NS Package M08A</description>
 <instance part="R19" gate="G$1" x="152.4" y="22.86"/>
 <instance part="R20" gate="G$1" x="152.4" y="-7.62"/>
 <instance part="U$1" gate="G$1" x="48.26" y="83.82" rot="R90"/>
-<instance part="GND20" gate="1" x="27.94" y="76.2"/>
+<instance part="GND20" gate="1" x="30.48" y="71.12"/>
+<instance part="C18" gate="G$1" x="134.62" y="27.94" rot="R90"/>
+<instance part="C19" gate="G$1" x="93.98" y="-2.54" rot="R90"/>
+<instance part="C20" gate="G$1" x="134.62" y="-2.54" rot="R90"/>
+<instance part="U1" gate="G$1" x="20.32" y="78.74"/>
 </instances>
 <busses>
 </busses>
@@ -11973,12 +11957,14 @@ NS Package M08A</description>
 <junction x="48.26" y="5.08"/>
 </segment>
 <segment>
-<pinref part="TR1" gate="G$1" pin="S2"/>
-<pinref part="GND20" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="C7" gate="G$1" pin="+"/>
 <pinref part="GND11" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="S3"/>
+<pinref part="GND20" gate="1" pin="GND"/>
+<wire x1="27.94" y1="76.2" x2="30.48" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="76.2" x2="30.48" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="-5V" class="0">
@@ -12013,28 +11999,6 @@ NS Package M08A</description>
 <pinref part="P-1" gate="1" pin="-5V"/>
 <wire x1="22.86" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <junction x="20.32" y="45.72"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="AUDIO_IN" gate="-2" pin="S"/>
-<pinref part="TR1" gate="G$1" pin="P1"/>
-<wire x1="10.16" y1="83.82" x2="15.24" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="AUDIO_IN" gate="-1" pin="S"/>
-<pinref part="TR1" gate="G$1" pin="P2"/>
-<wire x1="10.16" y1="81.28" x2="15.24" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="81.28" x2="15.24" y2="78.74" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="TR1" gate="G$1" pin="S1"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="27.94" y1="83.82" x2="30.48" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -12193,6 +12157,9 @@ NS Package M08A</description>
 <wire x1="88.9" y1="-7.62" x2="91.44" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="-20.32" x2="88.9" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="88.9" y="-7.62"/>
+<pinref part="C19" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="-2.54" x2="88.9" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="-2.54" x2="88.9" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -12204,6 +12171,9 @@ NS Package M08A</description>
 <pinref part="R14" gate="G$1" pin="1"/>
 <wire x1="109.22" y1="-7.62" x2="104.14" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="104.14" y="-7.62"/>
+<pinref part="C19" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="-2.54" x2="104.14" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-2.54" x2="104.14" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -12227,8 +12197,12 @@ NS Package M08A</description>
 <wire x1="127" y1="22.86" x2="129.54" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="B" pin="-IN"/>
 <wire x1="129.54" y1="22.86" x2="132.08" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="12.7" x2="129.54" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="12.7" x2="129.54" y2="20.32" width="0.1524" layer="91"/>
 <junction x="129.54" y="22.86"/>
+<pinref part="C18" gate="G$1" pin="1"/>
+<wire x1="129.54" y1="20.32" x2="129.54" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="27.94" x2="129.54" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="27.94" x2="129.54" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$20" class="0">
@@ -12240,6 +12214,9 @@ NS Package M08A</description>
 <pinref part="R19" gate="G$1" pin="1"/>
 <wire x1="147.32" y1="22.86" x2="144.78" y2="22.86" width="0.1524" layer="91"/>
 <junction x="144.78" y="22.86"/>
+<pinref part="C18" gate="G$1" pin="2"/>
+<wire x1="139.7" y1="27.94" x2="144.78" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="27.94" x2="144.78" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$21" class="0">
@@ -12257,6 +12234,9 @@ NS Package M08A</description>
 <wire x1="129.54" y1="-7.62" x2="132.08" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="-20.32" x2="129.54" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="129.54" y="-7.62"/>
+<pinref part="C20" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="-2.54" x2="129.54" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="-2.54" x2="129.54" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$23" class="0">
@@ -12268,6 +12248,9 @@ NS Package M08A</description>
 <pinref part="R20" gate="G$1" pin="1"/>
 <wire x1="147.32" y1="-7.62" x2="144.78" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="144.78" y="-7.62"/>
+<pinref part="C20" gate="G$1" pin="2"/>
+<wire x1="139.7" y1="-2.54" x2="144.78" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="-2.54" x2="144.78" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -12296,6 +12279,27 @@ NS Package M08A</description>
 <pinref part="R20" gate="G$1" pin="2"/>
 <pinref part="HP" gate="-1" pin="S"/>
 <wire x1="157.48" y1="-7.62" x2="160.02" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="S4"/>
+<wire x1="30.48" y1="83.82" x2="27.94" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="AUDIO_IN" gate="-1" pin="S"/>
+<pinref part="U1" gate="G$1" pin="P1"/>
+<wire x1="10.16" y1="86.36" x2="15.24" y2="86.36" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="AUDIO_IN" gate="-2" pin="S"/>
+<pinref part="U1" gate="G$1" pin="P2"/>
+<wire x1="10.16" y1="73.66" x2="15.24" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
