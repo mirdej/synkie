@@ -11729,9 +11729,9 @@ NS Package M08A</description>
 <attribute name="VALUE" x="17.8054" y="58.3371" size="1.778" layer="96" rot="MR270"/>
 </instance>
 <instance part="GND10" gate="1" x="20.32" y="60.96" rot="MR180"/>
-<instance part="X1" gate="-1" x="12.7" y="45.72" rot="R180"/>
+<instance part="X1" gate="-1" x="12.7" y="50.8" rot="R180"/>
 <instance part="X1" gate="-2" x="12.7" y="48.26" rot="R180"/>
-<instance part="X1" gate="-3" x="12.7" y="50.8" rot="R180"/>
+<instance part="X1" gate="-3" x="12.7" y="45.72" rot="R180"/>
 <instance part="C7" gate="G$1" x="20.32" y="40.64" smashed="yes" rot="MR180">
 <attribute name="NAME" x="21.463" y="40.1574" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="17.8054" y="45.6371" size="1.778" layer="96" rot="MR270"/>
@@ -11830,12 +11830,12 @@ NS Package M08A</description>
 <nets>
 <net name="+5V" class="0">
 <segment>
-<wire x1="15.24" y1="50.8" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="50.8" x2="22.86" y2="50.8" width="0.1524" layer="91"/>
-<junction x="20.32" y="50.8"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 <pinref part="C6" gate="G$1" pin="+"/>
-<pinref part="X1" gate="-3" pin="S"/>
+<pinref part="X1" gate="-1" pin="S"/>
+<wire x1="15.24" y1="50.8" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
+<junction x="20.32" y="50.8"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="V+"/>
@@ -11993,11 +11993,11 @@ NS Package M08A</description>
 <pinref part="IC4" gate="P" pin="V-"/>
 </segment>
 <segment>
-<pinref part="X1" gate="-1" pin="S"/>
 <pinref part="C7" gate="G$1" pin="-"/>
-<wire x1="15.24" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="P-1" gate="1" pin="-5V"/>
 <wire x1="22.86" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-3" pin="S"/>
+<wire x1="15.24" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <junction x="20.32" y="45.72"/>
 </segment>
 </net>
