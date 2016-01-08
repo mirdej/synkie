@@ -3549,6 +3549,7 @@ variable-capacitance diode (Infineon)</description>
 <sheets>
 <sheet>
 <plain>
+<text x="144.78" y="-53.34" size="1.778" layer="91">2016-01-08 Check paper schema for current debugging status</text>
 </plain>
 <instances>
 <instance part="T1" gate="G$1" x="88.9" y="60.96"/>
