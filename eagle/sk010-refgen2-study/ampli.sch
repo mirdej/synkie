@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,12 +39,12 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="6" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -6063,17 +6063,16 @@ Source: AVX .. aphvc.pdf</description>
 </classes>
 <parts>
 <part name="IC1" library="linear" deviceset="LM833" device="D"/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="R2010"/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="R2010"/>
-<part name="R4" library="rcl" deviceset="R-EU_" device="R2010"/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="R2010"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="R2010"/>
-<part name="R6" library="rcl" deviceset="R-EU_" device="R2010"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R2010"/>
-<part name="R8" library="rcl" deviceset="R-EU_" device="R2010"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="R3" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="R1206"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="R1206"/>
 <part name="I1+" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="I1-" library="wirepad" deviceset="3,17/1,1" device=""/>
-<part name="G1" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="O1" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="P+1" library="supply1" deviceset="V+" device=""/>
 <part name="P-1" library="supply1" deviceset="V-" device=""/>
@@ -6083,9 +6082,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="X1" library="con-molex" deviceset="22-23-2031" device=""/>
 <part name="I2+" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="I2-" library="wirepad" deviceset="3,17/1,1" device=""/>
-<part name="G2" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="O2" library="wirepad" deviceset="3,17/1,1" device=""/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="V+" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="V-" library="wirepad" deviceset="3,17/1,1" device=""/>
 </parts>
@@ -6107,7 +6104,6 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="R8" gate="G$1" x="71.12" y="27.94"/>
 <instance part="I1+" gate="1" x="33.02" y="91.44"/>
 <instance part="I1-" gate="1" x="33.02" y="68.58"/>
-<instance part="G1" gate="1" x="25.4" y="81.28" rot="R180"/>
 <instance part="O1" gate="1" x="91.44" y="81.28" rot="R180"/>
 <instance part="P+1" gate="1" x="2.54" y="96.52"/>
 <instance part="P-1" gate="1" x="2.54" y="66.04"/>
@@ -6119,9 +6115,7 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="X1" gate="-3" x="-5.08" y="83.82" rot="R180"/>
 <instance part="I2+" gate="1" x="33.02" y="50.8"/>
 <instance part="I2-" gate="1" x="33.02" y="27.94"/>
-<instance part="G2" gate="1" x="25.4" y="40.64" rot="R180"/>
 <instance part="O2" gate="1" x="91.44" y="40.64" rot="R180"/>
-<instance part="GND2" gate="1" x="15.24" y="33.02"/>
 <instance part="V+" gate="1" x="-7.62" y="91.44"/>
 <instance part="V-" gate="1" x="-7.62" y="71.12"/>
 </instances>
@@ -6227,17 +6221,8 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="7.62" y1="81.28" x2="15.24" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="81.28" x2="15.24" y2="76.2" width="0.1524" layer="91"/>
 <junction x="7.62" y="81.28"/>
-<pinref part="G1" gate="1" pin="P"/>
-<wire x1="22.86" y1="81.28" x2="15.24" y2="81.28" width="0.1524" layer="91"/>
-<junction x="15.24" y="81.28"/>
 <pinref part="X1" gate="-2" pin="S"/>
 <wire x1="-2.54" y1="81.28" x2="7.62" y2="81.28" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="15.24" y1="40.64" x2="15.24" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="G2" gate="1" pin="P"/>
-<wire x1="22.86" y1="40.64" x2="15.24" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
