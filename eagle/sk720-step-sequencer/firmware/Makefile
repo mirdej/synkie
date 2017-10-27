@@ -29,7 +29,7 @@ COMPILE = avr-gcc -Wall -Os -I.  -mmcu=$(DEVICE) -DF_CPU=$(F_CPU)#-DDEBUG_LEVEL=
 # NEVER compile the final product with debugging! Any debug output will
 # distort timing so that the specs can't be met.
 
-OBJECTS = build/main.o
+OBJECTS = build/main.o build/light_ws2812.o
 
 
 # symbolic targets:

@@ -15415,6 +15415,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="P+20" library="supply1" deviceset="+5V" device=""/>
 <part name="GND67" library="supply1" deviceset="GND" device=""/>
 <part name="C22" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="INSYNC?" library="wirepad" deviceset="3,17/1,1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15618,6 +15619,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="P+20" gate="1" x="-109.22" y="73.66"/>
 <instance part="GND67" gate="1" x="-109.22" y="60.96"/>
 <instance part="C22" gate="G$1" x="-109.22" y="66.04" rot="R180"/>
+<instance part="INSYNC?" gate="1" x="-10.16" y="96.52" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -16428,11 +16430,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="-109.22" y1="109.22" x2="-91.44" y2="109.22" width="0.1524" layer="91"/>
 <label x="-104.14" y="109.22" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="BUTTONS" gate="A" pin="3"/>
-<wire x1="78.74" y1="58.42" x2="66.04" y2="58.42" width="0.1524" layer="91"/>
-<label x="66.04" y="58.42" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="SCK" class="0">
 <segment>
@@ -16478,11 +16475,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="IC1" gate="G$1" pin="PB3(MOSI/OC2)"/>
 <wire x1="-43.18" y1="55.88" x2="-38.1" y2="55.88" width="0.1524" layer="91"/>
 <label x="-43.18" y="55.88" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="BUTTONS" gate="A" pin="6"/>
-<wire x1="78.74" y1="50.8" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
-<label x="66.04" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -16597,6 +16589,37 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="15.24" y="248.92"/>
 <junction x="15.24" y="203.2"/>
 <junction x="15.24" y="157.48"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="INSYNC?" gate="1" pin="P"/>
+<pinref part="IC1" gate="G$1" pin="PC5(ADC5/SCL)"/>
+<wire x1="-12.7" y1="96.52" x2="-43.18" y2="96.52" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LATCH" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="PB2(SS/OC1B)"/>
+<wire x1="-43.18" y1="58.42" x2="33.02" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="58.42" x2="33.02" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="40.64" x2="71.12" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="40.64" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="BUTTONS" gate="A" pin="6"/>
+<wire x1="71.12" y1="50.8" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<label x="10.16" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PIXELS" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="PB1(OC1A)"/>
+<wire x1="-43.18" y1="60.96" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="60.96" x2="48.26" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="68.58" x2="66.04" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="68.58" x2="66.04" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="58.42" x2="78.74" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="BUTTONS" gate="A" pin="3"/>
+<label x="10.16" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

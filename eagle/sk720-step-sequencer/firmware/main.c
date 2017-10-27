@@ -15,171 +15,223 @@
 #include <avr/io.h>			// include I/O definitions (port names, pin names, etc)
 #include <avr/wdt.h>		// include watchdog timer support
 #include <avr/interrupt.h>	// include interrupt support
+#include "light_ws2812.h"
 
 // ==============================================================================
 // Globals
 // ------------------------------------------------------------------------------
 
+unsigned char insync; 			// flag if we're changing outputs synced to video frame rate
+unsigned char step_idx;
+unsigned char steps[8];
+unsigned char last_buttons[5];
 
+unsigned char bank;
+
+#define PIXELS 36
+struct cRGB colors[8];
+struct cRGB led[PIXELS];
+unsigned char leds_changed;
 
 // ==============================================================================
 // Functions
 // ------------------------------------------------------------------------------
 
+void output() {
+	PORTC = (PORTC & ~0x07) | (step_idx & 0x07);	// output address
+	PORTD = steps[step_idx];						// set muxes
+	leds_changed = 1;
+}
 
+void trigger() {
+	step_idx++;
+	step_idx %=8;
+	if (!insync) {
+		output();
+	}
+}
+
+//------------------------------------------ check SPI
+
+unsigned char SPI_transmit(unsigned char cData) {
+	SPDR = cData;
+	while(!(SPSR & (1 << SPIF))){ ; }
+	return SPDR;
+}
+
+void checkSPI(void) {
+	unsigned char i,j,triggers,temp,step,mux;
+
+	PORTB |= (1 << 2); // latch
+	for (j = 0; j<5; j++ ) {
+		temp = SPI_transmit(0);
+		temp = ~temp;
+
+		if (temp != last_buttons[j]) {
+			
+			triggers = temp & ~last_buttons[j];
+
+			for (i = 0; i < 8; i++) {
+				if (triggers & (1 << i)) {
+					leds_changed = 1;
+					
+					if (j == 4) {				// bank select
+						if (i > 3) {				// don't look at unconnected row
+							bank = i - 4;
+						}
+					} else {					// set step
+						step = j*2;
+						if (i > 3) {
+							step++;
+							mux = i-4;
+						} else {
+							mux = i;
+						}
+						
+						steps[step] &= (0x03 	<< (bank*2));		// mask
+						steps[step] |= (mux 	<< (bank*2));		// set new value
+					}
+				}
+			}	
+		}
+		last_buttons[j] = temp;
+	}
+	PORTB &= ~(1 << 2); // unlatch
+}
+
+
+void update_leds() {
+	if (!leds_changed) return;
+	leds_changed = 0;
+	
+	unsigned char i,a;
+	struct cRGB color1,color2;
+	color1 		= colors[bank+2];
+	color2.r 	= color1.r/4;
+	color2.g 	= color1.g/4;	
+	color2.b 	= color1.b/4;
+	
+	for (i = 0; i < 36; i++) { // set all to black first, I'm too lazy
+		led[i] = colors[0]; 		// black
+	}
+
+	for (i = 0; i < 8; i++ ) {
+		if (i == step_idx) {
+			led[(i*4)] 		= color2;
+			led[(i*4) + 1] 	= color2;
+			led[(i*4) + 2] 	= color2;
+			led[(i*4) + 3] 	= color2;
+		}
+		
+		a = steps[i] >> (bank * 2);
+		a &= 0x03;
+		led[(i*4)+a] = color1;
+	}
+	
+	led[32 + bank] = color1; 			// bank color
+}
 
 // ------------------------------------------------------------------------------
 // Init
 // ------------------------------------------------------------------------------
 void init (void) {
+	step_idx = 0;
 	
 	//PORTB:  ODD/even input, SPI
+	DDRB 	= (1 << PB2) | (1 << PB1);	// PB1: Neopixels, PB2: Latch for buttons
 	PORTB 	= (1 << PC0);	//pull up sync in??
 	
 	//PORTC
 	DDRC 	= (1 << PC2) | (1 << PC1) | (1 << PC0); 		// Address Output
-	PORTC 	= (1 << PC4) | (1 << PC3); 						// pullup for trigger & reset inputs
+	PORTC 	= (1 << PC5) | (1 << PC4) | (1 << PC3); 						// pullup for trigger & reset inputs & in-sync input
 	
 	//PORTD:	Muxes
 	DDRD 	= 0xff;
 	
-	// Pin change Interrupts:
-	// Trigger on PCINT11
-	// Reset on PCINT12	
+	// ------------------		Pin change Interrupts:
+	// Trigger on PC3 = PCINT11
+	// Reset on PC4 = PCINT12	
 	// Odd/EVEN on PCINT0
 	PCICR 	= (1 << PCIE1) | (1 << PCIE0);
-	PCMSK1 	= (1 << PCINT13);
-	PCMSK0  = (1 << PCINT12);
+	PCMSK1 	= (1 << PCINT12) |(1 << PCINT11);
+	PCMSK0  = (1 << PCINT2);
 		
 	
-	// ------------------		ADC
-	//"By default, the successive approximation circuitry requires an input clock frequency between 50kHz and 200kHz to get maximum resolution"
-	// "A normal conversion takes 13 ADC clock cycles. The first conversion after the ADC is switched "
-	// Max 200kHz @ 20 MHz -> >1700 clk cycles... to slow for 16khz sampling
-	
-	ADCSRA 	= (1 << ADEN | 1 << ADATE | 1 << ADIE);						// Enable ADC
+	// ------------------		ADC -> 0-0.7V Ramp input on ADC7	
+	ADCSRA 	= (1 << ADEN | 1 << ADATE | 1 << ADIE);						// Enable ADC, free running mode, ADC Interrupt
 	ADCSRA |= (1 << ADPS2) | (1 << ADPS1);								// prescaler 64
-	ADMUX = (1 << ADLAR);												// we're only reading 8bits, so left adjust result
-	ADCSRB	= (1 << ADTS1) | (1 << ADTS0);								// Trigger ADC on Timer 0 COMPA
+	ADMUX 	= (1 << ADLAR) | 0x07;										// ADC7, we're only reading 8bits, so left adjust result
 	ADCSRA |= (1 << ADSC);												// Start Conversion
 	
-	// Timer 1 : speed of reading back samples -> output frequency
-	// 
-	OCR1AL = 0xdf;
-	TCCR1A = ( 1 << COM1A0 );						// Toggle OC1A on compare match, 
-	TCCR1B = ( 1 << WGM12 | 1 << CS10);				// CTC Mode, no prescaler @20mhz / 256 -> max 78.125khz sampling rate
-	TIMSK1 = (1 << OCIE1A); 
 
 	wdt_enable(WDTO_30MS);			// enable watchdog timer
 	sei();
 }
 
 
+// ------------------------------------------------------------------------------
+// Interrupts
+// ------------------------------------------------------------------------------
 
 
 // ------------------------------------------------------------------------------
-// 													odd/even - vertical blanking
-// 											on one field sample cv, on other video
-ISR (PCINT0_vect) {  						
-	line_idx = 0;	
-	if (PINB & (1 << PB2)) {
-		if (PINB & (1 << PB3))	{		
-			do_sample_video = 1;
-			ADCSRA |= (1 << ADPS2) | (1 << ADPS1);								// prescaler 64
-			ADMUX = (1 << ADLAR);												// adc0
-		}
-	} else {
-		ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS1);								// prescaler 128 for 10bit resolution
+// 													odd/even - vertical blanking 25Hz
+// 											
+//	check buttons, output steps if in sync with video
 
-		ADMUX = (1 << ADLAR) | 1;		
-		do_sample_video = 0;
-	}
+ISR (PCINT0_vect) {  	
+	// check switches
+	insync = PINC & (1 << PC5);
 	
-	if (PINC & (1 << PC3)) {	
-		fast_mode = 1;
-	} else {
-		fast_mode = 0;
-	}
+	// check buttons
+	checkSPI();
 	
-	if (PINB & (1 << PB0)) {	
-		ramp_input = 0;
-		TCCR1B |= (1 << CS10);				// run with no prescaler
-	} else {
-		ramp_input = 1;
-		TCCR1B &= ~(1 << CS10);				//stop timer		
-	}
+	// set leds
+	ws2812_sendarray((uint8_t *)led,PIXELS*3);
+
+	// set muxes and address output
+	output();
 }
 
 // ------------------------------------------------------------------------------
-// 														H-Sync
+// 													Trigger 
 
-ISR (PCINT1_vect) {
-	// Start Timer -> Pulse delay
-	OCR0A 	= x_pos;
-	TCCR0B |= ( 1 << CS01 );		// clk/8 prescaler -> start timer
-	line_idx++;
+ISR (PCINT11_vect) {
+	if (PINC & (1 << PC3)) {					// positive edge only
+		trigger();
+	}
 }  
 
 // ------------------------------------------------------------------------------
-// 														Pulse Start
-ISR (TIMER0_COMPA_vect) {
-	PORTC |= (1 << 4);	
-	TCCR0B &= ~( 1 << CS01 );		// stop timer  - adc is started automatically by interrupt
-}
+// 													Reset 
+
+ISR (PCINT12_vect) {
+	if (PINC & (1 << PC4)) {					// positive edge only
+		step_idx = 0;
+		if (!insync) {
+			output();
+		}
+	}
+}  
 
 
 // ------------------------------------------------------------------------------
 // 														ADC complete interrupt
 
 ISR (ADC_vect) {
-	PORTC &= ~(1 << 4);					//stop pulseout
-	if (do_sample_video) {
-		if (line_idx > 35) {
-			if (line_idx < 292) {
-				table[line_idx - 36] = ADCH;
-			}
-		}
-	} else {
-		if (line_idx == 50) {
-			if (ramp_input) {
-				cv_input = ADCH;
-				PORTD = table[cv_input];
-			} else {
-				cv_input = (ADCL | ADCH << 2);				// Left adjusted ADC result
-				cv_input = 1024 - cv_input;
-			
-				cv_input = cv_input + 20;				// keep minimum 20 clks -> 1MHZ overflow / 256 Table size -> 3.9kHz fastest
-			
-				if (!fast_mode) {
-					cv_input *= 16;				
-				}
-			
-				OCR1AL = (unsigned char)cv_input;
-				OCR1AH = (unsigned char)(cv_input >> 8);
-			}
-			
-			ADCSRA |= (1 << ADPS2) | (1 << ADPS1);								// prescaler 64
-			ADMUX = (1 << ADLAR) | 2;												// adc02
-				
-
-		} else if (line_idx == 120) {
-			cv_input = ADCH;
-			cv_input /= 2;
-			if (cv_input > 1) {						// only if there seems to be signal
-				x_pos = cv_input + 10;
-			}
-			ADCSRA |= (1 << ADPS2) | (1 << ADPS1);								// prescaler 64
-			ADMUX = (1 << ADLAR) ;												// adc0
-		}
+	unsigned char trigger_level;
+	trigger_level = step_idx + 1;
+	trigger_level %= 8;
+	trigger_level = trigger_level * 32;
+	if (ADCH > trigger_level){
+		trigger();
 	}
+	
+	//todo: backwards
 }
 
-// ------------------------------------------------------------------------------
-// 														Timer 1 Overflow: output next sample
 
-ISR (TIMER1_COMPA_vect) {
-	PORTD = table[table_read_idx++];
-} 
+
 
 
 // ==============================================================================
@@ -188,11 +240,22 @@ ISR (TIMER1_COMPA_vect) {
 
 int main (void) {
 
-	
+	//Rainbowcolors
+    colors[0].r=0; colors[0].g=0; colors[0].b=0;	// black
+    colors[1].r=255; colors[1].g=000; colors[1].b=000;//red
+    colors[2].r=255; colors[2].g=100; colors[2].b=000;//orange
+    colors[3].r=100; colors[3].g=255; colors[3].b=000;//yellow
+    colors[4].r=000; colors[4].g=255; colors[4].b=000;//green
+    colors[5].r=000; colors[5].g=100; colors[5].b=255;//light blue (türkis)
+    colors[6].r=000; colors[6].g=000; colors[6].b=255;//blue
+    colors[7].r=100; colors[7].g=000; colors[7].b=255;//violet
+
+
 	init();
 
 	while(1) {
-		wdt_reset();		
+		wdt_reset();	
+		update_leds();		// low priority led update;	
 	}
 	return 0;
 }	
