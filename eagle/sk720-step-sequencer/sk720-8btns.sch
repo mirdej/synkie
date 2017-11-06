@@ -6620,7 +6620,7 @@ Based on the following sources:
 <instance part="R8" gate="G$1" x="-165.1" y="-25.4" rot="R90"/>
 <instance part="P+8" gate="1" x="-165.1" y="-17.78"/>
 <instance part="U$9" gate="G$1" x="76.2" y="60.96" rot="R180"/>
-<instance part="U$9" gate="G$2" x="68.58" y="53.34" rot="R180"/>
+<instance part="U$9" gate="G$2" x="66.04" y="53.34" rot="R180"/>
 <instance part="U$9" gate="G$3" x="71.12" y="30.48" rot="R180"/>
 <instance part="U$9" gate="G$4" x="71.12" y="27.94" rot="R180"/>
 <instance part="U$10" gate="G$1" x="106.68" y="83.82"/>
@@ -6970,10 +6970,11 @@ Based on the following sources:
 <pinref part="IC2" gate="A" pin="RCK"/>
 <wire x1="78.74" y1="48.26" x2="73.66" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="48.26" x2="73.66" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="53.34" x2="71.12" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="53.34" x2="68.58" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="A" pin="SRCK"/>
 <wire x1="78.74" y1="55.88" x2="73.66" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="55.88" x2="73.66" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="53.34" x2="71.12" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LATCH" class="0">
@@ -7026,14 +7027,14 @@ Based on the following sources:
 <pinref part="LED7" gate="G$1" pin="DO"/>
 </segment>
 </net>
-<net name="N$17" class="0">
+<net name="PXLOUT" class="0">
 <segment>
 <pinref part="LED8" gate="G$1" pin="DO"/>
 <pinref part="PXLOUT" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="127" x2="45.72" y2="134.62" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$18" class="0">
+<net name="PXLIN" class="0">
 <segment>
 <pinref part="LED1" gate="G$1" pin="DI"/>
 <pinref part="PIXLN" gate="G$1" pin="1"/>

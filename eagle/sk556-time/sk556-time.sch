@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16782,6 +16782,9 @@ NS Package M08A</description>
 <sheets>
 <sheet>
 <plain>
+<rectangle x1="-5.08" y1="175.26" x2="66.04" y2="220.98" layer="91"/>
+<text x="48.26" y="223.52" size="1.778" layer="91">seems not to work!!</text>
+<text x="68.58" y="210.82" size="1.778" layer="91">seems not to work!!</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="35.56" y="48.26"/>
@@ -17048,7 +17051,6 @@ NS Package M08A</description>
 </segment>
 <segment>
 <pinref part="IC2" gate="P" pin="V-"/>
-<pinref part="IC2" gate="P" pin="V-"/>
 <pinref part="GND23" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -17090,10 +17092,7 @@ NS Package M08A</description>
 </segment>
 <segment>
 <pinref part="C8" gate="G$1" pin="2"/>
-<pinref part="C8" gate="G$1" pin="2"/>
 <pinref part="IC2" gate="P" pin="V+"/>
-<pinref part="IC2" gate="P" pin="V+"/>
-<pinref part="P+6" gate="VCC" pin="VCC"/>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
 </segment>
 <segment>
@@ -17105,7 +17104,6 @@ NS Package M08A</description>
 <pinref part="P+8" gate="VCC" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="P+10" gate="VCC" pin="VCC"/>
 <pinref part="P+10" gate="VCC" pin="VCC"/>
 </segment>
 </net>
@@ -17550,7 +17548,6 @@ NS Package M08A</description>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="C7" gate="G$1" pin="2"/>
 <pinref part="C7" gate="G$1" pin="2"/>
 <pinref part="IC1" gate="P" pin="V+"/>
 </segment>

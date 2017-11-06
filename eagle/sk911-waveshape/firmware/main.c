@@ -43,12 +43,13 @@ unsigned char ramp_input;
 // Init
 // ------------------------------------------------------------------------------
 void init (void) {
+	DDRB = (1 < PB1);		//Osc_Out
+	DDRC = (1 << PC4); 		//pulse out
+	DDRD = 0xFF; // R2R Ladder DAC
 	
-	DDRC = (1 << 4); 		//pulse out
 	PORTC |= (1 << PC3); 	// pullup for fast/slow, switch
 	PORTB |= (1 << PB3); 	// pullup for rec switch
 	PORTB |= (1 << PB0);	// pullup for osc/ramp, switch
-	DDRD = 0xFF; // R2R Ladder DAC
 	
 	
 	
