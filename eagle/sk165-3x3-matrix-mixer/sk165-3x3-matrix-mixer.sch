@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -11796,6 +11796,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <sheets>
 <sheet>
 <plain>
+<text x="-50.8" y="83.82" size="1.778" layer="91">100k durtch 10 ersetzen?</text>
+<text x="-58.42" y="48.26" size="1.778" layer="91">kondenser</text>
 </plain>
 <instances>
 <instance part="R7" gate="G$1" x="-60.96" y="63.5" rot="R270"/>
@@ -11868,7 +11870,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="P+2" gate="1" x="38.1" y="124.46" rot="R90"/>
 <instance part="P-2" gate="1" x="38.1" y="119.38" rot="R270"/>
 <instance part="GND18" gate="1" x="38.1" y="121.92" rot="R270"/>
-<instance part="R24" gate="G$1" x="50.8" y="55.88"/>
+<instance part="R24" gate="G$1" x="58.42" y="55.88"/>
 <instance part="R25" gate="G$1" x="-60.96" y="2.54" rot="R270"/>
 <instance part="R26" gate="G$1" x="-53.34" y="7.62"/>
 <instance part="R27" gate="G$1" x="-35.56" y="7.62"/>
@@ -11999,7 +12001,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="BUF" gate="G$3" pin="+5V"/>
 <pinref part="P+6" gate="1" pin="+5V"/>
 <pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="C1" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="D6" gate="-B1" pin="C"/>
@@ -12025,7 +12026,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="BUF1" gate="G$3" pin="+5V"/>
 <pinref part="P+7" gate="1" pin="+5V"/>
-<pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="C3" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -12058,7 +12058,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="C15" gate="G$1" pin="2"/>
 <pinref part="BUF2" gate="G$3" pin="+5V"/>
 <pinref part="P+17" gate="1" pin="+5V"/>
-<pinref part="P+17" gate="1" pin="+5V"/>
 </segment>
 </net>
 <net name="-5V" class="0">
@@ -12069,7 +12068,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="BUF" gate="G$3" pin="-5V"/>
 <pinref part="P-8" gate="1" pin="-5V"/>
-<pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="C2" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -12095,7 +12093,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="BUF1" gate="G$3" pin="-5V"/>
 <pinref part="P-9" gate="1" pin="-5V"/>
-<pinref part="C5" gate="G$1" pin="2"/>
 <pinref part="C5" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -12127,7 +12124,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="C16" gate="G$1" pin="2"/>
 <pinref part="BUF2" gate="G$3" pin="-5V"/>
-<pinref part="P-17" gate="1" pin="-5V"/>
 <pinref part="P-17" gate="1" pin="-5V"/>
 </segment>
 </net>
@@ -12164,7 +12160,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="BUF" gate="G$1" pin="OUT"/>
 <pinref part="R16" gate="G$1" pin="1"/>
-<pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="66.04" x2="-15.24" y2="66.04" width="0.1524" layer="91"/>
 </segment>
@@ -12243,6 +12238,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="GND7" gate="1" pin="GND"/>
 <pinref part="R24" gate="G$1" pin="1"/>
+<wire x1="53.34" y1="55.88" x2="45.72" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R25" gate="G$1" pin="2"/>
@@ -12410,7 +12406,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
 <pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="40.64" x2="-15.24" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="BUF" gate="G$2" pin="OUT"/>
 </segment>
@@ -12465,7 +12460,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="R24" gate="G$1" pin="2"/>
 <pinref part="U$1" gate="G$1" pin="-IN"/>
-<wire x1="55.88" y1="55.88" x2="68.58" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="55.88" x2="68.58" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -12501,7 +12496,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="BUF1" gate="G$1" pin="OUT"/>
 <pinref part="R28" gate="G$1" pin="1"/>
-<pinref part="R33" gate="G$1" pin="2"/>
 <pinref part="R33" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="5.08" x2="-15.24" y2="5.08" width="0.1524" layer="91"/>
 </segment>
@@ -12572,7 +12566,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <net name="N$31" class="0">
 <segment>
 <pinref part="R36" gate="G$1" pin="1"/>
-<pinref part="R38" gate="G$1" pin="2"/>
 <pinref part="R38" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-20.32" x2="-15.24" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="BUF1" gate="G$2" pin="OUT"/>
@@ -12655,7 +12648,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="BUF2" gate="G$1" pin="OUT"/>
 <pinref part="R49" gate="G$1" pin="1"/>
 <pinref part="R54" gate="G$1" pin="2"/>
-<pinref part="R54" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-55.88" x2="-15.24" y2="-55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -12725,7 +12717,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <net name="N$48" class="0">
 <segment>
 <pinref part="R57" gate="G$1" pin="1"/>
-<pinref part="R59" gate="G$1" pin="2"/>
 <pinref part="R59" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-81.28" x2="-15.24" y2="-81.28" width="0.1524" layer="91"/>
 <pinref part="BUF2" gate="G$2" pin="OUT"/>

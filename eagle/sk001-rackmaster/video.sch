@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1291,6 +1291,64 @@ grid 5.08 mm, diameter 10.5 mm</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="con-molex">
+<description>&lt;b&gt;Molex Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="22-23-2021">
+<description>.100" (2.54mm) Center Headers - 2 Pin</description>
+<wire x1="-2.54" y1="3.175" x2="2.54" y2="3.175" width="0.254" layer="21"/>
+<wire x1="2.54" y1="3.175" x2="2.54" y2="1.27" width="0.254" layer="21"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="2.54" y1="-3.175" x2="-2.54" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="-3.175" x2="-2.54" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="3.175" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="1" shape="long" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="1" shape="long" rot="R90"/>
+<text x="-2.54" y="3.81" size="1.016" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-5.08" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MV">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<text x="-0.762" y="1.397" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="M">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="22-23-2021" prefix="X">
+<description>.100" (2.54mm) Center Header - 2 Pin</description>
+<gates>
+<gate name="-1" symbol="MV" x="0" y="0" addlevel="always" swaplevel="1"/>
+<gate name="-2" symbol="M" x="0" y="-2.54" addlevel="always" swaplevel="1"/>
+</gates>
+<devices>
+<device name="" package="22-23-2021">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="MOLEX" constant="no"/>
+<attribute name="MPN" value="22-23-2021" constant="no"/>
+<attribute name="OC_FARNELL" value="1462926" constant="no"/>
+<attribute name="OC_NEWARK" value="25C3832" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1565,6 +1623,10 @@ grid 5.08 mm, diameter 10.5 mm</description>
 <part name="P+28" library="synkie" deviceset="+5V" device=""/>
 <part name="P-23" library="synkie" deviceset="-5V" device=""/>
 <part name="GND45" library="synkie" deviceset="0V" device=""/>
+<part name="TO-PHASE-DELAY" library="con-molex" deviceset="22-23-2021" device=""/>
+<part name="X4" library="con-molex" deviceset="22-23-2021" device=""/>
+<part name="GND56" library="synkie" deviceset="0V" device=""/>
+<part name="GND57" library="synkie" deviceset="0V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1573,6 +1635,7 @@ grid 5.08 mm, diameter 10.5 mm</description>
 <text x="43.18" y="132.08" size="1.778" layer="91">check footprint!</text>
 <text x="43.18" y="187.96" size="1.778" layer="91">check footprint!</text>
 <text x="43.18" y="241.3" size="1.778" layer="91">check footprint!</text>
+<text x="294.64" y="73.66" size="1.778" layer="91">AC COUPLE</text>
 </plain>
 <instances>
 <instance part="D1" gate="-B1" x="-22.86" y="73.66" rot="R270"/>
@@ -1879,6 +1942,12 @@ grid 5.08 mm, diameter 10.5 mm</description>
 <instance part="P+28" gate="1" x="210.82" y="-27.94"/>
 <instance part="P-23" gate="1" x="210.82" y="-43.18"/>
 <instance part="GND45" gate="1" x="223.52" y="-43.18"/>
+<instance part="TO-PHASE-DELAY" gate="-1" x="68.58" y="10.16"/>
+<instance part="TO-PHASE-DELAY" gate="-2" x="68.58" y="15.24"/>
+<instance part="X4" gate="-1" x="213.36" y="10.16"/>
+<instance part="X4" gate="-2" x="213.36" y="15.24"/>
+<instance part="GND56" gate="1" x="66.04" y="7.62"/>
+<instance part="GND57" gate="1" x="210.82" y="7.62"/>
 </instances>
 <busses>
 </busses>
@@ -2602,6 +2671,14 @@ grid 5.08 mm, diameter 10.5 mm</description>
 <wire x1="220.98" y1="-38.1" x2="223.52" y2="-38.1" width="0.1524" layer="91"/>
 <junction x="223.52" y="-38.1"/>
 </segment>
+<segment>
+<pinref part="TO-PHASE-DELAY" gate="-1" pin="S"/>
+<pinref part="GND56" gate="1" pin="0V"/>
+</segment>
+<segment>
+<pinref part="X4" gate="-1" pin="S"/>
+<pinref part="GND57" gate="1" pin="0V"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -2641,25 +2718,14 @@ grid 5.08 mm, diameter 10.5 mm</description>
 <pinref part="U3" gate="G$1" pin="+IN"/>
 <wire x1="35.56" y1="68.58" x2="66.04" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="68.58" x2="68.58" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="33.02" x2="210.82" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="15.24" x2="66.04" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="68.58" x2="66.04" y2="40.64" width="0.1524" layer="91"/>
 <junction x="66.04" y="68.58"/>
-<pinref part="IC3" gate="A" pin="Z1"/>
 <wire x1="66.04" y1="40.64" x2="66.04" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="33.02" x2="223.52" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="A" pin="Y1"/>
-<wire x1="223.52" y1="40.64" x2="210.82" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="40.64" x2="210.82" y2="33.02" width="0.1524" layer="91"/>
-<junction x="210.82" y="33.02"/>
-<pinref part="IC3" gate="A" pin="X1"/>
-<wire x1="223.52" y1="48.26" x2="210.82" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="48.26" x2="210.82" y2="40.64" width="0.1524" layer="91"/>
-<junction x="210.82" y="40.64"/>
 <pinref part="C6" gate="G$1" pin="1"/>
 <wire x1="0" y1="38.1" x2="0" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="0" y1="40.64" x2="66.04" y2="40.64" width="0.1524" layer="91"/>
 <junction x="66.04" y="40.64"/>
+<pinref part="TO-PHASE-DELAY" gate="-2" pin="S"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -3556,6 +3622,22 @@ grid 5.08 mm, diameter 10.5 mm</description>
 <segment>
 <pinref part="VIDEO_OUT3" gate="1" pin="P"/>
 <pinref part="R43" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$90" class="0">
+<segment>
+<pinref part="IC3" gate="A" pin="Z1"/>
+<wire x1="210.82" y1="33.02" x2="210.82" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="A" pin="Y1"/>
+<wire x1="223.52" y1="40.64" x2="210.82" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="A" pin="X1"/>
+<wire x1="223.52" y1="48.26" x2="210.82" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="48.26" x2="210.82" y2="40.64" width="0.1524" layer="91"/>
+<junction x="210.82" y="40.64"/>
+<wire x1="210.82" y1="40.64" x2="210.82" y2="33.02" width="0.1524" layer="91"/>
+<junction x="210.82" y="33.02"/>
+<wire x1="210.82" y1="33.02" x2="223.52" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="X4" gate="-2" pin="S"/>
 </segment>
 </net>
 </nets>

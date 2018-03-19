@@ -54,15 +54,15 @@ void init (void) {
 	
 	
 	// Pin change Interrupts
-	// HSYNC on PC5 = PCINT13
-	// Odd/EVEN on PB2 = PCINT2
+	// HSYNC on 		PC5 = PCINT13
+	// Odd/EVEN on 		PB2 = PCINT2
 	PCICR 	= (1 << PCIE1) | (1 << PCIE0);
 	PCMSK1 	= (1 << PCINT13);
-	PCMSK0  = (1 << PCINT2);
+	PCMSK0  = (1 << PCINT2);		// PB2 - O/E
 	
 	// Timer 0 : H-Sync Pulse Delay max 64us  @ 20Mhz = 1280 Clock Cycles
 	//												Prescaler 8 -> OCR0 0-160 (better something like 10-150...?)
-	x_pos  = 150;
+	set_x_pos(50);
 	TCCR0A = 0; 				// Normal mode, no OC= pins connected
 	TIMSK0 = ( 1 << OCIE0A);	// Output compare interrupt enabled
 								// Timer still stopped
@@ -97,17 +97,17 @@ void init (void) {
 // 													odd/even - vertical blanking
 // 											on one field sample cv, on other video
 ISR (PCINT0_vect) {  						
-	line_idx = 0;	
+	line_idx = 0;
 	if (PINB & (1 << PB2)) {
-		if (PINB & (1 << PB3))	{		
+		if (PINB & (1 << PB3))	{			// field 1
 			do_sample_video = 1;
 			ADCSRA |= (1 << ADPS2) | (1 << ADPS1);								// prescaler 64
-			ADMUX = (1 << ADLAR);												// adc0
+			ADMUX = (1 << ADLAR);												// adc0				= VIDEO 
 		}
 	} else {
 		ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS1);								// prescaler 128 for 10bit resolution
 
-		ADMUX = (1 << ADLAR) | 1;		
+		ADMUX = (1 << ADLAR) | 1;			// adc 1 = CV
 		do_sample_video = 0;
 	}
 	
@@ -123,7 +123,7 @@ ISR (PCINT0_vect) {
 	} else {
 		ramp_input = 1;
 		TCCR1B &= ~(1 << CS10);				//stop timer		
-	}
+	} 
 }
 
 // ------------------------------------------------------------------------------
@@ -131,19 +131,26 @@ ISR (PCINT0_vect) {
 
 ISR (PCINT1_vect) {
 	// Start Timer -> Pulse delay
-	OCR0A 	= x_pos;
-	TCCR0B |= ( 1 << CS01 );		// clk/8 prescaler -> start timer
-	line_idx++;
+if ( PINC & (1 << PC5)) {
+	TCNT0 = 0;
+		OCR0A 	= x_pos;
+		TCCR0B |= ( 1 << CS01 );		// clk/8 prescaler -> start timer
+		line_idx++;
+	}
 }  
 
 // ------------------------------------------------------------------------------
 // 														Pulse Start
 ISR (TIMER0_COMPA_vect) {
-	PORTC |= (1 << 4);	
+	PORTC |= (1 << 4);	 //Pulse High
 	TCCR0B &= ~( 1 << CS01 );		// stop timer  - adc is started automatically by interrupt
 }
 
-
+void set_x_pos(unsigned char n) {
+	if (n < 10) x_pos = 10;
+	else if (n > 130) x_pos = 130;
+	else x_pos = n;
+}
 // ------------------------------------------------------------------------------
 // 														ADC complete interrupt
 
@@ -164,14 +171,13 @@ ISR (ADC_vect) {
 				cv_input = (ADCL | ADCH << 2);				// Left adjusted ADC result
 				cv_input = 1024 - cv_input;
 			
-				cv_input = cv_input + 20;				// keep minimum 20 clks -> 1MHZ overflow / 256 Table size -> 3.9kHz fastest
 			
 				if (!fast_mode) {
 					cv_input *= 16;				
 				}
-			
-				OCR1AL = (unsigned char)cv_input;
-				OCR1AH = (unsigned char)(cv_input >> 8);
+				// keep minimum 20 clks -> 1MHZ overflow / 256 Table size -> 3.9kHz fastest
+				if (cv_input < 100) OCR1A = 100;
+				else OCR1A = cv_input;
 			}
 			
 			ADCSRA |= (1 << ADPS2) | (1 << ADPS1);								// prescaler 64
@@ -182,7 +188,9 @@ ISR (ADC_vect) {
 			cv_input = ADCH;
 			cv_input /= 2;
 			if (cv_input > 1) {						// only if there seems to be signal
-				x_pos = cv_input + 10;
+				set_x_pos(cv_input);
+			} else {
+				set_x_pos(50);
 			}
 			ADCSRA |= (1 << ADPS2) | (1 << ADPS1);								// prescaler 64
 			ADMUX = (1 << ADLAR) ;												// adc0
