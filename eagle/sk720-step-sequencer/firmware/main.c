@@ -55,6 +55,19 @@ void trigger() {
 	}
 }
 
+void step_up() {
+	trigger();
+}
+
+
+void step_down() {
+	if (step_idx) step_idx--;
+	else step_idx = 7;
+	if (!insync) {
+		output();
+	}
+}
+
 //------------------------------------------ check SPI
 
 unsigned char SPI_transmit(unsigned char cData) {
@@ -234,18 +247,37 @@ ISR (PCINT1_vect) {
 // 														ADC complete interrupt
 
 ISR (ADC_vect) {
-/*	unsigned char trigger_level;
-	trigger_level = step_idx + 1;
-	trigger_level %= 8;
-	trigger_level = trigger_level * 32;
-	if (ADCH > trigger_level){
-		trigger();
-	}
-	*/
+	unsigned int ramp_in = ADCH;
+	static unsigned int last_ramp_in;
+
+	ramp_in = (3 * last_ramp_in + ramp_in) / 4;
 	
-	//step_idx = ADCH / 32;
-	//todo: backwards
+	ramp_in %= 256;
+	last_ramp_in = ramp_in;
+
+	if (ramp_in > 2) {step_idx = ramp_in / 32; }
+	
+/*	unsigned char ramp_in = ADCH;
+	static unsigned char last_ramp_in;
+	static unsigned char ups[8] 		= {34,66,98,130,162,194,226,255};	// add some hysteresis
+	static unsigned char downs[8] 		= {0,30,62,94,126,158,190,222};
+	
+	if ((last_ramp_in > downs[step_idx]) && (last_ramp_in < ups[step_idx])) {
+	
+		if ((step_idx == 0) && (ramp_in > 250)) 	{ step_down();  	}	// special circle wrap case
+		if ((step_idx == 7) && (ramp_in < 3)) 		{ step_up();  		} 	// special circle wrap case
+		if (ramp_in > ups[step_idx]) 				{ step_up();  		}
+		if (ramp_in < downs[step_idx]) 				{ step_down();  	}	
+		
+	}
+	
+	last_ramp_in = ramp_in;
+	*/
 }
+
+// ------------------------------------------------------------------------------
+// 														Display Stuff
+
 
 void black() {
     uint8_t i;
