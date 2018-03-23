@@ -1,0 +1,110 @@
+//------------------------------------------------------------------------------------------
+//
+// 	SK166 4 x 4 Matrix Mixer							atmega 88 @ 20 MHz
+//
+//
+//
+// 	Part of the Synkie Project: www.synkie.net
+//
+// 	© 2018 Michael Egger, Licensed under GNU GPLv3
+//
+// 	needs MiniCore boards definition for atmega88 arduino support
+//  https://mcudude.github.io/MiniCore/package_MCUdude_MiniCore_index.json
+//  upload sketch with cmd-shift-U
+//
+//--------------------------------------------------------------------------------------------
+
+#include <SPI.h>
+
+int potis[16];
+
+//---------------------------------------------------------------------------------------------
+//																					SETUP
+//---------------------------------------------------------------------------------------------
+void setup() {
+	DDRC = 0x0F;		// PC0..3 are address inputs for potentiometer mux
+	int cs_pin;
+	
+	for ( cs_pin = 7; cs_pin < 11 ; cs_pin++) {
+		pinMode(cs_pin,OUTPUT);	// Slave selct pins
+		digitalWrite(cs_pin, HIGH);
+	}
+	
+	pinMode(4,OUTPUT);	// debug output
+	
+	attachInterrupt(digitalPinToInterrupt(3), vertical_blanking, CHANGE);
+
+
+	
+	
+	SPI.begin(); 
+	power_on_dacs();
+	
+}
+
+//---------------------------------------------------------------------------------------------
+//																					LOOP
+//---------------------------------------------------------------------------------------------
+
+void loop() {
+	static int pot_idx;
+
+	//continuosly read local potentiometers
+	PORTC = (PORTC & 0xF0) | (pot_idx & 0x0F);
+	potis[pot_idx] = analogRead(A6);
+	pot_idx++;
+	pot_idx %= 16;
+	
+}
+
+
+//---------------------------------------------------------------------------------------------
+//																				INTERRUPT
+void vertical_blanking() {
+	int sendval;
+	int cs_pin, i,n;
+	
+	digitalWrite(4,HIGH);					// debug out for measuring time this all takes
+	
+	for (cs_pin=7; cs_pin < 11 ; cs_pin++) {
+	
+		for (i = 0; i < 4; i++) 	{
+			digitalWrite(cs_pin,LOW);
+			n =  (cs_pin - 7) * 4 + i;
+			
+			sendval = potis[n] << 2;
+      		sendval &= 1023 << 2;
+      		sendval |= i << 12;
+
+			SPI.transfer16(sendval);
+			digitalWrite(cs_pin,HIGH);
+		}
+	}
+
+	digitalWrite(4,LOW);					// debug out for measuring time this all takes
+}
+
+
+//---------------------------------------------------------------------------------------------
+void power_on_dacs() {
+	static int sendval;
+	int cs_pin;
+	return;
+	
+	sendval = 0xf010;	
+	
+	for (cs_pin=7; cs_pin < 11 ; cs_pin++); {
+		digitalWrite(cs_pin,LOW);
+		delay(1);
+		SPI.transfer16(sendval);
+		digitalWrite(cs_pin,HIGH);
+	}
+	/*delay(100);
+	
+	for (cs_pin=7; cs_pin < 11 ; cs_pin++); {
+		digitalWrite(cs_pin,LOW);
+		delay(1);
+		SPI.transfer16(sendval);
+		digitalWrite(cs_pin,HIGH);
+	}*/
+}
