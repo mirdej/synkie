@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4265,7 +4265,7 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <wire x1="81.28" y1="-40.64" x2="83.82" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$19" class="0">
+<net name="O!E" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="ODD/EVEN"/>
 <wire x1="43.18" y1="22.86" x2="45.72" y2="22.86" width="0.1524" layer="91"/>
@@ -4301,7 +4301,7 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <junction x="0" y="-5.08"/>
 </segment>
 </net>
-<net name="N$22" class="0">
+<net name="H" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="SYNC"/>
 <wire x1="2.54" y1="27.94" x2="-2.54" y2="27.94" width="0.1524" layer="91"/>
