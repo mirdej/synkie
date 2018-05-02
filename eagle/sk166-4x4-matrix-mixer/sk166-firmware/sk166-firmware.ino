@@ -41,7 +41,8 @@ void setup() {
 	
 	SPI.begin(); 
 	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE2));
-
+	
+	for(int i = 0; i < 16; i++) {potis[i] = 0; }
 	delay(1000);
 	power_on_dacs();
 	
@@ -54,9 +55,11 @@ void setup() {
 void loop() {
 	static int pot_idx;
 
-	//continuosly read local potentiometers
-	PORTC = (PORTC & 0xF0) | (pot_idx & 0x0F);
-	//potis[pot_idx] = (pot_idx % 4) * 255;//analogRead(A6);
+		//continuosly read local potentiometers
+
+	//if ((pot_idx % 4) == 0) {pot_idx++; }			// Input "T" has no local pots
+	//PORTC = (PORTC & 0xF0) | (pot_idx & 0x0F);
+	//PORTC= 0;
 	potis[pot_idx] = analogRead(A6);
 	pot_idx++;
 	pot_idx %= 16;
@@ -67,10 +70,11 @@ void loop() {
 //---------------------------------------------------------------------------------------------
 //																				INTERRUPT
 void vertical_blanking() {
-	test = 0x3ff;
 	
 	int sendval;
 	int cs_pin, i,n;
+	test+=8;
+	test%=1024;
 	
 	digitalWrite(4,HIGH);					// debug out for measuring time this all takes
 
@@ -80,8 +84,11 @@ void vertical_blanking() {
 			digitalWrite(cs_pin,LOW);
 			n =  (cs_pin - 7) * 4 + i;
 			
-			//sendval = potis[n] << 2;
-			sendval = test << 2;
+			if (cs_pin == 7) {
+				sendval = test << 2;//potis[n] << 2;
+    	  	} else {
+				sendval = (1023 - test) << 2;//potis[n] << 2;
+    	  	}
       		sendval &= 1023 << 2;
       		sendval |= i << 12;
 
@@ -105,7 +112,7 @@ void power_on_dacs() {
 		delay(1);
 		SPI.transfer16(sendval);
 		digitalWrite(cs_pin,HIGH);
-	}
+	} 
 	delay(100);
 	
 	for (cs_pin=7; cs_pin < 11 ; cs_pin++) {
