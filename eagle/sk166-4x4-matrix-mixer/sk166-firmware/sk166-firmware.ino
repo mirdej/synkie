@@ -16,8 +16,33 @@
 
 #include <SPI.h>
 
-int potis[16];
+int potis[17];
 int test;
+
+// in:	 	X Y Z E	  ->  U V W T
+// out: 	T U V W   ->  X Y Z E
+
+/*
+											TX TY TZ TE
+											UX UY UZ UE
+											VX VY VZ VE
+											WX WY WZ WE
+											
+*/
+/*
+const unsigned char  pot_lut[4][4] = {	{ 16, 16, 16, 16  },
+										{  2,  6, 10, 16  },
+										{  1,  5,  9, 16  },
+										{  0,  4,  8, 16  }
+									};
+*/
+
+const unsigned char  pot_lut[4][4] = {	{ 16, 16, 16, 16  },
+										{ 16, 10,  6,  2  },
+										{ 16,  9,  5,  1  },
+										{ 16,  8,  4,  0  }
+									};
+
 
 
 //---------------------------------------------------------------------------------------------
@@ -42,7 +67,7 @@ void setup() {
 	SPI.begin(); 
 	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE2));
 	
-	for(int i = 0; i < 16; i++) {potis[i] = 0; }
+	for(int i = 0; i < 17; i++) {potis[i] = 0; }
 	delay(1000);
 	power_on_dacs();
 	
@@ -57,13 +82,12 @@ void loop() {
 
 		//continuosly read local potentiometers
 
-	//if ((pot_idx % 4) == 0) {pot_idx++; }			// Input "T" has no local pots
-	//PORTC = (PORTC & 0xF0) | (pot_idx & 0x0F);
-	//PORTC= 0;
 	potis[pot_idx] = analogRead(A6);
 	pot_idx++;
+	
 	pot_idx %= 16;
 	
+	PORTC = (PORTC & 0xF0) | (pot_idx & 0x0F);		// select next mux channel
 }
 
 
@@ -73,8 +97,6 @@ void vertical_blanking() {
 	
 	int sendval;
 	int cs_pin, i,n;
-	test+=8;
-	test%=1024;
 	
 	digitalWrite(4,HIGH);					// debug out for measuring time this all takes
 
@@ -82,13 +104,10 @@ void vertical_blanking() {
 	
 		for (i = 0; i < 4; i++) 	{
 			digitalWrite(cs_pin,LOW);
-			n =  (cs_pin - 7) * 4 + i;
+			n =  pot_lut[cs_pin - 7][i];
 			
-			if (cs_pin == 7) {
-				sendval = test << 2;//potis[n] << 2;
-    	  	} else {
-				sendval = (1023 - test) << 2;//potis[n] << 2;
-    	  	}
+//			sendval = (cs_pin == 9)	* 0xffc;
+			sendval = potis[n] << 2;
       		sendval &= 1023 << 2;
       		sendval |= i << 12;
 
