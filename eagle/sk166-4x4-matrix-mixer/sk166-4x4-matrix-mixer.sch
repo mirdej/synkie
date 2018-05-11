@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -13814,9 +13814,9 @@ Source: 3M</description>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="R19" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="R21" library="rcl" deviceset="R-EU_" device="R1206" value="22"/>
+<part name="R21" library="rcl" deviceset="R-EU_" device="R1206" value="120"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="R22" library="rcl" deviceset="R-EU_" device="R1206" value="180"/>
+<part name="R22" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
 <part name="OUT-" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="P-2" library="supply1" deviceset="-5V" device=""/>
@@ -13826,7 +13826,7 @@ Source: 3M</description>
 <part name="P-11" library="supply1" deviceset="-5V" device=""/>
 <part name="C13" library="rcl" deviceset="C-EU" device="C1206"/>
 <part name="GND26" library="supply1" deviceset="GND" device=""/>
-<part name="R43" library="rcl" deviceset="R-EU_" device="R1206" value="22"/>
+<part name="R43" library="rcl" deviceset="R-EU_" device="R1206" value="120"/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
 <part name="R46" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
@@ -13837,7 +13837,7 @@ Source: 3M</description>
 <part name="P-15" library="supply1" deviceset="-5V" device=""/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C1206"/>
 <part name="GND35" library="supply1" deviceset="GND" device=""/>
-<part name="R63" library="rcl" deviceset="R-EU_" device="R1206" value="22"/>
+<part name="R63" library="rcl" deviceset="R-EU_" device="R1206" value="120"/>
 <part name="GND37" library="supply1" deviceset="GND" device=""/>
 <part name="R64" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
@@ -13861,8 +13861,8 @@ Source: 3M</description>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R1206" value="2k"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="X3" library="con-3m" deviceset="2510-" device=""/>
-<part name="R11" library="rcl" deviceset="R-EU_" device="R1206" value="180"/>
-<part name="R13" library="rcl" deviceset="R-EU_" device="R1206" value="180"/>
+<part name="R11" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
+<part name="R13" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
 <part name="OUT-1" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="OUT-2" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="U$5" library="anyma-lib" deviceset="LT1228" device=""/>
@@ -13870,13 +13870,13 @@ Source: 3M</description>
 <part name="P-3" library="supply1" deviceset="-5V" device=""/>
 <part name="C5" library="rcl" deviceset="C-EU" device="C1206"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
-<part name="R14" library="rcl" deviceset="R-EU_" device="R1206" value="22"/>
+<part name="R14" library="rcl" deviceset="R-EU_" device="R1206" value="120"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="R15" library="rcl" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="C10" library="rcl" deviceset="C-EU" device="C1206"/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
-<part name="R17" library="rcl" deviceset="R-EU_" device="R1206" value="180"/>
+<part name="R17" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
 <part name="OUT-3" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="TRIM1" library="rcl" deviceset="R-TRIMM" device="64Y" value="500"/>
 <part name="R18" library="rcl" deviceset="R-EU_" device="R1206" value="1k5"/>
