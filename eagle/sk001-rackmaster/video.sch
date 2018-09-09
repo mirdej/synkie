@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3040,6 +3040,9 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <part name="R44" library="synkie" deviceset="R-EU_" device="R0805" value="1k2"/>
 <part name="P+37" library="synkie" deviceset="+5V" device=""/>
 <part name="P-27" library="synkie" deviceset="-5V" device=""/>
+<part name="C11" library="synkie" deviceset="C-EU" device="C0805" value="470p"/>
+<part name="R45" library="synkie" deviceset="R-EU_" device="R0805" value="560"/>
+<part name="GND9" library="synkie" deviceset="0V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3357,6 +3360,9 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <instance part="R44" gate="G$1" x="254" y="134.62" rot="MR270"/>
 <instance part="P+37" gate="1" x="254" y="162.56"/>
 <instance part="P-27" gate="1" x="254" y="127"/>
+<instance part="C11" gate="G$1" x="17.78" y="43.18"/>
+<instance part="R45" gate="G$1" x="27.94" y="48.26"/>
+<instance part="GND9" gate="1" x="17.78" y="35.56"/>
 </instances>
 <busses>
 </busses>
@@ -4110,6 +4116,10 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <pinref part="X4" gate="-1" pin="S"/>
 <pinref part="GND57" gate="1" pin="0V"/>
 </segment>
+<segment>
+<pinref part="C11" gate="G$1" pin="2"/>
+<pinref part="GND9" gate="1" pin="0V"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -4149,15 +4159,14 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <pinref part="U3" gate="G$1" pin="+IN"/>
 <wire x1="35.56" y1="68.58" x2="40.64" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="68.58" x2="45.72" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="68.58" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="68.58" x2="40.64" y2="48.26" width="0.1524" layer="91"/>
 <junction x="40.64" y="68.58"/>
-<wire x1="40.64" y1="40.64" x2="66.04" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="40.64" x2="66.04" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="0" y1="38.1" x2="0" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="0" y1="40.64" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
-<junction x="40.64" y="40.64"/>
+<wire x1="40.64" y1="48.26" x2="66.04" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="48.26" x2="66.04" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="TO-PHASE-DELAY" gate="-2" pin="S"/>
+<pinref part="R45" gate="G$1" pin="2"/>
+<wire x1="33.02" y1="48.26" x2="40.64" y2="48.26" width="0.1524" layer="91"/>
+<junction x="40.64" y="48.26"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -5067,6 +5076,18 @@ Source: &lt;a href="http://www.bourns.com/pdfs/3314.pdf"&gt; Data sheet&lt;/a&gt
 <segment>
 <pinref part="R_TTOP" gate="G$1" pin="A"/>
 <pinref part="R44" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="0" y1="38.1" x2="0" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="R45" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="48.26" x2="17.78" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="C11" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="48.26" x2="0" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="45.72" x2="17.78" y2="48.26" width="0.1524" layer="91"/>
+<junction x="17.78" y="48.26"/>
 </segment>
 </net>
 </nets>
