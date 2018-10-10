@@ -18972,7 +18972,7 @@ Based on the following sources:
 <wire x1="-12.7" y1="99.06" x2="-12.7" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$28" class="0">
+<net name="MIDI" class="0">
 <segment>
 <pinref part="OK1" gate="G$1" pin="COL"/>
 <pinref part="R2" gate="G$1" pin="1"/>

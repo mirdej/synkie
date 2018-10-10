@@ -24,7 +24,7 @@
 9		-Audio		(PWM)
 10		(SD)		(PWM)
 11		-Audio	
-12		(SD)
+12		Jack Detect
 13		-Audio
 14		(SD)						SCK
 15			(-Volume)
@@ -398,7 +398,7 @@ void setup() {
 	SPI.setSCK(14);
 	SPI.begin(); 
 	pinMode(CS_Pin,OUTPUT);		// slave select
-
+	pinMode(12,INPUT_PULLUP); // jack detect
 	
 	input_level_l = 120;
 	input_level_r = 120;
@@ -407,9 +407,9 @@ void setup() {
 	calculate_bands();
 
 	sgtl5000_1.enable();
-	sgtl5000_1.volume(0.5);
-	//sgtl5000_1.inputSelect(AUDIO_INPUT_LINEIN);
 	sgtl5000_1.inputSelect(AUDIO_INPUT_MIC);
+
+	sgtl5000_1.volume(0.5);
 	AudioMemory(12);
 
 
@@ -432,6 +432,7 @@ void setup() {
 */
 	t.every(50,update_display);
 	t.every(10,check_Encoder);
+	t.every(500,check_jack);
 	strip.show(); // Initialize all pixels to 'off'
 	brightness = 16;
 
@@ -528,6 +529,19 @@ void loop() {
 	digitalWrite(32,out_trigger[3]);
 	
 	//delay(2);
+	
+}
+
+void check_jack() {
+	static char oldJack 
+	char jack = digitalRead(12);
+	if (jack==oldJack) return;
+	
+	oldJack = jack;
+	
+	if (!jack) sgtl5000_1.inputSelect(AUDIO_INPUT_MIC);
+	else sgtl5000_1.inputSelect(AUDIO_INPUT_LINEIN);
+
 
 }
 

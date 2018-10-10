@@ -13,41 +13,50 @@
 //  upload sketch with cmd-shift-U
 //
 //--------------------------------------------------------------------------------------------
-
 #include <SPI.h>
-#include <SoftwareSerial.h>
 #include <MIDI.h>
 
-MIDI_CREATE_DEFAULT_INSTANCE();
+MIDI_CREATE_INSTANCE(HardwareSerial, Serial, MIDI);
 
-// We will use the SoftwareSerial library instead of the Serial library, as this will let us control which pins our MIDI interface is connected to.
-SoftwareSerial mySerial(2, 3); // RX, TX
-
-
-
-int potis[16];
+int potis[17];
 int values[16];
+
+const unsigned char  pot_lut[4][4] = {	{ 16, 16, 16, 16  },
+										{ 16, 10,  6,  2  },
+										{ 16,  9,  5,  1  },
+										{ 16,  8,  4,  0  }
+									};
+
+
 
 //---------------------------------------------------------------------------------------------
 //																					SETUP
 //---------------------------------------------------------------------------------------------
 void setup() {
 	DDRC = 0x0F;		// PC0..3 are address inputs for potentiometer mux
-	pinMode(7,OUTPUT);	// Slave selct pins
-	pinMode(8,OUTPUT);
-	pinMode(9,OUTPUT);
-	pinMode(10,OUTPUT);
+	int cs_pin;
+	
+	for ( cs_pin = 7; cs_pin < 11 ; cs_pin++) {
+		pinMode(cs_pin,OUTPUT);	// Slave selct pins
+		digitalWrite(cs_pin, HIGH);
+	}
 	
 	pinMode(4,OUTPUT);	// debug output
 	
 	attachInterrupt(digitalPinToInterrupt(3), vertical_blanking, CHANGE);
+	digitalWrite(3,LOW);
+
+	
 	
 	SPI.begin(); 
+	SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE2));
+	
+	for(int i = 0; i < 17; i++) {potis[i] = 0; }
+	delay(1000);
 	power_on_dacs();
-
+	
 	MIDI.setHandleControlChange(controller); 
 	MIDI.begin(MIDI_CHANNEL_OMNI);
-	
 }
 
 //---------------------------------------------------------------------------------------------
@@ -57,14 +66,15 @@ void setup() {
 void loop() {
 	static int pot_idx;
 
-	//continuosly read local potentiometers
-	PORTC = (PORTC & 0xF0) | (pot_idx & 0x0F);
+		//continuosly read local potentiometers
+
 	potis[pot_idx] = analogRead(A6);
 	pot_idx++;
-	pot_idx %= 16;
-
-    MIDI.read();
 	
+	pot_idx %= 16;
+	
+	PORTC = (PORTC & 0xF0) | (pot_idx & 0x0F);		// select next mux channel
+	if (MIDI.read()) { potis[16] = 0x3ff;}
 }
 
 //---------------------------------------------------------------------------------------------
@@ -78,21 +88,26 @@ void controller(byte channel, byte number, byte value)
 	values[number] = value << 3;
 }
 
+
+
 //---------------------------------------------------------------------------------------------
 //																				INTERRUPT
 void vertical_blanking() {
+	
 	int sendval;
 	int cs_pin, i,n;
 	
 	digitalWrite(4,HIGH);					// debug out for measuring time this all takes
-	
-	for (cs_pin=7; cs_pin < 11 ; cs_pin++); {
+
+	for (cs_pin=7; cs_pin < 11 ; cs_pin++) {
 	
 		for (i = 0; i < 4; i++) 	{
 			digitalWrite(cs_pin,LOW);
-			n =  (cs_pin - 7) * 4 + i;
+			n =  pot_lut[cs_pin - 7][i];
 			
-			sendval = values[n] << 2;
+//			sendval = (cs_pin == 9)	* 0xffc;
+			sendval = potis[n] << 2;
+//			sendval = values[n] << 2;
       		sendval &= 1023 << 2;
       		sendval |= i << 12;
 
@@ -100,7 +115,6 @@ void vertical_blanking() {
 			digitalWrite(cs_pin,HIGH);
 		}
 	}
-
 	digitalWrite(4,LOW);					// debug out for measuring time this all takes
 }
 
@@ -112,15 +126,15 @@ void power_on_dacs() {
 	
 	sendval = 0xf010;	
 	
-	for (cs_pin=7; cs_pin < 11 ; cs_pin++); {
+	for (cs_pin=7; cs_pin < 11 ; cs_pin++) {
 		digitalWrite(cs_pin,LOW);
 		delay(1);
 		SPI.transfer16(sendval);
 		digitalWrite(cs_pin,HIGH);
-	}
+	} 
 	delay(100);
 	
-	for (cs_pin=7; cs_pin < 11 ; cs_pin++); {
+	for (cs_pin=7; cs_pin < 11 ; cs_pin++) {
 		digitalWrite(cs_pin,LOW);
 		delay(1);
 		SPI.transfer16(sendval);
