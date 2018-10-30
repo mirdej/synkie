@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -11547,9 +11547,9 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="R20" library="rcl" deviceset="R-EU_" device="R1206" value="300"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="R21" library="rcl" deviceset="R-EU_" device="R1206" value="22"/>
+<part name="R21" library="rcl" deviceset="R-EU_" device="R1206" value="68"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="R22" library="rcl" deviceset="R-EU_" device="R1206" value="180"/>
+<part name="R22" library="rcl" deviceset="R-EU_" device="R1206" value="1k"/>
 <part name="R23" library="rcl" deviceset="R-EU_" device="R1206" value="75"/>
 <part name="OUT-" library="wirepad" deviceset="3,17/1,1" device=""/>
 <part name="X1" library="con-molex" deviceset="22-23-2031" device=""/>
@@ -12225,7 +12225,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="BUF" gate="G$3" pin="+5V"/>
 <pinref part="P+6" gate="1" pin="+5V"/>
 <pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="C1" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="D6" gate="-B1" pin="C"/>
@@ -12259,7 +12258,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="BUF1" gate="G$3" pin="+5V"/>
 <pinref part="P+7" gate="1" pin="+5V"/>
-<pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="C3" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -12300,7 +12298,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="C15" gate="G$1" pin="2"/>
 <pinref part="BUF2" gate="G$3" pin="+5V"/>
 <pinref part="P+17" gate="1" pin="+5V"/>
-<pinref part="P+17" gate="1" pin="+5V"/>
 </segment>
 <segment>
 <pinref part="D10" gate="-B1" pin="C"/>
@@ -12324,7 +12321,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="C19" gate="G$1" pin="2"/>
 <pinref part="BUF3" gate="G$3" pin="+5V"/>
-<pinref part="P+21" gate="1" pin="+5V"/>
 <pinref part="P+21" gate="1" pin="+5V"/>
 </segment>
 <segment>
@@ -12350,7 +12346,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="C23" gate="G$1" pin="2"/>
 <pinref part="BUF4" gate="G$3" pin="+5V"/>
 <pinref part="P+25" gate="1" pin="+5V"/>
-<pinref part="P+25" gate="1" pin="+5V"/>
 </segment>
 <segment>
 <pinref part="D16" gate="-B1" pin="C"/>
@@ -12375,7 +12370,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="C27" gate="G$1" pin="2"/>
 <pinref part="BUF5" gate="G$3" pin="+5V"/>
 <pinref part="P+29" gate="1" pin="+5V"/>
-<pinref part="P+29" gate="1" pin="+5V"/>
 </segment>
 </net>
 <net name="-5V" class="0">
@@ -12386,7 +12380,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="BUF" gate="G$3" pin="-5V"/>
 <pinref part="P-8" gate="1" pin="-5V"/>
-<pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="C2" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -12420,7 +12413,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="BUF1" gate="G$3" pin="-5V"/>
 <pinref part="P-9" gate="1" pin="-5V"/>
-<pinref part="C5" gate="G$1" pin="2"/>
 <pinref part="C5" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -12461,7 +12453,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="C16" gate="G$1" pin="2"/>
 <pinref part="BUF2" gate="G$3" pin="-5V"/>
 <pinref part="P-17" gate="1" pin="-5V"/>
-<pinref part="P-17" gate="1" pin="-5V"/>
 </segment>
 <segment>
 <pinref part="D10" gate="-B1" pin="A"/>
@@ -12485,7 +12476,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="C20" gate="G$1" pin="2"/>
 <pinref part="BUF3" gate="G$3" pin="-5V"/>
-<pinref part="P-22" gate="1" pin="-5V"/>
 <pinref part="P-22" gate="1" pin="-5V"/>
 </segment>
 <segment>
@@ -12511,7 +12501,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="C24" gate="G$1" pin="2"/>
 <pinref part="BUF4" gate="G$3" pin="-5V"/>
 <pinref part="P-27" gate="1" pin="-5V"/>
-<pinref part="P-27" gate="1" pin="-5V"/>
 </segment>
 <segment>
 <pinref part="D16" gate="-B1" pin="A"/>
@@ -12535,7 +12524,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="C28" gate="G$1" pin="2"/>
 <pinref part="BUF5" gate="G$3" pin="-5V"/>
-<pinref part="P-32" gate="1" pin="-5V"/>
 <pinref part="P-32" gate="1" pin="-5V"/>
 </segment>
 </net>
@@ -12572,7 +12560,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="BUF" gate="G$1" pin="OUT"/>
 <pinref part="R16" gate="G$1" pin="1"/>
-<pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="66.04" x2="-15.24" y2="66.04" width="0.1524" layer="91"/>
 </segment>
@@ -12647,9 +12634,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="C10" gate="G$1" pin="-"/>
 <pinref part="C12" gate="G$1" pin="+"/>
-<pinref part="C12" gate="G$1" pin="+"/>
-<pinref part="GND19" gate="1" pin="GND"/>
-<pinref part="GND19" gate="1" pin="GND"/>
 <pinref part="GND19" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -12958,7 +12942,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
 <pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="40.64" x2="-15.24" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="BUF" gate="G$2" pin="OUT"/>
 </segment>
@@ -13070,7 +13053,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="BUF1" gate="G$1" pin="OUT"/>
 <pinref part="R28" gate="G$1" pin="1"/>
 <pinref part="R33" gate="G$1" pin="2"/>
-<pinref part="R33" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="5.08" x2="-15.24" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -13140,7 +13122,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <net name="N$31" class="0">
 <segment>
 <pinref part="R36" gate="G$1" pin="1"/>
-<pinref part="R38" gate="G$1" pin="2"/>
 <pinref part="R38" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-20.32" x2="-15.24" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="BUF1" gate="G$2" pin="OUT"/>
@@ -13251,7 +13232,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="BUF2" gate="G$1" pin="OUT"/>
 <pinref part="R49" gate="G$1" pin="1"/>
 <pinref part="R54" gate="G$1" pin="2"/>
-<pinref part="R54" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-55.88" x2="-15.24" y2="-55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -13321,7 +13301,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <net name="N$48" class="0">
 <segment>
 <pinref part="R57" gate="G$1" pin="1"/>
-<pinref part="R59" gate="G$1" pin="2"/>
 <pinref part="R59" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-81.28" x2="-15.24" y2="-81.28" width="0.1524" layer="91"/>
 <pinref part="BUF2" gate="G$2" pin="OUT"/>
@@ -13413,7 +13392,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="BUF3" gate="G$1" pin="OUT"/>
 <pinref part="R70" gate="G$1" pin="1"/>
 <pinref part="R75" gate="G$1" pin="2"/>
-<pinref part="R75" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-114.3" x2="-15.24" y2="-114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -13483,7 +13461,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <net name="N$66" class="0">
 <segment>
 <pinref part="R78" gate="G$1" pin="1"/>
-<pinref part="R80" gate="G$1" pin="2"/>
 <pinref part="R80" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-139.7" x2="-15.24" y2="-139.7" width="0.1524" layer="91"/>
 <pinref part="BUF3" gate="G$2" pin="OUT"/>
@@ -13575,7 +13552,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="BUF4" gate="G$1" pin="OUT"/>
 <pinref part="R91" gate="G$1" pin="1"/>
 <pinref part="R96" gate="G$1" pin="2"/>
-<pinref part="R96" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-172.72" x2="-15.24" y2="-172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -13645,7 +13621,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <net name="N$83" class="0">
 <segment>
 <pinref part="R99" gate="G$1" pin="1"/>
-<pinref part="R101" gate="G$1" pin="2"/>
 <pinref part="R101" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-198.12" x2="-15.24" y2="-198.12" width="0.1524" layer="91"/>
 <pinref part="BUF4" gate="G$2" pin="OUT"/>
@@ -13737,7 +13712,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <pinref part="BUF5" gate="G$1" pin="OUT"/>
 <pinref part="R112" gate="G$1" pin="1"/>
 <pinref part="R117" gate="G$1" pin="2"/>
-<pinref part="R117" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-231.14" x2="-15.24" y2="-231.14" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -13807,7 +13781,6 @@ body 3.9 mm/JEDEC MS-012AA</description>
 <net name="N$100" class="0">
 <segment>
 <pinref part="R120" gate="G$1" pin="1"/>
-<pinref part="R122" gate="G$1" pin="2"/>
 <pinref part="R122" gate="G$1" pin="2"/>
 <wire x1="-10.16" y1="-256.54" x2="-15.24" y2="-256.54" width="0.1524" layer="91"/>
 <pinref part="BUF5" gate="G$2" pin="OUT"/>
