@@ -16782,7 +16782,7 @@ NS Package M08A</description>
 <sheets>
 <sheet>
 <plain>
-<rectangle x1="-5.08" y1="175.26" x2="66.04" y2="220.98" layer="91"/>
+<rectangle x1="-7.62" y1="177.8" x2="63.5" y2="223.52" layer="91"/>
 <text x="48.26" y="223.52" size="1.778" layer="91">seems not to work!!</text>
 <text x="68.58" y="210.82" size="1.778" layer="91">seems not to work!!</text>
 </plain>
