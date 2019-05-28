@@ -36,6 +36,7 @@ unsigned char bank;
 struct cRGB colors[8];
 struct cRGB led[PIXELS];
 unsigned char leds_changed;
+unsigned char trigger_inhibit;
 
 // ==============================================================================
 // Functions
@@ -47,7 +48,7 @@ void output() {
 	leds_changed = 1;
 }
 
-void trigger() {
+void trigger() {	
 	step_idx++;
 	step_idx %=8;
 	if (!insync) {
@@ -55,18 +56,6 @@ void trigger() {
 	}
 }
 
-void step_up() {
-	trigger();
-}
-
-
-void step_down() {
-	if (step_idx) step_idx--;
-	else step_idx = 7;
-	if (!insync) {
-		output();
-	}
-}
 
 //------------------------------------------ check SPI
 
@@ -157,13 +146,13 @@ void init (void) {
 	
 	//Rainbowcolors
     colors[0].r=0; colors[0].g=0; colors[0].b=0;	// black
-    colors[1].r=255; colors[1].g=000; colors[1].b=000;//red
-    colors[2].r=255; colors[2].g=100; colors[2].b=000;//orange
-    colors[3].r=255; colors[3].g=255; colors[3].b=000;//yellow
-    colors[4].r=000; colors[4].g=255; colors[4].b=000;//green
-    colors[5].r=000; colors[5].g=100; colors[5].b=255;//light blue (türkis)
-    colors[6].r=000; colors[6].g=000; colors[6].b=255;//blue
-    colors[7].r=100; colors[7].g=000; colors[7].b=255;//violet
+    colors[1].r=64; colors[1].g=000; colors[1].b=000;//red
+    colors[2].r=64; colors[2].g=25; colors[2].b=000;//orange
+    colors[3].r=64; colors[3].g=64; colors[3].b=000;//yellow
+    colors[4].r=000; colors[4].g=64; colors[4].b=000;//green
+    colors[5].r=000; colors[5].g=25; colors[5].b=64;//light blue (türkis)
+    colors[6].r=000; colors[6].g=000; colors[6].b=64;//blue
+    colors[7].r=25; colors[7].g=000; colors[7].b=64;//violet
 
 
 	//PORTB:  ODD/even input, SPI
@@ -209,6 +198,8 @@ void init (void) {
 
 ISR (PCINT0_vect) {  	
 	// check switches
+	if (trigger_inhibit > 0) trigger_inhibit--;
+	
 	insync = PINC & (1 << PC5);
 	
 	// check buttons
@@ -228,6 +219,7 @@ ISR (PCINT1_vect) {
 	unsigned char pinstate = PINC;
 	if (~last_pinc & (1 << 3)) {
 		if (pinstate & (1 << 3)) {					// positive edge only
+		//	led[35] = colors[1];
 			trigger();
 		}
 	}
@@ -249,13 +241,14 @@ ISR (PCINT1_vect) {
 ISR (ADC_vect) {
 	unsigned int ramp_in = ADCH;
 	static unsigned int last_ramp_in;
-
+	//ramp_in += 4;		//margin at top
+	if (ramp_in > 255) ramp_in = 255;
+	
 	ramp_in = (3 * last_ramp_in + ramp_in) / 4;
 	
-	ramp_in %= 256;
 	last_ramp_in = ramp_in;
 
-	if (ramp_in > 2) {step_idx = ramp_in / 32; }
+//	if (ramp_in > 2) {step_idx = ramp_in / 32; }
 	
 /*	unsigned char ramp_in = ADCH;
 	static unsigned char last_ramp_in;

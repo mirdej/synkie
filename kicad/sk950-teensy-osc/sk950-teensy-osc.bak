@@ -1,0 +1,1506 @@
+EESchema Schematic File Version 4
+LIBS:sk950-teensy-osc-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L teensy:Teensy3.5 U2
+U 1 1 5C6ACBB2
+P 5050 3850
+F 0 "U2" H 5050 6237 60  0000 C CNN
+F 1 "Teensy3.5" H 5050 6131 60  0000 C CNN
+F 2 "synkie_footprints:Teensy35_36-light" H 5050 3850 60  0001 C CNN
+F 3 "" H 5050 3850 60  0000 C CNN
+	1    5050 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0101
+U 1 1 5C6AF25C
+P 6050 5050
+F 0 "#PWR0101" H 6050 4900 50  0001 C CNN
+F 1 "+5V" H 6065 5223 50  0000 C CNN
+F 2 "" H 6050 5050 50  0001 C CNN
+F 3 "" H 6050 5050 50  0001 C CNN
+	1    6050 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5C6AF71C
+P 4050 5550
+F 0 "#PWR0102" H 4050 5300 50  0001 C CNN
+F 1 "GND" V 4050 5450 50  0000 R CNN
+F 2 "" H 4050 5550 50  0001 C CNN
+F 3 "" H 4050 5550 50  0001 C CNN
+	1    4050 5550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5C6AFA5A
+P 6050 5150
+F 0 "#PWR0103" H 6050 4900 50  0001 C CNN
+F 1 "GND" V 6050 5050 50  0000 R CNN
+F 2 "" H 6050 5150 50  0001 C CNN
+F 3 "" H 6050 5150 50  0001 C CNN
+	1    6050 5150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L synkie_symbols:Opamp_Dual_Generic U3
+U 1 1 5C6BDD30
+P 8150 4900
+F 0 "U3" H 8150 5267 50  0000 C CNN
+F 1 "Opamp_Dual_Generic" H 8150 5176 50  0000 C CNN
+F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 8150 4900 50  0001 C CNN
+F 3 "~" H 8150 4900 50  0001 C CNN
+	1    8150 4900
+	1    0    0    -1  
+$EndComp
+Text Label 4050 5350 2    50   ~ 0
+dac0
+Text Label 4050 5450 2    50   ~ 0
+dac1
+Wire Wire Line
+	7850 5000 7850 5200
+Wire Wire Line
+	7850 5200 8450 5200
+Wire Wire Line
+	8450 5200 8450 4900
+Wire Wire Line
+	7600 4800 7850 4800
+$Comp
+L power:GND #PWR0104
+U 1 1 5C6BE8C9
+P 7450 4950
+F 0 "#PWR0104" H 7450 4700 50  0001 C CNN
+F 1 "GND" V 7450 4850 50  0000 R CNN
+F 2 "" H 7450 4950 50  0001 C CNN
+F 3 "" H 7450 4950 50  0001 C CNN
+	1    7450 4950
+	1    0    0    -1  
+$EndComp
+Text Label 7450 4650 2    50   ~ 0
+dac0
+$Comp
+L synkie_symbols:R_POT RV2
+U 1 1 5C6BEEDD
+P 7450 4800
+F 0 "RV2" H 7380 4846 50  0000 R CNN
+F 1 "R_POT" H 7380 4755 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_ACP_CA14-H4_Horizontal" H 7450 4800 50  0001 C CNN
+F 3 "~" H 7450 4800 50  0001 C CNN
+	1    7450 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:Conn_01x01 J6
+U 1 1 5C6BF223
+P 8650 4900
+F 0 "J6" H 8729 4942 50  0000 L CNN
+F 1 "Out1" H 8729 4851 50  0000 L CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 8650 4900 50  0001 C CNN
+F 3 "~" H 8650 4900 50  0001 C CNN
+	1    8650 4900
+	1    0    0    -1  
+$EndComp
+Connection ~ 8450 4900
+$Comp
+L synkie_symbols:Opamp_Dual_Generic U3
+U 2 1 5C6BF90B
+P 8150 5800
+F 0 "U3" H 8150 6167 50  0000 C CNN
+F 1 "Opamp_Dual_Generic" H 8150 6076 50  0000 C CNN
+F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 8150 5800 50  0001 C CNN
+F 3 "~" H 8150 5800 50  0001 C CNN
+	2    8150 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 5900 7850 6100
+Wire Wire Line
+	7850 6100 8450 6100
+Wire Wire Line
+	8450 6100 8450 5800
+Wire Wire Line
+	7600 5700 7850 5700
+$Comp
+L power:GND #PWR0105
+U 1 1 5C6BF915
+P 7450 5850
+F 0 "#PWR0105" H 7450 5600 50  0001 C CNN
+F 1 "GND" V 7450 5750 50  0000 R CNN
+F 2 "" H 7450 5850 50  0001 C CNN
+F 3 "" H 7450 5850 50  0001 C CNN
+	1    7450 5850
+	1    0    0    -1  
+$EndComp
+Text Label 7450 5550 2    50   ~ 0
+dac1
+$Comp
+L synkie_symbols:R_POT RV3
+U 1 1 5C6BF91C
+P 7450 5700
+F 0 "RV3" H 7380 5746 50  0000 R CNN
+F 1 "R_POT" H 7380 5655 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_ACP_CA14-H4_Horizontal" H 7450 5700 50  0001 C CNN
+F 3 "~" H 7450 5700 50  0001 C CNN
+	1    7450 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:Conn_01x01 J7
+U 1 1 5C6BF922
+P 8650 5800
+F 0 "J7" H 8729 5842 50  0000 L CNN
+F 1 "Out2" H 8729 5751 50  0000 L CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 8650 5800 50  0001 C CNN
+F 3 "~" H 8650 5800 50  0001 C CNN
+	1    8650 5800
+	1    0    0    -1  
+$EndComp
+Connection ~ 8450 5800
+$Comp
+L synkie_symbols:Opamp_Dual_Generic U3
+U 3 1 5C6C0165
+P 9450 5350
+F 0 "U3" H 9408 5396 50  0000 L CNN
+F 1 "Opamp_Dual_Generic" H 9600 5350 50  0000 L CNN
+F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 9450 5350 50  0001 C CNN
+F 3 "~" H 9450 5350 50  0001 C CNN
+	3    9450 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0106
+U 1 1 5C6C0386
+P 9350 5050
+F 0 "#PWR0106" H 9350 4900 50  0001 C CNN
+F 1 "+5V" H 9365 5223 50  0000 C CNN
+F 2 "" H 9350 5050 50  0001 C CNN
+F 3 "" H 9350 5050 50  0001 C CNN
+	1    9350 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-5V #PWR0107
+U 1 1 5C6C0864
+P 9350 5650
+F 0 "#PWR0107" H 9350 5750 50  0001 C CNN
+F 1 "-5V" H 9365 5823 50  0000 C CNN
+F 2 "" H 9350 5650 50  0001 C CNN
+F 3 "" H 9350 5650 50  0001 C CNN
+	1    9350 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5C6C0C4E
+P 9500 5050
+F 0 "C5" V 9248 5050 50  0000 C CNN
+F 1 "C" V 9339 5050 50  0000 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9538 4900 50  0001 C CNN
+F 3 "~" H 9500 5050 50  0001 C CNN
+	1    9500 5050
+	0    1    1    0   
+$EndComp
+Connection ~ 9350 5050
+$Comp
+L Device:C C6
+U 1 1 5C6C1277
+P 9500 5650
+F 0 "C6" V 9248 5650 50  0000 C CNN
+F 1 "C" V 9339 5650 50  0000 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9538 5500 50  0001 C CNN
+F 3 "~" H 9500 5650 50  0001 C CNN
+	1    9500 5650
+	0    1    1    0   
+$EndComp
+Connection ~ 9350 5650
+$Comp
+L power:GND #PWR0108
+U 1 1 5C6C1512
+P 9650 5050
+F 0 "#PWR0108" H 9650 4800 50  0001 C CNN
+F 1 "GND" V 9650 4950 50  0000 R CNN
+F 2 "" H 9650 5050 50  0001 C CNN
+F 3 "" H 9650 5050 50  0001 C CNN
+	1    9650 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5C6C160D
+P 9650 5650
+F 0 "#PWR0109" H 9650 5400 50  0001 C CNN
+F 1 "GND" V 9650 5550 50  0000 R CNN
+F 2 "" H 9650 5650 50  0001 C CNN
+F 3 "" H 9650 5650 50  0001 C CNN
+	1    9650 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L synkie_symbols:Conn_01x04 J5
+U 1 1 5C6C2461
+P 7400 2050
+F 0 "J5" H 7480 2042 50  0000 L CNN
+F 1 "Display" H 7480 1951 50  0000 L CNN
+F 2 "synkie_footprints:Bangood_I2C_Display" H 7400 2050 50  0001 C CNN
+F 3 "~" H 7400 2050 50  0001 C CNN
+	1    7400 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0110
+U 1 1 5C6C2CE8
+P 4050 3150
+F 0 "#PWR0110" H 4050 3000 50  0001 C CNN
+F 1 "+3V3" V 4065 3278 50  0000 L CNN
+F 2 "" H 4050 3150 50  0001 C CNN
+F 3 "" H 4050 3150 50  0001 C CNN
+	1    4050 3150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0111
+U 1 1 5C6C33FD
+P 7200 1950
+F 0 "#PWR0111" H 7200 1800 50  0001 C CNN
+F 1 "+3V3" V 7215 2078 50  0000 L CNN
+F 2 "" H 7200 1950 50  0001 C CNN
+F 3 "" H 7200 1950 50  0001 C CNN
+	1    7200 1950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 5C6C3698
+P 7200 2050
+F 0 "#PWR0112" H 7200 1800 50  0001 C CNN
+F 1 "GND" V 7200 1950 50  0000 R CNN
+F 2 "" H 7200 2050 50  0001 C CNN
+F 3 "" H 7200 2050 50  0001 C CNN
+	1    7200 2050
+	0    1    1    0   
+$EndComp
+Text Label 7200 2150 2    50   ~ 0
+scl
+Text Label 7200 2250 2    50   ~ 0
+sda
+Text Label 6050 5750 0    50   ~ 0
+scl
+Text Label 6050 5850 0    50   ~ 0
+sda
+$Comp
+L Anyma_Library:AS5047D U1
+U 1 1 5C6C645B
+P 1850 6550
+F 0 "U1" H 1850 7065 50  0000 C CNN
+F 1 "AS5047D" H 1850 6974 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 1700 6550 50  0001 C CNN
+F 3 "" H 1700 6550 50  0001 C CNN
+	1    1850 6550
+	1    0    0    -1  
+$EndComp
+Text Label 1400 6400 2    50   ~ 0
+sck
+Text Label 1400 6500 2    50   ~ 0
+miso
+Text Label 1400 6600 2    50   ~ 0
+mosi
+Text Label 1400 6300 2    50   ~ 0
+cs
+$Comp
+L power:GND #PWR0113
+U 1 1 5C6C7808
+P 2300 6400
+F 0 "#PWR0113" H 2300 6150 50  0001 C CNN
+F 1 "GND" V 2300 6300 50  0000 R CNN
+F 2 "" H 2300 6400 50  0001 C CNN
+F 3 "" H 2300 6400 50  0001 C CNN
+	1    2300 6400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0114
+U 1 1 5C6C7CAB
+P 2300 6500
+F 0 "#PWR0114" H 2300 6350 50  0001 C CNN
+F 1 "+3V3" V 2315 6628 50  0000 L CNN
+F 2 "" H 2300 6500 50  0001 C CNN
+F 3 "" H 2300 6500 50  0001 C CNN
+	1    2300 6500
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0115
+U 1 1 5C6C7E55
+P 2300 6600
+F 0 "#PWR0115" H 2300 6450 50  0001 C CNN
+F 1 "+3V3" V 2315 6728 50  0000 L CNN
+F 2 "" H 2300 6600 50  0001 C CNN
+F 3 "" H 2300 6600 50  0001 C CNN
+	1    2300 6600
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0116
+U 1 1 5C6C7F2C
+P 1650 7250
+F 0 "#PWR0116" H 1650 7100 50  0001 C CNN
+F 1 "+3V3" H 1665 7423 50  0000 C CNN
+F 2 "" H 1650 7250 50  0001 C CNN
+F 3 "" H 1650 7250 50  0001 C CNN
+	1    1650 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5C6C8260
+P 1800 7250
+F 0 "C3" V 1548 7250 50  0000 C CNN
+F 1 "C" V 1639 7250 50  0000 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1838 7100 50  0001 C CNN
+F 3 "~" H 1800 7250 50  0001 C CNN
+	1    1800 7250
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 5C6C84EA
+P 1950 7250
+F 0 "#PWR0117" H 1950 7000 50  0001 C CNN
+F 1 "GND" V 1950 7150 50  0000 R CNN
+F 2 "" H 1950 7250 50  0001 C CNN
+F 3 "" H 1950 7250 50  0001 C CNN
+	1    1950 7250
+	1    0    0    -1  
+$EndComp
+Text Label 4050 2950 2    50   ~ 0
+mosi
+Text Label 4050 3050 2    50   ~ 0
+miso
+Text Label 4050 5650 2    50   ~ 0
+sck
+Text Label 4050 2850 2    50   ~ 0
+cs
+$Comp
+L synkie_symbols:Conn_01x01 J1
+U 1 1 5C6CA848
+P 950 2250
+F 0 "J1" H 870 2025 50  0000 C CNN
+F 1 "CV-Octave" H 870 2116 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 950 2250 50  0001 C CNN
+F 3 "~" H 950 2250 50  0001 C CNN
+	1    950  2250
+	-1   0    0    1   
+$EndComp
+$Comp
+L synkie_symbols:BAT54S D1
+U 1 1 5C6CAD5D
+P 1450 2250
+F 0 "D1" V 1404 2338 50  0000 L CNN
+F 1 "BAT54S" V 1550 1850 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 1525 2375 50  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds11005.pdf" H 1330 2250 50  0001 C CNN
+	1    1450 2250
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0118
+U 1 1 5C6CB392
+P 1450 1950
+F 0 "#PWR0118" H 1450 1800 50  0001 C CNN
+F 1 "+3V3" H 1465 2123 50  0000 C CNN
+F 2 "" H 1450 1950 50  0001 C CNN
+F 3 "" H 1450 1950 50  0001 C CNN
+	1    1450 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 5C6CBB8B
+P 1450 2550
+F 0 "#PWR0119" H 1450 2300 50  0001 C CNN
+F 1 "GND" V 1450 2450 50  0000 R CNN
+F 2 "" H 1450 2550 50  0001 C CNN
+F 3 "" H 1450 2550 50  0001 C CNN
+	1    1450 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 2250 1650 2250
+Text Label 1650 2250 0    50   ~ 0
+cv1
+$Comp
+L synkie_symbols:Conn_01x01 J2
+U 1 1 5C6CC89B
+P 950 3350
+F 0 "J2" H 870 3125 50  0000 C CNN
+F 1 "CV-Note" H 870 3216 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 950 3350 50  0001 C CNN
+F 3 "~" H 950 3350 50  0001 C CNN
+	1    950  3350
+	-1   0    0    1   
+$EndComp
+$Comp
+L synkie_symbols:BAT54S D2
+U 1 1 5C6CC8A1
+P 1450 3350
+F 0 "D2" V 1404 3438 50  0000 L CNN
+F 1 "BAT54S" V 1550 3000 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 1525 3475 50  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds11005.pdf" H 1330 3350 50  0001 C CNN
+	1    1450 3350
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0120
+U 1 1 5C6CC8A7
+P 1450 3050
+F 0 "#PWR0120" H 1450 2900 50  0001 C CNN
+F 1 "+3V3" H 1465 3223 50  0000 C CNN
+F 2 "" H 1450 3050 50  0001 C CNN
+F 3 "" H 1450 3050 50  0001 C CNN
+	1    1450 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5C6CC8AD
+P 1450 3650
+F 0 "#PWR0121" H 1450 3400 50  0001 C CNN
+F 1 "GND" V 1450 3550 50  0000 R CNN
+F 2 "" H 1450 3650 50  0001 C CNN
+F 3 "" H 1450 3650 50  0001 C CNN
+	1    1450 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 3350 1650 3350
+Text Label 1650 3350 0    50   ~ 0
+cv2
+$Comp
+L synkie_symbols:Conn_01x01 J3
+U 1 1 5C6CE754
+P 950 4450
+F 0 "J3" H 870 4225 50  0000 C CNN
+F 1 "CV-Sens" H 870 4316 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 950 4450 50  0001 C CNN
+F 3 "~" H 950 4450 50  0001 C CNN
+	1    950  4450
+	-1   0    0    1   
+$EndComp
+$Comp
+L synkie_symbols:BAT54S D3
+U 1 1 5C6CE75A
+P 1450 4450
+F 0 "D3" V 1404 4538 50  0000 L CNN
+F 1 "BAT54S" V 1550 4100 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 1525 4575 50  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds11005.pdf" H 1330 4450 50  0001 C CNN
+	1    1450 4450
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0122
+U 1 1 5C6CE760
+P 1450 4150
+F 0 "#PWR0122" H 1450 4000 50  0001 C CNN
+F 1 "+3V3" H 1465 4323 50  0000 C CNN
+F 2 "" H 1450 4150 50  0001 C CNN
+F 3 "" H 1450 4150 50  0001 C CNN
+	1    1450 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 5C6CE766
+P 1450 4750
+F 0 "#PWR0123" H 1450 4500 50  0001 C CNN
+F 1 "GND" V 1450 4650 50  0000 R CNN
+F 2 "" H 1450 4750 50  0001 C CNN
+F 3 "" H 1450 4750 50  0001 C CNN
+	1    1450 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 4450 1650 4450
+Text Label 1650 4450 0    50   ~ 0
+cv3
+$Comp
+L synkie_symbols:Conn_01x01 J4
+U 1 1 5C6CE76E
+P 950 5550
+F 0 "J4" H 870 5325 50  0000 C CNN
+F 1 "CV-Freq" H 870 5416 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 950 5550 50  0001 C CNN
+F 3 "~" H 950 5550 50  0001 C CNN
+	1    950  5550
+	-1   0    0    1   
+$EndComp
+$Comp
+L synkie_symbols:BAT54S D4
+U 1 1 5C6CE774
+P 1450 5550
+F 0 "D4" V 1404 5638 50  0000 L CNN
+F 1 "BAT54S" V 1550 5200 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 1525 5675 50  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds11005.pdf" H 1330 5550 50  0001 C CNN
+	1    1450 5550
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0124
+U 1 1 5C6CE77A
+P 1450 5250
+F 0 "#PWR0124" H 1450 5100 50  0001 C CNN
+F 1 "+3V3" H 1465 5423 50  0000 C CNN
+F 2 "" H 1450 5250 50  0001 C CNN
+F 3 "" H 1450 5250 50  0001 C CNN
+	1    1450 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0125
+U 1 1 5C6CE780
+P 1450 5850
+F 0 "#PWR0125" H 1450 5600 50  0001 C CNN
+F 1 "GND" V 1450 5750 50  0000 R CNN
+F 2 "" H 1450 5850 50  0001 C CNN
+F 3 "" H 1450 5850 50  0001 C CNN
+	1    1450 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 5550 1650 5550
+Text Label 1650 5550 0    50   ~ 0
+cv4
+$Comp
+L synkie_symbols:R R1
+U 1 1 5C6CF566
+P 1150 2400
+F 0 "R1" H 1220 2446 50  0000 L CNN
+F 1 "47k" H 1220 2355 50  0000 L CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1080 2400 50  0001 C CNN
+F 3 "~" H 1150 2400 50  0001 C CNN
+	1    1150 2400
+	1    0    0    -1  
+$EndComp
+Connection ~ 1150 2250
+$Comp
+L power:GND #PWR0126
+U 1 1 5C6CFD06
+P 1150 2550
+F 0 "#PWR0126" H 1150 2300 50  0001 C CNN
+F 1 "GND" V 1150 2450 50  0000 R CNN
+F 2 "" H 1150 2550 50  0001 C CNN
+F 3 "" H 1150 2550 50  0001 C CNN
+	1    1150 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:R R2
+U 1 1 5C6D0BD8
+P 1150 3500
+F 0 "R2" H 1220 3546 50  0000 L CNN
+F 1 "47k" H 1220 3455 50  0000 L CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1080 3500 50  0001 C CNN
+F 3 "~" H 1150 3500 50  0001 C CNN
+	1    1150 3500
+	1    0    0    -1  
+$EndComp
+Connection ~ 1150 3350
+$Comp
+L synkie_symbols:R R3
+U 1 1 5C6D0D21
+P 1150 4600
+F 0 "R3" H 1220 4646 50  0000 L CNN
+F 1 "47k" H 1220 4555 50  0000 L CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1080 4600 50  0001 C CNN
+F 3 "~" H 1150 4600 50  0001 C CNN
+	1    1150 4600
+	1    0    0    -1  
+$EndComp
+Connection ~ 1150 4450
+$Comp
+L synkie_symbols:R R4
+U 1 1 5C6D0E94
+P 1150 5700
+F 0 "R4" H 1220 5746 50  0000 L CNN
+F 1 "47k" H 1220 5655 50  0000 L CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1080 5700 50  0001 C CNN
+F 3 "~" H 1150 5700 50  0001 C CNN
+	1    1150 5700
+	1    0    0    -1  
+$EndComp
+Connection ~ 1150 5550
+$Comp
+L power:GND #PWR0127
+U 1 1 5C6D10E8
+P 1150 5850
+F 0 "#PWR0127" H 1150 5600 50  0001 C CNN
+F 1 "GND" V 1150 5750 50  0000 R CNN
+F 2 "" H 1150 5850 50  0001 C CNN
+F 3 "" H 1150 5850 50  0001 C CNN
+	1    1150 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0128
+U 1 1 5C6D11C5
+P 1150 4750
+F 0 "#PWR0128" H 1150 4500 50  0001 C CNN
+F 1 "GND" V 1150 4650 50  0000 R CNN
+F 2 "" H 1150 4750 50  0001 C CNN
+F 3 "" H 1150 4750 50  0001 C CNN
+	1    1150 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0129
+U 1 1 5C6D1374
+P 1150 3650
+F 0 "#PWR0129" H 1150 3400 50  0001 C CNN
+F 1 "GND" V 1150 3550 50  0000 R CNN
+F 2 "" H 1150 3650 50  0001 C CNN
+F 3 "" H 1150 3650 50  0001 C CNN
+	1    1150 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J8
+U 1 1 5C6ACCC5
+P 10050 1150
+F 0 "J8" H 10150 1150 50  0000 C CNN
+F 1 "Supply" H 10200 1400 50  0000 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 10050 1150 50  0001 C CNN
+F 3 "~" H 10050 1150 50  0001 C CNN
+	1    10050 1150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Ferrite_Bead FB1
+U 1 1 5C6ACEE4
+P 10400 1050
+F 0 "FB1" V 10150 950 50  0000 C CNN
+F 1 "Ferrite_Bead" V 10250 900 50  0000 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 10330 1050 50  0001 C CNN
+F 3 "~" H 10400 1050 50  0001 C CNN
+	1    10400 1050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Ferrite_Bead FB2
+U 1 1 5C6ACF86
+P 10400 1250
+F 0 "FB2" V 10650 1250 50  0000 C CNN
+F 1 "Ferrite_Bead" V 10550 1200 50  0000 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 10330 1250 50  0001 C CNN
+F 3 "~" H 10400 1250 50  0001 C CNN
+	1    10400 1250
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0130
+U 1 1 5C6AD007
+P 10850 1150
+F 0 "#PWR0130" H 10850 900 50  0001 C CNN
+F 1 "GND" V 10850 1050 50  0000 R CNN
+F 2 "" H 10850 1150 50  0001 C CNN
+F 3 "" H 10850 1150 50  0001 C CNN
+	1    10850 1150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR0131
+U 1 1 5C6AD4FF
+P 10850 850
+F 0 "#PWR0131" H 10850 700 50  0001 C CNN
+F 1 "+5V" H 10865 1023 50  0000 C CNN
+F 2 "" H 10850 850 50  0001 C CNN
+F 3 "" H 10850 850 50  0001 C CNN
+	1    10850 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C7
+U 1 1 5C6AD59C
+P 10850 1000
+F 0 "C7" H 10968 1046 50  0000 L CNN
+F 1 "10u" H 10968 955 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 10888 850 50  0001 C CNN
+F 3 "~" H 10850 1000 50  0001 C CNN
+	1    10850 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C8
+U 1 1 5C6AD7CD
+P 10850 1300
+F 0 "C8" H 10968 1346 50  0000 L CNN
+F 1 "10u" H 10968 1255 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 10888 1150 50  0001 C CNN
+F 3 "~" H 10850 1300 50  0001 C CNN
+	1    10850 1300
+	1    0    0    -1  
+$EndComp
+Connection ~ 10850 1150
+Wire Wire Line
+	10250 1150 10850 1150
+Wire Wire Line
+	10550 1250 10650 1250
+Wire Wire Line
+	10650 1250 10650 1450
+Wire Wire Line
+	10650 1450 10850 1450
+Wire Wire Line
+	10550 1050 10650 1050
+Wire Wire Line
+	10650 1050 10650 850 
+Wire Wire Line
+	10650 850  10850 850 
+Connection ~ 10850 850 
+$Comp
+L power:-5V #PWR0132
+U 1 1 5C6AE342
+P 10850 1450
+F 0 "#PWR0132" H 10850 1550 50  0001 C CNN
+F 1 "-5V" H 10865 1623 50  0000 C CNN
+F 2 "" H 10850 1450 50  0001 C CNN
+F 3 "" H 10850 1450 50  0001 C CNN
+	1    10850 1450
+	-1   0    0    1   
+$EndComp
+Connection ~ 10850 1450
+$Comp
+L synkie_symbols:Conn_01x04 J9
+U 1 1 5C6ADAD3
+P 10050 2200
+F 0 "J9" H 9970 1775 50  0000 C CNN
+F 1 "Sync" H 9970 1866 50  0000 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical" H 10050 2200 50  0001 C CNN
+F 3 "~" H 10050 2200 50  0001 C CNN
+	1    10050 2200
+	-1   0    0    1   
+$EndComp
+Text Label 10250 2000 0    50   ~ 0
+h-sync
+Text Label 10250 2100 0    50   ~ 0
+v-sync
+Text Label 10250 2200 0    50   ~ 0
+b-porch
+Text Label 10250 2300 0    50   ~ 0
+odd~even
+Text Label 4050 1850 2    50   ~ 0
+h-sync
+Text Label 4050 1950 2    50   ~ 0
+v-sync
+Text Label 4050 2050 2    50   ~ 0
+odd~even
+$Comp
+L Device:Rotary_Encoder_Switch SW1
+U 1 1 5C6B3D80
+P 1500 1100
+F 0 "SW1" H 1500 1467 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 1500 1376 50  0000 C CNN
+F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC12E-Switch_Vertical_H20mm_CircularMountingHoles" H 1350 1260 50  0001 C CNN
+F 3 "~" H 1500 1360 50  0001 C CNN
+	1    1500 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0133
+U 1 1 5C6B5194
+P 1200 1100
+F 0 "#PWR0133" H 1200 850 50  0001 C CNN
+F 1 "GND" V 1200 1000 50  0000 R CNN
+F 2 "" H 1200 1100 50  0001 C CNN
+F 3 "" H 1200 1100 50  0001 C CNN
+	1    1200 1100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5C6B5C8C
+P 800 850
+F 0 "C1" H 915 896 50  0000 L CNN
+F 1 "100n" H 915 805 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 838 700 50  0001 C CNN
+F 3 "~" H 800 850 50  0001 C CNN
+	1    800  850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5C6B60A2
+P 800 1350
+F 0 "C2" H 915 1396 50  0000 L CNN
+F 1 "100n" H 915 1305 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 838 1200 50  0001 C CNN
+F 3 "~" H 800 1350 50  0001 C CNN
+	1    800  1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0134
+U 1 1 5C6B6470
+P 800 1500
+F 0 "#PWR0134" H 800 1250 50  0001 C CNN
+F 1 "GND" V 800 1400 50  0000 R CNN
+F 2 "" H 800 1500 50  0001 C CNN
+F 3 "" H 800 1500 50  0001 C CNN
+	1    800  1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0135
+U 1 1 5C6B6AFD
+P 800 700
+F 0 "#PWR0135" H 800 450 50  0001 C CNN
+F 1 "GND" V 800 600 50  0000 R CNN
+F 2 "" H 800 700 50  0001 C CNN
+F 3 "" H 800 700 50  0001 C CNN
+	1    800  700 
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1200 1000 800  1000
+Wire Wire Line
+	1200 1200 800  1200
+$Comp
+L power:GND #PWR0136
+U 1 1 5C6B77A3
+P 1800 1200
+F 0 "#PWR0136" H 1800 950 50  0001 C CNN
+F 1 "GND" V 1800 1100 50  0000 R CNN
+F 2 "" H 1800 1200 50  0001 C CNN
+F 3 "" H 1800 1200 50  0001 C CNN
+	1    1800 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5C6B7BEE
+P 2050 1150
+F 0 "C4" H 2165 1196 50  0000 L CNN
+F 1 "100n" H 2165 1105 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2088 1000 50  0001 C CNN
+F 3 "~" H 2050 1150 50  0001 C CNN
+	1    2050 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0137
+U 1 1 5C6B7E7D
+P 2050 1300
+F 0 "#PWR0137" H 2050 1050 50  0001 C CNN
+F 1 "GND" V 2050 1200 50  0000 R CNN
+F 2 "" H 2050 1300 50  0001 C CNN
+F 3 "" H 2050 1300 50  0001 C CNN
+	1    2050 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1000 2050 1000
+Text Label 1900 1000 0    50   ~ 0
+select
+Text Label 850  1000 0    50   ~ 0
+menu_a
+Text Label 4050 2650 2    50   ~ 0
+menu_b
+Text Label 4050 2550 2    50   ~ 0
+menu_a
+Text Label 4050 2750 2    50   ~ 0
+select
+$Comp
+L synkie_symbols:SW_Push SW6
+U 1 1 5C6BD3EA
+P 2850 1100
+F 0 "SW6" H 2850 1385 50  0000 C CNN
+F 1 "SW_Push" H 2850 1294 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2850 1300 50  0001 C CNN
+F 3 "" H 2850 1300 50  0001 C CNN
+	1    2850 1100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0138
+U 1 1 5C6BDB07
+P 3050 1100
+F 0 "#PWR0138" H 3050 850 50  0001 C CNN
+F 1 "GND" V 3050 1000 50  0000 R CNN
+F 2 "" H 3050 1100 50  0001 C CNN
+F 3 "" H 3050 1100 50  0001 C CNN
+	1    3050 1100
+	-1   0    0    -1  
+$EndComp
+Text Label 2650 1100 2    50   ~ 0
+sw1
+$Comp
+L synkie_symbols:SW_Push SW7
+U 1 1 5C6BFB9B
+P 2850 1700
+F 0 "SW7" H 2850 1985 50  0000 C CNN
+F 1 "SW_Push" H 2850 1894 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2850 1900 50  0001 C CNN
+F 3 "" H 2850 1900 50  0001 C CNN
+	1    2850 1700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0139
+U 1 1 5C6BFBA1
+P 3050 1700
+F 0 "#PWR0139" H 3050 1450 50  0001 C CNN
+F 1 "GND" V 3050 1600 50  0000 R CNN
+F 2 "" H 3050 1700 50  0001 C CNN
+F 3 "" H 3050 1700 50  0001 C CNN
+	1    3050 1700
+	-1   0    0    -1  
+$EndComp
+Text Label 2650 1700 2    50   ~ 0
+sw2
+$Comp
+L synkie_symbols:SW_Push SW8
+U 1 1 5C6C2684
+P 2850 2400
+F 0 "SW8" H 2850 2685 50  0000 C CNN
+F 1 "SW_Push" H 2850 2594 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2850 2600 50  0001 C CNN
+F 3 "" H 2850 2600 50  0001 C CNN
+	1    2850 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0140
+U 1 1 5C6C268A
+P 3050 2400
+F 0 "#PWR0140" H 3050 2150 50  0001 C CNN
+F 1 "GND" V 3050 2300 50  0000 R CNN
+F 2 "" H 3050 2400 50  0001 C CNN
+F 3 "" H 3050 2400 50  0001 C CNN
+	1    3050 2400
+	-1   0    0    -1  
+$EndComp
+Text Label 2650 2400 2    50   ~ 0
+sw3
+$Comp
+L synkie_symbols:SW_Push SW9
+U 1 1 5C6C2691
+P 2850 3000
+F 0 "SW9" H 2850 3285 50  0000 C CNN
+F 1 "SW_Push" H 2850 3194 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2850 3200 50  0001 C CNN
+F 3 "" H 2850 3200 50  0001 C CNN
+	1    2850 3000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0141
+U 1 1 5C6C2697
+P 3050 3000
+F 0 "#PWR0141" H 3050 2750 50  0001 C CNN
+F 1 "GND" V 3050 2900 50  0000 R CNN
+F 2 "" H 3050 3000 50  0001 C CNN
+F 3 "" H 3050 3000 50  0001 C CNN
+	1    3050 3000
+	-1   0    0    -1  
+$EndComp
+Text Label 2650 3000 2    50   ~ 0
+sw4
+$Comp
+L synkie_symbols:SW_Push SW2
+U 1 1 5C6C4124
+P 2800 3800
+F 0 "SW2" H 2800 4085 50  0000 C CNN
+F 1 "SW_Push" H 2800 3994 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2800 4000 50  0001 C CNN
+F 3 "" H 2800 4000 50  0001 C CNN
+	1    2800 3800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0142
+U 1 1 5C6C412A
+P 3000 3800
+F 0 "#PWR0142" H 3000 3550 50  0001 C CNN
+F 1 "GND" V 3000 3700 50  0000 R CNN
+F 2 "" H 3000 3800 50  0001 C CNN
+F 3 "" H 3000 3800 50  0001 C CNN
+	1    3000 3800
+	-1   0    0    -1  
+$EndComp
+Text Label 2600 3800 2    50   ~ 0
+sw5
+$Comp
+L synkie_symbols:SW_Push SW3
+U 1 1 5C6C4131
+P 2800 4400
+F 0 "SW3" H 2800 4685 50  0000 C CNN
+F 1 "SW_Push" H 2800 4594 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2800 4600 50  0001 C CNN
+F 3 "" H 2800 4600 50  0001 C CNN
+	1    2800 4400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0143
+U 1 1 5C6C4137
+P 3000 4400
+F 0 "#PWR0143" H 3000 4150 50  0001 C CNN
+F 1 "GND" V 3000 4300 50  0000 R CNN
+F 2 "" H 3000 4400 50  0001 C CNN
+F 3 "" H 3000 4400 50  0001 C CNN
+	1    3000 4400
+	-1   0    0    -1  
+$EndComp
+Text Label 2600 4400 2    50   ~ 0
+sw6
+$Comp
+L synkie_symbols:SW_Push SW4
+U 1 1 5C6C413E
+P 2800 5100
+F 0 "SW4" H 2800 5385 50  0000 C CNN
+F 1 "SW_Push" H 2800 5294 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2800 5300 50  0001 C CNN
+F 3 "" H 2800 5300 50  0001 C CNN
+	1    2800 5100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0144
+U 1 1 5C6C4144
+P 3000 5100
+F 0 "#PWR0144" H 3000 4850 50  0001 C CNN
+F 1 "GND" V 3000 5000 50  0000 R CNN
+F 2 "" H 3000 5100 50  0001 C CNN
+F 3 "" H 3000 5100 50  0001 C CNN
+	1    3000 5100
+	-1   0    0    -1  
+$EndComp
+Text Label 2600 5100 2    50   ~ 0
+sw7
+$Comp
+L synkie_symbols:SW_Push SW5
+U 1 1 5C6C414B
+P 2800 5700
+F 0 "SW5" H 2800 5985 50  0000 C CNN
+F 1 "SW_Push" H 2800 5894 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 2800 5900 50  0001 C CNN
+F 3 "" H 2800 5900 50  0001 C CNN
+	1    2800 5700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0145
+U 1 1 5C6C4151
+P 3000 5700
+F 0 "#PWR0145" H 3000 5450 50  0001 C CNN
+F 1 "GND" V 3000 5600 50  0000 R CNN
+F 2 "" H 3000 5700 50  0001 C CNN
+F 3 "" H 3000 5700 50  0001 C CNN
+	1    3000 5700
+	-1   0    0    -1  
+$EndComp
+Text Label 2600 5700 2    50   ~ 0
+sw8
+Text Label 4050 3250 2    50   ~ 0
+sw1
+Text Label 4050 3350 2    50   ~ 0
+sw2
+Text Label 4050 3450 2    50   ~ 0
+sw3
+Text Label 4050 3650 2    50   ~ 0
+sw5
+Text Label 4050 3750 2    50   ~ 0
+sw6
+Text Label 4050 3550 2    50   ~ 0
+sw4
+Text Label 4050 3850 2    50   ~ 0
+sw7
+Text Label 4050 3950 2    50   ~ 0
+sw8
+Text Label 4050 4650 2    50   ~ 0
+cv1
+Text Label 4050 4750 2    50   ~ 0
+cv2
+Text Label 4050 4850 2    50   ~ 0
+cv3
+Text Label 4050 4950 2    50   ~ 0
+cv4
+$Comp
+L synkie_symbols:R_POT RV1
+U 1 1 5C6CC67F
+P 3350 6850
+F 0 "RV1" H 3280 6896 50  0000 R CNN
+F 1 "R_POT" H 3280 6805 50  0000 R CNN
+F 2 "synkie_footprints:Potentiometer_Alps_RK09K_Single_Vertical" H 3350 6850 50  0001 C CNN
+F 3 "~" H 3350 6850 50  0001 C CNN
+	1    3350 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0146
+U 1 1 5C6CCCCF
+P 3350 7000
+F 0 "#PWR0146" H 3350 6750 50  0001 C CNN
+F 1 "GND" V 3350 6900 50  0000 R CNN
+F 2 "" H 3350 7000 50  0001 C CNN
+F 3 "" H 3350 7000 50  0001 C CNN
+	1    3350 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:R R5
+U 1 1 5C6CD5CA
+P 3350 6550
+F 0 "R5" H 3420 6596 50  0000 L CNN
+F 1 "R" H 3420 6505 50  0000 L CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3280 6550 50  0001 C CNN
+F 3 "~" H 3350 6550 50  0001 C CNN
+	1    3350 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0147
+U 1 1 5C6CDE5A
+P 3350 6400
+F 0 "#PWR0147" H 3350 6250 50  0001 C CNN
+F 1 "+3V3" V 3365 6528 50  0000 L CNN
+F 2 "" H 3350 6400 50  0001 C CNN
+F 3 "" H 3350 6400 50  0001 C CNN
+	1    3350 6400
+	1    0    0    -1  
+$EndComp
+Text Label 3500 6850 0    50   ~ 0
+sens
+Text Label 4050 5050 2    50   ~ 0
+sens
+$Comp
+L synkie_symbols:SK6812MINI D5
+U 1 1 5C6CFF04
+P 6650 3200
+F 0 "D5" H 6750 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 6700 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 6700 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 6750 2825 50  0001 L TNN
+	1    6650 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0148
+U 1 1 5C6D0868
+P 6650 2900
+F 0 "#PWR0148" H 6650 2750 50  0001 C CNN
+F 1 "+3V3" V 6665 3028 50  0000 L CNN
+F 2 "" H 6650 2900 50  0001 C CNN
+F 3 "" H 6650 2900 50  0001 C CNN
+	1    6650 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0149
+U 1 1 5C6D0F47
+P 6650 3500
+F 0 "#PWR0149" H 6650 3250 50  0001 C CNN
+F 1 "GND" V 6650 3400 50  0000 R CNN
+F 2 "" H 6650 3500 50  0001 C CNN
+F 3 "" H 6650 3500 50  0001 C CNN
+	1    6650 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:SK6812MINI D6
+U 1 1 5C6D4516
+P 7250 3200
+F 0 "D6" H 7350 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 7300 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 7300 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 7350 2825 50  0001 L TNN
+	1    7250 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0150
+U 1 1 5C6D451C
+P 7250 2900
+F 0 "#PWR0150" H 7250 2750 50  0001 C CNN
+F 1 "+3V3" V 7265 3028 50  0000 L CNN
+F 2 "" H 7250 2900 50  0001 C CNN
+F 3 "" H 7250 2900 50  0001 C CNN
+	1    7250 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0151
+U 1 1 5C6D4522
+P 7250 3500
+F 0 "#PWR0151" H 7250 3250 50  0001 C CNN
+F 1 "GND" V 7250 3400 50  0000 R CNN
+F 2 "" H 7250 3500 50  0001 C CNN
+F 3 "" H 7250 3500 50  0001 C CNN
+	1    7250 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:SK6812MINI D7
+U 1 1 5C6D4E7C
+P 7850 3200
+F 0 "D7" H 7950 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 7900 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 7900 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 7950 2825 50  0001 L TNN
+	1    7850 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0152
+U 1 1 5C6D4E82
+P 7850 2900
+F 0 "#PWR0152" H 7850 2750 50  0001 C CNN
+F 1 "+3V3" V 7865 3028 50  0000 L CNN
+F 2 "" H 7850 2900 50  0001 C CNN
+F 3 "" H 7850 2900 50  0001 C CNN
+	1    7850 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0153
+U 1 1 5C6D4E88
+P 7850 3500
+F 0 "#PWR0153" H 7850 3250 50  0001 C CNN
+F 1 "GND" V 7850 3400 50  0000 R CNN
+F 2 "" H 7850 3500 50  0001 C CNN
+F 3 "" H 7850 3500 50  0001 C CNN
+	1    7850 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:SK6812MINI D8
+U 1 1 5C6D4E8E
+P 8450 3200
+F 0 "D8" H 8550 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 8500 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 8500 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 8550 2825 50  0001 L TNN
+	1    8450 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0154
+U 1 1 5C6D4E94
+P 8450 2900
+F 0 "#PWR0154" H 8450 2750 50  0001 C CNN
+F 1 "+3V3" V 8465 3028 50  0000 L CNN
+F 2 "" H 8450 2900 50  0001 C CNN
+F 3 "" H 8450 2900 50  0001 C CNN
+	1    8450 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0155
+U 1 1 5C6D4E9A
+P 8450 3500
+F 0 "#PWR0155" H 8450 3250 50  0001 C CNN
+F 1 "GND" V 8450 3400 50  0000 R CNN
+F 2 "" H 8450 3500 50  0001 C CNN
+F 3 "" H 8450 3500 50  0001 C CNN
+	1    8450 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:SK6812MINI D9
+U 1 1 5C6D5D07
+P 9050 3200
+F 0 "D9" H 9150 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 9100 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 9100 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 9150 2825 50  0001 L TNN
+	1    9050 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0156
+U 1 1 5C6D5D0D
+P 9050 2900
+F 0 "#PWR0156" H 9050 2750 50  0001 C CNN
+F 1 "+3V3" V 9065 3028 50  0000 L CNN
+F 2 "" H 9050 2900 50  0001 C CNN
+F 3 "" H 9050 2900 50  0001 C CNN
+	1    9050 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0157
+U 1 1 5C6D5D13
+P 9050 3500
+F 0 "#PWR0157" H 9050 3250 50  0001 C CNN
+F 1 "GND" V 9050 3400 50  0000 R CNN
+F 2 "" H 9050 3500 50  0001 C CNN
+F 3 "" H 9050 3500 50  0001 C CNN
+	1    9050 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:SK6812MINI D10
+U 1 1 5C6D5D19
+P 9650 3200
+F 0 "D10" H 9750 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 9700 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 9700 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 9750 2825 50  0001 L TNN
+	1    9650 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0158
+U 1 1 5C6D5D1F
+P 9650 2900
+F 0 "#PWR0158" H 9650 2750 50  0001 C CNN
+F 1 "+3V3" V 9665 3028 50  0000 L CNN
+F 2 "" H 9650 2900 50  0001 C CNN
+F 3 "" H 9650 2900 50  0001 C CNN
+	1    9650 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0159
+U 1 1 5C6D5D25
+P 9650 3500
+F 0 "#PWR0159" H 9650 3250 50  0001 C CNN
+F 1 "GND" V 9650 3400 50  0000 R CNN
+F 2 "" H 9650 3500 50  0001 C CNN
+F 3 "" H 9650 3500 50  0001 C CNN
+	1    9650 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:SK6812MINI D11
+U 1 1 5C6D5D2B
+P 10250 3200
+F 0 "D11" H 10350 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 10300 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 10300 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 10350 2825 50  0001 L TNN
+	1    10250 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0160
+U 1 1 5C6D5D31
+P 10250 2900
+F 0 "#PWR0160" H 10250 2750 50  0001 C CNN
+F 1 "+3V3" V 10265 3028 50  0000 L CNN
+F 2 "" H 10250 2900 50  0001 C CNN
+F 3 "" H 10250 2900 50  0001 C CNN
+	1    10250 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0161
+U 1 1 5C6D5D37
+P 10250 3500
+F 0 "#PWR0161" H 10250 3250 50  0001 C CNN
+F 1 "GND" V 10250 3400 50  0000 R CNN
+F 2 "" H 10250 3500 50  0001 C CNN
+F 3 "" H 10250 3500 50  0001 C CNN
+	1    10250 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:SK6812MINI D12
+U 1 1 5C6D5D3D
+P 10850 3200
+F 0 "D12" H 10950 3450 50  0000 L CNN
+F 1 "SK6812MINI" H 10900 2950 50  0000 L CNN
+F 2 "LED_SMD:LED_SK6812MINI_PLCC4_3.5x3.5mm_P1.75mm" H 10900 2900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/product-files/2686/SK6812MINI_REV.01-1-2.pdf" H 10950 2825 50  0001 L TNN
+	1    10850 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0162
+U 1 1 5C6D5D43
+P 10850 2900
+F 0 "#PWR0162" H 10850 2750 50  0001 C CNN
+F 1 "+3V3" V 10865 3028 50  0000 L CNN
+F 2 "" H 10850 2900 50  0001 C CNN
+F 3 "" H 10850 2900 50  0001 C CNN
+	1    10850 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0163
+U 1 1 5C6D5D49
+P 10850 3500
+F 0 "#PWR0163" H 10850 3250 50  0001 C CNN
+F 1 "GND" V 10850 3400 50  0000 R CNN
+F 2 "" H 10850 3500 50  0001 C CNN
+F 3 "" H 10850 3500 50  0001 C CNN
+	1    10850 3500
+	-1   0    0    -1  
+$EndComp
+Text Label 6350 3200 2    50   ~ 0
+pix
+Text Label 4050 2350 2    50   ~ 0
+pix
+Text Label 850  1200 0    50   ~ 0
+menu_b
+$Comp
+L Regulator_Linear:LD1117S33TR_SOT223 U?
+U 1 1 5C6D6490
+P 6250 950
+F 0 "U?" H 6250 1192 50  0000 C CNN
+F 1 "LD1117S33TR_SOT223" H 6250 1101 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 6250 1150 50  0001 C CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000544.pdf" H 6350 700 50  0001 C CNN
+	1    6250 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5C6D70C2
+P 6550 950
+F 0 "#PWR?" H 6550 800 50  0001 C CNN
+F 1 "+3V3" V 6565 1078 50  0000 L CNN
+F 2 "" H 6550 950 50  0001 C CNN
+F 3 "" H 6550 950 50  0001 C CNN
+	1    6550 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C6D8141
+P 5950 950
+F 0 "#PWR?" H 5950 800 50  0001 C CNN
+F 1 "+5V" H 5965 1123 50  0000 C CNN
+F 2 "" H 5950 950 50  0001 C CNN
+F 3 "" H 5950 950 50  0001 C CNN
+	1    5950 950 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C6D9814
+P 6250 1250
+F 0 "#PWR?" H 6250 1000 50  0001 C CNN
+F 1 "GND" V 6250 1150 50  0000 R CNN
+F 2 "" H 6250 1250 50  0001 C CNN
+F 3 "" H 6250 1250 50  0001 C CNN
+	1    6250 1250
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC

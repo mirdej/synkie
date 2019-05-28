@@ -1,4 +1,4 @@
-#include <Adafruit_NeoPixel.h>
+  #include <Adafruit_NeoPixel.h>
 #include <Timer.h>
 #define PIN            0
 #define NUMPIXELS      2
@@ -9,7 +9,7 @@ Timer	t;
 
 void setup() {
 	//analogReference(INTERNAL2V56);
-	pixels.setBrightness(30);
+	pixels.setBrightness(100);
 	pixels.begin();
 	
 	for (char i=0; i < 4; i++) {
@@ -34,10 +34,12 @@ void update () {
 
 	if (volts_pos < 0.7) {
 		power = volts_pos / 0.7;
+		power = sqrt(power);
 		power *= 255.;
 		pixels.setPixelColor(0, pixels.Color(0,power,0)); 
 	} else if (volts_pos < 1.4) {
 		power = (volts_pos-0.7) / 0.7;
+		power = sqrt(power);
 		power *= 255.;
 		pixels.setPixelColor(0, pixels.Color( power,255,0));
 	} else {
