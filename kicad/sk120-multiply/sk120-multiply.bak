@@ -1,0 +1,562 @@
+EESchema Schematic File Version 4
+LIBS:sk120-multiply-cache
+LIBS:b002-in-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5C6ACCC5
+P 2800 1750
+F 0 "J?" H 2900 1750 50  0000 C CNN
+F 1 "Supply" H 2950 2000 50  0000 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 2800 1750 50  0001 C CNN
+F 3 "~" H 2800 1750 50  0001 C CNN
+	1    2800 1750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Ferrite_Bead FB?
+U 1 1 5C6ACEE4
+P 3150 1650
+F 0 "FB?" V 2900 1550 50  0000 C CNN
+F 1 "Ferrite_Bead" V 3000 1500 50  0000 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3080 1650 50  0001 C CNN
+F 3 "~" H 3150 1650 50  0001 C CNN
+	1    3150 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Ferrite_Bead FB?
+U 1 1 5C6ACF86
+P 3150 1850
+F 0 "FB?" V 3400 1850 50  0000 C CNN
+F 1 "Ferrite_Bead" V 3300 1800 50  0000 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3080 1850 50  0001 C CNN
+F 3 "~" H 3150 1850 50  0001 C CNN
+	1    3150 1850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C6AD007
+P 3600 1750
+F 0 "#PWR?" H 3600 1500 50  0001 C CNN
+F 1 "GND" V 3600 1650 50  0000 R CNN
+F 2 "" H 3600 1750 50  0001 C CNN
+F 3 "" H 3600 1750 50  0001 C CNN
+	1    3600 1750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C6AD4FF
+P 3600 1450
+F 0 "#PWR?" H 3600 1300 50  0001 C CNN
+F 1 "+5V" H 3615 1623 50  0000 C CNN
+F 2 "" H 3600 1450 50  0001 C CNN
+F 3 "" H 3600 1450 50  0001 C CNN
+	1    3600 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5C6AD59C
+P 3600 1600
+F 0 "C?" H 3718 1646 50  0000 L CNN
+F 1 "10u" H 3718 1555 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 3638 1450 50  0001 C CNN
+F 3 "~" H 3600 1600 50  0001 C CNN
+	1    3600 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5C6AD7CD
+P 3600 1900
+F 0 "C?" H 3718 1946 50  0000 L CNN
+F 1 "10u" H 3718 1855 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 3638 1750 50  0001 C CNN
+F 3 "~" H 3600 1900 50  0001 C CNN
+	1    3600 1900
+	1    0    0    -1  
+$EndComp
+Connection ~ 3600 1750
+Wire Wire Line
+	3000 1750 3600 1750
+Wire Wire Line
+	3300 1850 3400 1850
+Wire Wire Line
+	3400 1850 3400 2050
+Wire Wire Line
+	3400 2050 3600 2050
+Wire Wire Line
+	3300 1650 3400 1650
+Wire Wire Line
+	3400 1650 3400 1450
+Wire Wire Line
+	3400 1450 3600 1450
+Connection ~ 3600 1450
+$Comp
+L power:-5V #PWR?
+U 1 1 5C6AE342
+P 3600 2050
+F 0 "#PWR?" H 3600 2150 50  0001 C CNN
+F 1 "-5V" H 3615 2223 50  0000 C CNN
+F 2 "" H 3600 2050 50  0001 C CNN
+F 3 "" H 3600 2050 50  0001 C CNN
+	1    3600 2050
+	-1   0    0    1   
+$EndComp
+Connection ~ 3600 2050
+$Comp
+L synkie_symbols:AD835 U?
+U 1 1 5CED3BB1
+P 5650 3500
+F 0 "U?" H 6191 3596 50  0000 L CNN
+F 1 "AD835" H 6191 3505 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5650 3300 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/mpy634.pdf" H 5650 3550 50  0001 C CNN
+	1    5650 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-5V #PWR?
+U 1 1 5CED4112
+P 5650 4000
+F 0 "#PWR?" H 5650 4100 50  0001 C CNN
+F 1 "-5V" H 5665 4173 50  0000 C CNN
+F 2 "" H 5650 4000 50  0001 C CNN
+F 3 "" H 5650 4000 50  0001 C CNN
+	1    5650 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5CED4387
+P 5650 2900
+F 0 "#PWR?" H 5650 2750 50  0001 C CNN
+F 1 "+5V" H 5665 3073 50  0000 C CNN
+F 2 "" H 5650 2900 50  0001 C CNN
+F 3 "" H 5650 2900 50  0001 C CNN
+	1    5650 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5CED46BF
+P 5800 1400
+F 0 "#PWR?" H 5800 1250 50  0001 C CNN
+F 1 "+5V" H 5815 1573 50  0000 C CNN
+F 2 "" H 5800 1400 50  0001 C CNN
+F 3 "" H 5800 1400 50  0001 C CNN
+	1    5800 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CED487C
+P 5800 1550
+F 0 "C?" H 5915 1596 50  0000 L CNN
+F 1 "10n" H 5915 1505 50  0000 L CNN
+F 2 "" H 5838 1400 50  0001 C CNN
+F 3 "~" H 5800 1550 50  0001 C CNN
+	1    5800 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CED4E40
+P 5800 1700
+F 0 "#PWR?" H 5800 1450 50  0001 C CNN
+F 1 "GND" V 5800 1600 50  0000 R CNN
+F 2 "" H 5800 1700 50  0001 C CNN
+F 3 "" H 5800 1700 50  0001 C CNN
+	1    5800 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CED51D4
+P 6150 1400
+F 0 "#PWR?" H 6150 1150 50  0001 C CNN
+F 1 "GND" V 6150 1300 50  0000 R CNN
+F 2 "" H 6150 1400 50  0001 C CNN
+F 3 "" H 6150 1400 50  0001 C CNN
+	1    6150 1400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CED5375
+P 6150 1550
+F 0 "C?" H 6265 1596 50  0000 L CNN
+F 1 "10n" H 6265 1505 50  0000 L CNN
+F 2 "" H 6188 1400 50  0001 C CNN
+F 3 "~" H 6150 1550 50  0001 C CNN
+	1    6150 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-5V #PWR?
+U 1 1 5CED5560
+P 6150 1700
+F 0 "#PWR?" H 6150 1800 50  0001 C CNN
+F 1 "-5V" H 6165 1873 50  0000 C CNN
+F 2 "" H 6150 1700 50  0001 C CNN
+F 3 "" H 6150 1700 50  0001 C CNN
+	1    6150 1700
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CED599B
+P 5150 3200
+F 0 "#PWR?" H 5150 2950 50  0001 C CNN
+F 1 "GND" V 5150 3100 50  0000 R CNN
+F 2 "" H 5150 3200 50  0001 C CNN
+F 3 "" H 5150 3200 50  0001 C CNN
+	1    5150 3200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CED5AFE
+P 5150 3500
+F 0 "#PWR?" H 5150 3250 50  0001 C CNN
+F 1 "GND" V 5150 3400 50  0000 R CNN
+F 2 "" H 5150 3500 50  0001 C CNN
+F 3 "" H 5150 3500 50  0001 C CNN
+	1    5150 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:Conn_01x01 J?
+U 1 1 5CED60A7
+P 2800 3100
+F 0 "J?" H 2720 2875 50  0000 C CNN
+F 1 "Conn_01x01" H 2720 2966 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 2800 3100 50  0001 C CNN
+F 3 "~" H 2800 3100 50  0001 C CNN
+	1    2800 3100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CED6258
+P 3550 3100
+F 0 "R?" V 3343 3100 50  0000 C CNN
+F 1 "100" V 3434 3100 50  0000 C CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3480 3100 50  0001 C CNN
+F 3 "~" H 3550 3100 50  0001 C CNN
+	1    3550 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:BAT54S D?
+U 1 1 5CED638F
+P 3850 3100
+F 0 "D?" V 3896 3188 50  0000 L CNN
+F 1 "BAT54S" H 3550 3000 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3925 3225 50  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds11005.pdf" H 3730 3100 50  0001 C CNN
+	1    3850 3100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3700 3100 4050 3100
+$Comp
+L power:+5V #PWR?
+U 1 1 5CED6754
+P 3850 2800
+F 0 "#PWR?" H 3850 2650 50  0001 C CNN
+F 1 "+5V" H 3865 2973 50  0000 C CNN
+F 2 "" H 3850 2800 50  0001 C CNN
+F 3 "" H 3850 2800 50  0001 C CNN
+	1    3850 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-5V #PWR?
+U 1 1 5CED6984
+P 3850 3400
+F 0 "#PWR?" H 3850 3500 50  0001 C CNN
+F 1 "-5V" H 3865 3573 50  0000 C CNN
+F 2 "" H 3850 3400 50  0001 C CNN
+F 3 "" H 3850 3400 50  0001 C CNN
+	1    3850 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CED6B17
+P 3400 3250
+F 0 "R?" H 3330 3204 50  0000 R CNN
+F 1 "47k" H 3330 3295 50  0000 R CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3330 3250 50  0001 C CNN
+F 3 "~" H 3400 3250 50  0001 C CNN
+	1    3400 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CED6F0B
+P 3400 3400
+F 0 "#PWR?" H 3400 3150 50  0001 C CNN
+F 1 "GND" H 3405 3227 50  0000 C CNN
+F 2 "" H 3400 3400 50  0001 C CNN
+F 3 "" H 3400 3400 50  0001 C CNN
+	1    3400 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 3100 3400 3100
+Connection ~ 3400 3100
+$Comp
+L Device:R R?
+U 1 1 5CED7212
+P 4200 3100
+F 0 "R?" V 3993 3100 50  0000 C CNN
+F 1 "100" V 4084 3100 50  0000 C CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4130 3100 50  0001 C CNN
+F 3 "~" H 4200 3100 50  0001 C CNN
+	1    4200 3100
+	0    1    1    0   
+$EndComp
+Connection ~ 4050 3100
+$Comp
+L synkie_symbols:Conn_01x01 J?
+U 1 1 5CED854E
+P 2800 4350
+F 0 "J?" H 2720 4125 50  0000 C CNN
+F 1 "Conn_01x01" H 2720 4216 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 2800 4350 50  0001 C CNN
+F 3 "~" H 2800 4350 50  0001 C CNN
+	1    2800 4350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CED8554
+P 3550 4350
+F 0 "R?" V 3343 4350 50  0000 C CNN
+F 1 "100" V 3434 4350 50  0000 C CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3480 4350 50  0001 C CNN
+F 3 "~" H 3550 4350 50  0001 C CNN
+	1    3550 4350
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:BAT54S D?
+U 1 1 5CED855A
+P 3850 4350
+F 0 "D?" V 3896 4438 50  0000 L CNN
+F 1 "BAT54S" H 3550 4250 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3925 4475 50  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds11005.pdf" H 3730 4350 50  0001 C CNN
+	1    3850 4350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3700 4350 4050 4350
+$Comp
+L power:+5V #PWR?
+U 1 1 5CED8561
+P 3850 4050
+F 0 "#PWR?" H 3850 3900 50  0001 C CNN
+F 1 "+5V" H 3865 4223 50  0000 C CNN
+F 2 "" H 3850 4050 50  0001 C CNN
+F 3 "" H 3850 4050 50  0001 C CNN
+	1    3850 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-5V #PWR?
+U 1 1 5CED8567
+P 3850 4650
+F 0 "#PWR?" H 3850 4750 50  0001 C CNN
+F 1 "-5V" H 3865 4823 50  0000 C CNN
+F 2 "" H 3850 4650 50  0001 C CNN
+F 3 "" H 3850 4650 50  0001 C CNN
+	1    3850 4650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CED856D
+P 3400 4500
+F 0 "R?" H 3330 4454 50  0000 R CNN
+F 1 "47k" H 3330 4545 50  0000 R CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3330 4500 50  0001 C CNN
+F 3 "~" H 3400 4500 50  0001 C CNN
+	1    3400 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CED8573
+P 3400 4650
+F 0 "#PWR?" H 3400 4400 50  0001 C CNN
+F 1 "GND" H 3405 4477 50  0000 C CNN
+F 2 "" H 3400 4650 50  0001 C CNN
+F 3 "" H 3400 4650 50  0001 C CNN
+	1    3400 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 4350 3400 4350
+Connection ~ 3400 4350
+$Comp
+L Device:R R?
+U 1 1 5CED857B
+P 4200 4350
+F 0 "R?" V 3993 4350 50  0000 C CNN
+F 1 "100" V 4084 4350 50  0000 C CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4130 4350 50  0001 C CNN
+F 3 "~" H 4200 4350 50  0001 C CNN
+	1    4200 4350
+	0    1    1    0   
+$EndComp
+Connection ~ 4050 4350
+$Comp
+L synkie_symbols:Conn_01x01 J?
+U 1 1 5CED8FB8
+P 2800 5650
+F 0 "J?" H 2720 5425 50  0000 C CNN
+F 1 "Conn_01x01" H 2720 5516 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 2800 5650 50  0001 C CNN
+F 3 "~" H 2800 5650 50  0001 C CNN
+	1    2800 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CED8FBE
+P 3550 5650
+F 0 "R?" V 3343 5650 50  0000 C CNN
+F 1 "100" V 3434 5650 50  0000 C CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3480 5650 50  0001 C CNN
+F 3 "~" H 3550 5650 50  0001 C CNN
+	1    3550 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:BAT54S D?
+U 1 1 5CED8FC4
+P 3850 5650
+F 0 "D?" V 3896 5738 50  0000 L CNN
+F 1 "BAT54S" H 3550 5550 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3925 5775 50  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds11005.pdf" H 3730 5650 50  0001 C CNN
+	1    3850 5650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3700 5650 4050 5650
+$Comp
+L power:+5V #PWR?
+U 1 1 5CED8FCB
+P 3850 5350
+F 0 "#PWR?" H 3850 5200 50  0001 C CNN
+F 1 "+5V" H 3865 5523 50  0000 C CNN
+F 2 "" H 3850 5350 50  0001 C CNN
+F 3 "" H 3850 5350 50  0001 C CNN
+	1    3850 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-5V #PWR?
+U 1 1 5CED8FD1
+P 3850 5950
+F 0 "#PWR?" H 3850 6050 50  0001 C CNN
+F 1 "-5V" H 3865 6123 50  0000 C CNN
+F 2 "" H 3850 5950 50  0001 C CNN
+F 3 "" H 3850 5950 50  0001 C CNN
+	1    3850 5950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CED8FD7
+P 3400 5800
+F 0 "R?" H 3330 5754 50  0000 R CNN
+F 1 "47k" H 3330 5845 50  0000 R CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3330 5800 50  0001 C CNN
+F 3 "~" H 3400 5800 50  0001 C CNN
+	1    3400 5800
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CED8FDD
+P 3400 5950
+F 0 "#PWR?" H 3400 5700 50  0001 C CNN
+F 1 "GND" H 3405 5777 50  0000 C CNN
+F 2 "" H 3400 5950 50  0001 C CNN
+F 3 "" H 3400 5950 50  0001 C CNN
+	1    3400 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 5650 3400 5650
+Connection ~ 3400 5650
+$Comp
+L Device:R R?
+U 1 1 5CED8FE5
+P 4200 5650
+F 0 "R?" V 3993 5650 50  0000 C CNN
+F 1 "100" V 4084 5650 50  0000 C CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4130 5650 50  0001 C CNN
+F 3 "~" H 4200 5650 50  0001 C CNN
+	1    4200 5650
+	0    1    1    0   
+$EndComp
+Connection ~ 4050 5650
+Wire Wire Line
+	4350 3100 5150 3100
+Wire Wire Line
+	5150 3400 4350 3400
+Wire Wire Line
+	4350 3400 4350 4350
+Wire Wire Line
+	5150 3700 4550 3700
+Wire Wire Line
+	4550 3700 4550 5650
+Wire Wire Line
+	4550 5650 4350 5650
+$Comp
+L Device:R R?
+U 1 1 5CEDB06E
+P 6650 3700
+F 0 "R?" V 6443 3700 50  0000 C CNN
+F 1 "75" V 6534 3700 50  0000 C CNN
+F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6580 3700 50  0001 C CNN
+F 3 "~" H 6650 3700 50  0001 C CNN
+	1    6650 3700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6150 3700 6500 3700
+$Comp
+L synkie_symbols:Conn_01x01 J?
+U 1 1 5CEDC7A3
+P 7000 3700
+F 0 "J?" H 6920 3475 50  0000 C CNN
+F 1 "Conn_01x01" H 6920 3566 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 7000 3700 50  0001 C CNN
+F 3 "~" H 7000 3700 50  0001 C CNN
+	1    7000 3700
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
