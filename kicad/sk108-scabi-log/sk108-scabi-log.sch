@@ -442,8 +442,6 @@ F 3 "" H 6750 4800 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	6450 4400 6950 4400
-Wire Wire Line
 	6750 4000 6750 4100
 Wire Wire Line
 	6750 4700 6750 4800
@@ -482,9 +480,6 @@ F 3 "" H 7350 4850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7350 4750 7350 4850
-Wire Wire Line
-	7000 4400 6950 4400
-Connection ~ 6950 4400
 Wire Wire Line
 	7300 4400 7350 4400
 Wire Wire Line
@@ -672,8 +667,6 @@ F 3 "" H 3900 6550 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	3600 6200 4100 6200
-Wire Wire Line
 	3900 5850 3900 5900
 $Comp
 L synkie_symbols:R R31
@@ -686,9 +679,6 @@ F 3 "~" H 4300 6200 50  0001 C CNN
 	1    4300 6200
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	4150 6200 4100 6200
-Connection ~ 4100 6200
 $Comp
 L synkie_symbols:Opamp_Dual_Generic U2
 U 1 1 5DDD6A34
@@ -1176,8 +1166,6 @@ F 3 "" H 5500 1500 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	5200 1150 5700 1150
-Wire Wire Line
 	5500 800  5500 850 
 Wire Wire Line
 	5500 1450 5500 1500
@@ -1192,9 +1180,6 @@ F 3 "~" H 5900 1150 50  0001 C CNN
 	1    5900 1150
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	5750 1150 5700 1150
-Connection ~ 5700 1150
 $Comp
 L synkie_symbols:R R3
 U 1 1 5E0373D2
@@ -1803,4 +1788,19 @@ $EndComp
 Wire Wire Line
 	9600 4900 9600 4600
 Connection ~ 9600 4600
+Wire Wire Line
+	5200 1150 5500 1150
+Wire Wire Line
+	5500 1150 5750 1150
+Connection ~ 5500 1150
+Wire Wire Line
+	6450 4400 6750 4400
+Wire Wire Line
+	7000 4400 6750 4400
+Connection ~ 6750 4400
+Wire Wire Line
+	3600 6200 3900 6200
+Wire Wire Line
+	4150 6200 3900 6200
+Connection ~ 3900 6200
 $EndSCHEMATC
