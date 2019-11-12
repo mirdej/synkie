@@ -1,5 +1,15 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP +5V
+D Power symbol creates a global label with name "+5V"
+K power-flag
+$ENDCMP
+#
+$CMP -5V
+D Power symbol creates a global label with name "-5V"
+K power-flag
+$ENDCMP
+#
 $CMP AD835
 D Wide Bandwidth Precision Analog Multiplier, DIP-14
 K analog multiplier
@@ -10,6 +20,18 @@ $CMP BAT54S
 D schottky barrier diode
 K schottky diode
 F https://www.diodes.com/assets/Datasheets/ds11005.pdf
+$ENDCMP
+#
+$CMP CP_Small
+D Polarized capacitor, small symbol
+K cap capacitor
+F ~
+$ENDCMP
+#
+$CMP C_Small
+D Unpolarized capacitor, small symbol
+K capacitor cap
+F ~
 $ENDCMP
 #
 $CMP Conn_01x01
@@ -42,9 +64,24 @@ K L ferrite bead inductor filter
 F ~
 $ENDCMP
 #
+$CMP GND
+D Power symbol creates a global label with name "GND" , ground
+K power-flag
+$ENDCMP
+#
+$CMP LT1228
+D LT1228 CFA with gain control
+$ENDCMP
+#
 $CMP Opamp_Dual_Generic
 D Dual operational amplifier
 K dual opamp
+F ~
+$ENDCMP
+#
+$CMP PWR_FLAG
+D Special symbol for telling ERC where power comes from
+K power-flag
 F ~
 $ENDCMP
 #
