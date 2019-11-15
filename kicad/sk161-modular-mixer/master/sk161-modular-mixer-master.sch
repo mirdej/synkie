@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
 LIBS:sk161-modular-mixer-master-cache
-LIBS:sk161-modular-mixer-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -32,7 +31,7 @@ U 1 1 5DCE4D3A
 P 6700 4600
 F 0 "FB2" V 6850 4600 50  0000 C CNN
 F 1 "330u" V 6950 4600 50  0000 C CNN
-F 2 "synkie_footprints:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6630 4600 50  0001 C CNN
+F 2 "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6630 4600 50  0001 C CNN
 F 3 "~" H 6700 4600 50  0001 C CNN
 	1    6700 4600
 	0    1    1    0   
@@ -43,7 +42,7 @@ U 1 1 5DCE4D39
 P 6700 4400
 F 0 "FB1" V 6426 4400 50  0000 C CNN
 F 1 "330u" V 6517 4400 50  0000 C CNN
-F 2 "synkie_footprints:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6630 4400 50  0001 C CNN
+F 2 "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6630 4400 50  0001 C CNN
 F 3 "~" H 6700 4400 50  0001 C CNN
 	1    6700 4400
 	0    1    1    0   
