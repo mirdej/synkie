@@ -193,28 +193,6 @@ F 3 "~" H 7550 2400 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L synkie_symbols:Conn_01x01 IN1
-U 1 1 5CF279D9
-P 4000 2000
-F 0 "IN1" H 3918 1775 50  0000 C CNN
-F 1 "Conn_01x01" H 3918 1866 50  0000 C CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 4000 2000 50  0001 C CNN
-F 3 "~" H 4000 2000 50  0001 C CNN
-	1    4000 2000
-	-1   0    0    1   
-$EndComp
-$Comp
-L synkie_symbols:Conn_01x01 OUT1
-U 1 1 5CF2941F
-P 6350 4000
-F 0 "OUT1" H 6430 4042 50  0000 L CNN
-F 1 "Conn_01x01" H 6430 3951 50  0000 L CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 6350 4000 50  0001 C CNN
-F 3 "~" H 6350 4000 50  0001 C CNN
-	1    6350 4000
-	1    0    0    -1  
-$EndComp
-$Comp
 L synkie_symbols:Conn_01x03 J5
 U 1 1 5CF2C01D
 P 8600 3600
@@ -503,4 +481,48 @@ Wire Wire Line
 Connection ~ 4900 3450
 Wire Wire Line
 	4650 4700 4850 4700
+$Comp
+L synkie_symbols:Conn_01x02 IN1
+U 1 1 5DD5A6DA
+P 4000 2100
+F 0 "IN1" H 3920 1775 50  0000 C CNN
+F 1 "Conn_01x02" H 3920 1866 50  0000 C CNN
+F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 4000 2100 50  0001 C CNN
+F 3 "~" H 4000 2100 50  0001 C CNN
+	1    4000 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L synkie_symbols:Conn_01x02 OUT1
+U 1 1 5DD5B16D
+P 6350 4100
+F 0 "OUT1" H 6269 3775 50  0000 C CNN
+F 1 "Conn_01x02" H 6269 3866 50  0000 C CNN
+F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 6350 4100 50  0001 C CNN
+F 3 "~" H 6350 4100 50  0001 C CNN
+	1    6350 4100
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5DD60243
+P 6150 4100
+F 0 "#PWR0109" H 6150 3850 50  0001 C CNN
+F 1 "GND" H 6155 3927 50  0000 C CNN
+F 2 "" H 6150 4100 50  0001 C CNN
+F 3 "" H 6150 4100 50  0001 C CNN
+	1    6150 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5DD60488
+P 4200 2100
+F 0 "#PWR0110" H 4200 1850 50  0001 C CNN
+F 1 "GND" H 4205 1927 50  0000 C CNN
+F 2 "" H 4200 2100 50  0001 C CNN
+F 3 "" H 4200 2100 50  0001 C CNN
+	1    4200 2100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
