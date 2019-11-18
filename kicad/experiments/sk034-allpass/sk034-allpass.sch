@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+LIBS:sk034-allpass-cache
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -112,10 +113,6 @@ F 3 "~" H 5050 4200 50  0001 C CNN
 	1    5050 4200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4850 3900 4950 3900
-Wire Wire Line
-	4750 2000 5050 2000
 $Comp
 L power:GND #PWR0101
 U 1 1 5CF13127
@@ -138,8 +135,6 @@ F 3 "" H 5050 4350 50  0001 C CNN
 	1    5050 4350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4450 3900 4550 3900
 $Comp
 L power:+5V #PWR0103
 U 1 1 5CF16C13
@@ -165,24 +160,6 @@ $EndComp
 Wire Wire Line
 	7700 1600 7700 1750
 $Comp
-L synkie_symbols:R_POT RV2
-U 1 1 5CF1BB20
-P 4700 3900
-F 0 "RV2" V 4493 3900 50  0000 C CNN
-F 1 "10k" V 4584 3900 50  0000 C CNN
-F 2 "synkie_footprints:Potentiometer_Alps_RK09K_Single_Vertical" H 4700 3900 50  0001 C CNN
-F 3 "~" H 4700 3900 50  0001 C CNN
-	1    4700 3900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4600 2150 4600 2200
-Wire Wire Line
-	4600 2200 4350 2200
-Wire Wire Line
-	4700 4050 4700 4100
-Connection ~ 4450 3900
-$Comp
 L power:GND #PWR0105
 U 1 1 5CF1D48A
 P 7400 2550
@@ -199,7 +176,7 @@ U 1 1 5CF1DF6E
 P 7550 1750
 F 0 "C3" V 7298 1750 50  0000 C CNN
 F 1 "100n" V 7389 1750 50  0000 C CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7588 1600 50  0001 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7588 1600 50  0001 C CNN
 F 3 "~" H 7550 1750 50  0001 C CNN
 	1    7550 1750
 	0    1    1    0   
@@ -210,16 +187,16 @@ U 1 1 5CF1EF18
 P 7550 2400
 F 0 "C4" V 7298 2400 50  0000 C CNN
 F 1 "100n" V 7389 2400 50  0000 C CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7588 2250 50  0001 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7588 2250 50  0001 C CNN
 F 3 "~" H 7550 2400 50  0001 C CNN
 	1    7550 2400
 	0    1    1    0   
 $EndComp
 $Comp
-L synkie_symbols:Conn_01x01 J1
+L synkie_symbols:Conn_01x01 IN1
 U 1 1 5CF279D9
 P 4000 2000
-F 0 "J1" H 3918 1775 50  0000 C CNN
+F 0 "IN1" H 3918 1775 50  0000 C CNN
 F 1 "Conn_01x01" H 3918 1866 50  0000 C CNN
 F 2 "synkie_footprints:Solderpad_1mm" H 4000 2000 50  0001 C CNN
 F 3 "~" H 4000 2000 50  0001 C CNN
@@ -227,40 +204,16 @@ F 3 "~" H 4000 2000 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L synkie_symbols:Conn_01x01 J2
-U 1 1 5CF2851C
-P 4100 3900
-F 0 "J2" H 4018 3675 50  0000 C CNN
-F 1 "Conn_01x01" H 4018 3766 50  0000 C CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 4100 3900 50  0001 C CNN
-F 3 "~" H 4100 3900 50  0001 C CNN
-	1    4100 3900
-	-1   0    0    1   
-$EndComp
-$Comp
-L synkie_symbols:Conn_01x01 J4
-U 1 1 5CF28D17
-P 6400 2100
-F 0 "J4" H 6480 2142 50  0000 L CNN
-F 1 "Conn_01x01" H 6480 2051 50  0000 L CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 6400 2100 50  0001 C CNN
-F 3 "~" H 6400 2100 50  0001 C CNN
-	1    6400 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L synkie_symbols:Conn_01x01 J3
+L synkie_symbols:Conn_01x01 OUT1
 U 1 1 5CF2941F
 P 6350 4000
-F 0 "J3" H 6430 4042 50  0000 L CNN
+F 0 "OUT1" H 6430 4042 50  0000 L CNN
 F 1 "Conn_01x01" H 6430 3951 50  0000 L CNN
 F 2 "synkie_footprints:Solderpad_1mm" H 6350 4000 50  0001 C CNN
 F 3 "~" H 6350 4000 50  0001 C CNN
 	1    6350 4000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4300 3900 4450 3900
 $Comp
 L synkie_symbols:Conn_01x03 J5
 U 1 1 5CF2C01D
@@ -300,7 +253,7 @@ U 1 1 5CF2EF68
 P 8050 3500
 F 0 "FB1" V 7776 3500 50  0000 C CNN
 F 1 "Ferrite_Bead" V 7867 3500 50  0000 C CNN
-F 2 "synkie_footprints:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 7980 3500 50  0001 C CNN
+F 2 "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7980 3500 50  0001 C CNN
 F 3 "~" H 8050 3500 50  0001 C CNN
 	1    8050 3500
 	0    1    1    0   
@@ -311,7 +264,7 @@ U 1 1 5CF2FF42
 P 8050 3700
 F 0 "FB2" V 7776 3700 50  0000 C CNN
 F 1 "Ferrite_Bead" V 7867 3700 50  0000 C CNN
-F 2 "synkie_footprints:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 7980 3700 50  0001 C CNN
+F 2 "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7980 3700 50  0001 C CNN
 F 3 "~" H 8050 3700 50  0001 C CNN
 	1    8050 3700
 	0    1    1    0   
@@ -422,26 +375,10 @@ Wire Wire Line
 	7950 3950 7950 3850
 Wire Wire Line
 	7950 3850 7800 3850
-$Comp
-L synkie_symbols:R_POT RV1
-U 1 1 5CF18B52
-P 4600 2000
-F 0 "RV1" V 4393 2000 50  0000 C CNN
-F 1 "10k" V 4484 2000 50  0000 C CNN
-F 2 "synkie_footprints:Potentiometer_Alps_RK09K_Single_Vertical" H 4600 2000 50  0001 C CNN
-F 3 "~" H 4600 2000 50  0001 C CNN
-	1    4600 2000
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	6000 2100 6050 2100
 Wire Wire Line
-	4350 2200 4350 2000
-Wire Wire Line
 	4200 2000 4350 2000
-Connection ~ 4350 2000
-Wire Wire Line
-	4350 2000 4450 2000
 Wire Wire Line
 	5400 2000 5050 2000
 Connection ~ 5050 2000
@@ -460,17 +397,9 @@ Connection ~ 5400 2750
 Wire Wire Line
 	5400 2750 5500 2750
 Wire Wire Line
-	4850 2750 4350 2750
-Wire Wire Line
-	4350 2750 4350 2200
-Connection ~ 4350 2200
-Wire Wire Line
 	5950 4000 6000 4000
 Wire Wire Line
-	5350 3900 5050 3900
-Connection ~ 5050 3900
-Wire Wire Line
-	4450 4700 4850 4700
+	5350 3900 5200 3900
 Wire Wire Line
 	5150 4700 5350 4700
 Wire Wire Line
@@ -485,15 +414,6 @@ Wire Wire Line
 Connection ~ 5350 4700
 Wire Wire Line
 	5350 4700 5400 4700
-Wire Wire Line
-	4450 3900 4450 4700
-Wire Wire Line
-	4700 4100 4950 4100
-Wire Wire Line
-	4950 4100 4950 3900
-Connection ~ 4950 3900
-Wire Wire Line
-	4950 3900 5050 3900
 Wire Wire Line
 	7700 2350 7700 2400
 Wire Wire Line
@@ -529,4 +449,58 @@ Wire Wire Line
 	5050 3900 5050 4100
 Wire Wire Line
 	5050 4300 5050 4350
+$Comp
+L Device:R_POT_Dual RV1
+U 1 1 5DD36098
+P 4800 3200
+F 0 "RV1" V 4846 3012 50  0000 R CNN
+F 1 "R_POT_Dual" V 4755 3012 50  0000 R CNN
+F 2 "synkie_footprints:RK12L123" H 5050 3125 50  0001 C CNN
+F 3 "~" H 5050 3125 50  0001 C CNN
+	1    4800 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2750 4850 2750
+Wire Wire Line
+	4550 3100 4550 3000
+Wire Wire Line
+	4550 3000 4350 3000
+Wire Wire Line
+	4350 3000 4350 3300
+Wire Wire Line
+	4350 3300 4400 3300
+Wire Wire Line
+	4350 2750 4350 3000
+Connection ~ 4350 2750
+Connection ~ 4350 3000
+Wire Wire Line
+	4700 3300 4700 2000
+Wire Wire Line
+	4700 2000 5050 2000
+Wire Wire Line
+	4350 2000 4350 2750
+Wire Wire Line
+	6200 2100 6200 3450
+Wire Wire Line
+	6200 3450 4900 3450
+Wire Wire Line
+	4900 3450 4900 3300
+Wire Wire Line
+	4900 3300 4900 3100
+Wire Wire Line
+	4900 3100 5050 3100
+Connection ~ 4900 3300
+Wire Wire Line
+	5200 3300 5200 3900
+Connection ~ 5200 3900
+Wire Wire Line
+	5200 3900 5050 3900
+Wire Wire Line
+	4900 3450 4650 3450
+Wire Wire Line
+	4650 3450 4650 4700
+Connection ~ 4900 3450
+Wire Wire Line
+	4650 4700 4850 4700
 $EndSCHEMATC

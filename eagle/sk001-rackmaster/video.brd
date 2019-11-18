@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -42,10 +42,10 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
@@ -68,13 +68,13 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="106.66" y2="0" width="0" layer="20"/>
-<wire x1="106.66" y1="0" x2="106.66" y2="80.95" width="0" layer="20"/>
-<wire x1="106.66" y1="80.95" x2="0" y2="80.95" width="0" layer="20"/>
-<wire x1="0" y1="80.95" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="6.35" y1="0" x2="105.39" y2="0" width="0" layer="20"/>
+<wire x1="105.39" y1="0" x2="105.39" y2="80.95" width="0" layer="20"/>
+<wire x1="105.39" y1="80.95" x2="6.35" y2="80.95" width="0" layer="20"/>
+<wire x1="6.35" y1="80.95" x2="6.35" y2="0" width="0" layer="20"/>
 <text x="40.64" y="76.835" size="1.778" layer="1" font="vector">sk001-rackmaster-20180511</text>
 <hole x="100.33" y="5.08" drill="3.2"/>
-<hole x="6.35" y="5.08" drill="3.2"/>
+<hole x="12.7" y="5.08" drill="3.2"/>
 <hole x="57.15" y="71.12" drill="3.2"/>
 </plain>
 <libraries>
@@ -619,11 +619,11 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="C1" library="synkie" package="C0805" value="1u" x="16.51" y="16.51" smashed="yes">
-<attribute name="NAME" x="12.7" y="14.9225" size="1.016" layer="25"/>
+<attribute name="NAME" x="13.7" y="15.9225" size="1.016" layer="25"/>
 <attribute name="VALUE" x="15.24" y="13.97" size="1.27" layer="27"/>
 </element>
 <element name="C10" library="synkie" package="C0805" value="100n" x="35.56" y="11.43" smashed="yes">
-<attribute name="NAME" x="33.9725" y="8.89" size="1.016" layer="25"/>
+<attribute name="NAME" x="34.4725" y="9.49" size="1.016" layer="25"/>
 <attribute name="VALUE" x="34.29" y="8.89" size="1.27" layer="27"/>
 </element>
 <element name="C12" library="synkie" package="C0805" value="100n" x="56.515" y="18.415" smashed="yes" rot="R270">
@@ -631,19 +631,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="53.975" y="19.685" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C13" library="synkie" package="C0805" value="100n" x="64.135" y="15.875" smashed="yes" rot="R90">
-<attribute name="NAME" x="66.04" y="17.4625" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="64.64" y="11.9625" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="66.675" y="14.605" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C14" library="synkie" package="C0805" value="100n" x="90.17" y="72.39" smashed="yes" rot="R270">
-<attribute name="NAME" x="88.265" y="72.39" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="88.265" y="73.59" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="87.63" y="73.66" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C15" library="synkie" package="C0805" value="100n" x="97.79" y="69.85" smashed="yes" rot="R90">
-<attribute name="NAME" x="100.0125" y="67.6275" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="99.5125" y="68.5275" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="100.33" y="68.58" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C17" library="synkie" package="C0805" value="120p" x="73.66" y="33.655" smashed="yes" rot="R90">
-<attribute name="NAME" x="75.8825" y="33.02" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="75.8825" y="32.42" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="76.2" y="32.385" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C2" library="synkie" package="C0805" value="1u" x="15.875" y="13.335" smashed="yes" rot="R270">
@@ -655,15 +655,15 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="15.24" y="14.605" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C4" library="synkie" package="C0805" value="1u" x="21.59" y="21.59" smashed="yes" rot="R180">
-<attribute name="NAME" x="22.225" y="24.13" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="20.225" y="21.93" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="22.86" y="24.13" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C5" library="synkie" package="C0805" value="100n" x="21.59" y="19.05" smashed="yes" rot="R180">
-<attribute name="NAME" x="19.685" y="19.685" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="20.285" y="19.485" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="22.86" y="21.59" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C6" library="synkie" package="C0805" value="100n" x="69.85" y="29.21" smashed="yes">
-<attribute name="NAME" x="68.58" y="30.48" size="1.016" layer="25"/>
+<attribute name="NAME" x="68.98" y="27.18" size="1.016" layer="25"/>
 <attribute name="VALUE" x="68.58" y="26.67" size="1.27" layer="27"/>
 </element>
 <element name="C7" library="synkie" package="C0805" value="100n" x="75.565" y="20.955" smashed="yes" rot="R270">
@@ -671,19 +671,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="73.025" y="22.225" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C8" library="synkie" package="C0805" value="100n" x="70.485" y="15.875" smashed="yes" rot="R90">
-<attribute name="NAME" x="71.12" y="12.065" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="71.02" y="12.365" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="73.025" y="14.605" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C9" library="synkie" package="C0805" value="100n" x="38.1" y="19.05" smashed="yes" rot="R180">
-<attribute name="NAME" x="38.1" y="21.2725" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="35.7275" y="19.9" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="39.37" y="21.59" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="D1" library="synkie" package="SOT23" value="" x="15.24" y="20.32" smashed="yes" rot="R180">
-<attribute name="NAME" x="16.51" y="23.8125" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="16.21" y="22.7125" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="17.145" y="23.495" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="D3" library="synkie" package="SOT23" value="" x="93.345" y="65.405" smashed="yes" rot="R270">
-<attribute name="NAME" x="95.25" y="67.31" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="90.75" y="66.01" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="90.17" y="67.31" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="D6" library="synkie" package="SOT23" value="" x="70.485" y="33.655" smashed="yes" rot="R90">
@@ -718,35 +718,35 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="99.06" y="67.945" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R12" library="synkie" package="R0805" value="120" x="89.535" y="68.58" smashed="yes" rot="R180">
-<attribute name="NAME" x="89.8525" y="67.31" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="90.8525" y="67.71" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="90.17" y="71.12" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R13" library="synkie" package="R0805" value="200" x="95.885" y="76.835" smashed="yes" rot="R180">
-<attribute name="NAME" x="100.33" y="77.1525" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="99.83" y="77.2525" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="96.52" y="79.375" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R14" library="synkie" package="R0805" value="200" x="92.71" y="77.47" smashed="yes" rot="R270">
-<attribute name="NAME" x="93.98" y="80.9625" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="93.48" y="78.6625" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="90.17" y="78.105" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R15" library="synkie" package="R0805" value="2k2" x="66.04" y="34.29" smashed="yes">
-<attribute name="NAME" x="64.135" y="32.385" size="1.016" layer="25"/>
+<attribute name="NAME" x="64.835" y="32.285" size="1.016" layer="25"/>
 <attribute name="VALUE" x="65.405" y="31.75" size="1.27" layer="27"/>
 </element>
 <element name="R2" library="synkie" package="R0805" value="680k" x="67.945" y="15.875" smashed="yes" rot="R90">
-<attribute name="NAME" x="68.58" y="12.3825" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="68.38" y="12.3825" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="70.485" y="15.24" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R3" library="synkie" package="R0805" value="120" x="34.29" y="19.685" smashed="yes" rot="R90">
-<attribute name="NAME" x="33.02" y="19.05" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="33.32" y="18.35" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="36.83" y="19.05" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R4" library="synkie" package="R0805" value="75" x="42.545" y="16.51" smashed="yes" rot="R90">
-<attribute name="NAME" x="45.085" y="15.5575" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="44.585" y="15.5575" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="45.085" y="15.875" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R5" library="synkie" package="R0805" value="75" x="55.245" y="14.605" smashed="yes">
-<attribute name="NAME" x="54.61" y="13.97" size="1.016" layer="25"/>
+<attribute name="NAME" x="54.41" y="12.37" size="1.016" layer="25"/>
 <attribute name="VALUE" x="54.61" y="12.065" size="1.27" layer="27"/>
 </element>
 <element name="R6" library="synkie" package="R0805" value="75" x="58.42" y="22.225" smashed="yes">
@@ -754,7 +754,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="57.785" y="19.685" size="1.27" layer="27"/>
 </element>
 <element name="R7" library="synkie" package="R0805" value="75" x="55.245" y="26.67" smashed="yes">
-<attribute name="NAME" x="53.34" y="24.4475" size="1.016" layer="25"/>
+<attribute name="NAME" x="54.54" y="24.3475" size="1.016" layer="25"/>
 <attribute name="VALUE" x="54.61" y="24.13" size="1.27" layer="27"/>
 </element>
 <element name="R8" library="synkie" package="R0805" value="75" x="58.42" y="34.29" smashed="yes">
@@ -766,11 +766,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="97.155" y="65.405" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="SIFF_IN1" library="synkie" package="3,17/1,1" value="" x="41.91" y="20.32" smashed="yes">
-<attribute name="NAME" x="40.386" y="22.225" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="41.986" y="22.325" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="41.91" y="21.52" size="0.0254" layer="27"/>
 </element>
 <element name="SIFF_OUT1" library="synkie" package="3,17/1,1" value="" x="100.33" y="62.23" smashed="yes" rot="R180">
-<attribute name="NAME" x="102.235" y="63.119" size="1.016" layer="25" ratio="10" rot="R270"/>
+<attribute name="NAME" x="97.381" y="59.135" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="100.33" y="61.03" size="0.0254" layer="27" rot="R180"/>
 </element>
 <element name="U1" library="synkie" package="SO08-EXP" value="MAX7450" x="22.86" y="15.24" smashed="yes" rot="R270">
@@ -782,19 +782,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="67.818" y="24.13" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="U3" library="synkie" package="SO08" value="MAX4392ESA" x="36.83" y="15.24" smashed="yes" rot="R270">
-<attribute name="NAME" x="40.9575" y="12.192" size="1.016" layer="25"/>
+<attribute name="NAME" x="37.5575" y="11.592" size="1.016" layer="25"/>
 <attribute name="VALUE" x="34.925" y="11.303" size="1.27" layer="27"/>
 </element>
 <element name="U4" library="synkie" package="SO08" value="MAX4392ESA" x="93.98" y="71.12" smashed="yes">
-<attribute name="NAME" x="99.8855" y="73.025" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="97.5855" y="71.625" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="97.917" y="69.215" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="VIDEO_IN1" library="synkie" package="3,17/1,1" value="" x="11.43" y="21.59" smashed="yes">
-<attribute name="NAME" x="11.176" y="23.495" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="9.676" y="23.895" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="11.43" y="22.79" size="0.0254" layer="27"/>
 </element>
 <element name="VIDEO_OUT1" library="synkie" package="3,17/1,1" value="" x="85.09" y="76.835" smashed="yes" rot="R180">
-<attribute name="NAME" x="81.915" y="78.994" size="1.016" layer="25" ratio="10" rot="R270"/>
+<attribute name="NAME" x="74.206" y="76.115" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="85.09" y="75.635" size="0.0254" layer="27" rot="R180"/>
 </element>
 <element name="X1" library="synkie" package="22-23-2041" value="CON-SYNCBUS" x="53.975" y="7.62" rot="MR0">
@@ -804,11 +804,11 @@ design rules under a new name.</description>
 <attribute name="MPN" value="22-23-2041" x="53.975" y="7.62" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
 <element name="C18" library="synkie" package="C0805" value="100n" x="56.515" y="30.48" smashed="yes" rot="R270">
-<attribute name="NAME" x="54.61" y="33.02" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="54.41" y="31.72" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="53.975" y="31.75" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C19" library="synkie" package="C0805" value="100n" x="64.135" y="27.94" smashed="yes" rot="R90">
-<attribute name="NAME" x="66.3575" y="26.3525" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="66.2575" y="26.7525" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="66.675" y="26.67" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C20" library="synkie" package="C0805" value="100n" x="59.69" y="41.275" smashed="yes" rot="R270">
@@ -816,15 +816,15 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="57.15" y="42.545" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C22" library="synkie" package="C0805" value="100n" x="75.565" y="51.435" smashed="yes" rot="R90">
-<attribute name="NAME" x="77.47" y="47.9425" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="75.97" y="47.2425" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="78.105" y="50.165" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C23" library="synkie" package="C0805" value="100n" x="62.865" y="57.15" smashed="yes" rot="R270">
-<attribute name="NAME" x="57.15" y="53.6575" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="62.25" y="61.0575" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="60.325" y="58.42" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="D7" library="synkie" package="SOT23" value="" x="15.24" y="36.83" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.5575" y="40.005" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="16.0575" y="39.305" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="17.145" y="40.005" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="JP1" library="synkie" package="1X02" value="" x="11.43" y="33.655" smashed="yes" rot="R270">
@@ -839,23 +839,23 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="20.955" y="27.305" size="1.27" layer="27"/>
 </element>
 <element name="C24" library="synkie" package="C0805" value="1u" x="16.51" y="33.02" smashed="yes">
-<attribute name="NAME" x="14.605" y="31.4325" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="15.205" y="31.8325" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="15.24" y="30.48" size="1.27" layer="27"/>
 </element>
 <element name="C25" library="synkie" package="C0805" value="1u" x="15.875" y="29.845" smashed="yes" rot="R270">
-<attribute name="NAME" x="14.605" y="26.67" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="16.83" y="27.905" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="13.335" y="31.115" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C26" library="synkie" package="C0805" value="100n" x="17.78" y="29.845" smashed="yes" rot="R270">
-<attribute name="NAME" x="19.685" y="27.94" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="19.885" y="27.94" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="15.24" y="31.115" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C27" library="synkie" package="C0805" value="1u" x="21.59" y="38.1" smashed="yes" rot="R180">
-<attribute name="NAME" x="22.5425" y="40.3225" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="23.1425" y="40.0225" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="22.86" y="40.64" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C28" library="synkie" package="C0805" value="100n" x="21.59" y="35.56" smashed="yes" rot="R180">
-<attribute name="NAME" x="19.685" y="36.195" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="20.185" y="35.995" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="22.86" y="38.1" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="U6" library="synkie" package="SO08" value="MAX4392ESA" x="36.83" y="31.75" smashed="yes" rot="R270">
@@ -863,7 +863,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="34.925" y="27.813" size="1.27" layer="27"/>
 </element>
 <element name="C29" library="synkie" package="C0805" value="100n" x="38.1" y="35.56" smashed="yes" rot="R180">
-<attribute name="NAME" x="39.0525" y="37.7825" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="35.6175" y="36.9525" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="39.37" y="38.1" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C30" library="synkie" package="C0805" value="100n" x="35.56" y="27.94" smashed="yes">
@@ -871,30 +871,30 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="34.29" y="25.4" size="1.27" layer="27"/>
 </element>
 <element name="R17" library="synkie" package="R0805" value="120" x="34.29" y="36.195" smashed="yes" rot="R90">
-<attribute name="NAME" x="33.02" y="35.56" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="33.22" y="34.76" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="36.83" y="35.56" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R18" library="synkie" package="R0805" value="75" x="42.545" y="33.02" smashed="yes" rot="R90">
-<attribute name="NAME" x="45.4025" y="31.75" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="44.6025" y="31.85" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="45.085" y="32.385" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="SIFF_IN2" library="synkie" package="3,17/1,1" value="" x="41.91" y="36.83" smashed="yes">
-<attribute name="NAME" x="40.386" y="38.735" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="42.086" y="39.135" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="41.91" y="38.03" size="0.0254" layer="27"/>
 </element>
 <element name="VIDEO_IN2" library="synkie" package="3,17/1,1" value="" x="11.43" y="38.1" smashed="yes">
-<attribute name="NAME" x="11.176" y="40.005" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="9.376" y="40.205" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="11.43" y="39.3" size="0.0254" layer="27"/>
 </element>
 <element name="D9" library="synkie" package="SOT23" value="" x="15.24" y="53.34" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.24" y="56.515" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="16.24" y="55.915" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="17.145" y="56.515" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="JP3" library="synkie" package="1X02" value="" x="11.43" y="50.165" smashed="yes" rot="R270">
 <attribute name="VALUE" x="8.255" y="52.705" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R19" library="synkie" package="R0805" value="75" x="12.7" y="46.355" smashed="yes" rot="R180">
-<attribute name="NAME" x="13.335" y="45.085" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="12.135" y="45.085" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="13.335" y="48.895" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="U7" library="synkie" package="SO08-EXP" value="MAX7450" x="22.86" y="48.26" smashed="yes" rot="R270">
@@ -902,15 +902,15 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="20.955" y="43.815" size="1.27" layer="27"/>
 </element>
 <element name="C32" library="synkie" package="C0805" value="1u" x="16.51" y="49.53" smashed="yes">
-<attribute name="NAME" x="14.605" y="48.5775" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="15.105" y="48.3775" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="15.24" y="46.99" size="1.27" layer="27"/>
 </element>
 <element name="C33" library="synkie" package="C0805" value="1u" x="15.875" y="46.355" smashed="yes" rot="R270">
-<attribute name="NAME" x="13.6525" y="46.355" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="16.755" y="44.9475" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="13.335" y="47.625" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C34" library="synkie" package="C0805" value="100n" x="17.78" y="46.355" smashed="yes" rot="R270">
-<attribute name="NAME" x="19.05" y="44.45" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="19.65" y="44.95" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="15.24" y="47.625" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C35" library="synkie" package="C0805" value="1u" x="21.59" y="54.61" smashed="yes" rot="R180">
@@ -926,38 +926,38 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="34.925" y="44.323" size="1.27" layer="27"/>
 </element>
 <element name="C37" library="synkie" package="C0805" value="100n" x="38.1" y="52.07" smashed="yes" rot="R180">
-<attribute name="NAME" x="39.37" y="50.8" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="39.77" y="53.8" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="39.37" y="54.61" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C38" library="synkie" package="C0805" value="100n" x="35.56" y="44.45" smashed="yes">
-<attribute name="NAME" x="32.7025" y="42.2275" size="1.016" layer="25"/>
+<attribute name="NAME" x="34.3025" y="42.6275" size="1.016" layer="25"/>
 <attribute name="VALUE" x="34.29" y="41.91" size="1.27" layer="27"/>
 </element>
 <element name="R20" library="synkie" package="R0805" value="120" x="34.29" y="52.705" smashed="yes" rot="R90">
-<attribute name="NAME" x="33.02" y="52.07" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="33.02" y="51.37" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="36.83" y="52.07" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R21" library="synkie" package="R0805" value="75" x="42.545" y="49.53" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.7675" y="48.5775" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="44.5675" y="48.1775" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="45.085" y="48.895" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="SIFF_IN3" library="synkie" package="3,17/1,1" value="" x="41.91" y="53.34" smashed="yes">
-<attribute name="NAME" x="40.386" y="55.245" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="41.586" y="55.245" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="41.91" y="54.54" size="0.0254" layer="27"/>
 </element>
 <element name="VIDEO_IN3" library="synkie" package="3,17/1,1" value="" x="11.43" y="54.61" smashed="yes">
-<attribute name="NAME" x="11.176" y="56.515" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="8.876" y="57.115" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="11.43" y="55.81" size="0.0254" layer="27"/>
 </element>
 <element name="D11" library="synkie" package="SOT23" value="" x="15.24" y="69.85" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.5575" y="72.7075" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="16.5575" y="72.3075" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="17.145" y="73.025" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="JP4" library="synkie" package="1X02" value="" x="11.43" y="66.675" smashed="yes" rot="R270">
 <attribute name="VALUE" x="8.255" y="69.215" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R22" library="synkie" package="R0805" value="75" x="12.7" y="62.865" smashed="yes" rot="R180">
-<attribute name="NAME" x="13.335" y="61.595" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="13.735" y="61.795" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="13.335" y="65.405" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="U9" library="synkie" package="SO08-EXP" value="MAX7450" x="22.86" y="64.77" smashed="yes" rot="R270">
@@ -969,19 +969,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="15.24" y="63.5" size="1.27" layer="27"/>
 </element>
 <element name="C41" library="synkie" package="C0805" value="1u" x="15.875" y="62.865" smashed="yes" rot="R270">
-<attribute name="NAME" x="13.97" y="62.5475" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="14.6525" y="60.16" size="1.016" layer="25"/>
 <attribute name="VALUE" x="13.335" y="64.135" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C42" library="synkie" package="C0805" value="100n" x="17.78" y="62.865" smashed="yes" rot="R270">
-<attribute name="NAME" x="16.51" y="60.0075" size="1.016" layer="25"/>
+<attribute name="NAME" x="17.38" y="60.1075" size="1.016" layer="25"/>
 <attribute name="VALUE" x="15.24" y="64.135" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C43" library="synkie" package="C0805" value="1u" x="21.59" y="71.12" smashed="yes" rot="R180">
-<attribute name="NAME" x="22.86" y="69.85" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="22.86" y="73.05" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="22.86" y="73.66" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C44" library="synkie" package="C0805" value="100n" x="21.59" y="68.58" smashed="yes" rot="R180">
-<attribute name="NAME" x="22.86" y="67.31" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="20.36" y="69.61" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="22.86" y="71.12" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="U10" library="synkie" package="SO08" value="MAX4392ESA" x="36.83" y="64.77" smashed="yes" rot="R270">
@@ -989,31 +989,31 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="34.925" y="60.833" size="1.27" layer="27"/>
 </element>
 <element name="C45" library="synkie" package="C0805" value="100n" x="38.1" y="68.58" smashed="yes" rot="R180">
-<attribute name="NAME" x="39.0525" y="70.485" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="39.6525" y="70.385" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="39.37" y="71.12" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C46" library="synkie" package="C0805" value="100n" x="35.56" y="60.96" smashed="yes">
-<attribute name="NAME" x="33.02" y="59.055" size="1.016" layer="25"/>
+<attribute name="NAME" x="34.22" y="58.955" size="1.016" layer="25"/>
 <attribute name="VALUE" x="34.29" y="58.42" size="1.27" layer="27"/>
 </element>
 <element name="R23" library="synkie" package="R0805" value="120" x="34.29" y="69.215" smashed="yes" rot="R270">
-<attribute name="NAME" x="35.56" y="69.85" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="32.16" y="70.55" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="31.75" y="69.85" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R24" library="synkie" package="R0805" value="75" x="42.545" y="66.04" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.7675" y="65.0875" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="44.5675" y="64.6875" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="45.085" y="65.405" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="SIFF_IN4" library="synkie" package="3,17/1,1" value="" x="41.91" y="69.85" smashed="yes">
-<attribute name="NAME" x="40.386" y="71.755" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="44.086" y="69.455" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="41.91" y="71.05" size="0.0254" layer="27"/>
 </element>
 <element name="VIDEO_IN4" library="synkie" package="3,17/1,1" value="" x="11.43" y="71.12" smashed="yes">
-<attribute name="NAME" x="11.176" y="73.025" size="1.016" layer="25" ratio="10"/>
+<attribute name="NAME" x="8.676" y="73.125" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="11.43" y="72.32" size="0.0254" layer="27"/>
 </element>
 <element name="SIFF_OUT2" library="synkie" package="3,17/1,1" value="" x="100.33" y="41.91" smashed="yes" rot="R270">
-<attribute name="NAME" x="102.235" y="45.0215" size="1.016" layer="25" ratio="10" rot="R270"/>
+<attribute name="NAME" x="96.7785" y="38.735" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="101.53" y="41.91" size="0.0254" layer="27" rot="R270"/>
 </element>
 <element name="R25" library="synkie" package="R0805" value="75" x="96.52" y="42.545" smashed="yes" rot="R180">
@@ -1025,11 +1025,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="99.06" y="47.625" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="U11" library="synkie" package="SO08" value="MAX4392ESA" x="93.98" y="50.8" smashed="yes">
-<attribute name="NAME" x="96.0755" y="49.8475" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="97.7755" y="51.2475" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="97.917" y="48.895" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C48" library="synkie" package="C0805" value="100n" x="90.17" y="52.07" smashed="yes" rot="R270">
-<attribute name="NAME" x="87.9475" y="53.0225" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="88.2475" y="52.8225" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="87.63" y="53.34" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C49" library="synkie" package="C0805" value="100n" x="97.79" y="49.53" smashed="yes" rot="R90">
@@ -1037,35 +1037,35 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="100.33" y="48.26" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="D13" library="synkie" package="SOT23" value="" x="93.345" y="45.085" smashed="yes" rot="R270">
-<attribute name="NAME" x="95.25" y="46.99" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="94.95" y="46.29" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="90.17" y="46.99" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R28" library="synkie" package="R0805" value="120" x="89.535" y="48.26" smashed="yes" rot="R180">
-<attribute name="NAME" x="90.17" y="46.99" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="90.97" y="47.39" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="90.17" y="50.8" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R29" library="synkie" package="R0805" value="200" x="95.885" y="56.515" smashed="yes" rot="R180">
-<attribute name="NAME" x="96.52" y="55.245" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="97.22" y="55.545" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="96.52" y="59.055" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R30" library="synkie" package="R0805" value="200" x="92.71" y="57.15" smashed="yes" rot="R270">
-<attribute name="NAME" x="93.6625" y="62.23" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="90.7625" y="58.23" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="90.17" y="57.785" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="VIDEO_OUT2" library="synkie" package="3,17/1,1" value="" x="85.09" y="55.88" smashed="yes" rot="R270">
-<attribute name="NAME" x="82.55" y="49.5935" size="1.016" layer="25" ratio="10" rot="R90"/>
+<attribute name="NAME" x="86.5065" y="59.15" size="1.016" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="86.29" y="55.88" size="0.0254" layer="27" rot="R270"/>
 </element>
 <element name="SIFF_OUT3" library="synkie" package="3,17/1,1" value="" x="100.33" y="20.32" smashed="yes" rot="R270">
-<attribute name="NAME" x="102.235" y="21.844" size="1.016" layer="25" ratio="10" rot="R270"/>
+<attribute name="NAME" x="95.956" y="16.635" size="1.016" layer="25" ratio="10"/>
 <attribute name="VALUE" x="101.53" y="20.32" size="0.0254" layer="27" rot="R270"/>
 </element>
 <element name="R31" library="synkie" package="R0805" value="75" x="96.52" y="20.955" smashed="yes" rot="R180">
-<attribute name="NAME" x="97.155" y="19.685" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="97.755" y="19.585" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="97.155" y="23.495" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R32" library="synkie" package="R0805" value="10k" x="98.425" y="23.495" smashed="yes" rot="R180">
-<attribute name="NAME" x="101.6" y="25.7175" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="99.8" y="25.5175" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="99.06" y="26.035" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="U12" library="synkie" package="SO08" value="MAX4392ESA" x="93.98" y="29.21" smashed="yes">
@@ -1073,7 +1073,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="97.917" y="27.305" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="C51" library="synkie" package="C0805" value="100n" x="90.17" y="30.48" smashed="yes" rot="R270">
-<attribute name="NAME" x="88.265" y="32.385" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="88.165" y="31.185" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="87.63" y="31.75" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C52" library="synkie" package="C0805" value="100n" x="97.79" y="27.94" smashed="yes" rot="R90">
@@ -1085,19 +1085,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="90.17" y="25.4" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R34" library="synkie" package="R0805" value="120" x="89.535" y="26.67" smashed="yes" rot="R180">
-<attribute name="NAME" x="90.17" y="25.4" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="90.97" y="25.5" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="90.17" y="29.21" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R35" library="synkie" package="R0805" value="200" x="95.885" y="34.925" smashed="yes" rot="R180">
-<attribute name="NAME" x="99.06" y="33.9725" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="97.26" y="36.8725" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="96.52" y="37.465" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R36" library="synkie" package="R0805" value="200" x="92.71" y="35.56" smashed="yes" rot="R270">
-<attribute name="NAME" x="91.7575" y="41.5925" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="90.9575" y="36.8925" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="90.17" y="36.195" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="VIDEO_OUT3" library="synkie" package="3,17/1,1" value="" x="85.09" y="34.29" smashed="yes" rot="R270">
-<attribute name="NAME" x="82.55" y="28.6385" size="1.016" layer="25" ratio="10" rot="R90"/>
+<attribute name="NAME" x="86.4615" y="37.45" size="1.016" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="86.29" y="34.29" size="0.0254" layer="27" rot="R270"/>
 </element>
 <element name="T1" library="synkie" package="SOT23-BEC" value="" x="26.035" y="19.685" smashed="yes">
@@ -1105,7 +1105,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="24.13" y="16.51" size="1.27" layer="27"/>
 </element>
 <element name="R37" library="synkie" package="R0805" value="300" x="29.21" y="19.05" smashed="yes" rot="R90">
-<attribute name="NAME" x="31.4325" y="17.4625" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="31.2325" y="17.7625" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="31.75" y="18.415" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="LED_VIN1" library="synkie" package="3,17/1,1" value="" x="28.575" y="22.86" smashed="yes">
@@ -1113,11 +1113,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="28.575" y="24.06" size="0.0254" layer="27"/>
 </element>
 <element name="T2" library="synkie" package="SOT23-BEC" value="" x="26.035" y="36.195" smashed="yes">
-<attribute name="NAME" x="24.13" y="38.1" size="1.016" layer="25"/>
+<attribute name="NAME" x="23.93" y="37.4" size="1.016" layer="25"/>
 <attribute name="VALUE" x="24.13" y="33.02" size="1.27" layer="27"/>
 </element>
 <element name="R38" library="synkie" package="R0805" value="300" x="29.21" y="35.56" smashed="yes" rot="R90">
-<attribute name="NAME" x="31.75" y="34.925" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="31.05" y="34.225" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="31.75" y="34.925" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="LED_VIN2" library="synkie" package="3,17/1,1" value="" x="28.575" y="39.37" smashed="yes">
@@ -1137,11 +1137,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="28.575" y="57.715" size="0.0254" layer="27"/>
 </element>
 <element name="T4" library="synkie" package="SOT23-BEC" value="" x="26.035" y="69.85" smashed="yes">
-<attribute name="NAME" x="24.13" y="71.755" size="1.016" layer="25"/>
+<attribute name="NAME" x="24.23" y="71.055" size="1.016" layer="25"/>
 <attribute name="VALUE" x="24.13" y="66.675" size="1.27" layer="27"/>
 </element>
 <element name="R40" library="synkie" package="R0805" value="300" x="29.21" y="69.215" smashed="yes" rot="R90">
-<attribute name="NAME" x="31.115" y="68.2625" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="31.115" y="68.0625" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="31.75" y="68.58" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="LED_VIN4" library="synkie" package="3,17/1,1" value="" x="28.575" y="73.025" smashed="yes">
@@ -1149,15 +1149,15 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="28.575" y="74.225" size="0.0254" layer="27"/>
 </element>
 <element name="R41" library="synkie" package="R0805" value="75" x="89.535" y="76.2" smashed="yes" rot="R180">
-<attribute name="NAME" x="90.17" y="74.93" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="90.97" y="78.23" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="90.17" y="78.74" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R42" library="synkie" package="R0805" value="75" x="89.535" y="55.88" smashed="yes" rot="R180">
-<attribute name="NAME" x="90.17" y="54.61" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="90.87" y="55.01" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="90.17" y="58.42" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R43" library="synkie" package="R0805" value="75" x="89.535" y="34.29" smashed="yes" rot="R180">
-<attribute name="NAME" x="87.63" y="34.6075" size="1.016" layer="25" rot="R180"/>
+<attribute name="NAME" x="90.63" y="33.3075" size="1.016" layer="25" rot="R180"/>
 <attribute name="VALUE" x="90.17" y="36.83" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="X2" library="synkie" package="22-23-2031" value="CON-POWER" x="68.58" y="7.62" rot="MR0">
@@ -1167,18 +1167,20 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="30C0862" x="68.58" y="7.62" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
 <element name="C54" library="synkie" package="CT3528" value="" x="74.93" y="7.62" smashed="yes" rot="R270">
-<attribute name="NAME" x="76.5175" y="8.5725" size="1.016" layer="25" rot="R270"/>
+<attribute name="NAME" x="76.8175" y="9.2725" size="1.016" layer="25" rot="R270"/>
 <attribute name="VALUE" x="71.755" y="10.16" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C55" library="synkie" package="CT3528" value="" x="62.23" y="7.62" smashed="yes" rot="R90">
-<attribute name="NAME" x="60.6425" y="6.35" size="1.016" layer="25" rot="R90"/>
+<attribute name="NAME" x="60.2425" y="6.35" size="1.016" layer="25" rot="R90"/>
 <attribute name="VALUE" x="65.405" y="5.08" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="TO-PHASE-DELAY" library="con-molex" package="22-23-2021" value="22-23-2021" x="27.94" y="7.62">
+<element name="TO-PHASE-DELAY" library="con-molex" package="22-23-2021" value="22-23-2021" x="27.94" y="7.62" smashed="yes">
 <attribute name="MPN" value="22-23-2021" x="27.94" y="7.62" size="1.778" layer="27" font="vector" display="off"/>
 <attribute name="OC_FARNELL" value="1462926" x="27.94" y="7.62" size="1.778" layer="27" font="vector" display="off"/>
 <attribute name="MF" value="MOLEX" x="27.94" y="7.62" size="1.778" layer="27" font="vector" display="off"/>
 <attribute name="OC_NEWARK" value="25C3832" x="27.94" y="7.62" size="1.778" layer="27" font="vector" display="off"/>
+<attribute name="NAME" x="30.9" y="4.53" size="1.016" layer="25" ratio="10"/>
+<attribute name="VALUE" x="25.4" y="2.54" size="1.016" layer="27" ratio="10"/>
 </element>
 <element name="X4" library="con-molex" package="22-23-2021" value="22-23-2021" x="78.105" y="56.515" rot="MR90">
 <attribute name="MPN" value="22-23-2021" x="78.105" y="56.515" size="1.778" layer="28" font="vector" rot="MR90" display="off"/>
@@ -1186,22 +1188,64 @@ design rules under a new name.</description>
 <attribute name="MF" value="MOLEX" x="78.105" y="56.515" size="1.778" layer="28" font="vector" rot="MR90" display="off"/>
 <attribute name="OC_NEWARK" value="25C3832" x="78.105" y="56.515" size="1.778" layer="28" font="vector" rot="MR90" display="off"/>
 </element>
-<element name="T5" library="synkie" package="SOT23-BEC" value="" x="37.465" y="71.755" rot="R270"/>
-<element name="T6" library="synkie" package="SOT23-BEC" value="" x="37.465" y="55.245" rot="R270"/>
-<element name="T7" library="synkie" package="SOT23-BEC" value="" x="37.465" y="38.735" rot="R270"/>
-<element name="T8" library="synkie" package="SOT23-BEC" value="" x="37.465" y="22.225" rot="R270"/>
-<element name="T9" library="synkie" package="SOT23-BEC" value="" x="85.725" y="29.21"/>
-<element name="T10" library="synkie" package="SOT23-BEC" value="" x="85.725" y="24.13" rot="R180"/>
-<element name="T11" library="synkie" package="SOT23-BEC" value="" x="85.725" y="50.8"/>
-<element name="T12" library="synkie" package="SOT23-BEC" value="" x="85.725" y="45.72" rot="R180"/>
-<element name="T13" library="synkie" package="SOT23-BEC" value="" x="85.725" y="71.12"/>
-<element name="T14" library="synkie" package="SOT23-BEC" value="" x="85.725" y="66.04" rot="R180"/>
+<element name="T5" library="synkie" package="SOT23-BEC" value="" x="37.465" y="71.755" smashed="yes" rot="R270">
+<attribute name="NAME" x="39.37" y="73.66" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="34.29" y="73.66" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="T6" library="synkie" package="SOT23-BEC" value="" x="37.465" y="55.245" smashed="yes" rot="R270">
+<attribute name="NAME" x="38.27" y="57.65" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="34.29" y="57.15" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="T7" library="synkie" package="SOT23-BEC" value="" x="37.465" y="38.735" smashed="yes" rot="R270">
+<attribute name="NAME" x="38.47" y="41.34" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="34.29" y="40.64" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="T8" library="synkie" package="SOT23-BEC" value="" x="37.465" y="22.225" smashed="yes" rot="R270">
+<attribute name="NAME" x="38.57" y="24.73" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="34.29" y="24.13" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="T9" library="synkie" package="SOT23-BEC" value="" x="85.725" y="29.21" smashed="yes">
+<attribute name="NAME" x="81.62" y="28.315" size="1.27" layer="25"/>
+<attribute name="VALUE" x="83.82" y="26.035" size="1.27" layer="27"/>
+</element>
+<element name="T10" library="synkie" package="SOT23-BEC" value="" x="85.725" y="24.13" smashed="yes" rot="R180">
+<attribute name="NAME" x="83.93" y="24.625" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="87.63" y="27.305" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="T11" library="synkie" package="SOT23-BEC" value="" x="85.725" y="50.8" smashed="yes">
+<attribute name="NAME" x="81.62" y="50.205" size="1.27" layer="25"/>
+<attribute name="VALUE" x="83.82" y="47.625" size="1.27" layer="27"/>
+</element>
+<element name="T12" library="synkie" package="SOT23-BEC" value="" x="85.725" y="45.72" smashed="yes" rot="R180">
+<attribute name="NAME" x="84.13" y="46.215" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="87.63" y="48.895" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="T13" library="synkie" package="SOT23-BEC" value="" x="85.725" y="71.12" smashed="yes">
+<attribute name="NAME" x="84.42" y="72.825" size="1.27" layer="25"/>
+<attribute name="VALUE" x="83.82" y="67.945" size="1.27" layer="27"/>
+</element>
+<element name="T14" library="synkie" package="SOT23-BEC" value="" x="85.725" y="66.04" smashed="yes" rot="R180">
+<attribute name="NAME" x="87.03" y="64.335" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="87.63" y="69.215" size="1.27" layer="27" rot="R180"/>
+</element>
 <element name="R_TBOT" library="synkie" package="RTRIM64Y" value="500" x="55.88" y="53.34" rot="MR90"/>
-<element name="R27" library="synkie" package="R0805" value="1k2" x="59.055" y="55.88" rot="R180"/>
-<element name="R33" library="synkie" package="R0805" value="1k2" x="52.705" y="55.88" rot="R180"/>
+<element name="R27" library="synkie" package="R0805" value="1k2" x="59.055" y="55.88" smashed="yes" rot="R180">
+<attribute name="NAME" x="59.69" y="54.61" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="59.69" y="58.42" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R33" library="synkie" package="R0805" value="1k2" x="52.705" y="55.88" smashed="yes" rot="R180">
+<attribute name="NAME" x="53.34" y="54.61" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="53.34" y="58.42" size="1.27" layer="27" rot="R180"/>
+</element>
 <element name="R_TTOP" library="synkie" package="RTRIM64Y" value="500" x="55.88" y="60.96" rot="MR90"/>
-<element name="R11" library="synkie" package="R0805" value="1k2" x="59.055" y="63.5" rot="R180"/>
-<element name="R44" library="synkie" package="R0805" value="1k2" x="52.705" y="63.5" rot="R180"/>
+<element name="R11" library="synkie" package="R0805" value="1k2" x="59.055" y="63.5" smashed="yes" rot="R180">
+<attribute name="NAME" x="59.69" y="62.23" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="59.69" y="66.04" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R44" library="synkie" package="R0805" value="1k2" x="52.705" y="63.5" smashed="yes" rot="R180">
+<attribute name="NAME" x="53.34" y="62.23" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="53.34" y="66.04" size="1.27" layer="27" rot="R180"/>
+</element>
 <element name="C11" library="synkie" package="C0805" value="470p" x="43.815" y="8.89" rot="MR90"/>
 <element name="R45" library="synkie" package="R0805" value="560" x="40.64" y="7.62" rot="MR0"/>
 </elements>
@@ -1838,14 +1882,14 @@ design rules under a new name.</description>
 <wire x1="56.515" y1="17.465" x2="56.83" y2="17.465" width="0.6096" layer="1"/>
 <wire x1="56.83" y1="17.465" x2="57.15" y2="17.145" width="0.6096" layer="1"/>
 <polygon width="0.6096" layer="1" isolate="0.6096">
-<vertex x="1.27" y="1.27"/>
-<vertex x="1.27" y="80.01"/>
+<vertex x="6.35" y="1.27"/>
+<vertex x="6.35" y="80.01"/>
 <vertex x="105.41" y="80.01"/>
 <vertex x="105.41" y="1.27"/>
 </polygon>
 <polygon width="0.6096" layer="16" isolate="0.6096">
-<vertex x="1.27" y="1.27"/>
-<vertex x="1.27" y="80.01"/>
+<vertex x="6.35" y="1.27"/>
+<vertex x="6.35" y="80.01"/>
 <vertex x="105.41" y="80.01"/>
 <vertex x="105.41" y="1.27"/>
 </polygon>
@@ -2033,6 +2077,7 @@ design rules under a new name.</description>
 <wire x1="43.815" y1="9.84" x2="27.62" y2="9.84" width="0.6096" layer="16"/>
 <wire x1="27.62" y1="9.84" x2="26.67" y2="8.89" width="0.6096" layer="16"/>
 <wire x1="26.67" y1="8.89" x2="26.67" y2="7.62" width="0.6096" layer="16"/>
+<wire x1="96.835" y1="76.835" x2="97.47" y2="71.12" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="JP2" pad="2"/>
