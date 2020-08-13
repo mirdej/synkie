@@ -398,7 +398,7 @@ void setup() {
 	SPI.setSCK(14);
 	SPI.begin(); 
 	pinMode(CS_Pin,OUTPUT);		// slave select
-	pinMode(12,INPUT_PULLUP); // jack detect
+//	pinMode(12,INPUT_PULLUP); // jack detect
 	
 	input_level_l = 120;
 	input_level_r = 120;
@@ -432,7 +432,7 @@ void setup() {
 */
 	t.every(50,update_display);
 	t.every(10,check_Encoder);
-	t.every(500,check_jack);
+//	t.every(500,check_jack);
 	strip.show(); // Initialize all pixels to 'off'
 	brightness = 16;
 
@@ -531,7 +531,7 @@ void loop() {
 	//delay(2);
 	
 }
-
+/*
 void check_jack() {
 	static char oldJack 
 	char jack = digitalRead(12);
@@ -544,7 +544,7 @@ void check_jack() {
 
 
 }
-
+*/
 void calculate_bands_for_channel(int chan) {
 	float len = (float)fft_top - (float)fft_bottom;
 	float lo = (float)fft_bottom + (float)len * pow(c_frequency[chan]-0.5/c_q[chan], fft_logScale);
