@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:sk108-scabi-log-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -1366,7 +1365,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 6350 3600 6400
 $Comp
-L synkie_symbols:PMBT3906YS Q3
+L sk108-scabi-log-rescue:PMBT3906YS-synkie_symbols Q3
 U 1 1 5E529FCD
 P 6100 5500
 F 0 "Q3" H 6238 5454 50  0000 L CNN
@@ -1461,7 +1460,7 @@ F 3 "" H 5400 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:PMBT3906YS Q3
+L sk108-scabi-log-rescue:PMBT3906YS-synkie_symbols Q3
 U 2 1 5E52B921
 P 5950 6600
 F 0 "Q3" H 6088 6554 50  0000 L CNN
