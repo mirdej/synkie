@@ -1,4 +1,4 @@
-update=2020 August 16, Sunday 13:10:05
+update=2020 August 19, Wednesday 14:28:52
 version=1
 last_client=kicad
 [general]
@@ -15,7 +15,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=sk034-allpass.net
+LastNetListRead=
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
@@ -29,7 +29,7 @@ MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
 TrackWidth1=0.5
-ViaDiameter1=2.5
+ViaDiameter1=2
 ViaDrill1=0.8
 dPairWidth1=0.2
 dPairGap1=0.25
@@ -227,9 +227,9 @@ Enabled=0
 [pcbnew/Netclasses]
 [pcbnew/Netclasses/Default]
 Name=Default
-Clearance=0.5
+Clearance=0.2
 TrackWidth=0.5
-ViaDiameter=2.5
+ViaDiameter=2
 ViaDrill=0.8
 uViaDiameter=0.3
 uViaDrill=0.1
@@ -237,10 +237,10 @@ dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
-Name=power
-Clearance=0.5
-TrackWidth=1
-ViaDiameter=3
+Name=Name
+Clearance=0.2
+TrackWidth=0.8
+ViaDiameter=2
 ViaDrill=0.8
 uViaDiameter=0.3
 uViaDrill=0.1
@@ -253,7 +253,7 @@ PageLayoutDescrFile=
 PlotDirectoryName=
 SubpartIdSeparator=0
 SubpartFirstId=65
-NetFmtName=Pcbnew
+NetFmtName=
 SpiceAjustPassiveValues=0
 LabSize=50
 ERC_TestSimilarLabels=1
