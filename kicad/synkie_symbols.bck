@@ -16,6 +16,42 @@ K analog multiplier
 F http://www.ti.com/lit/ds/symlink/mpy634.pdf
 $ENDCMP
 #
+$CMP ATmega168-20AU
+D 20MHz, 16kB Flash, 1kB SRAM, 512B EEPROM, TQFP-32
+K AVR 8bit Microcontroller MegaAVR
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2545-8-bit-AVR-Microcontroller-ATmega48-88-168_Datasheet.pdf
+$ENDCMP
+#
+$CMP ATmega168V-10AU
+D 10MHz, 16kB Flash, 1kB SRAM, 512B EEPROM, TQFP-32
+K AVR 8bit Microcontroller MegaAVR
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2545-8-bit-AVR-Microcontroller-ATmega48-88-168_Datasheet.pdf
+$ENDCMP
+#
+$CMP ATmega48-20AU
+D 20MHz, 4kB Flash, 512B SRAM, 256B EEPROM, TQFP-32
+K AVR 8bit Microcontroller MegaAVR
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2545-8-bit-AVR-Microcontroller-ATmega48-88-168_Datasheet.pdf
+$ENDCMP
+#
+$CMP ATmega48V-10AU
+D 10MHz, 4kB Flash, 512B SRAM, 256B EEPROM, TQFP-32
+K AVR 8bit Microcontroller MegaAVR
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2545-8-bit-AVR-Microcontroller-ATmega48-88-168_Datasheet.pdf
+$ENDCMP
+#
+$CMP ATmega88-20AU
+D 20MHz, 8kB Flash, 1kB SRAM, 512B EEPROM, TQFP-32
+K AVR 8bit Microcontroller MegaAVR
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2545-8-bit-AVR-Microcontroller-ATmega48-88-168_Datasheet.pdf
+$ENDCMP
+#
+$CMP ATmega88V-10AU
+D 10MHz, 8kB Flash, 1kB SRAM, 512B EEPROM, TQFP-32
+K AVR 8bit Microcontroller MegaAVR
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2545-8-bit-AVR-Microcontroller-ATmega48-88-168_Datasheet.pdf
+$ENDCMP
+#
 $CMP BAT54S
 D schottky barrier diode
 K schottky diode
@@ -81,8 +117,26 @@ D Power symbol creates a global label with name "GND" , ground
 K power-flag
 $ENDCMP
 #
+$CMP LM311
+D Voltage Comparator, DIP-8/SOIC-8
+K comp
+F https://www.st.com/resource/en/datasheet/lm311.pdf
+$ENDCMP
+#
+$CMP LT1011
+D Voltage Comparator, DIP-8/SOIC-8
+K comp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/lt1011.pdf
+$ENDCMP
+#
 $CMP LT1228
 D LT1228 CFA with gain control
+$ENDCMP
+#
+$CMP MAX5741
+D Digital to analog, 10 Bit, 4 ch, 2.7 - 5.5 VDD, SPI, uMAX-10
+K DA 8 Bit 4 ch
+F https://datasheets.maximintegrated.com/en/ds/MAX5741.pdf
 $ENDCMP
 #
 $CMP Opamp_Dual_Generic
