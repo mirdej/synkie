@@ -2293,17 +2293,6 @@ addr_2
 Text Label 6450 6300 2    50   ~ 0
 addr_3
 $Comp
-L synkie_symbols:Conn_01x03 J24
-U 1 1 5F7BB9B2
-P 6650 6200
-F 0 "J24" H 6730 6242 50  0000 L CNN
-F 1 "Conn_01x03" H 6730 6151 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6650 6200 50  0001 C CNN
-F 3 "~" H 6650 6200 50  0001 C CNN
-	1    6650 6200
-	1    0    0    -1  
-$EndComp
-$Comp
 L tinkerforge:AGND #PWR0104
 U 1 1 5F7BDAE6
 P 900 -750
@@ -3306,4 +3295,26 @@ Text Label 5250 4100 0    50   ~ 0
 b_b
 Text Label 5250 4200 0    50   ~ 0
 b_c
+$Comp
+L synkie_symbols:Conn_01x04 J24
+U 1 1 600411E8
+P 6650 6200
+F 0 "J24" H 6730 6192 50  0000 L CNN
+F 1 "Conn_01x04" H 6730 6101 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 6650 6200 50  0001 C CNN
+F 3 "~" H 6650 6200 50  0001 C CNN
+	1    6650 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-5V #PWR0247
+U 1 1 60041D73
+P 6450 6400
+F 0 "#PWR0247" H 6450 6500 50  0001 C CNN
+F 1 "-5V" H 6465 6573 50  0000 C CNN
+F 2 "" H 6450 6400 50  0001 C CNN
+F 3 "" H 6450 6400 50  0001 C CNN
+	1    6450 6400
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
