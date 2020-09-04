@@ -925,9 +925,6 @@ Wire Wire Line
 	-14800 5500 -14800 -9700
 Wire Wire Line
 	-14800 -9700 -13300 -9700
-Wire Wire Line
-	3750 4950 4000 4950
-Connection ~ 3750 4950
 Connection ~ 2600 4950
 Wire Wire Line
 	2600 5250 2600 4950
@@ -1483,8 +1480,6 @@ F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms
 	1    5200 1800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3450 4950 3750 4950
 Text Label 800  7000 1    50   ~ 0
 colorburst
 Wire Wire Line
@@ -1608,7 +1603,7 @@ U 1 1 5F44307A
 P 2150 -600
 F 0 "C7" V 2250 -600 50  0000 C CNN
 F 1 "100n" V 2012 -600 50  0001 C CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2150 -600 50  0001 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2150 -600 50  0001 C CNN
 F 3 "~" H 2150 -600 50  0001 C CNN
 	1    2150 -600
 	-1   0    0    1   
@@ -1619,7 +1614,7 @@ U 1 1 5F444718
 P 2150 -1000
 F 0 "C6" V 2250 -1000 50  0000 C CNN
 F 1 "100n" V 2012 -1000 50  0001 C CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2150 -1000 50  0001 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2150 -1000 50  0001 C CNN
 F 3 "~" H 2150 -1000 50  0001 C CNN
 	1    2150 -1000
 	-1   0    0    1   
@@ -1832,7 +1827,7 @@ U 1 1 600C9173
 P 3050 -600
 F 0 "C9" V 3150 -600 50  0000 C CNN
 F 1 "100n" V 2912 -600 50  0001 C CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3050 -600 50  0001 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3050 -600 50  0001 C CNN
 F 3 "~" H 3050 -600 50  0001 C CNN
 	1    3050 -600
 	-1   0    0    1   
@@ -1843,7 +1838,7 @@ U 1 1 600C917D
 P 3050 -1000
 F 0 "C8" V 3150 -1000 50  0000 C CNN
 F 1 "100n" V 2912 -1000 50  0001 C CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3050 -1000 50  0001 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3050 -1000 50  0001 C CNN
 F 3 "~" H 3050 -1000 50  0001 C CNN
 	1    3050 -1000
 	-1   0    0    1   
@@ -2156,4 +2151,6 @@ F 3 "" H 5750 6800 50  0001 C CNN
 	1    5750 6800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3450 4950 4000 4950
 $EndSCHEMATC
