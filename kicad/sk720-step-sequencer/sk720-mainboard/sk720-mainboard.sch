@@ -19,7 +19,7 @@ U 1 1 5CED6258
 P 1200 3900
 F 0 "R2" V 993 3900 50  0000 C CNN
 F 1 "100" V 1084 3900 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1130 3900 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1130 3900 50  0001 C CNN
 F 3 "~" H 1200 3900 50  0001 C CNN
 	1    1200 3900
 	0    1    1    0   
@@ -65,7 +65,7 @@ U 1 1 5CED6B17
 P 1050 4050
 F 0 "R1" H 980 4004 50  0000 R CNN
 F 1 "47k" H 980 4095 50  0000 R CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 980 4050 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 980 4050 50  0001 C CNN
 F 3 "~" H 1050 4050 50  0001 C CNN
 	1    1050 4050
 	-1   0    0    1   
@@ -76,7 +76,7 @@ U 1 1 5CED7212
 P 1850 3900
 F 0 "R3" V 1643 3900 50  0000 C CNN
 F 1 "100" V 1734 3900 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1780 3900 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1780 3900 50  0001 C CNN
 F 3 "~" H 1850 3900 50  0001 C CNN
 	1    1850 3900
 	0    1    1    0   
@@ -107,7 +107,7 @@ U 1 1 5F480F54
 P 1200 4950
 F 0 "R8" V 993 4950 50  0000 C CNN
 F 1 "100" V 1084 4950 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1130 4950 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1130 4950 50  0001 C CNN
 F 3 "~" H 1200 4950 50  0001 C CNN
 	1    1200 4950
 	0    1    1    0   
@@ -153,7 +153,7 @@ U 1 1 5F480F7D
 P 1050 5100
 F 0 "R4" H 980 5054 50  0000 R CNN
 F 1 "47k" H 980 5145 50  0000 R CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 980 5100 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 980 5100 50  0001 C CNN
 F 3 "~" H 1050 5100 50  0001 C CNN
 	1    1050 5100
 	-1   0    0    1   
@@ -164,7 +164,7 @@ U 1 1 5F480F93
 P 1850 4950
 F 0 "R11" V 1643 4950 50  0000 C CNN
 F 1 "100" V 1734 4950 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1780 4950 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1780 4950 50  0001 C CNN
 F 3 "~" H 1850 4950 50  0001 C CNN
 	1    1850 4950
 	0    1    1    0   
@@ -184,7 +184,7 @@ U 1 1 5F4859D6
 P 1200 6000
 F 0 "R9" V 993 6000 50  0000 C CNN
 F 1 "100" V 1084 6000 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1130 6000 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1130 6000 50  0001 C CNN
 F 3 "~" H 1200 6000 50  0001 C CNN
 	1    1200 6000
 	0    1    1    0   
@@ -230,7 +230,7 @@ U 1 1 5F4859FF
 P 1050 6150
 F 0 "R5" H 980 6104 50  0000 R CNN
 F 1 "47k" H 980 6195 50  0000 R CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 980 6150 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 980 6150 50  0001 C CNN
 F 3 "~" H 1050 6150 50  0001 C CNN
 	1    1050 6150
 	-1   0    0    1   
@@ -241,7 +241,7 @@ U 1 1 5F485A15
 P 1850 6000
 F 0 "R12" V 1643 6000 50  0000 C CNN
 F 1 "100" V 1734 6000 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1780 6000 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1780 6000 50  0001 C CNN
 F 3 "~" H 1850 6000 50  0001 C CNN
 	1    1850 6000
 	0    1    1    0   
@@ -261,7 +261,7 @@ U 1 1 5F485A38
 P 1200 7050
 F 0 "R10" V 993 7050 50  0000 C CNN
 F 1 "100" V 1084 7050 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1130 7050 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1130 7050 50  0001 C CNN
 F 3 "~" H 1200 7050 50  0001 C CNN
 	1    1200 7050
 	0    1    1    0   
@@ -307,7 +307,7 @@ U 1 1 5F485A61
 P 1050 7200
 F 0 "R6" H 980 7154 50  0000 R CNN
 F 1 "47k" H 980 7245 50  0000 R CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 980 7200 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 980 7200 50  0001 C CNN
 F 3 "~" H 1050 7200 50  0001 C CNN
 	1    1050 7200
 	-1   0    0    1   
@@ -318,7 +318,7 @@ U 1 1 5F485A77
 P 1850 7050
 F 0 "R13" V 1643 7050 50  0000 C CNN
 F 1 "100" V 1734 7050 50  0000 C CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1780 7050 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1780 7050 50  0001 C CNN
 F 3 "~" H 1850 7050 50  0001 C CNN
 	1    1850 7050
 	0    1    1    0   
@@ -1103,7 +1103,7 @@ L Device:R R15
 U 1 1 5F63A7FF
 P 5400 4500
 F 0 "R15" V 5193 4500 50  0000 C CNN
-F 1 "R" V 5284 4500 50  0000 C CNN
+F 1 "680" V 5284 4500 50  0000 C CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5330 4500 50  0001 C CNN
 F 3 "~" H 5400 4500 50  0001 C CNN
 	1    5400 4500
@@ -1145,7 +1145,7 @@ U 1 1 5F6443D5
 P 1150 2600
 F 0 "R7" H 1080 2554 50  0000 R CNN
 F 1 "47k" H 1080 2645 50  0000 R CNN
-F 2 "synkie_footprints:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1080 2600 50  0001 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1080 2600 50  0001 C CNN
 F 3 "~" H 1150 2600 50  0001 C CNN
 	1    1150 2600
 	-1   0    0    1   
