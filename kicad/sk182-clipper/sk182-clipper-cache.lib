@@ -1,6 +1,50 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
+# sk182-clipper-rescue_D-synkie_symbols
+#
+DEF sk182-clipper-rescue_D-synkie_symbols D 0 40 N N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "sk182-clipper-rescue_D-synkie_symbols" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TO-???*
+ *_Diode_*
+ *SingleDiode*
+ D_*
+$ENDFPLIST
+DRAW
+P 2 0 1 10 -50 50 -50 -50 N
+P 2 0 1 0 50 0 -50 0 N
+P 4 0 1 10 50 50 50 -50 -50 0 50 50 N
+X K 1 -150 0 100 R 50 50 1 1 P
+X A 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# sk182-clipper-rescue_PMBT3906YS-synkie_symbols
+#
+DEF sk182-clipper-rescue_PMBT3906YS-synkie_symbols Q 0 0 Y Y 2 F N
+F0 "Q" -150 150 50 H V C CNN
+F1 "sk182-clipper-rescue_PMBT3906YS-synkie_symbols" 175 0 50 V V C CNN
+F2 "" -100 25 50 H I C CNN
+F3 "" -100 25 50 H I C CNN
+DRAW
+P 2 0 1 0 -50 0 -25 0 N
+P 2 0 1 0 -25 25 50 100 N
+P 2 0 1 20 -25 75 -25 -75 N
+P 2 0 1 0 50 -100 -25 -25 N
+P 4 0 1 0 25 -50 0 -75 -25 -25 25 -50 F
+X E 1 50 -200 100 U 50 50 1 1 P
+X B 2 -150 0 100 R 50 50 1 1 I
+X C 6 50 200 100 D 50 50 1 1 P
+X C 3 50 200 100 D 50 50 2 1 P
+X E 4 50 -200 100 U 50 50 2 1 P
+X B 5 -150 0 100 R 50 50 2 1 I
+ENDDRAW
+ENDDEF
+#
 # synkie_symbols_+5V
 #
 DEF synkie_symbols_+5V #PWR 0 0 Y Y 1 F P
@@ -105,28 +149,6 @@ X Pin_3 3 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# synkie_symbols_D
-#
-DEF synkie_symbols_D D 0 40 N N 1 F N
-F0 "D" 0 100 50 H V C CNN
-F1 "synkie_symbols_D" 0 -100 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- TO-???*
- *_Diode_*
- *SingleDiode*
- D_*
-$ENDFPLIST
-DRAW
-P 2 0 1 10 -50 50 -50 -50 N
-P 2 0 1 0 50 0 -50 0 N
-P 4 0 1 10 50 50 50 -50 -50 0 50 50 N
-X K 1 -150 0 100 R 50 50 1 1 P
-X A 2 150 0 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # synkie_symbols_Ferrite_Bead
 #
 DEF synkie_symbols_Ferrite_Bead FB 0 0 N Y 1 F N
@@ -204,28 +226,6 @@ P 2 0 1 0 -25 25 50 100 N
 P 2 0 1 20 -25 75 -25 -75 N
 P 2 0 1 0 50 -100 -25 -25 N
 P 4 0 1 0 0 -75 25 -50 50 -100 0 -75 F
-X E 1 50 -200 100 U 50 50 1 1 P
-X B 2 -150 0 100 R 50 50 1 1 I
-X C 6 50 200 100 D 50 50 1 1 P
-X C 3 50 200 100 D 50 50 2 1 P
-X E 4 50 -200 100 U 50 50 2 1 P
-X B 5 -150 0 100 R 50 50 2 1 I
-ENDDRAW
-ENDDEF
-#
-# synkie_symbols_PMBT3906YS
-#
-DEF synkie_symbols_PMBT3906YS Q 0 0 Y Y 2 F N
-F0 "Q" -150 150 50 H V C CNN
-F1 "synkie_symbols_PMBT3906YS" 175 0 50 V V C CNN
-F2 "" -100 25 50 H I C CNN
-F3 "" -100 25 50 H I C CNN
-DRAW
-P 2 0 1 0 -50 0 -25 0 N
-P 2 0 1 0 -25 25 50 100 N
-P 2 0 1 20 -25 75 -25 -75 N
-P 2 0 1 0 50 -100 -25 -25 N
-P 4 0 1 0 25 -50 0 -75 -25 -25 25 -50 F
 X E 1 50 -200 100 U 50 50 1 1 P
 X B 2 -150 0 100 R 50 50 1 1 I
 X C 6 50 200 100 D 50 50 1 1 P

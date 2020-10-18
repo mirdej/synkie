@@ -316,7 +316,7 @@ F 3 "" H 4750 5650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:PMBT3906YS Q1
+L sk182-clipper-rescue:PMBT3906YS-synkie_symbols Q1
 U 2 1 5F3F8435
 P 4700 2900
 F 0 "Q1" H 4838 2946 50  0000 L CNN
@@ -327,7 +327,7 @@ F 3 "" H 4600 2925 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:PMBT3906YS Q1
+L sk182-clipper-rescue:PMBT3906YS-synkie_symbols Q1
 U 1 1 5F3F9C4A
 P 4250 2900
 F 0 "Q1" H 4388 2854 50  0000 L CNN
@@ -338,7 +338,7 @@ F 3 "" H 4150 2925 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L synkie_symbols:D D1
+L sk182-clipper-rescue:D-synkie_symbols D1
 U 1 1 5F40DC4F
 P 3750 2950
 F 0 "D1" V 3796 2870 50  0000 R CNN
@@ -563,7 +563,7 @@ Connection ~ 2900 6500
 Wire Wire Line
 	2900 6500 2900 6700
 $Comp
-L synkie_symbols:D D2
+L sk182-clipper-rescue:D-synkie_symbols D2
 U 1 1 5F3E5E5A
 P 4500 5350
 F 0 "D2" V 4454 5430 50  0000 L CNN
