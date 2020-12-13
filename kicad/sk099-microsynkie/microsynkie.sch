@@ -558,17 +558,6 @@ Wire Wire Line
 	3550 1550 3550 1800
 Wire Wire Line
 	2950 1800 3550 1800
-$Comp
-L Connector:TestPoint TP2
-U 1 1 5F69D5BA
-P 6200 1250
-F 0 "TP2" H 6258 1368 50  0000 L CNN
-F 1 "TestPoint" H 6450 1400 50  0001 L CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 6400 1250 50  0001 C CNN
-F 3 "~" H 6400 1250 50  0001 C CNN
-	1    6200 1250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4300 1200 4300 1550
 Wire Wire Line
@@ -1135,17 +1124,6 @@ F 3 "~" H 2300 4950 50  0001 C CNN
 	1    2300 4950
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5F3AD2B4
-P 4350 6650
-F 0 "TP1" H 4408 6768 50  0000 L CNN
-F 1 "TestPoint" H 4300 6900 50  0000 L CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 4550 6650 50  0001 C CNN
-F 3 "~" H 4550 6650 50  0001 C CNN
-	1    4350 6650
-	1    0    0    -1  
-$EndComp
 Text Label 4000 4950 0    50   ~ 0
 clipper_out
 $Comp
@@ -1293,8 +1271,6 @@ Wire Wire Line
 	1450 6600 1850 6600
 Wire Wire Line
 	1450 7500 2750 7500
-Wire Wire Line
-	4250 6650 4350 6650
 Wire Wire Line
 	3650 6550 3400 6550
 Connection ~ 4250 6650
@@ -1460,11 +1436,6 @@ Wire Wire Line
 	5700 1500 6000 1500
 Wire Wire Line
 	6000 1500 6000 1250
-Wire Wire Line
-	6000 1250 6200 1250
-Connection ~ 6200 1250
-Wire Wire Line
-	6200 1250 6300 1250
 Text Label 6600 4750 2    49   ~ 0
 dry
 Text Label 9300 1750 0    50   ~ 0
@@ -2126,9 +2097,6 @@ F 3 "" H 7800 -800 50  0001 C CNN
 	1    7800 -800
 	1    0    0    -1  
 $EndComp
-Connection ~ 4350 6650
-Wire Wire Line
-	4350 6650 4450 6650
 $Comp
 L Connector:TestPoint TP3
 U 1 1 5F54B793
@@ -2153,4 +2121,146 @@ F 3 "" H 5750 6800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3450 4950 4000 4950
+$Comp
+L synkie_symbols:TEC3 U7
+U 1 1 5FD31DB4
+P 10450 -300
+F 0 "U7" H 10450 713 49  0000 C CNN
+F 1 "TEC3" H 10450 623 49  0000 C CNN
+F 2 "synkie_footprints:TEC" H 10450 -300 49  0001 C CNN
+F 3 "" H 10450 -300 49  0001 C CNN
+	1    10450 -300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J8
+U 1 1 5FD34166
+P 9300 -1050
+F 0 "J8" H 9408 -869 50  0000 C CNN
+F 1 "Conn_01x02_Male" H 9408 -960 50  0000 C CNN
+F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 9300 -1050 50  0001 C CNN
+F 3 "~" H 9300 -1050 50  0001 C CNN
+	1    9300 -1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0105
+U 1 1 5FD41C1E
+P 10900 -1050
+F 0 "#PWR0105" H 10900 -1200 50  0001 C CNN
+F 1 "+5V" H 10915 -877 50  0000 C CNN
+F 2 "" H 10900 -1050 50  0001 C CNN
+F 3 "" H 10900 -1050 50  0001 C CNN
+	1    10900 -1050
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5FD43570
+P 10900 -750
+F 0 "#PWR0106" H 10900 -1000 50  0001 C CNN
+F 1 "GND" V 10905 -878 50  0000 R CNN
+F 2 "" H 10900 -750 50  0001 C CNN
+F 3 "" H 10900 -750 50  0001 C CNN
+	1    10900 -750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:-5V #PWR0107
+U 1 1 5FD44034
+P 10900 -400
+F 0 "#PWR0107" H 10900 -300 50  0001 C CNN
+F 1 "-5V" H 10915 -227 50  0000 C CNN
+F 2 "" H 10900 -400 50  0001 C CNN
+F 3 "" H 10900 -400 50  0001 C CNN
+	1    10900 -400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4250 6650 4450 6650
+Wire Wire Line
+	6000 1250 6300 1250
+$Comp
+L Connector:USB_B_Micro J9
+U 1 1 5FD5DCA6
+P 11750 -800
+F 0 "J9" H 11807 -333 50  0000 C CNN
+F 1 "USB_B_Micro" H 11807 -424 50  0000 C CNN
+F 2 "anyma_footprints:FCI-Microusb" H 11900 -850 50  0001 C CNN
+F 3 "~" H 11900 -850 50  0001 C CNN
+	1    11750 -800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 -1050 9750 -1050
+Wire Wire Line
+	11750 -400 11750 -150
+Wire Wire Line
+	11750 -150 11650 -150
+Wire Wire Line
+	9750 -150 9750 -1050
+Connection ~ 9750 -1050
+Wire Wire Line
+	9750 -1050 10000 -1050
+$Comp
+L Device:Polyfuse F1
+U 1 1 5FD6E705
+P 9350 -550
+F 0 "F1" V 9125 -550 50  0000 C CNN
+F 1 "Polyfuse" V 9216 -550 50  0000 C CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9400 -750 50  0001 L CNN
+F 3 "~" H 9350 -550 50  0001 C CNN
+	1    9350 -550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9500 -950 9500 -850
+Wire Wire Line
+	9500 -850 9100 -850
+Wire Wire Line
+	9100 -850 9100 -550
+Wire Wire Line
+	9100 -550 9200 -550
+Wire Wire Line
+	9500 -550 9650 -550
+Wire Wire Line
+	9650 -550 9650 -850
+Wire Wire Line
+	9650 -850 10000 -850
+Wire Wire Line
+	12050 -1000 12050 -1600
+Wire Wire Line
+	12050 -1600 8900 -1600
+Wire Wire Line
+	8900 -1600 8900 -850
+Wire Wire Line
+	8900 -850 9100 -850
+Connection ~ 9100 -850
+Wire Wire Line
+	11650 -400 11650 -150
+Connection ~ 11650 -150
+Wire Wire Line
+	11650 -150 9750 -150
+$Comp
+L Anyma_Library:LOGO U8
+U 1 1 5FE7C5CF
+P 10500 1800
+F 0 "U8" H 10578 1921 50  0000 L CNN
+F 1 "LOGO" H 10578 1830 50  0000 L CNN
+F 2 "anyma_footprints:logo_anyma" H 10500 1800 50  0001 C CNN
+F 3 "" H 10500 1800 50  0001 C CNN
+	1    10500 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Anyma_Library:LOGO U9
+U 1 1 5FE7DC31
+P 10500 2100
+F 0 "U9" H 10578 2221 50  0000 L CNN
+F 1 "LOGO" H 10578 2130 50  0000 L CNN
+F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 10500 2100 50  0001 C CNN
+F 3 "" H 10500 2100 50  0001 C CNN
+	1    10500 2100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
