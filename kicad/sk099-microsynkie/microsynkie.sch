@@ -2181,28 +2181,6 @@ Wire Wire Line
 Wire Wire Line
 	6000 1250 6300 1250
 $Comp
-L Connector:USB_B_Micro J9
-U 1 1 5FD5DCA6
-P 11750 -800
-F 0 "J9" H 11807 -333 50  0000 C CNN
-F 1 "USB_B_Micro" H 11807 -424 50  0000 C CNN
-F 2 "anyma_footprints:FCI-Microusb" H 11900 -850 50  0001 C CNN
-F 3 "~" H 11900 -850 50  0001 C CNN
-	1    11750 -800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9500 -1050 9750 -1050
-Wire Wire Line
-	11750 -400 11750 -150
-Wire Wire Line
-	11750 -150 11650 -150
-Wire Wire Line
-	9750 -150 9750 -1050
-Connection ~ 9750 -1050
-Wire Wire Line
-	9750 -1050 10000 -1050
-$Comp
 L Device:Polyfuse F1
 U 1 1 5FD6E705
 P 9350 -550
@@ -2214,10 +2192,6 @@ F 3 "~" H 9350 -550 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	9500 -950 9500 -850
-Wire Wire Line
-	9500 -850 9100 -850
-Wire Wire Line
 	9100 -850 9100 -550
 Wire Wire Line
 	9100 -550 9200 -550
@@ -2228,19 +2202,7 @@ Wire Wire Line
 Wire Wire Line
 	9650 -850 10000 -850
 Wire Wire Line
-	12050 -1000 12050 -1600
-Wire Wire Line
-	12050 -1600 8900 -1600
-Wire Wire Line
-	8900 -1600 8900 -850
-Wire Wire Line
 	8900 -850 9100 -850
-Connection ~ 9100 -850
-Wire Wire Line
-	11650 -400 11650 -150
-Connection ~ 11650 -150
-Wire Wire Line
-	11650 -150 9750 -150
 $Comp
 L Anyma_Library:LOGO U8
 U 1 1 5FE7C5CF
@@ -2263,4 +2225,74 @@ F 3 "" H 10500 2100 50  0001 C CNN
 	1    10500 2100
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:USB_C_Receptacle_USB2.0 J?
+U 1 1 5FE5B33F
+P 13000 -950
+F 0 "J?" H 13107 -83 50  0000 C CNN
+F 1 "USB_C_Receptacle_USB2.0" H 13107 -174 50  0000 C CNN
+F 2 "" H 13150 -950 50  0001 C CNN
+F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 13150 -950 50  0001 C CNN
+	1    13000 -950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5FE62BC8
+P 13750 -1350
+F 0 "R?" V 13543 -1350 50  0000 C CNN
+F 1 "5k1" V 13634 -1350 50  0000 C CNN
+F 2 "" V 13680 -1350 50  0001 C CNN
+F 3 "~" H 13750 -1350 50  0001 C CNN
+	1    13750 -1350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5FE630A8
+P 13750 -1250
+F 0 "R?" V 13543 -1250 50  0000 C CNN
+F 1 "5k1" V 13634 -1250 50  0000 C CNN
+F 2 "" V 13680 -1250 50  0001 C CNN
+F 3 "~" H 13750 -1250 50  0001 C CNN
+	1    13750 -1250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	13000 -50  14300 -50 
+Wire Wire Line
+	14300 -1350 13900 -1350
+Wire Wire Line
+	13900 -1250 14300 -1250
+Wire Wire Line
+	14300 -1350 14300 -1250
+Connection ~ 14300 -1250
+Wire Wire Line
+	14300 -1250 14300 -50 
+Wire Wire Line
+	12700 -50  13000 -50 
+Connection ~ 13000 -50 
+Wire Wire Line
+	12700 -50  9800 -50 
+Wire Wire Line
+	9800 -50  9800 -1050
+Connection ~ 12700 -50 
+Connection ~ 9800 -1050
+Wire Wire Line
+	9800 -1050 10000 -1050
+Wire Wire Line
+	9500 -1050 9800 -1050
+Wire Wire Line
+	13600 -1550 14150 -1550
+Wire Wire Line
+	14150 -1550 14150 -2100
+Wire Wire Line
+	14150 -2100 8900 -2100
+Wire Wire Line
+	8900 -2100 8900 -850
+Wire Wire Line
+	9500 -950 9650 -950
+Wire Wire Line
+	9650 -950 9650 -850
+Connection ~ 9650 -850
 $EndSCHEMATC
