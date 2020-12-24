@@ -209,7 +209,7 @@ U 1 1 5F4EBBE1
 P 1550 2950
 F 0 "C3" H 1665 2996 50  0000 L CNN
 F 1 "100n" H 1665 2905 50  0000 L CNN
-F 2 "synkie_footprints:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1588 2800 50  0001 C CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1588 2800 50  0001 C CNN
 F 3 "~" H 1550 2950 50  0001 C CNN
 	1    1550 2950
 	1    0    0    -1  
@@ -455,7 +455,7 @@ L Device:R R21
 U 1 1 5F3D7EDD
 P 8000 1950
 F 0 "R21" V 7793 1950 50  0000 C CNN
-F 1 "300" V 7884 1950 50  0000 C CNN
+F 1 "4k7" V 7884 1950 50  0000 C CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7930 1950 50  0001 C CNN
 F 3 "~" H 8000 1950 50  0001 C CNN
 	1    8000 1950
@@ -947,7 +947,7 @@ L synkie_symbols:R R12
 U 1 1 5F41B095
 P 2900 4500
 F 0 "R12" H 2830 4454 50  0000 R CNN
-F 1 "5k6" H 2830 4545 50  0000 R CNN
+F 1 "4k7?(was5k6)" H 2830 4545 50  0000 R CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2830 4500 50  0001 C CNN
 F 3 "~" H 2900 4500 50  0001 C CNN
 	1    2900 4500
@@ -1059,7 +1059,7 @@ L synkie_symbols:R R10
 U 1 1 5F3E73A4
 P 2750 4950
 F 0 "R10" V 2543 4950 50  0000 C CNN
-F 1 "330" V 2634 4950 50  0000 C CNN
+F 1 "300" V 2634 4950 50  0000 C CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 4950 50  0001 C CNN
 F 3 "~" H 2750 4950 50  0001 C CNN
 	1    2750 4950
@@ -1191,7 +1191,7 @@ L Device:R R3
 U 1 1 5F44CEA2
 P 1350 5000
 F 0 "R3" H 1280 4954 50  0000 R CNN
-F 1 "47k" H 1280 5045 50  0000 R CNN
+F 1 "10k" H 1280 5045 50  0000 R CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1280 5000 50  0001 C CNN
 F 3 "~" H 1350 5000 50  0001 C CNN
 	1    1350 5000
@@ -1490,7 +1490,7 @@ U 1 1 6004FCB7
 P 7900 4850
 F 0 "C20" H 8000 4850 50  0000 L CNN
 F 1 "120p" H 7650 4750 50  0000 L CNN
-F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7938 4700 50  0001 C CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7938 4700 50  0001 C CNN
 F 3 "~" H 7900 4850 50  0001 C CNN
 	1    7900 4850
 	1    0    0    -1  
@@ -2226,10 +2226,10 @@ F 3 "" H 10500 2100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:USB_C_Receptacle_USB2.0 J?
+L Connector:USB_C_Receptacle_USB2.0 J9
 U 1 1 5FE5B33F
 P 13000 -950
-F 0 "J?" H 13107 -83 50  0000 C CNN
+F 0 "J9" H 13107 -83 50  0000 C CNN
 F 1 "USB_C_Receptacle_USB2.0" H 13107 -174 50  0000 C CNN
 F 2 "" H 13150 -950 50  0001 C CNN
 F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 13150 -950 50  0001 C CNN
@@ -2237,10 +2237,10 @@ F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 13150 -
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R28
 U 1 1 5FE62BC8
 P 13750 -1350
-F 0 "R?" V 13543 -1350 50  0000 C CNN
+F 0 "R28" V 13543 -1350 50  0000 C CNN
 F 1 "5k1" V 13634 -1350 50  0000 C CNN
 F 2 "" V 13680 -1350 50  0001 C CNN
 F 3 "~" H 13750 -1350 50  0001 C CNN
@@ -2248,10 +2248,10 @@ F 3 "~" H 13750 -1350 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R29
 U 1 1 5FE630A8
 P 13750 -1250
-F 0 "R?" V 13543 -1250 50  0000 C CNN
+F 0 "R29" V 13543 -1250 50  0000 C CNN
 F 1 "5k1" V 13634 -1250 50  0000 C CNN
 F 2 "" V 13680 -1250 50  0001 C CNN
 F 3 "~" H 13750 -1250 50  0001 C CNN
