@@ -136,7 +136,7 @@ L Device:C C15
 U 1 1 5F4E07B6
 P 4150 1550
 F 0 "C15" V 3898 1550 50  0000 C CNN
-F 1 "100n" V 3989 1550 50  0000 C CNN
+F 1 "1u" V 3989 1550 50  0000 C CNN
 F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4188 1400 50  0001 C CNN
 F 3 "~" H 4150 1550 50  0001 C CNN
 	1    4150 1550
@@ -510,7 +510,7 @@ L Device:C C12
 U 1 1 5F3E8429
 P 3800 2100
 F 0 "C12" V 3548 2100 50  0000 C CNN
-F 1 "68p" V 3639 2100 50  0000 C CNN
+F 1 "100p" V 3639 2100 50  0000 C CNN
 F 2 "synkie_footprints:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3838 1950 50  0001 C CNN
 F 3 "~" H 3800 2100 50  0001 C CNN
 	1    3800 2100
@@ -1059,7 +1059,7 @@ L synkie_symbols:R R10
 U 1 1 5F3E73A4
 P 2750 4950
 F 0 "R10" V 2543 4950 50  0000 C CNN
-F 1 "300" V 2634 4950 50  0000 C CNN
+F 1 "75" V 2634 4950 50  0000 C CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2680 4950 50  0001 C CNN
 F 3 "~" H 2750 4950 50  0001 C CNN
 	1    2750 4950
@@ -1235,21 +1235,8 @@ F 3 "~" H 1650 7000 50  0001 C CNN
 	1    1650 7000
 	0    1    1    0   
 $EndComp
-$Comp
-L synkie_symbols:R R2
-U 1 1 5F4DC2DD
-P 1200 7000
-F 0 "R2" V 993 7000 50  0000 C CNN
-F 1 "75" V 1084 7000 50  0000 C CNN
-F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1130 7000 50  0001 C CNN
-F 3 "~" H 1200 7000 50  0001 C CNN
-	1    1200 7000
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1800 7000 2000 7000
-Wire Wire Line
-	1350 7000 1400 7000
 Wire Wire Line
 	2600 7200 2450 7200
 Wire Wire Line
@@ -1453,8 +1440,6 @@ F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms
 $EndComp
 Text Label 800  7000 1    50   ~ 0
 colorburst
-Wire Wire Line
-	1050 7000 800  7000
 Text Label 4450 6650 0    49   ~ 0
 delayed_burst
 Text Label 6600 4150 2    49   ~ 0
@@ -1474,41 +1459,16 @@ Wire Wire Line
 Wire Wire Line
 	7650 4450 7600 4450
 $Comp
-L Device:R R20
-U 1 1 6004F70A
-P 7750 4750
-F 0 "R20" V 7543 4750 50  0000 C CNN
-F 1 "120" V 7634 4750 50  0000 C CNN
-F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7680 4750 50  0001 C CNN
-F 3 "~" H 7750 4750 50  0001 C CNN
-	1    7750 4750
-	0    1    1    0   
-$EndComp
-$Comp
 L synkie_symbols:C_Small C20
 U 1 1 6004FCB7
-P 7900 4850
-F 0 "C20" H 8000 4850 50  0000 L CNN
-F 1 "120p" H 7650 4750 50  0000 L CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7938 4700 50  0001 C CNN
-F 3 "~" H 7900 4850 50  0001 C CNN
-	1    7900 4850
+P 8150 5450
+F 0 "C20" H 7900 5450 50  0000 L CNN
+F 1 "10p" H 7900 5350 50  0000 L CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8188 5300 50  0001 C CNN
+F 3 "~" H 8150 5450 50  0001 C CNN
+	1    8150 5450
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR058
-U 1 1 600502A0
-P 7900 4950
-F 0 "#PWR058" H 7900 4700 50  0001 C CNN
-F 1 "GND" H 7905 4777 50  0000 C CNN
-F 2 "" H 7900 4950 50  0001 C CNN
-F 3 "" H 7900 4950 50  0001 C CNN
-	1    7900 4950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8450 4750 7900 4750
-Connection ~ 7900 4750
 $Comp
 L synkie_symbols:Opamp_Dual_Generic U1
 U 3 1 5F3C8CDE
@@ -2295,4 +2255,23 @@ Wire Wire Line
 Wire Wire Line
 	9650 -950 9650 -850
 Connection ~ 9650 -850
+$Comp
+L power:GND #PWR?
+U 1 1 5FE75AD6
+P 8150 5550
+F 0 "#PWR?" H 8150 5300 50  0001 C CNN
+F 1 "GND" H 8155 5377 50  0000 C CNN
+F 2 "" H 8150 5550 50  0001 C CNN
+F 3 "" H 8150 5550 50  0001 C CNN
+	1    8150 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 5250 8150 5250
+Wire Wire Line
+	8150 5250 8150 5350
+Wire Wire Line
+	7600 4750 8450 4750
+Wire Wire Line
+	800  7000 1400 7000
 $EndSCHEMATC
