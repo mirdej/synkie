@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:synkie-module-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -173,7 +172,7 @@ L synkie_symbols:R R?
 U 1 1 5DCC6769
 P 3800 3300
 F 0 "R?" V 3593 3300 50  0000 C CNN
-F 1 "100" V 3684 3300 50  0000 C CNN
+F 1 "75" V 3684 3300 50  0000 C CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3730 3300 50  0001 C CNN
 F 3 "~" H 3800 3300 50  0001 C CNN
 	1    3800 3300
@@ -184,7 +183,7 @@ L synkie_symbols:R R?
 U 1 1 5DCC7045
 P 3600 3500
 F 0 "R?" H 3530 3454 50  0000 R CNN
-F 1 "4k7" H 3530 3545 50  0000 R CNN
+F 1 "10k" H 3530 3545 50  0000 R CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3530 3500 50  0001 C CNN
 F 3 "~" H 3600 3500 50  0001 C CNN
 	1    3600 3500
