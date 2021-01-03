@@ -14,25 +14,14 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_01x02 J2
-U 1 1 5F4D92B3
-P 1150 1450
-F 0 "J2" H 1068 1667 50  0000 C CNN
-F 1 "INPUT" H 1068 1576 50  0000 C CNN
-F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 1150 1450 50  0001 C CNN
-F 3 "~" H 1150 1450 50  0001 C CNN
-	1    1150 1450
-	-1   0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR06
 U 1 1 5F4D96A8
-P 1350 1550
-F 0 "#PWR06" H 1350 1300 50  0001 C CNN
-F 1 "GND" H 1355 1377 50  0000 C CNN
-F 2 "" H 1350 1550 50  0001 C CNN
-F 3 "" H 1350 1550 50  0001 C CNN
-	1    1350 1550
+P 1150 1650
+F 0 "#PWR06" H 1150 1400 50  0001 C CNN
+F 1 "GND" H 1155 1477 50  0000 C CNN
+F 2 "" H 1150 1650 50  0001 C CNN
+F 3 "" H 1150 1650 50  0001 C CNN
+	1    1150 1650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -368,28 +357,6 @@ F 3 "~" H 6700 1900 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 6550 1900
-$Comp
-L Connector_Generic:Conn_01x02 J5
-U 1 1 5F398FD6
-P 7050 1900
-F 0 "J5" H 7050 2050 50  0000 C CNN
-F 1 "INPUT_CLAMPED" H 7250 1700 50  0000 C CNN
-F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 7050 1900 50  0001 C CNN
-F 3 "~" H 7050 1900 50  0001 C CNN
-	1    7050 1900
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR054
-U 1 1 5F399E1E
-P 6850 2000
-F 0 "#PWR054" H 6850 1750 50  0001 C CNN
-F 1 "GND" H 6855 1827 50  0000 C CNN
-F 2 "" H 6850 2000 50  0001 C CNN
-F 3 "" H 6850 2000 50  0001 C CNN
-	1    6850 2000
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR038
 U 1 1 5F3A6A96
@@ -839,28 +806,6 @@ F 3 "~" H 9200 4850 50  0001 C CNN
 $EndComp
 Connection ~ 9050 4850
 $Comp
-L Connector_Generic:Conn_01x02 J7
-U 1 1 5F48530D
-P 9550 4850
-F 0 "J7" H 9468 5067 50  0000 C CNN
-F 1 "VIDEO_OUT" H 9468 4976 50  0000 C CNN
-F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 9550 4850 50  0001 C CNN
-F 3 "~" H 9550 4850 50  0001 C CNN
-	1    9550 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR064
-U 1 1 5F48F072
-P 9350 4950
-F 0 "#PWR064" H 9350 4700 50  0001 C CNN
-F 1 "GND" H 9355 4777 50  0000 C CNN
-F 2 "" H 9350 4950 50  0001 C CNN
-F 3 "" H 9350 4950 50  0001 C CNN
-	1    9350 4950
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R25
 U 1 1 5F3B7D93
 P 9050 3900
@@ -1196,28 +1141,6 @@ F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1280 5000 
 F 3 "~" H 1350 5000 50  0001 C CNN
 	1    1350 5000
 	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR04
-U 1 1 5F44CE98
-P 1100 4950
-F 0 "#PWR04" H 1100 4700 50  0001 C CNN
-F 1 "GND" H 1105 4777 50  0000 C CNN
-F 2 "" H 1100 4950 50  0001 C CNN
-F 3 "" H 1100 4950 50  0001 C CNN
-	1    1100 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J1
-U 1 1 5F44CE8E
-P 900 4850
-F 0 "J1" H 818 5067 50  0000 C CNN
-F 1 "SIFF_IN" H 818 4976 50  0000 C CNN
-F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 900 4850 50  0001 C CNN
-F 3 "~" H 900 4850 50  0001 C CNN
-	1    900  4850
-	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	2100 7000 2000 7000
@@ -2084,56 +2007,56 @@ Wire Wire Line
 $Comp
 L synkie_symbols:TEC3 U7
 U 1 1 5FD31DB4
-P 10450 -300
-F 0 "U7" H 10450 713 49  0000 C CNN
-F 1 "TEC3" H 10450 623 49  0000 C CNN
-F 2 "synkie_footprints:TEC" H 10450 -300 49  0001 C CNN
-F 3 "" H 10450 -300 49  0001 C CNN
-	1    10450 -300
+P 9300 -4350
+F 0 "U7" H 9300 -3337 49  0000 C CNN
+F 1 "TEC3" H 9300 -3427 49  0000 C CNN
+F 2 "synkie_footprints:TEC" H 9300 -4350 49  0001 C CNN
+F 3 "" H 9300 -4350 49  0001 C CNN
+	1    9300 -4350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x02_Male J8
 U 1 1 5FD34166
-P 9300 -1050
-F 0 "J8" H 9408 -869 50  0000 C CNN
-F 1 "Conn_01x02_Male" H 9408 -960 50  0000 C CNN
-F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 9300 -1050 50  0001 C CNN
-F 3 "~" H 9300 -1050 50  0001 C CNN
-	1    9300 -1050
+P 5250 -6400
+F 0 "J8" H 5358 -6219 50  0000 C CNN
+F 1 "Conn_01x02_Male" H 5358 -6310 50  0000 C CNN
+F 2 "synkie_footprints:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 5250 -6400 50  0001 C CNN
+F 3 "~" H 5250 -6400 50  0001 C CNN
+	1    5250 -6400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR0105
 U 1 1 5FD41C1E
-P 10900 -1050
-F 0 "#PWR0105" H 10900 -1200 50  0001 C CNN
-F 1 "+5V" H 10915 -877 50  0000 C CNN
-F 2 "" H 10900 -1050 50  0001 C CNN
-F 3 "" H 10900 -1050 50  0001 C CNN
-	1    10900 -1050
+P 9750 -5100
+F 0 "#PWR0105" H 9750 -5250 50  0001 C CNN
+F 1 "+5V" H 9765 -4927 50  0000 C CNN
+F 2 "" H 9750 -5100 50  0001 C CNN
+F 3 "" H 9750 -5100 50  0001 C CNN
+	1    9750 -5100
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR0106
 U 1 1 5FD43570
-P 10900 -750
-F 0 "#PWR0106" H 10900 -1000 50  0001 C CNN
-F 1 "GND" V 10905 -878 50  0000 R CNN
-F 2 "" H 10900 -750 50  0001 C CNN
-F 3 "" H 10900 -750 50  0001 C CNN
-	1    10900 -750
+P 9750 -4800
+F 0 "#PWR0106" H 9750 -5050 50  0001 C CNN
+F 1 "GND" V 9755 -4928 50  0000 R CNN
+F 2 "" H 9750 -4800 50  0001 C CNN
+F 3 "" H 9750 -4800 50  0001 C CNN
+	1    9750 -4800
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:-5V #PWR0107
 U 1 1 5FD44034
-P 10900 -400
-F 0 "#PWR0107" H 10900 -300 50  0001 C CNN
-F 1 "-5V" H 10915 -227 50  0000 C CNN
-F 2 "" H 10900 -400 50  0001 C CNN
-F 3 "" H 10900 -400 50  0001 C CNN
-	1    10900 -400
+P 9750 -4450
+F 0 "#PWR0107" H 9750 -4350 50  0001 C CNN
+F 1 "-5V" H 9765 -4277 50  0000 C CNN
+F 2 "" H 9750 -4450 50  0001 C CNN
+F 3 "" H 9750 -4450 50  0001 C CNN
+	1    9750 -4450
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -2143,26 +2066,14 @@ Wire Wire Line
 $Comp
 L Device:Polyfuse F1
 U 1 1 5FD6E705
-P 9350 -550
-F 0 "F1" V 9125 -550 50  0000 C CNN
-F 1 "Polyfuse" V 9216 -550 50  0000 C CNN
-F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9400 -750 50  0001 L CNN
-F 3 "~" H 9350 -550 50  0001 C CNN
-	1    9350 -550
+P 7550 -6400
+F 0 "F1" V 7325 -6400 50  0000 C CNN
+F 1 "Polyfuse" V 7416 -6400 50  0000 C CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7600 -6600 50  0001 L CNN
+F 3 "~" H 7550 -6400 50  0001 C CNN
+	1    7550 -6400
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	9100 -850 9100 -550
-Wire Wire Line
-	9100 -550 9200 -550
-Wire Wire Line
-	9500 -550 9650 -550
-Wire Wire Line
-	9650 -550 9650 -850
-Wire Wire Line
-	9650 -850 10000 -850
-Wire Wire Line
-	8900 -850 9100 -850
 $Comp
 L Anyma_Library:LOGO U8
 U 1 1 5FE7C5CF
@@ -2188,78 +2099,59 @@ $EndComp
 $Comp
 L Connector:USB_C_Receptacle_USB2.0 J9
 U 1 1 5FE5B33F
-P 13000 -950
-F 0 "J9" H 13107 -83 50  0000 C CNN
-F 1 "USB_C_Receptacle_USB2.0" H 13107 -174 50  0000 C CNN
-F 2 "" H 13150 -950 50  0001 C CNN
-F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 13150 -950 50  0001 C CNN
-	1    13000 -950
+P 5850 -4900
+F 0 "J9" H 5957 -4033 50  0000 C CNN
+F 1 "USB_C_Receptacle_USB2.0" H 5957 -4124 50  0000 C CNN
+F 2 "synkie_footprints:JAE_USB-C_SJ122205" H 6000 -4900 50  0001 C CNN
+F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 6000 -4900 50  0001 C CNN
+	1    5850 -4900
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R28
 U 1 1 5FE62BC8
-P 13750 -1350
-F 0 "R28" V 13543 -1350 50  0000 C CNN
-F 1 "5k1" V 13634 -1350 50  0000 C CNN
-F 2 "" V 13680 -1350 50  0001 C CNN
-F 3 "~" H 13750 -1350 50  0001 C CNN
-	1    13750 -1350
+P 6600 -5300
+F 0 "R28" V 6393 -5300 50  0000 C CNN
+F 1 "5k1" V 6484 -5300 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6530 -5300 50  0001 C CNN
+F 3 "~" H 6600 -5300 50  0001 C CNN
+	1    6600 -5300
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R29
 U 1 1 5FE630A8
-P 13750 -1250
-F 0 "R29" V 13543 -1250 50  0000 C CNN
-F 1 "5k1" V 13634 -1250 50  0000 C CNN
-F 2 "" V 13680 -1250 50  0001 C CNN
-F 3 "~" H 13750 -1250 50  0001 C CNN
-	1    13750 -1250
+P 6600 -5200
+F 0 "R29" V 6393 -5200 50  0000 C CNN
+F 1 "5k1" V 6484 -5200 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6530 -5200 50  0001 C CNN
+F 3 "~" H 6600 -5200 50  0001 C CNN
+	1    6600 -5200
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	13000 -50  14300 -50 
+	5850 -4000 7150 -4000
 Wire Wire Line
-	14300 -1350 13900 -1350
+	7150 -5300 6750 -5300
 Wire Wire Line
-	13900 -1250 14300 -1250
+	6750 -5200 7150 -5200
 Wire Wire Line
-	14300 -1350 14300 -1250
-Connection ~ 14300 -1250
+	7150 -5300 7150 -5200
+Connection ~ 7150 -5200
 Wire Wire Line
-	14300 -1250 14300 -50 
+	7150 -5200 7150 -5100
 Wire Wire Line
-	12700 -50  13000 -50 
-Connection ~ 13000 -50 
+	5550 -4000 5850 -4000
+Connection ~ 5850 -4000
 Wire Wire Line
-	12700 -50  9800 -50 
+	6450 -5500 7000 -5500
 Wire Wire Line
-	9800 -50  9800 -1050
-Connection ~ 12700 -50 
-Connection ~ 9800 -1050
-Wire Wire Line
-	9800 -1050 10000 -1050
-Wire Wire Line
-	9500 -1050 9800 -1050
-Wire Wire Line
-	13600 -1550 14150 -1550
-Wire Wire Line
-	14150 -1550 14150 -2100
-Wire Wire Line
-	14150 -2100 8900 -2100
-Wire Wire Line
-	8900 -2100 8900 -850
-Wire Wire Line
-	9500 -950 9650 -950
-Wire Wire Line
-	9650 -950 9650 -850
-Connection ~ 9650 -850
+	7000 -5500 7000 -6050
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0108
 U 1 1 5FE75AD6
 P 8150 5550
-F 0 "#PWR?" H 8150 5300 50  0001 C CNN
+F 0 "#PWR0108" H 8150 5300 50  0001 C CNN
 F 1 "GND" H 8155 5377 50  0000 C CNN
 F 2 "" H 8150 5550 50  0001 C CNN
 F 3 "" H 8150 5550 50  0001 C CNN
@@ -2274,4 +2166,128 @@ Wire Wire Line
 	7600 4750 8450 4750
 Wire Wire Line
 	800  7000 1400 7000
+Wire Wire Line
+	5450 -6400 7400 -6400
+$Comp
+L synkie_symbols:D D101
+U 1 1 5FF59AE7
+P 7850 -6400
+F 0 "D101" H 7850 -6617 50  0000 C CNN
+F 1 "D" H 7850 -6526 50  0000 C CNN
+F 2 "Diode_SMD:D_MiniMELF" H 7850 -6400 50  0001 C CNN
+F 3 "~" H 7850 -6400 50  0001 C CNN
+	1    7850 -6400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:CP C101
+U 1 1 5FF5BC14
+P 8200 -5250
+F 0 "C101" H 8318 -5204 50  0000 L CNN
+F 1 "CP" H 8318 -5295 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_10x10.5" H 8238 -5400 50  0001 C CNN
+F 3 "~" H 8200 -5250 50  0001 C CNN
+	1    8200 -5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 -4900 8850 -4900
+Wire Wire Line
+	5450 -6300 5450 -6100
+Wire Wire Line
+	5450 -6100 5050 -6100
+Wire Wire Line
+	5050 -6100 5050 -4000
+Wire Wire Line
+	5050 -4000 5550 -4000
+Connection ~ 5550 -4000
+Wire Wire Line
+	8850 -5100 8200 -5100
+Connection ~ 7150 -5100
+Wire Wire Line
+	7150 -5100 7150 -4000
+$Comp
+L synkie_symbols:D D102
+U 1 1 5FF8519C
+P 7850 -6050
+F 0 "D102" H 7850 -6267 50  0000 C CNN
+F 1 "D" H 7850 -6176 50  0000 C CNN
+F 2 "Diode_SMD:D_MiniMELF" H 7850 -6050 50  0001 C CNN
+F 3 "~" H 7850 -6050 50  0001 C CNN
+	1    7850 -6050
+	-1   0    0    1   
+$EndComp
+Connection ~ 8200 -5100
+Wire Wire Line
+	8200 -5100 7150 -5100
+Wire Wire Line
+	7000 -6050 7700 -6050
+Wire Wire Line
+	8000 -6400 8200 -6400
+Wire Wire Line
+	8200 -6400 8200 -6050
+Connection ~ 8200 -6050
+Wire Wire Line
+	8200 -6050 8200 -5400
+Wire Wire Line
+	8000 -6050 8200 -6050
+Wire Wire Line
+	8450 -4900 8450 -6050
+Wire Wire Line
+	8450 -6050 8200 -6050
+$Comp
+L Connector_Generic:Conn_01x01 J103
+U 1 1 5FFEC025
+P 7050 1900
+F 0 "J103" H 7130 1942 50  0000 L CNN
+F 1 "SIFF-OUT" H 7130 1851 50  0000 L CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 7050 1900 50  0001 C CNN
+F 3 "~" H 7050 1900 50  0001 C CNN
+	1    7050 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_Coaxial J101
+U 1 1 5FFEDC6E
+P 1150 1450
+F 0 "J101" H 1078 1688 50  0000 C CNN
+F 1 "Conn_Coaxial" H 1078 1597 50  0000 C CNN
+F 2 "synkie_footprints:BNC_MOLEX_0731000080_Horizontal" H 1150 1450 50  0001 C CNN
+F 3 " ~" H 1150 1450 50  0001 C CNN
+	1    1150 1450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J104
+U 1 1 5FFEF621
+P 900 4850
+F 0 "J104" H 818 4625 50  0000 C CNN
+F 1 "SIFF-IN" H 818 4716 50  0000 C CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 900 4850 50  0001 C CNN
+F 3 "~" H 900 4850 50  0001 C CNN
+	1    900  4850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_Coaxial J102
+U 1 1 5FFF0B97
+P 9550 4850
+F 0 "J102" H 9650 4825 50  0000 L CNN
+F 1 "Conn_Coaxial" H 9650 4734 50  0000 L CNN
+F 2 "synkie_footprints:BNC_MOLEX_0731000080_Horizontal" H 9550 4850 50  0001 C CNN
+F 3 " ~" H 9550 4850 50  0001 C CNN
+	1    9550 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5FFF1B54
+P 9550 5050
+F 0 "#PWR0109" H 9550 4800 50  0001 C CNN
+F 1 "GND" H 9555 4877 50  0000 C CNN
+F 2 "" H 9550 5050 50  0001 C CNN
+F 3 "" H 9550 5050 50  0001 C CNN
+	1    9550 5050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
