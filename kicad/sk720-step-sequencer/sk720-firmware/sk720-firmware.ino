@@ -14,6 +14,8 @@
 
 #include <FastLED.h>
 #include <SPI.h>
+#include <EEPROM.h>
+
 // ...........................................................................CONSTANTS
 
 #define BRIGHTNESS	    50
@@ -98,6 +100,7 @@ TriggerInput                            quantize_in(PIN_QUANTIZE, MIN_QUANTIIZE)
 TriggerInput                            reset_in(PIN_RESET, MIN_RESET);     
 
 
+
 //----------------------------------------------------------------------------------------
 //																		buttons
 
@@ -124,6 +127,7 @@ void check_buttons(){
     SPI.endTransaction();
     
     if (something_happened) {
+        something_happened = false;
         byte triggers;
         for (int i = 0; i < NUM_REGISTERS; i++) {
            triggers =  ~old_buttons[i] & buttons_raw[i];
@@ -134,6 +138,8 @@ void check_buttons(){
                     }
                 } else {                                                // STEP SELECT
                    for (int bit = 0; bit < 8; bit++) {
+                        something_happened = true;
+
                         if (triggers & (1 << bit)){
                             char btn_nr = i * 8 + bit;
                             char col = btn_nr / NUM_BANKS;
@@ -150,6 +156,7 @@ void check_buttons(){
            }
         }
         do_output();
+        if (something_happened) {    EEPROM.put(0,steps); }
     }
     
     for (int i = 0; i < NUM_REGISTERS; i++) {
@@ -275,9 +282,7 @@ void setup(){
   	}
     digitalWrite(PIN_LED_QUANTIZE, LOW);
     
-    for (int i = 0; i < NUM_STEPS; i++) {
-        steps[i] = 0x7777;      // "empty" steps
-    }
+    EEPROM.get(0,steps);
 }
 
 //========================================================================================

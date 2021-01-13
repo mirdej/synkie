@@ -2080,7 +2080,7 @@ U 1 1 5FE7C5CF
 P 10500 1800
 F 0 "U8" H 10578 1921 50  0000 L CNN
 F 1 "LOGO" H 10578 1830 50  0000 L CNN
-F 2 "anyma_footprints:logo_anyma" H 10500 1800 50  0001 C CNN
+F 2 "anyma_footprints:logo_anyma_tiny" H 10500 1800 50  0001 C CNN
 F 3 "" H 10500 1800 50  0001 C CNN
 	1    10500 1800
 	1    0    0    -1  
