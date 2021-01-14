@@ -23,6 +23,7 @@
 #define MIN_TRIGGERS	20
 #define MIN_QUANTIIZE	3
 #define MIN_RESET   	20
+#define BLINK_INTERVAL  200 
 
 const int NUM_PIXELS        =   40 ;
 const int PIN_LED_QUANTIZE  =   0;
@@ -43,6 +44,11 @@ const int NUM_STEPS     = 8;
 const CRGB      BANK_COLOR[]    = { CRGB::Crimson, CRGB::BlueViolet, CRGB::ForestGreen, CRGB::DarkCyan};
 const CRGB      STEP_COLOR      =   CRGB::Gray;
 
+const char BLINK_STATUS_NONE          =  0;
+const char BLINK_STATUS_BLINK_ON      =  1;
+const char BLINK_STATUS_BLINK_OFF     =  2;
+
+const int EEPROM_SAVE_WAIT_TIME       = 30000;
 
 //----------------------------------------------------------------------------------------
 // debouncing
@@ -81,7 +87,7 @@ bool TriggerInput::check() {
 //----------------------------------------------------------------------------------------
 //																				GLOBALS
 CRGB                                    pixels[NUM_PIXELS];
-long 									last_ui_interaction;
+int 									eeprom_save_countdown;
 byte									buttons_raw[NUM_REGISTERS];
 
 byte                                    bank_idx;
@@ -99,13 +105,28 @@ TriggerInput                            trigger_in(PIN_TRIGGER, MIN_TRIGGERS);
 TriggerInput                            quantize_in(PIN_QUANTIZE, MIN_QUANTIIZE);     
 TriggerInput                            reset_in(PIN_RESET, MIN_RESET);     
 
+byte        blink_status;
+byte        blink_num;
 
+
+void test_blink() {
+    blink_status = BLINK_STATUS_BLINK_ON;
+    blink_num = 3;
+}
+//----------------------------------------------------------------------------------------
+
+void clear_steps(char bank) {
+    for (int i = 0; i < NUM_STEPS; i++) {
+         steps[i] =   steps[i] | (0x7 << bank);
+     }
+}
 
 //----------------------------------------------------------------------------------------
 //																		buttons
 
 void check_buttons(){
     static long last_check;
+    static long last_bank_select_press;
     static byte old_buttons[NUM_REGISTERS];
     bool    something_happened = false;
     
@@ -156,7 +177,7 @@ void check_buttons(){
            }
         }
         do_output();
-        if (something_happened) {    EEPROM.put(0,steps); }
+        if (something_happened) { eeprom_save_countdown = EEPROM_SAVE_WAIT_TIME/100;  } // reset contdown 
     }
     
     for (int i = 0; i < NUM_REGISTERS; i++) {
@@ -208,6 +229,7 @@ void update_leds(){
     for (int col = 0; col < NUM_STEPS; col++){
         char row = (steps[col] >> bank_idx * 4) & 0x07;
         if (row < NUM_BANKS) {
+        
             pixels[NUM_BANKS * col + row] = BANK_COLOR[bank_idx];
         }
     }
@@ -222,6 +244,7 @@ void update_leds(){
             pixels[8*i + j] = CRGB::Yellow;
         }
     }
+
     
     FastLED.show(); 
 }
@@ -252,6 +275,16 @@ void reset() {
     do_output();
 }
 
+//----------------------------------------------------------------------------------------
+void check_eeprom_save() {
+    static long last_check;
+    if (millis() - last_check < 100) return;
+    last_check = millis();
+    
+    if (eeprom_save_countdown == 0) return;
+    if (eeprom_save_countdown == 1) EEPROM.put(0,steps);
+    if (eeprom_save_countdown > 0) eeprom_save_countdown--;
+}
 
 
 //========================================================================================
@@ -283,6 +316,11 @@ void setup(){
     digitalWrite(PIN_LED_QUANTIZE, LOW);
     
     EEPROM.get(0,steps);
+    
+    update_leds();
+    delay(1000);
+    blink_num = 3;
+
 }
 
 //========================================================================================
@@ -293,6 +331,7 @@ void loop() {
     check_buttons();
     check_ad();
     update_leds();
+    check_eeprom_save();
     if (quantize_in.check()){
             last_quantize = millis();
             quantized = true;
