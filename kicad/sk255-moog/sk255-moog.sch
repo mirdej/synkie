@@ -1250,4 +1250,15 @@ Wire Wire Line
 	6300 2850 6450 2850
 Text Notes 5200 3100 0    50   ~ 0
 ev bias geben um das output runterzuziehen
+$Comp
+L Device:R R?
+U 1 1 61390559
+P 7650 2100
+F 0 "R?" V 7443 2100 50  0000 C CNN
+F 1 "75" V 7534 2100 50  0000 C CNN
+F 2 "" V 7580 2100 50  0001 C CNN
+F 3 "~" H 7650 2100 50  0001 C CNN
+	1    7650 2100
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
