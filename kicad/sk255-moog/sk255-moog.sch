@@ -36,28 +36,6 @@ F 3 "~" H 2900 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:Trans_NPN_Generic Q1
-U 1 1 61D97451
-P 3400 2000
-F 0 "Q1" H 3250 2150 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3538 1955 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3400 2000 50  0001 C CNN
-F 3 "" H 3400 2000 50  0001 C CNN
-	1    3400 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L synkie_symbols:Trans_NPN_Generic Q2
-U 1 1 61D9A8E0
-P 3800 2000
-F 0 "Q2" H 3650 2150 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3938 1955 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3800 2000 50  0001 C CNN
-F 3 "" H 3800 2000 50  0001 C CNN
-	1    3800 2000
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Device:C C1
 U 1 1 61D9B027
 P 3600 2200
@@ -93,28 +71,6 @@ F 3 "~" H 2900 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:Trans_NPN_Generic Q3
-U 1 1 61DA37EA
-P 3400 2750
-F 0 "Q3" H 3250 2900 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3538 2705 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3400 2750 50  0001 C CNN
-F 3 "" H 3400 2750 50  0001 C CNN
-	1    3400 2750
-	1    0    0    -1  
-$EndComp
-$Comp
-L synkie_symbols:Trans_NPN_Generic Q4
-U 1 1 61DA37F0
-P 3800 2750
-F 0 "Q4" H 3650 2900 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3938 2705 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3800 2750 50  0001 C CNN
-F 3 "" H 3800 2750 50  0001 C CNN
-	1    3800 2750
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Device:C C4
 U 1 1 61DA37F6
 P 3600 2950
@@ -140,7 +96,6 @@ Wire Wire Line
 Connection ~ 3150 2750
 Wire Wire Line
 	3450 2200 3450 2350
-Connection ~ 3450 2200
 Wire Wire Line
 	3750 2200 3750 2550
 Connection ~ 3750 2200
@@ -169,28 +124,6 @@ F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2830 3350 
 F 3 "~" H 2900 3350 50  0001 C CNN
 	1    2900 3350
 	1    0    0    -1  
-$EndComp
-$Comp
-L synkie_symbols:Trans_NPN_Generic Q5
-U 1 1 61DA747F
-P 3400 3500
-F 0 "Q5" H 3250 3650 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3538 3455 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3400 3500 50  0001 C CNN
-F 3 "" H 3400 3500 50  0001 C CNN
-	1    3400 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L synkie_symbols:Trans_NPN_Generic Q6
-U 1 1 61DA7485
-P 3800 3500
-F 0 "Q6" H 3650 3650 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3938 3455 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3800 3500 50  0001 C CNN
-F 3 "" H 3800 3500 50  0001 C CNN
-	1    3800 3500
-	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:C C8
@@ -235,28 +168,6 @@ F 3 "~" H 2900 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:Trans_NPN_Generic Q7
-U 1 1 61DA95C0
-P 3400 4250
-F 0 "Q7" H 3250 4400 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3538 4205 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3400 4250 50  0001 C CNN
-F 3 "" H 3400 4250 50  0001 C CNN
-	1    3400 4250
-	1    0    0    -1  
-$EndComp
-$Comp
-L synkie_symbols:Trans_NPN_Generic Q8
-U 1 1 61DA95C6
-P 3800 4250
-F 0 "Q8" H 3650 4400 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3938 4205 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3800 4250 50  0001 C CNN
-F 3 "" H 3800 4250 50  0001 C CNN
-	1    3800 4250
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Device:C C9
 U 1 1 61DA95CC
 P 3600 4450
@@ -287,38 +198,10 @@ Wire Wire Line
 Wire Wire Line
 	2900 3950 2900 3500
 Connection ~ 2900 3500
-Connection ~ 3450 3700
-Connection ~ 3750 3700
-Connection ~ 3450 2950
-Connection ~ 3750 2950
-$Comp
-L synkie_symbols:Trans_NPN_Generic Q9
-U 1 1 61DAC5CE
-P 3400 5000
-F 0 "Q9" H 3250 5150 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3538 4955 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3400 5000 50  0001 C CNN
-F 3 "" H 3400 5000 50  0001 C CNN
-	1    3400 5000
-	1    0    0    -1  
-$EndComp
-$Comp
-L synkie_symbols:Trans_NPN_Generic Q10
-U 1 1 61DAC5D4
-P 3800 5000
-F 0 "Q10" H 3650 5150 50  0000 L CNN
-F 1 "Trans_NPN_Generic" H 3938 4955 50  0001 L CNN
-F 2 "synkie_footprints:SOT-23_BEC" H 3800 5000 50  0001 C CNN
-F 3 "" H 3800 5000 50  0001 C CNN
-	1    3800 5000
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	3450 4450 3450 4800
 Wire Wire Line
 	3750 4450 3750 4800
-Connection ~ 3450 4450
-Connection ~ 3750 4450
 $Comp
 L Device:R R12
 U 1 1 61DAC5C8
@@ -992,12 +875,12 @@ Wire Wire Line
 $Comp
 L synkie_symbols:Conn_01x01 J1
 U 1 1 61E280BC
-P 7450 2550
-F 0 "J1" H 7530 2592 50  0000 L CNN
-F 1 "OUTPUT" H 7530 2501 50  0000 L CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 7450 2550 50  0001 C CNN
-F 3 "~" H 7450 2550 50  0001 C CNN
-	1    7450 2550
+P 7750 2550
+F 0 "J1" H 7830 2592 50  0000 L CNN
+F 1 "OUTPUT" H 7830 2501 50  0000 L CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 7750 2550 50  0001 C CNN
+F 3 "~" H 7750 2550 50  0001 C CNN
+	1    7750 2550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1251,14 +1134,169 @@ Wire Wire Line
 Text Notes 5200 3100 0    50   ~ 0
 ev bias geben um das output runterzuziehen
 $Comp
-L Device:R R?
+L Device:R R21
 U 1 1 61390559
-P 7650 2100
-F 0 "R?" V 7443 2100 50  0000 C CNN
-F 1 "75" V 7534 2100 50  0000 C CNN
-F 2 "" V 7580 2100 50  0001 C CNN
-F 3 "~" H 7650 2100 50  0001 C CNN
-	1    7650 2100
+P 7400 2550
+F 0 "R21" V 7193 2550 50  0000 C CNN
+F 1 "75" V 7284 2550 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7330 2550 50  0001 C CNN
+F 3 "~" H 7400 2550 50  0001 C CNN
+	1    7400 2550
 	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q1
+U 1 1 618DB5A2
+P 3400 2000
+F 0 "Q1" H 3538 2046 50  0000 L CNN
+F 1 "PEMX1" H 3538 1955 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3300 2025 50  0001 C CNN
+F 3 "" H 3300 2025 50  0001 C CNN
+	1    3400 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q1
+U 2 1 618DD7F6
+P 3800 2000
+F 0 "Q1" H 3938 2046 50  0000 L CNN
+F 1 "PEMX1" H 3938 1955 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3700 2025 50  0001 C CNN
+F 3 "" H 3700 2025 50  0001 C CNN
+	2    3800 2000
+	-1   0    0    -1  
+$EndComp
+Connection ~ 3450 2200
+$Comp
+L Device:C C?
+U 1 1 613FEDC5
+P 3600 2950
+F 0 "C?" V 3348 2950 50  0000 C CNN
+F 1 "47n" V 3439 2950 50  0000 C CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3638 2800 50  0001 C CNN
+F 3 "~" H 3600 2950 50  0001 C CNN
+	1    3600 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 1 1 613FEDCB
+P 3400 2750
+F 0 "Q?" H 3538 2796 50  0000 L CNN
+F 1 "PEMX1" H 3538 2705 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3300 2775 50  0001 C CNN
+F 3 "" H 3300 2775 50  0001 C CNN
+	1    3400 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 2 1 613FEDD1
+P 3800 2750
+F 0 "Q?" H 3938 2796 50  0000 L CNN
+F 1 "PEMX1" H 3938 2705 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3700 2775 50  0001 C CNN
+F 3 "" H 3700 2775 50  0001 C CNN
+	2    3800 2750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 61402A4C
+P 3600 3700
+F 0 "C?" V 3348 3700 50  0000 C CNN
+F 1 "47n" V 3439 3700 50  0000 C CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3638 3550 50  0001 C CNN
+F 3 "~" H 3600 3700 50  0001 C CNN
+	1    3600 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 1 1 61402A52
+P 3400 3500
+F 0 "Q?" H 3538 3546 50  0000 L CNN
+F 1 "PEMX1" H 3538 3455 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3300 3525 50  0001 C CNN
+F 3 "" H 3300 3525 50  0001 C CNN
+	1    3400 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 2 1 61402A58
+P 3800 3500
+F 0 "Q?" H 3938 3546 50  0000 L CNN
+F 1 "PEMX1" H 3938 3455 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3700 3525 50  0001 C CNN
+F 3 "" H 3700 3525 50  0001 C CNN
+	2    3800 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 61407789
+P 3600 4450
+F 0 "C?" V 3348 4450 50  0000 C CNN
+F 1 "47n" V 3439 4450 50  0000 C CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3638 4300 50  0001 C CNN
+F 3 "~" H 3600 4450 50  0001 C CNN
+	1    3600 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 1 1 6140778F
+P 3400 4250
+F 0 "Q?" H 3538 4296 50  0000 L CNN
+F 1 "PEMX1" H 3538 4205 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3300 4275 50  0001 C CNN
+F 3 "" H 3300 4275 50  0001 C CNN
+	1    3400 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 2 1 61407795
+P 3800 4250
+F 0 "Q?" H 3938 4296 50  0000 L CNN
+F 1 "PEMX1" H 3938 4205 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3700 4275 50  0001 C CNN
+F 3 "" H 3700 4275 50  0001 C CNN
+	2    3800 4250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6140B4CA
+P 3600 5200
+F 0 "C?" V 3348 5200 50  0000 C CNN
+F 1 "47n" V 3439 5200 50  0000 C CNN
+F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3638 5050 50  0001 C CNN
+F 3 "~" H 3600 5200 50  0001 C CNN
+	1    3600 5200
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 1 1 6140B4D0
+P 3400 5000
+F 0 "Q?" H 3538 5046 50  0000 L CNN
+F 1 "PEMX1" H 3538 4955 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3300 5025 50  0001 C CNN
+F 3 "" H 3300 5025 50  0001 C CNN
+	1    3400 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:PEMX1 Q?
+U 2 1 6140B4D6
+P 3800 5000
+F 0 "Q?" H 3938 5046 50  0000 L CNN
+F 1 "PEMX1" H 3938 4955 50  0000 L CNN
+F 2 "synkie_footprints:SOT-666" H 3700 5025 50  0001 C CNN
+F 3 "" H 3700 5025 50  0001 C CNN
+	2    3800 5000
+	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC
