@@ -1418,14 +1418,6 @@ Wire Wire Line
 Wire Wire Line
 	4100 3500 4100 3400
 Connection ~ 4100 3500
-$Sheet
-S 9950 2650 1050 800 
-U 5FED65BF
-F0 "Resyncer" 50
-F1 "sk002-resync.sch" 50
-F2 "INPUT" I L 9950 3050 50 
-F3 "OUTPUT" I R 11000 3050 50 
-$EndSheet
 $Comp
 L synkie_symbols:R R7
 U 1 1 614F6F8E
@@ -1481,4 +1473,12 @@ F 3 "" H 7050 3450 50  0001 C CNN
 	1    7050 3450
 	1    0    0    -1  
 $EndComp
+$Sheet
+S 9950 2650 1050 800 
+U 5FED65BF
+F0 "Resyncer" 50
+F1 "sk003-resync.sch" 50
+F2 "INPUT" I L 9950 3050 50 
+F3 "OUTPUT" I R 11000 3050 50 
+$EndSheet
 $EndSCHEMATC
