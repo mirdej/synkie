@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:b000-power-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -23,7 +22,7 @@ F 1 "Supply" H 2950 2000 50  0000 C CNN
 F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 2800 1750 50  0001 C CNN
 F 3 "~" H 2800 1750 50  0001 C CNN
 	1    2800 1750
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:Ferrite_Bead FB1
