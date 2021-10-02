@@ -22,7 +22,7 @@ F 1 "R_POT" H 1881 1505 50  0000 R CNN
 F 2 "synkie_footprints:Potentiometer_Alps_RK09K_Single_Horizontal" H 1950 1550 50  0001 C CNN
 F 3 "~" H 1950 1550 50  0001 C CNN
 	1    1950 1550
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Amplifier_Operational:TL062 U1
@@ -491,7 +491,7 @@ F 1 "R_POT" H 1881 3055 50  0000 R CNN
 F 2 "synkie_footprints:Potentiometer_Alps_RK09K_Single_Horizontal" H 1950 3100 50  0001 C CNN
 F 3 "~" H 1950 3100 50  0001 C CNN
 	1    1950 3100
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Amplifier_Operational:TL062 U3
@@ -788,7 +788,7 @@ F 1 "R_POT" H 1881 4905 50  0000 R CNN
 F 2 "synkie_footprints:Potentiometer_Alps_RK09K_Single_Horizontal" H 1950 4950 50  0001 C CNN
 F 3 "~" H 1950 4950 50  0001 C CNN
 	1    1950 4950
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Amplifier_Operational:TL062 U4
@@ -1085,7 +1085,7 @@ F 1 "R_POT" H 1781 6655 50  0000 R CNN
 F 2 "synkie_footprints:Potentiometer_Alps_RK09K_Single_Horizontal" H 1850 6700 50  0001 C CNN
 F 3 "~" H 1850 6700 50  0001 C CNN
 	1    1850 6700
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Amplifier_Operational:TL062 U5
