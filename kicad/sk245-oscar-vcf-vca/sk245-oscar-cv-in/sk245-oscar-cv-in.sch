@@ -29,7 +29,7 @@ L Amplifier_Operational:TL062 U1
 U 1 1 61C60063
 P 3100 1600
 F 0 "U1" H 3150 1450 50  0000 C CNN
-F 1 "TL062" H 3050 1600 50  0000 C CNN
+F 1 "TLV272" H 3050 1600 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 3100 1600 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 3100 1600 50  0001 C CNN
 	1    3100 1600
@@ -40,7 +40,7 @@ L Amplifier_Operational:TL062 U1
 U 2 1 61C63FE6
 P 4300 1600
 F 0 "U1" H 4400 1450 50  0000 C CNN
-F 1 "TL062" H 4300 1600 50  0000 C CNN
+F 1 "TLV272" H 4300 1600 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 4300 1600 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 4300 1600 50  0001 C CNN
 	2    4300 1600
@@ -51,7 +51,7 @@ L Amplifier_Operational:TL062 U1
 U 3 1 61C66731
 P 6350 1300
 F 0 "U1" H 6308 1346 50  0000 L CNN
-F 1 "TL062" H 6308 1255 50  0000 L CNN
+F 1 "TLV272" H 6308 1255 50  0000 L CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 6350 1300 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 6350 1300 50  0001 C CNN
 	3    6350 1300
@@ -498,7 +498,7 @@ L Amplifier_Operational:TL062 U3
 U 1 1 61CCB65F
 P 3100 3150
 F 0 "U3" H 3150 3000 50  0000 C CNN
-F 1 "TL062" H 3050 3150 50  0000 C CNN
+F 1 "TLV272" H 3050 3150 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 3100 3150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 3100 3150 50  0001 C CNN
 	1    3100 3150
@@ -509,7 +509,7 @@ L Amplifier_Operational:TL062 U3
 U 2 1 61CCB665
 P 4300 3150
 F 0 "U3" H 4400 3000 50  0000 C CNN
-F 1 "TL062" H 4300 3150 50  0000 C CNN
+F 1 "TLV272" H 4300 3150 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 4300 3150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 4300 3150 50  0001 C CNN
 	2    4300 3150
@@ -520,7 +520,7 @@ L Amplifier_Operational:TL062 U3
 U 3 1 61CCB66B
 P 6350 2850
 F 0 "U3" H 6308 2896 50  0000 L CNN
-F 1 "TL062" H 6308 2805 50  0000 L CNN
+F 1 "TLV272" H 6308 2805 50  0000 L CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 6350 2850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 6350 2850 50  0001 C CNN
 	3    6350 2850
@@ -795,7 +795,7 @@ L Amplifier_Operational:TL062 U4
 U 1 1 61D0318E
 P 3100 5000
 F 0 "U4" H 3150 4850 50  0000 C CNN
-F 1 "TL062" H 3050 5000 50  0000 C CNN
+F 1 "TLV272" H 3050 5000 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 3100 5000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 3100 5000 50  0001 C CNN
 	1    3100 5000
@@ -806,7 +806,7 @@ L Amplifier_Operational:TL062 U4
 U 2 1 61D03194
 P 4300 5000
 F 0 "U4" H 4400 4850 50  0000 C CNN
-F 1 "TL062" H 4300 5000 50  0000 C CNN
+F 1 "TLV272" H 4300 5000 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 4300 5000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 4300 5000 50  0001 C CNN
 	2    4300 5000
@@ -817,7 +817,7 @@ L Amplifier_Operational:TL062 U4
 U 3 1 61D0319A
 P 6350 4700
 F 0 "U4" H 6308 4746 50  0000 L CNN
-F 1 "TL062" H 6308 4655 50  0000 L CNN
+F 1 "TLV272" H 6308 4655 50  0000 L CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 6350 4700 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 6350 4700 50  0001 C CNN
 	3    6350 4700
@@ -1092,7 +1092,7 @@ L Amplifier_Operational:TL062 U5
 U 1 1 61D39C42
 P 3000 6750
 F 0 "U5" H 3050 6600 50  0000 C CNN
-F 1 "TL062" H 2950 6750 50  0000 C CNN
+F 1 "TLV272" H 2950 6750 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 3000 6750 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 3000 6750 50  0001 C CNN
 	1    3000 6750
@@ -1103,7 +1103,7 @@ L Amplifier_Operational:TL062 U5
 U 2 1 61D39C48
 P 4200 6750
 F 0 "U5" H 4300 6600 50  0000 C CNN
-F 1 "TL062" H 4200 6750 50  0000 C CNN
+F 1 "TLV272" H 4200 6750 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 4200 6750 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 4200 6750 50  0001 C CNN
 	2    4200 6750
@@ -1114,7 +1114,7 @@ L Amplifier_Operational:TL062 U5
 U 3 1 61D39C4E
 P 6250 6450
 F 0 "U5" H 6208 6496 50  0000 L CNN
-F 1 "TL062" H 6208 6405 50  0000 L CNN
+F 1 "TLV272" H 6208 6405 50  0000 L CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 6250 6450 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tl061.pdf" H 6250 6450 50  0001 C CNN
 	3    6250 6450
@@ -1373,4 +1373,48 @@ F 3 "" H 6150 6750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Connection ~ 6150 6750
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 61740B3F
+P 9000 3600
+F 0 "H1" H 9100 3649 50  0000 L CNN
+F 1 "MountingHole_Pad" H 9100 3558 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9000 3600 50  0001 C CNN
+F 3 "~" H 9000 3600 50  0001 C CNN
+	1    9000 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 61740B8A
+P 9850 3600
+F 0 "H2" H 9950 3649 50  0000 L CNN
+F 1 "MountingHole_Pad" H 9950 3558 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad" H 9850 3600 50  0001 C CNN
+F 3 "~" H 9850 3600 50  0001 C CNN
+	1    9850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0143
+U 1 1 61740EFA
+P 9850 3700
+F 0 "#PWR0143" H 9850 3450 50  0001 C CNN
+F 1 "GND" H 9855 3527 50  0000 C CNN
+F 2 "" H 9850 3700 50  0001 C CNN
+F 3 "" H 9850 3700 50  0001 C CNN
+	1    9850 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0144
+U 1 1 61741515
+P 9000 3700
+F 0 "#PWR0144" H 9000 3450 50  0001 C CNN
+F 1 "GND" H 9005 3527 50  0000 C CNN
+F 2 "" H 9000 3700 50  0001 C CNN
+F 3 "" H 9000 3700 50  0001 C CNN
+	1    9000 3700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
