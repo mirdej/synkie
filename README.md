@@ -12,5 +12,6 @@ This Github repository is our working space and not a DIY tutorial. Lots of stuf
 
 - There are several modules where the supply connector is flipped. As we etch a lot of boards ourselves there is no silkscreen and we don't see the error. ALWAYS check the polarity !
 
+- We live in PAL land. These modules have not beent tested with NTSC video. Some might need to be adapted slightly, some might even work better than here ;-)
 
 If you have any questions contact info@synkie.net
