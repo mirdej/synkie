@@ -194,7 +194,7 @@ P 6200 3000
 AR Path="/5FD5CA83" Ref="R112"  Part="1" 
 AR Path="/5FD30D96/5FD5CA83" Ref="R410"  Part="1" 
 F 0 "R112" V 6300 3000 50  0000 C CNN
-F 1 "5k" V 6100 3000 50  0000 C CNN
+F 1 "5k1" V 6100 3000 50  0000 C CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6130 3000 50  0001 C CNN
 F 3 "~" H 6200 3000 50  0001 C CNN
 	1    6200 3000
@@ -207,7 +207,7 @@ P 6200 2400
 AR Path="/5FFD7BB4" Ref="R103"  Part="1" 
 AR Path="/5FD30D96/5FFD7BB4" Ref="R403"  Part="1" 
 F 0 "R103" V 6300 2400 50  0000 C CNN
-F 1 "5k" V 6200 2400 50  0000 C CNN
+F 1 "5k1" V 6200 2400 50  0000 C CNN
 F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6130 2400 50  0001 C CNN
 F 3 "~" H 6200 2400 50  0001 C CNN
 	1    6200 2400
@@ -903,15 +903,15 @@ $EndComp
 $Comp
 L synkie_symbols:UMCC J109
 U 1 1 5FF4409A
-P 1450 3700
-F 0 "J109" H 1978 3653 60  0000 L CNN
-F 1 "INPUT from Masterfaders" H 1978 3547 60  0000 L CNN
-F 2 "synkie_footprints:TE_UMCC_2337019-1" H 1850 3540 60  0001 C CNN
-F 3 "" H 1450 3700 60  0000 C CNN
-	1    1450 3700
-	1    0    0    -1  
+P 2200 6550
+F 0 "J109" H 2728 6503 60  0000 L CNN
+F 1 "INPUT from Masterfaders" H 2728 6397 60  0000 L CNN
+F 2 "synkie_footprints:TE_UMCC_2337019-1" H 2600 6390 60  0001 C CNN
+F 3 "" H 2200 6550 60  0000 C CNN
+	1    2200 6550
+	-1   0    0    -1  
 $EndComp
-Text GLabel 1450 3700 0    50   Input ~ 0
+Text GLabel 3150 6550 2    50   Input ~ 0
 genlock_delayed
 $Comp
 L Connector_Generic:Conn_01x01 J101
@@ -1316,34 +1316,19 @@ F 3 "" H 1650 1800 50  0001 C CNN
 	1    1650 1800
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:Jumper_NC_Small JP4
-U 1 1 603AB571
-P 1050 4100
-F 0 "JP4" H 1050 4312 50  0000 C CNN
-F 1 "Jumper_NC_Small" H 1050 4221 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 1050 4100 50  0001 C CNN
-F 3 "~" H 1050 4100 50  0001 C CNN
-	1    1050 4100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	1450 3800 1450 3900
-Wire Wire Line
-	1450 3900 1450 4100
-Wire Wire Line
-	1450 4100 1150 4100
-Connection ~ 1450 3900
+	2200 6650 2200 6750
+Connection ~ 2200 6750
 $Comp
 L synkie_symbols:GND #PWR0125
 U 1 1 603B2292
-P 950 4100
-F 0 "#PWR0125" H 950 3850 50  0001 C CNN
-F 1 "GND" H 955 3927 50  0000 C CNN
-F 2 "" H 950 4100 50  0001 C CNN
-F 3 "" H 950 4100 50  0001 C CNN
-	1    950  4100
-	1    0    0    -1  
+P 2200 7150
+F 0 "#PWR0125" H 2200 6900 50  0001 C CNN
+F 1 "GND" H 2205 6977 50  0000 C CNN
+F 2 "" H 2200 7150 50  0001 C CNN
+F 3 "" H 2200 7150 50  0001 C CNN
+	1    2200 7150
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	1150 2400 1900 2400
@@ -1481,4 +1466,55 @@ F1 "sk003-resync.sch" 50
 F2 "INPUT" I L 9950 3050 50 
 F3 "OUTPUT" I R 11000 3050 50 
 $EndSheet
+$Comp
+L synkie_symbols:R R?
+U 1 1 616AC221
+P 2800 6700
+AR Path="/5FA6FAA9/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA6A4E8/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA97FCE/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA999AE/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA8FC53/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA9040E/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA7B673/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA81498/616AC221" Ref="R?"  Part="1" 
+AR Path="/616AC221" Ref="R8"  Part="1" 
+AR Path="/5FA7E734/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA82020/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FA8A96F/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FA6FAA9/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FA7E734/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FA82020/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FA8A96F/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FEF8D28/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FEF8D2E/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FEF8D34/616AC221" Ref="R?"  Part="1" 
+AR Path="/5FECEEFB/5FEF8D3A/616AC221" Ref="R?"  Part="1" 
+F 0 "R8" H 2950 6750 50  0000 R CNN
+F 1 "75" H 2950 6850 50  0000 R CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2730 6700 50  0001 C CNN
+F 3 "~" H 2800 6700 50  0001 C CNN
+	1    2800 6700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3150 6550 2800 6550
+Wire Wire Line
+	2200 6550 2800 6550
+Connection ~ 2800 6550
+$Comp
+L synkie_symbols:GND #PWR0130
+U 1 1 616B4E99
+P 2800 6850
+AR Path="/616B4E99" Ref="#PWR0130"  Part="1" 
+AR Path="/5FD30D96/616B4E99" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0130" H 2800 6600 50  0001 C CNN
+F 1 "GND" H 2805 6677 50  0000 C CNN
+F 2 "" H 2800 6850 50  0001 C CNN
+F 3 "" H 2800 6850 50  0001 C CNN
+	1    2800 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 6750 2200 7150
 $EndSCHEMATC

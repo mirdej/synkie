@@ -58,23 +58,6 @@ F 3 "~" H 4350 1050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4650 2050 4700 2050
-Wire Wire Line
-	4050 2150 4050 2400
-Wire Wire Line
-	4050 2400 4700 2400
-Wire Wire Line
-	4700 2400 4700 2050
-Connection ~ 4700 2050
-Wire Wire Line
-	4700 2050 5250 2050
-Wire Wire Line
-	4100 3000 4100 3250
-Wire Wire Line
-	4100 3250 4700 3250
-Wire Wire Line
-	4700 3250 4700 3000
-Wire Wire Line
 	3900 1950 3900 2800
 Wire Wire Line
 	3900 2800 4100 2800
@@ -90,8 +73,7 @@ F2 "INPUT" I L 5250 3000 50
 F3 "OUTPUT" O R 6150 3000 50 
 $EndSheet
 Wire Wire Line
-	5250 3000 4700 3000
-Connection ~ 4700 3000
+	5250 3000 4850 3000
 Wire Wire Line
 	4700 3000 4700 2900
 $Sheet
@@ -114,21 +96,10 @@ F 3 "~" H 4350 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4650 4000 4700 4000
-Wire Wire Line
-	4050 4350 4700 4350
-Wire Wire Line
-	4700 4350 4700 4000
-Connection ~ 4700 4000
-Wire Wire Line
-	4700 4000 5250 4000
-Wire Wire Line
 	3900 2800 3900 3900
 Connection ~ 3900 2800
 Wire Wire Line
 	4050 3900 3900 3900
-Wire Wire Line
-	4050 4100 4050 4350
 $Comp
 L power:+5V #PWR0102
 U 1 1 5FF12C7E
@@ -420,10 +391,6 @@ F 3 "~" H 8700 2000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6150 2050 6650 2050
-Wire Wire Line
-	6650 2050 6650 1550
-Wire Wire Line
 	7900 2050 8300 2050
 Wire Wire Line
 	8300 2050 8300 2100
@@ -528,10 +495,6 @@ F 3 "~" H 8700 2950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6150 3000 6650 3000
-Wire Wire Line
-	6650 3000 6650 2500
-Wire Wire Line
 	7900 3000 8300 3000
 Wire Wire Line
 	8300 3000 8300 3050
@@ -635,10 +598,6 @@ F 3 "~" H 8700 3950 50  0001 C CNN
 	1    8700 3950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6150 4000 6650 4000
-Wire Wire Line
-	6650 4000 6650 3500
 Wire Wire Line
 	7900 4000 8300 4000
 Wire Wire Line
@@ -878,4 +837,133 @@ F 3 "" H 4100 4800 50  0001 C CNN
 	1    4100 4800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	4050 2150 4050 2350
+$Comp
+L Device:R R1
+U 1 1 61795515
+P 4850 2200
+F 0 "R1" H 4920 2246 50  0000 L CNN
+F 1 "220" H 4920 2155 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4780 2200 50  0001 C CNN
+F 3 "~" H 4850 2200 50  0001 C CNN
+	1    4850 2200
+	-1   0    0    1   
+$EndComp
+Connection ~ 4850 2050
+Wire Wire Line
+	4850 2050 5250 2050
+$Comp
+L Device:R R2
+U 1 1 6179982F
+P 4850 2500
+F 0 "R2" H 4920 2546 50  0000 L CNN
+F 1 "220" H 4920 2455 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4780 2500 50  0001 C CNN
+F 3 "~" H 4850 2500 50  0001 C CNN
+	1    4850 2500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4650 2050 4850 2050
+Wire Wire Line
+	4850 2350 4050 2350
+Connection ~ 4850 2350
+$Comp
+L power:GND #PWR0135
+U 1 1 6179B916
+P 4850 2650
+F 0 "#PWR0135" H 4850 2400 50  0001 C CNN
+F 1 "GND" V 4855 2522 50  0000 R CNN
+F 2 "" H 4850 2650 50  0001 C CNN
+F 3 "" H 4850 2650 50  0001 C CNN
+	1    4850 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 4000 4850 4000
+$Comp
+L Device:R R3
+U 1 1 617ABEE4
+P 4850 3150
+F 0 "R3" H 4920 3196 50  0000 L CNN
+F 1 "220" H 4920 3105 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4780 3150 50  0001 C CNN
+F 3 "~" H 4850 3150 50  0001 C CNN
+	1    4850 3150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 617ABEEA
+P 4850 3450
+F 0 "R4" H 4920 3496 50  0000 L CNN
+F 1 "220" H 4920 3405 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4780 3450 50  0001 C CNN
+F 3 "~" H 4850 3450 50  0001 C CNN
+	1    4850 3450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4850 3300 4050 3300
+Connection ~ 4850 3300
+$Comp
+L power:GND #PWR0136
+U 1 1 617ABEF2
+P 4850 3600
+F 0 "#PWR0136" H 4850 3350 50  0001 C CNN
+F 1 "GND" V 4855 3472 50  0000 R CNN
+F 2 "" H 4850 3600 50  0001 C CNN
+F 3 "" H 4850 3600 50  0001 C CNN
+	1    4850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 617AD4DF
+P 4850 4150
+F 0 "R5" H 4920 4196 50  0000 L CNN
+F 1 "220" H 4920 4105 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4780 4150 50  0001 C CNN
+F 3 "~" H 4850 4150 50  0001 C CNN
+	1    4850 4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 617AD4E5
+P 4850 4450
+F 0 "R6" H 4920 4496 50  0000 L CNN
+F 1 "220" H 4920 4405 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4780 4450 50  0001 C CNN
+F 3 "~" H 4850 4450 50  0001 C CNN
+	1    4850 4450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4850 4300 4050 4300
+Connection ~ 4850 4300
+$Comp
+L power:GND #PWR0137
+U 1 1 617AD4ED
+P 4850 4600
+F 0 "#PWR0137" H 4850 4350 50  0001 C CNN
+F 1 "GND" V 4855 4472 50  0000 R CNN
+F 2 "" H 4850 4600 50  0001 C CNN
+F 3 "" H 4850 4600 50  0001 C CNN
+	1    4850 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 4100 4050 4300
+Wire Wire Line
+	4100 3000 4050 3000
+Wire Wire Line
+	4050 3000 4050 3300
+Connection ~ 4850 4000
+Wire Wire Line
+	4850 4000 5250 4000
+Connection ~ 4850 3000
+Wire Wire Line
+	4850 3000 4700 3000
 $EndSCHEMATC

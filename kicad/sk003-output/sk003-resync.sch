@@ -734,10 +734,10 @@ Wire Wire Line
 	4250 4200 4450 4200
 Connection ~ 4450 4200
 $Comp
-L synkie_symbols:Opamp_Dual_Generic U?
+L synkie_symbols:Opamp_Dual_Generic U301
 U 1 1 5FF02768
 P 2300 3200
-F 0 "U?" H 2300 3567 50  0000 C CNN
+F 0 "U301" H 2300 3567 50  0000 C CNN
 F 1 "LMH6643" H 2300 3476 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 2300 3200 50  0001 C CNN
 F 3 "~" H 2300 3200 50  0001 C CNN
@@ -745,10 +745,10 @@ F 3 "~" H 2300 3200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:Opamp_Dual_Generic U?
+L synkie_symbols:Opamp_Dual_Generic U301
 U 2 1 5FF10FD3
 P 3550 4200
-F 0 "U?" H 3550 4567 50  0000 C CNN
+F 0 "U301" H 3550 4567 50  0000 C CNN
 F 1 "LMH6643" H 3550 4476 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 3550 4200 50  0001 C CNN
 F 3 "~" H 3550 4200 50  0001 C CNN
@@ -782,10 +782,10 @@ F 3 "~" H 3450 4650 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L synkie_symbols:D D?
+L synkie_symbols:D D2
 U 1 1 5FF1B317
 P 2550 3800
-F 0 "D?" H 2550 3583 50  0000 C CNN
+F 0 "D2" H 2550 3583 50  0000 C CNN
 F 1 "BAT54" H 2550 3674 50  0000 C CNN
 F 2 "synkie_footprints:D_SOT-23_ANK" H 2550 3800 50  0001 C CNN
 F 3 "~" H 2550 3800 50  0001 C CNN
@@ -806,10 +806,10 @@ F 3 "~" H 2150 3800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L synkie_symbols:D D?
+L synkie_symbols:D D1
 U 1 1 5FF3D57A
 P 2300 3550
-F 0 "D?" H 2300 3767 50  0000 C CNN
+F 0 "D1" H 2300 3767 50  0000 C CNN
 F 1 "BAT54" H 2300 3676 50  0000 C CNN
 F 2 "synkie_footprints:D_SOT-23_ANK" H 2300 3550 50  0001 C CNN
 F 3 "~" H 2300 3550 50  0001 C CNN
@@ -879,10 +879,10 @@ Wire Notes Line
 Wire Wire Line
 	4450 3200 4450 4200
 $Comp
-L synkie_symbols:C_Small C?
+L synkie_symbols:C_Small C1
 U 1 1 6005F63E
 P 2550 4150
-F 0 "C?" V 2321 4150 50  0000 C CNN
+F 0 "C1" V 2321 4150 50  0000 C CNN
 F 1 "1n" V 2412 4150 50  0000 C CNN
 F 2 "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2550 4150 50  0001 C CNN
 F 3 "~" H 2550 4150 50  0001 C CNN
@@ -923,10 +923,10 @@ F 3 "~" H 9750 3650 50  0001 C CNN
 $EndComp
 Connection ~ 9600 3650
 $Comp
-L Connector:Conn_Coaxial J?
+L Connector:Conn_Coaxial J1
 U 1 1 60032410
 P 10100 3650
-F 0 "J?" H 10200 3625 50  0000 L CNN
+F 0 "J1" H 10200 3625 50  0000 L CNN
 F 1 "Conn_Coaxial" H 10200 3534 50  0000 L CNN
 F 2 "synkie_footprints:BNC_MOLEX_0731000080_Horizontal" H 10100 3650 50  0001 C CNN
 F 3 " ~" H 10100 3650 50  0001 C CNN
@@ -979,10 +979,10 @@ Wire Wire Line
 Wire Wire Line
 	8800 4050 8800 4150
 $Comp
-L Mechanical:MountingHole_Pad H?
+L Mechanical:MountingHole_Pad H1
 U 1 1 6022D48A
 P 3500 6400
-F 0 "H?" H 3600 6449 50  0000 L CNN
+F 0 "H1" H 3600 6449 50  0000 L CNN
 F 1 "MountingHole_Pad" H 3600 6358 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.7mm_M2.5_DIN965_Pad" H 3500 6400 50  0001 C CNN
 F 3 "~" H 3500 6400 50  0001 C CNN
@@ -1003,10 +1003,10 @@ F 3 "" H 3500 6500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Anyma_Library:LOGO U?
+L Anyma_Library:LOGO U2
 U 1 1 60258AFD
 P 3650 7150
-F 0 "U?" H 3728 7271 50  0000 L CNN
+F 0 "U2" H 3728 7271 50  0000 L CNN
 F 1 "LOGO" H 3728 7180 50  0000 L CNN
 F 2 "anyma_footprints:logo_anyma" H 3650 7150 50  0001 C CNN
 F 3 "" H 3650 7150 50  0001 C CNN
@@ -1014,10 +1014,10 @@ F 3 "" H 3650 7150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Anyma_Library:LOGO U?
+L Anyma_Library:LOGO U3
 U 1 1 602590B8
 P 3650 7400
-F 0 "U?" H 3728 7521 50  0000 L CNN
+F 0 "U3" H 3728 7521 50  0000 L CNN
 F 1 "LOGO" H 3728 7430 50  0000 L CNN
 F 2 "Symbol:OSHW-Logo2_9.8x8mm_SilkScreen" H 3650 7400 50  0001 C CNN
 F 3 "" H 3650 7400 50  0001 C CNN
