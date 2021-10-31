@@ -761,7 +761,7 @@ F 3 "" H 3100 1950 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	3100 1950 3900 1950
+	3100 1950 3550 1950
 Wire Wire Line
 	3100 2150 3200 2150
 Wire Wire Line
@@ -966,4 +966,29 @@ Wire Wire Line
 Connection ~ 4850 3000
 Wire Wire Line
 	4850 3000 4700 3000
+$Comp
+L Device:R R?
+U 1 1 617F543A
+P 3550 2100
+F 0 "R?" H 3620 2146 50  0000 L CNN
+F 1 "75" H 3620 2055 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3480 2100 50  0001 C CNN
+F 3 "~" H 3550 2100 50  0001 C CNN
+	1    3550 2100
+	-1   0    0    1   
+$EndComp
+Connection ~ 3550 1950
+Wire Wire Line
+	3550 1950 3900 1950
+$Comp
+L power:GND #PWR?
+U 1 1 617F5AFC
+P 3550 2250
+F 0 "#PWR?" H 3550 2000 50  0001 C CNN
+F 1 "GND" H 3555 2077 50  0000 C CNN
+F 2 "" H 3550 2250 50  0001 C CNN
+F 3 "" H 3550 2250 50  0001 C CNN
+	1    3550 2250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
