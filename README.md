@@ -14,12 +14,12 @@ This Github repository is our working space and not a DIY tutorial. Lots of stuf
 
 - We live in PAL land. These modules have not beent tested with NTSC video. Some might need to be adapted slightly, some might even work better than here ;-)
 
-If you have any questions contact [info@synkie.net]()
+If you have any questions contact <info@synkie.net>
 
 
-#Basics
+# Basics
 
-##Synkie Backbone
+## Synkie Backbone
 Modules sk000 to sk009 constitute the Synkie Backbone – handling Ins out Outs to the normal Video World. Input video is clamped (black level = GND) and stripped of timing signals and color burst. This signal can then be fed to any processing modules.
 In the end , timing signals and a phase corrected color burst is cut back into the modified signal, in sync with the Genlock input.
 
