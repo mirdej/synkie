@@ -23,7 +23,7 @@ If you have any questions contact <info@synkie.net>
 Modules sk000 to sk009 constitute the Synkie Backbone – handling Ins out Outs to the normal Video World. Input video is clamped (black level = GND) and stripped of timing signals and color burst. This signal can then be fed to any processing modules.
 In the end , timing signals and a phase corrected color burst is cut back into the modified signal, in sync with the Genlock input.
 
-![](doc/backbone.png)
+![](doc/Backbone.png)
 
 ### sk000-power
 Power distribution to backbone modules and rack. +5V, GND, -5V.
