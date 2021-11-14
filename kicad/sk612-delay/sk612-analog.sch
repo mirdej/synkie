@@ -514,45 +514,6 @@ Wire Wire Line
 	1600 5350 2000 5350
 Connection ~ 2000 5350
 $Comp
-L Device:R R?
-U 1 1 616AA72D
-P 3400 5450
-AR Path="/616AA72D" Ref="R?"  Part="1" 
-AR Path="/6168A2F7/616AA72D" Ref="R13"  Part="1" 
-F 0 "R13" V 3193 5450 50  0000 C CNN
-F 1 "24" V 3284 5450 50  0000 C CNN
-F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3330 5450 50  0001 C CNN
-F 3 "~" H 3400 5450 50  0001 C CNN
-	1    3400 5450
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 616AA733
-P 3550 5600
-AR Path="/616AA733" Ref="R?"  Part="1" 
-AR Path="/6168A2F7/616AA733" Ref="R15"  Part="1" 
-F 0 "R15" V 3343 5600 50  0000 C CNN
-F 1 "51" V 3434 5600 50  0000 C CNN
-F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3480 5600 50  0001 C CNN
-F 3 "~" H 3550 5600 50  0001 C CNN
-	1    3550 5600
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 616AA739
-P 3550 5750
-AR Path="/616AA739" Ref="#PWR?"  Part="1" 
-AR Path="/6168A2F7/616AA739" Ref="#PWR0135"  Part="1" 
-F 0 "#PWR0135" H 3550 5500 50  0001 C CNN
-F 1 "GND" H 3555 5577 50  0000 C CNN
-F 2 "" H 3550 5750 50  0001 C CNN
-F 3 "" H 3550 5750 50  0001 C CNN
-	1    3550 5750
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C?
 U 1 1 616AA73F
 P 3700 5450
@@ -565,7 +526,6 @@ F 3 "~" H 3700 5450 50  0001 C CNN
 	1    3700 5450
 	0    1    1    0   
 $EndComp
-Connection ~ 3550 5450
 Wire Wire Line
 	3850 5450 4050 5450
 $Comp
@@ -588,7 +548,6 @@ Wire Wire Line
 	2650 5800 3250 5800
 Wire Wire Line
 	3250 5800 3250 5450
-Connection ~ 3250 5450
 Text GLabel 4050 5450 2    50   Input ~ 0
 ADC_IN
 $Comp
@@ -852,4 +811,30 @@ F 3 "" H 8550 3300 50  0001 C CNN
 	1    8550 3300
 	1    0    0    -1  
 $EndComp
+Text Notes 2000 4950 0    50   ~ 0
+NO.
+Connection ~ 3250 5450
+$Comp
+L Device:R R?
+U 1 1 616AA72D
+P 3400 5450
+AR Path="/616AA72D" Ref="R?"  Part="1" 
+AR Path="/6168A2F7/616AA72D" Ref="R13"  Part="1" 
+F 0 "R13" V 3193 5450 50  0000 C CNN
+F 1 "24" V 3284 5450 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3330 5450 50  0001 C CNN
+F 3 "~" H 3400 5450 50  0001 C CNN
+	1    3400 5450
+	0    1    1    0   
+$EndComp
+Wire Notes Line
+	800  2850 5300 2850
+Wire Notes Line
+	5300 2850 5300 6400
+Wire Notes Line
+	5300 6400 800  6400
+Wire Notes Line
+	800  6400 800  2850
+Text Notes 3200 2800 0    50   ~ 0
+Review. ESD Protection? Do we need input amps ???
 $EndSCHEMATC
