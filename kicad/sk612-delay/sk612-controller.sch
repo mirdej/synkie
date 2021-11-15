@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 3 6
 Title ""
 Date ""
 Rev ""
@@ -487,30 +487,6 @@ Text GLabel 2700 5100 0    50   Input ~ 0
 ADC_RESET
 Text GLabel 2700 5000 0    50   Input ~ 0
 DAC_RESET
-Text GLabel 2050 4500 0    50   Input ~ 0
-C0
-Text GLabel 2700 4600 0    50   Input ~ 0
-C1
-Text GLabel 2700 4700 0    50   Input ~ 0
-C2
-Text GLabel 2700 4800 0    50   Input ~ 0
-C3
-Text GLabel 2700 3750 0    50   Input ~ 0
-T7
-Text GLabel 2050 3650 0    50   Input ~ 0
-T6
-Text GLabel 2700 3550 0    50   Input ~ 0
-T5
-Text GLabel 2700 3450 0    50   Input ~ 0
-T4
-Text GLabel 2700 3350 0    50   Input ~ 0
-T3
-Text GLabel 2700 3250 0    50   Input ~ 0
-T2
-Text GLabel 2700 3150 0    50   Input ~ 0
-T1
-Text GLabel 2700 3050 0    50   Input ~ 0
-T0
 $Comp
 L synkie_symbols:R_POT RV1
 U 1 1 616ECE25
@@ -552,53 +528,95 @@ F 3 "" H 1400 2800 50  0001 C CNN
 	1    1400 2800
 	1    0    0    -1  
 $EndComp
-$Comp
-L synkie_symbols:Conn_01x03 J16
-U 1 1 616F066A
-P 1000 3350
-F 0 "J16" H 918 3667 50  0000 C CNN
-F 1 "Mode-Switch" H 918 3576 50  0000 C CNN
-F 2 "synkie_footprints:PinHeader_1x03_P2.54mm_Vertical" H 1000 3350 50  0001 C CNN
-F 3 "~" H 1000 3350 50  0001 C CNN
-	1    1000 3350
-	-1   0    0    -1  
-$EndComp
+Text GLabel 2700 3750 0    50   Input ~ 0
+MISO
+Text GLabel 2700 4800 0    50   Input ~ 0
+MOSI
+Text GLabel 2700 4700 0    50   Input ~ 0
+SCK
+Text GLabel 2700 3550 0    50   Input ~ 0
+SSEL
+Text GLabel 2700 4600 0    50   Input ~ 0
+FPGA_RESET
+Text GLabel 2700 3150 0    50   Input ~ 0
+TDI
+Text GLabel 2700 3250 0    50   Input ~ 0
+TMS
+Text GLabel 2700 3350 0    50   Input ~ 0
+TDO
+Text GLabel 2700 3450 0    50   Input ~ 0
+TRST
+Text GLabel 2700 3050 0    50   Input ~ 0
+TCK
 Wire Wire Line
-	1200 3350 1950 3350
+	2700 2750 1850 2750
 Wire Wire Line
-	1950 3350 1950 2750
+	1850 2750 1850 3450
 Wire Wire Line
-	1950 2750 2700 2750
-$Comp
-L tinkerforge:3V3 #PWR?
-U 1 1 616F3AC6
-P 1200 3250
-AR Path="/616F3AC6" Ref="#PWR?"  Part="1" 
-AR Path="/61949FCF/616F3AC6" Ref="#PWR?"  Part="1" 
-AR Path="/6168537C/616F3AC6" Ref="#PWR0255"  Part="1" 
-F 0 "#PWR0255" H 1200 3100 50  0001 C CNN
-F 1 "3V3" H 1215 3423 50  0000 C CNN
-F 2 "" H 1200 3250 50  0000 C CNN
-F 3 "" H 1200 3250 50  0000 C CNN
-	1    1200 3250
-	1    0    0    -1  
-$EndComp
+	1850 3450 1500 3450
+Wire Wire Line
+	2700 2850 1900 2850
+Wire Wire Line
+	1900 2850 1900 3550
+Wire Wire Line
+	1900 3550 1500 3550
+Wire Wire Line
+	2700 2950 1950 2950
+Wire Wire Line
+	1950 2950 1950 3650
+Wire Wire Line
+	1950 3650 1500 3650
+Wire Wire Line
+	2700 4400 1950 4400
+Wire Wire Line
+	1950 4400 1950 3750
+Wire Wire Line
+	1950 3750 1500 3750
+Wire Wire Line
+	2700 4500 1900 4500
+Wire Wire Line
+	1900 4500 1900 3850
+Wire Wire Line
+	1900 3850 1500 3850
 $Comp
 L power:GND #PWR?
-U 1 1 616F405F
-P 1200 3450
-AR Path="/616F405F" Ref="#PWR?"  Part="1" 
-AR Path="/61949FCF/616F405F" Ref="#PWR?"  Part="1" 
-AR Path="/6168537C/616F405F" Ref="#PWR0256"  Part="1" 
-F 0 "#PWR0256" H 1200 3200 50  0001 C CNN
-F 1 "GND" H 1205 3277 50  0000 C CNN
-F 2 "" H 1200 3450 50  0001 C CNN
-F 3 "" H 1200 3450 50  0001 C CNN
-	1    1200 3450
+U 1 1 61969D32
+P 1500 3950
+AR Path="/61969D32" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61969D32" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61969D32" Ref="#PWR0202"  Part="1" 
+F 0 "#PWR0202" H 1500 3700 50  0001 C CNN
+F 1 "GND" H 1505 3777 50  0000 C CNN
+F 2 "" H 1500 3950 50  0001 C CNN
+F 3 "" H 1500 3950 50  0001 C CNN
+	1    1500 3950
 	1    0    0    -1  
 $EndComp
-Text GLabel 2700 2850 0    50   Input ~ 0
-ADC_FIELD
-Text GLabel 2700 2950 0    50   Input ~ 0
-GENLOCK_FIELD
+$Comp
+L Connector_Generic:Conn_01x07 J11
+U 1 1 6196AFD2
+P 1300 3650
+F 0 "J11" H 1218 4167 50  0000 C CNN
+F 1 "Conn_01x07" H 1218 4076 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical" H 1300 3650 50  0001 C CNN
+F 3 "~" H 1300 3650 50  0001 C CNN
+	1    1300 3650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 6196D20E
+P 1700 3350
+AR Path="/6196D20E" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/6196D20E" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/6196D20E" Ref="#PWR0203"  Part="1" 
+F 0 "#PWR0203" H 1700 3200 50  0001 C CNN
+F 1 "3V3" H 1715 3523 50  0000 C CNN
+F 2 "" H 1700 3350 50  0000 C CNN
+F 3 "" H 1700 3350 50  0000 C CNN
+	1    1700 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 3350 1500 3350
 $EndSCHEMATC

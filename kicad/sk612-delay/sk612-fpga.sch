@@ -1,0 +1,2210 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63978
+P 5400 -1550
+AR Path="/61A63978" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63978" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63978" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63978" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63978" Ref="#PWR0208"  Part="1" 
+F 0 "#PWR0208" H 5400 -1700 50  0001 C CNN
+F 1 "3V3" H 5415 -1377 50  0000 C CNN
+F 2 "" H 5400 -1550 50  0000 C CNN
+F 3 "" H 5400 -1550 50  0000 C CNN
+	1    5400 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A6397E
+P 5400 -1450
+AR Path="/61776AE3/61A6397E" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A6397E" Ref="C10"  Part="1" 
+F 0 "C10" H 5492 -1404 50  0000 L CNN
+F 1 "100n" H 5492 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5400 -1450 50  0001 C CNN
+F 3 "~" H 5400 -1450 50  0001 C CNN
+	1    5400 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63984
+P 5400 -1350
+AR Path="/61776AE3/61A63984" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63984" Ref="#PWR0209"  Part="1" 
+F 0 "#PWR0209" H 5400 -1600 50  0001 C CNN
+F 1 "GND" H 5405 -1523 50  0001 C CNN
+F 2 "" H 5400 -1350 50  0001 C CNN
+F 3 "" H 5400 -1350 50  0001 C CNN
+	1    5400 -1350
+	1    0    0    -1  
+$EndComp
+Text GLabel 6150 2850 2    50   Input ~ 0
+AD0
+Text GLabel 6150 2750 2    50   Input ~ 0
+AD1
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A6398C
+P 1800 -1350
+AR Path="/61776AE3/61A6398C" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A6398C" Ref="C75"  Part="1" 
+F 0 "C75" H 1892 -1304 50  0000 L CNN
+F 1 "100n" H 1892 -1395 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1800 -1350 50  0001 C CNN
+F 3 "~" H 1800 -1350 50  0001 C CNN
+	1    1800 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63992
+P 1800 -1250
+AR Path="/61776AE3/61A63992" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63992" Ref="#PWR0212"  Part="1" 
+F 0 "#PWR0212" H 1800 -1500 50  0001 C CNN
+F 1 "GND" H 1805 -1423 50  0001 C CNN
+F 2 "" H 1800 -1250 50  0001 C CNN
+F 3 "" H 1800 -1250 50  0001 C CNN
+	1    1800 -1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A63998
+P 2250 -1350
+AR Path="/61776AE3/61A63998" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A63998" Ref="C76"  Part="1" 
+F 0 "C76" H 2342 -1304 50  0000 L CNN
+F 1 "100n" H 2342 -1395 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2250 -1350 50  0001 C CNN
+F 3 "~" H 2250 -1350 50  0001 C CNN
+	1    2250 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A6399E
+P 2250 -1250
+AR Path="/61776AE3/61A6399E" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A6399E" Ref="#PWR0213"  Part="1" 
+F 0 "#PWR0213" H 2250 -1500 50  0001 C CNN
+F 1 "GND" H 2255 -1423 50  0001 C CNN
+F 2 "" H 2250 -1250 50  0001 C CNN
+F 3 "" H 2250 -1250 50  0001 C CNN
+	1    2250 -1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A639A4
+P 2650 -1350
+AR Path="/61776AE3/61A639A4" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A639A4" Ref="C77"  Part="1" 
+F 0 "C77" H 2742 -1304 50  0000 L CNN
+F 1 "100n" H 2742 -1395 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2650 -1350 50  0001 C CNN
+F 3 "~" H 2650 -1350 50  0001 C CNN
+	1    2650 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A639AA
+P 2650 -1250
+AR Path="/61776AE3/61A639AA" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639AA" Ref="#PWR0216"  Part="1" 
+F 0 "#PWR0216" H 2650 -1500 50  0001 C CNN
+F 1 "GND" H 2655 -1423 50  0001 C CNN
+F 2 "" H 2650 -1250 50  0001 C CNN
+F 3 "" H 2650 -1250 50  0001 C CNN
+	1    2650 -1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A639B0
+P 3100 -1350
+AR Path="/61776AE3/61A639B0" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A639B0" Ref="C80"  Part="1" 
+F 0 "C80" H 3192 -1304 50  0000 L CNN
+F 1 "100n" H 3192 -1395 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3100 -1350 50  0001 C CNN
+F 3 "~" H 3100 -1350 50  0001 C CNN
+	1    3100 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A639B6
+P 3100 -1250
+AR Path="/61776AE3/61A639B6" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639B6" Ref="#PWR0217"  Part="1" 
+F 0 "#PWR0217" H 3100 -1500 50  0001 C CNN
+F 1 "GND" H 3105 -1423 50  0001 C CNN
+F 2 "" H 3100 -1250 50  0001 C CNN
+F 3 "" H 3100 -1250 50  0001 C CNN
+	1    3100 -1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A639BC
+P 5800 -1550
+AR Path="/61A639BC" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A639BC" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A639BC" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A639BC" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639BC" Ref="#PWR0252"  Part="1" 
+F 0 "#PWR0252" H 5800 -1700 50  0001 C CNN
+F 1 "3V3" H 5815 -1377 50  0000 C CNN
+F 2 "" H 5800 -1550 50  0000 C CNN
+F 3 "" H 5800 -1550 50  0000 C CNN
+	1    5800 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A639C2
+P 5800 -1450
+AR Path="/61776AE3/61A639C2" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A639C2" Ref="C15"  Part="1" 
+F 0 "C15" H 5892 -1404 50  0000 L CNN
+F 1 "100n" H 5892 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5800 -1450 50  0001 C CNN
+F 3 "~" H 5800 -1450 50  0001 C CNN
+	1    5800 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A639C8
+P 5800 -1350
+AR Path="/61776AE3/61A639C8" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639C8" Ref="#PWR0255"  Part="1" 
+F 0 "#PWR0255" H 5800 -1600 50  0001 C CNN
+F 1 "GND" H 5805 -1523 50  0001 C CNN
+F 2 "" H 5800 -1350 50  0001 C CNN
+F 3 "" H 5800 -1350 50  0001 C CNN
+	1    5800 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:OSC-RENESAS U?
+U 1 1 61A63A16
+P 9500 2200
+AR Path="/61776AE3/61A63A16" Ref="U?"  Part="1" 
+AR Path="/61A0E295/61A63A16" Ref="U10"  Part="1" 
+F 0 "U10" H 9650 2915 50  0000 C CNN
+F 1 "OSC-RENESAS" H 9650 2824 50  0000 C CNN
+F 2 "synkie_footprints:OSC-RENESAS" H 9500 2200 50  0001 C CNN
+F 3 "" H 9500 2200 50  0001 C CNN
+	1    9500 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63A1C
+P 9250 2050
+AR Path="/61776AE3/61A63A1C" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A1C" Ref="#PWR0256"  Part="1" 
+F 0 "#PWR0256" H 9250 1800 50  0001 C CNN
+F 1 "GND" H 9255 1877 50  0001 C CNN
+F 2 "" H 9250 2050 50  0001 C CNN
+F 3 "" H 9250 2050 50  0001 C CNN
+	1    9250 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63A22
+P 10050 1750
+AR Path="/61A63A22" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63A22" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63A22" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63A22" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A22" Ref="#PWR0261"  Part="1" 
+F 0 "#PWR0261" H 10050 1600 50  0001 C CNN
+F 1 "3V3" H 10065 1923 50  0000 C CNN
+F 2 "" H 10050 1750 50  0000 C CNN
+F 3 "" H 10050 1750 50  0000 C CNN
+	1    10050 1750
+	1    0    0    -1  
+$EndComp
+Text GLabel 10050 2050 2    50   Input ~ 0
+200MHZ
+Text GLabel 6150 1250 2    50   Input ~ 0
+ADC_LLC
+Text GLabel 6150 5450 2    50   Input ~ 0
+DA0
+Text GLabel 6150 5550 2    50   Input ~ 0
+DA1
+Text GLabel 6150 5650 2    50   Input ~ 0
+DA2
+Text GLabel 6150 5750 2    50   Input ~ 0
+DA3
+Text GLabel 6150 5850 2    50   Input ~ 0
+DA4
+Text GLabel 6150 5950 2    50   Input ~ 0
+DA5
+Text GLabel 6150 6050 2    50   Input ~ 0
+DA6
+Text GLabel 6150 6250 2    50   Input ~ 0
+DA7
+Text GLabel 6150 4850 2    50   Input ~ 0
+DAC_CLK
+$Comp
+L synkie_symbols:Conn_01x10 J?
+U 1 1 61A63A40
+P 9700 4250
+AR Path="/61776AE3/61A63A40" Ref="J?"  Part="1" 
+AR Path="/61A0E295/61A63A40" Ref="J12"  Part="1" 
+F 0 "J12" H 9780 4242 50  0000 L CNN
+F 1 "Conn_01x10" H 9780 4151 50  0000 L CNN
+F 2 "synkie_footprints:IDC-Header_2x05_P2.54mm_Vertical" H 9700 4250 50  0001 C CNN
+F 3 "~" H 9700 4250 50  0001 C CNN
+	1    9700 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61A63A46
+P 9500 3950
+AR Path="/61776AE3/61A63A46" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A46" Ref="#PWR0263"  Part="1" 
+F 0 "#PWR0263" H 9500 3700 50  0001 C CNN
+F 1 "GND" V 9505 3822 50  0000 R CNN
+F 2 "" H 9500 3950 50  0001 C CNN
+F 3 "" H 9500 3950 50  0001 C CNN
+	1    9500 3950
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61A63A4C
+P 9500 4750
+AR Path="/61776AE3/61A63A4C" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A4C" Ref="#PWR0264"  Part="1" 
+F 0 "#PWR0264" H 9500 4500 50  0001 C CNN
+F 1 "GND" V 9505 4622 50  0000 R CNN
+F 2 "" H 9500 4750 50  0001 C CNN
+F 3 "" H 9500 4750 50  0001 C CNN
+	1    9500 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:R R?
+U 1 1 61A63A53
+P 9450 5550
+AR Path="/61776AE3/61A63A53" Ref="R?"  Part="1" 
+AR Path="/61A0E295/61A63A53" Ref="R26"  Part="1" 
+F 0 "R26" H 9520 5596 50  0000 L CNN
+F 1 "1k" H 9520 5505 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9380 5550 50  0001 C CNN
+F 3 "~" H 9450 5550 50  0001 C CNN
+	1    9450 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61A63A59
+P 9450 5700
+AR Path="/61776AE3/61A63A59" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A59" Ref="#PWR0265"  Part="1" 
+F 0 "#PWR0265" H 9450 5450 50  0001 C CNN
+F 1 "GND" H 9455 5527 50  0000 C CNN
+F 2 "" H 9450 5700 50  0001 C CNN
+F 3 "" H 9450 5700 50  0001 C CNN
+	1    9450 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:R R?
+U 1 1 61A63A5F
+P 9950 5550
+AR Path="/61776AE3/61A63A5F" Ref="R?"  Part="1" 
+AR Path="/61A0E295/61A63A5F" Ref="R27"  Part="1" 
+F 0 "R27" H 10020 5596 50  0000 L CNN
+F 1 "10k" H 10020 5505 50  0000 L CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9880 5550 50  0001 C CNN
+F 3 "~" H 9950 5550 50  0001 C CNN
+	1    9950 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63A65
+P 9950 5400
+AR Path="/61A63A65" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63A65" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63A65" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63A65" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A65" Ref="#PWR0266"  Part="1" 
+F 0 "#PWR0266" H 9950 5250 50  0001 C CNN
+F 1 "3V3" H 9965 5573 50  0000 C CNN
+F 2 "" H 9950 5400 50  0000 C CNN
+F 3 "" H 9950 5400 50  0000 C CNN
+	1    9950 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:LED D?
+U 1 1 61A63A6C
+P 1050 6200
+AR Path="/61776AE3/61A63A6C" Ref="D?"  Part="1" 
+AR Path="/61A0E295/61A63A6C" Ref="D6"  Part="1" 
+F 0 "D6" H 1043 6416 50  0000 C CNN
+F 1 "LED" H 1043 6325 50  0000 C CNN
+F 2 "synkie_footprints:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1050 6200 50  0001 C CNN
+F 3 "~" H 1050 6200 50  0001 C CNN
+	1    1050 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:R R?
+U 1 1 61A63A72
+P 1350 6200
+AR Path="/61776AE3/61A63A72" Ref="R?"  Part="1" 
+AR Path="/61A0E295/61A63A72" Ref="R29"  Part="1" 
+F 0 "R29" V 1143 6200 50  0000 C CNN
+F 1 "1k" V 1234 6200 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1280 6200 50  0001 C CNN
+F 3 "~" H 1350 6200 50  0001 C CNN
+	1    1350 6200
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63A78
+P 900 6200
+AR Path="/61776AE3/61A63A78" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A78" Ref="#PWR0267"  Part="1" 
+F 0 "#PWR0267" H 900 5950 50  0001 C CNN
+F 1 "GND" H 905 6027 50  0001 C CNN
+F 2 "" H 900 6200 50  0001 C CNN
+F 3 "" H 900 6200 50  0001 C CNN
+	1    900  6200
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:LED D?
+U 1 1 61A63A7E
+P 1050 5400
+AR Path="/61776AE3/61A63A7E" Ref="D?"  Part="1" 
+AR Path="/61A0E295/61A63A7E" Ref="D4"  Part="1" 
+F 0 "D4" H 1043 5616 50  0000 C CNN
+F 1 "LED" H 1043 5525 50  0000 C CNN
+F 2 "synkie_footprints:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1050 5400 50  0001 C CNN
+F 3 "~" H 1050 5400 50  0001 C CNN
+	1    1050 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:R R?
+U 1 1 61A63A84
+P 1350 5400
+AR Path="/61776AE3/61A63A84" Ref="R?"  Part="1" 
+AR Path="/61A0E295/61A63A84" Ref="R25"  Part="1" 
+F 0 "R25" V 1143 5400 50  0000 C CNN
+F 1 "1k" V 1234 5400 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1280 5400 50  0001 C CNN
+F 3 "~" H 1350 5400 50  0001 C CNN
+	1    1350 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:LED D?
+U 1 1 61A63A90
+P 1050 5800
+AR Path="/61776AE3/61A63A90" Ref="D?"  Part="1" 
+AR Path="/61A0E295/61A63A90" Ref="D5"  Part="1" 
+F 0 "D5" H 1043 6016 50  0000 C CNN
+F 1 "LED" H 1043 5925 50  0000 C CNN
+F 2 "synkie_footprints:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1050 5800 50  0001 C CNN
+F 3 "~" H 1050 5800 50  0001 C CNN
+	1    1050 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:R R?
+U 1 1 61A63A96
+P 1350 5800
+AR Path="/61776AE3/61A63A96" Ref="R?"  Part="1" 
+AR Path="/61A0E295/61A63A96" Ref="R28"  Part="1" 
+F 0 "R28" V 1143 5800 50  0000 C CNN
+F 1 "1k" V 1234 5800 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1280 5800 50  0001 C CNN
+F 3 "~" H 1350 5800 50  0001 C CNN
+	1    1350 5800
+	0    1    1    0   
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63A9C
+P 900 5800
+AR Path="/61776AE3/61A63A9C" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A9C" Ref="#PWR0269"  Part="1" 
+F 0 "#PWR0269" H 900 5550 50  0001 C CNN
+F 1 "GND" H 905 5627 50  0001 C CNN
+F 2 "" H 900 5800 50  0001 C CNN
+F 3 "" H 900 5800 50  0001 C CNN
+	1    900  5800
+	0    1    1    0   
+$EndComp
+Text GLabel 6150 6450 2    50   Input ~ 0
+200MHZ
+Text Label 1500 5800 0    50   ~ 0
+led2
+Text Label 1500 5400 0    50   ~ 0
+led1
+Text Label 1500 6200 0    50   ~ 0
+led3
+$Comp
+L synkie_symbols:Conn_01x03 J?
+U 1 1 61A63B77
+P 850 6900
+AR Path="/6168537C/61A63B77" Ref="J?"  Part="1" 
+AR Path="/61776AE3/61A63B77" Ref="J?"  Part="1" 
+AR Path="/61A0E295/61A63B77" Ref="J13"  Part="1" 
+F 0 "J13" H 768 7217 50  0000 C CNN
+F 1 "Mode-Switch" H 768 7126 50  0000 C CNN
+F 2 "synkie_footprints:PinHeader_1x03_P2.54mm_Vertical" H 850 6900 50  0001 C CNN
+F 3 "~" H 850 6900 50  0001 C CNN
+	1    850  6900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63B7D
+P 1050 6800
+AR Path="/61A63B7D" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63B7D" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63B7D" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63B7D" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63B7D" Ref="#PWR0270"  Part="1" 
+F 0 "#PWR0270" H 1050 6650 50  0001 C CNN
+F 1 "3V3" H 1065 6973 50  0000 C CNN
+F 2 "" H 1050 6800 50  0000 C CNN
+F 3 "" H 1050 6800 50  0000 C CNN
+	1    1050 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61A63B83
+P 1050 7000
+AR Path="/61A63B83" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63B83" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63B83" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63B83" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63B83" Ref="#PWR0271"  Part="1" 
+F 0 "#PWR0271" H 1050 6750 50  0001 C CNN
+F 1 "GND" H 1055 6827 50  0000 C CNN
+F 2 "" H 1050 7000 50  0001 C CNN
+F 3 "" H 1050 7000 50  0001 C CNN
+	1    1050 7000
+	1    0    0    -1  
+$EndComp
+Text GLabel 2550 850  0    50   Input ~ 0
+TDI
+Text GLabel 2550 950  0    50   Input ~ 0
+TMS
+Text GLabel 2550 1050 0    50   Input ~ 0
+TDO
+Text GLabel 2550 1150 0    50   Input ~ 0
+TRST
+Text GLabel 2550 750  0    50   Input ~ 0
+TCK
+Text GLabel 9500 4650 0    50   Input ~ 0
+TDI
+Text GLabel 9500 4050 0    50   Input ~ 0
+TDO
+Text GLabel 9500 3850 0    50   Input ~ 0
+TCK
+Text GLabel 9500 4250 0    50   Input ~ 0
+TMS
+Text GLabel 6150 7750 2    50   Input ~ 0
+SCL
+Text GLabel 6150 7850 2    50   Input ~ 0
+SDA
+Text GLabel 6150 7350 2    50   Input ~ 0
+MISO
+Text GLabel 6150 7550 2    50   Input ~ 0
+MOSI
+Text GLabel 6150 7450 2    50   Input ~ 0
+SCK
+Text GLabel 6150 7650 2    50   Input ~ 0
+SSEL
+Text GLabel 7000 8500 2    50   Input ~ 0
+FPGA_RESET
+Text GLabel 6150 5250 2    50   Input ~ 0
+GL_SFL_OUT
+Text GLabel 6150 3950 2    50   Input ~ 0
+GL0
+Text GLabel 6150 3850 2    50   Input ~ 0
+GL1
+Text GLabel 6150 3750 2    50   Input ~ 0
+GL2
+Text GLabel 6150 3650 2    50   Input ~ 0
+GL3
+Text GLabel 6150 3550 2    50   Input ~ 0
+GL4
+Text GLabel 6150 3450 2    50   Input ~ 0
+GL5
+Text GLabel 6150 3350 2    50   Input ~ 0
+GL6
+Text GLabel 6150 3250 2    50   Input ~ 0
+GL7
+Text GLabel 6150 1750 2    50   Input ~ 0
+GL_LLC
+Text GLabel 6150 2150 2    50   Input ~ 0
+AD7
+Text GLabel 6150 2250 2    50   Input ~ 0
+AD6
+Text GLabel 6150 2350 2    50   Input ~ 0
+AD5
+Text GLabel 6150 2450 2    50   Input ~ 0
+AD4
+Text GLabel 6150 2550 2    50   Input ~ 0
+AD3
+Text GLabel 6150 2650 2    50   Input ~ 0
+AD2
+Text GLabel 6150 1450 2    50   Input ~ 0
+AD_SFL_OUT
+Text GLabel 6150 5350 2    50   Input ~ 0
+DAC_SFL_IN
+$Comp
+L power:GNDS #PWR?
+U 1 1 61A63BE8
+P 6100 9600
+AR Path="/61776AE3/61A63BE8" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63BE8" Ref="#PWR0272"  Part="1" 
+F 0 "#PWR0272" H 6100 9350 50  0001 C CNN
+F 1 "GNDS" H 6105 9427 50  0000 C CNN
+F 2 "" H 6100 9600 50  0001 C CNN
+F 3 "" H 6100 9600 50  0001 C CNN
+	1    6100 9600
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:Ferrite_Bead FB?
+U 1 1 61A63BEE
+P 6100 9450
+AR Path="/61776AE3/61A63BEE" Ref="FB?"  Part="1" 
+AR Path="/61A0E295/61A63BEE" Ref="FB4"  Part="1" 
+F 0 "FB4" H 6237 9496 50  0000 L CNN
+F 1 "Ferrite_Bead" H 6237 9405 50  0000 L CNN
+F 2 "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6030 9450 50  0001 C CNN
+F 3 "~" H 6100 9450 50  0001 C CNN
+	1    6100 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63BF4
+P 6100 9300
+AR Path="/61776AE3/61A63BF4" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63BF4" Ref="#PWR0273"  Part="1" 
+F 0 "#PWR0273" H 6100 9050 50  0001 C CNN
+F 1 "GND" H 6105 9127 50  0000 C CNN
+F 2 "" H 6100 9300 50  0001 C CNN
+F 3 "" H 6100 9300 50  0001 C CNN
+	1    6100 9300
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63BFA
+P 3250 -100
+AR Path="/61776AE3/61A63BFA" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63BFA" Ref="#PWR0274"  Part="1" 
+F 0 "#PWR0274" H 3250 -250 50  0001 C CNN
+F 1 "+1V5" H 3265 73  50  0000 C CNN
+F 2 "" H 3250 -100 50  0001 C CNN
+F 3 "" H 3250 -100 50  0001 C CNN
+	1    3250 -100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63C00
+P 3350 150
+AR Path="/61776AE3/61A63C00" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C00" Ref="#PWR0275"  Part="1" 
+F 0 "#PWR0275" H 3350 0   50  0001 C CNN
+F 1 "+1V5" H 3365 323 50  0000 C CNN
+F 2 "" H 3350 150 50  0001 C CNN
+F 3 "" H 3350 150 50  0001 C CNN
+	1    3350 150 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63C06
+P 3450 -100
+AR Path="/61776AE3/61A63C06" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C06" Ref="#PWR0276"  Part="1" 
+F 0 "#PWR0276" H 3450 -250 50  0001 C CNN
+F 1 "+1V5" H 3465 73  50  0000 C CNN
+F 2 "" H 3450 -100 50  0001 C CNN
+F 3 "" H 3450 -100 50  0001 C CNN
+	1    3450 -100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63C0C
+P 3550 150
+AR Path="/61776AE3/61A63C0C" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C0C" Ref="#PWR0277"  Part="1" 
+F 0 "#PWR0277" H 3550 0   50  0001 C CNN
+F 1 "+1V5" H 3565 323 50  0000 C CNN
+F 2 "" H 3550 150 50  0001 C CNN
+F 3 "" H 3550 150 50  0001 C CNN
+	1    3550 150 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 -100 3250 150 
+Wire Wire Line
+	3450 -100 3450 150 
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C14
+P 4050 -100
+AR Path="/61A63C14" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C14" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C14" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C14" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C14" Ref="#PWR0278"  Part="1" 
+F 0 "#PWR0278" H 4050 -250 50  0001 C CNN
+F 1 "3V3" H 4065 73  50  0000 C CNN
+F 2 "" H 4050 -100 50  0000 C CNN
+F 3 "" H 4050 -100 50  0000 C CNN
+	1    4050 -100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 -100 4050 150 
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C1B
+P 4150 150
+AR Path="/61A63C1B" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C1B" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C1B" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C1B" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C1B" Ref="#PWR0279"  Part="1" 
+F 0 "#PWR0279" H 4150 0   50  0001 C CNN
+F 1 "3V3" H 4165 323 50  0000 C CNN
+F 2 "" H 4150 150 50  0000 C CNN
+F 3 "" H 4150 150 50  0000 C CNN
+	1    4150 150 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C21
+P 4250 -100
+AR Path="/61A63C21" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C21" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C21" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C21" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C21" Ref="#PWR0280"  Part="1" 
+F 0 "#PWR0280" H 4250 -250 50  0001 C CNN
+F 1 "3V3" H 4265 73  50  0000 C CNN
+F 2 "" H 4250 -100 50  0000 C CNN
+F 3 "" H 4250 -100 50  0000 C CNN
+	1    4250 -100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C27
+P 4350 150
+AR Path="/61A63C27" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C27" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C27" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C27" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C27" Ref="#PWR0281"  Part="1" 
+F 0 "#PWR0281" H 4350 0   50  0001 C CNN
+F 1 "3V3" H 4365 323 50  0000 C CNN
+F 2 "" H 4350 150 50  0000 C CNN
+F 3 "" H 4350 150 50  0000 C CNN
+	1    4350 150 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 -100 4250 150 
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C2E
+P 4650 -100
+AR Path="/61A63C2E" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C2E" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C2E" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C2E" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C2E" Ref="#PWR0282"  Part="1" 
+F 0 "#PWR0282" H 4650 -250 50  0001 C CNN
+F 1 "3V3" H 4665 73  50  0000 C CNN
+F 2 "" H 4650 -100 50  0000 C CNN
+F 3 "" H 4650 -100 50  0000 C CNN
+	1    4650 -100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 -100 4650 150 
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C35
+P 5450 -100
+AR Path="/61A63C35" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C35" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C35" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C35" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C35" Ref="#PWR0283"  Part="1" 
+F 0 "#PWR0283" H 5450 -250 50  0001 C CNN
+F 1 "3V3" H 5465 73  50  0000 C CNN
+F 2 "" H 5450 -100 50  0000 C CNN
+F 3 "" H 5450 -100 50  0000 C CNN
+	1    5450 -100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 -100 5450 150 
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C3C
+P 4550 150
+AR Path="/61A63C3C" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C3C" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C3C" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C3C" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C3C" Ref="#PWR0284"  Part="1" 
+F 0 "#PWR0284" H 4550 0   50  0001 C CNN
+F 1 "3V3" H 4565 323 50  0000 C CNN
+F 2 "" H 4550 150 50  0000 C CNN
+F 3 "" H 4550 150 50  0000 C CNN
+	1    4550 150 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C42
+P 4750 150
+AR Path="/61A63C42" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C42" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C42" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C42" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C42" Ref="#PWR0285"  Part="1" 
+F 0 "#PWR0285" H 4750 0   50  0001 C CNN
+F 1 "3V3" H 4765 323 50  0000 C CNN
+F 2 "" H 4750 150 50  0000 C CNN
+F 3 "" H 4750 150 50  0000 C CNN
+	1    4750 150 
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63C4E
+P 2450 100
+AR Path="/61776AE3/61A63C4E" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C4E" Ref="#PWR0286"  Part="1" 
+F 0 "#PWR0286" H 2450 -150 50  0001 C CNN
+F 1 "GND" H 2455 -73 50  0000 C CNN
+F 2 "" H 2450 100 50  0001 C CNN
+F 3 "" H 2450 100 50  0001 C CNN
+	1    2450 100 
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Jumper JP?
+U 1 1 61A63C54
+P 2750 100
+AR Path="/61776AE3/61A63C54" Ref="JP?"  Part="1" 
+AR Path="/61A0E295/61A63C54" Ref="JP3"  Part="1" 
+F 0 "JP3" H 2750 364 50  0000 C CNN
+F 1 "Jumper" H 2750 273 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 2750 100 50  0001 C CNN
+F 3 "~" H 2750 100 50  0001 C CNN
+	1    2750 100 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 150  3050 100 
+$Comp
+L Device:Jumper JP?
+U 1 1 61A63C5B
+P 7100 -500
+AR Path="/61776AE3/61A63C5B" Ref="JP?"  Part="1" 
+AR Path="/61A0E295/61A63C5B" Ref="JP2"  Part="1" 
+F 0 "JP2" H 7100 -236 50  0000 C CNN
+F 1 "Jumper" H 7100 -327 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 7100 -500 50  0001 C CNN
+F 3 "~" H 7100 -500 50  0001 C CNN
+	1    7100 -500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63C62
+P 7400 -500
+AR Path="/61A63C62" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63C62" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63C62" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63C62" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C62" Ref="#PWR0287"  Part="1" 
+F 0 "#PWR0287" H 7400 -650 50  0001 C CNN
+F 1 "3V3" H 7415 -327 50  0000 C CNN
+F 2 "" H 7400 -500 50  0000 C CNN
+F 3 "" H 7400 -500 50  0000 C CNN
+	1    7400 -500
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A63C68
+P 6800 -400
+AR Path="/61776AE3/61A63C68" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A63C68" Ref="C84"  Part="1" 
+F 0 "C84" H 6892 -354 50  0000 L CNN
+F 1 "100n" H 6892 -445 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6800 -400 50  0001 C CNN
+F 3 "~" H 6800 -400 50  0001 C CNN
+	1    6800 -400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 61A63C6E
+P 6550 -350
+AR Path="/61776AE3/61A63C6E" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A63C6E" Ref="C85"  Part="1" 
+F 0 "C85" H 6668 -304 50  0000 L CNN
+F 1 "33u" H 6668 -395 50  0000 L CNN
+F 2 "synkie_footprints:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6588 -500 50  0001 C CNN
+F 3 "~" H 6550 -350 50  0001 C CNN
+	1    6550 -350
+	1    0    0    -1  
+$EndComp
+Connection ~ 6550 -500
+Connection ~ 6800 -500
+Wire Wire Line
+	6550 -500 6800 -500
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63C78
+P 6800 -300
+AR Path="/61776AE3/61A63C78" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C78" Ref="#PWR0288"  Part="1" 
+F 0 "#PWR0288" H 6800 -550 50  0001 C CNN
+F 1 "GND" H 6805 -473 50  0000 C CNN
+F 2 "" H 6800 -300 50  0001 C CNN
+F 3 "" H 6800 -300 50  0001 C CNN
+	1    6800 -300
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63C7E
+P 6550 -200
+AR Path="/61776AE3/61A63C7E" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C7E" Ref="#PWR0289"  Part="1" 
+F 0 "#PWR0289" H 6550 -450 50  0001 C CNN
+F 1 "GND" H 6555 -373 50  0000 C CNN
+F 2 "" H 6550 -200 50  0001 C CNN
+F 3 "" H 6550 -200 50  0001 C CNN
+	1    6550 -200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63C84
+P 1800 -1450
+AR Path="/61776AE3/61A63C84" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C84" Ref="#PWR0290"  Part="1" 
+F 0 "#PWR0290" H 1800 -1600 50  0001 C CNN
+F 1 "+1V5" H 1815 -1277 50  0000 C CNN
+F 2 "" H 1800 -1450 50  0001 C CNN
+F 3 "" H 1800 -1450 50  0001 C CNN
+	1    1800 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63C8A
+P 2250 -1450
+AR Path="/61776AE3/61A63C8A" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C8A" Ref="#PWR0291"  Part="1" 
+F 0 "#PWR0291" H 2250 -1600 50  0001 C CNN
+F 1 "+1V5" H 2265 -1277 50  0000 C CNN
+F 2 "" H 2250 -1450 50  0001 C CNN
+F 3 "" H 2250 -1450 50  0001 C CNN
+	1    2250 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63C90
+P 2650 -1450
+AR Path="/61776AE3/61A63C90" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C90" Ref="#PWR0292"  Part="1" 
+F 0 "#PWR0292" H 2650 -1600 50  0001 C CNN
+F 1 "+1V5" H 2665 -1277 50  0000 C CNN
+F 2 "" H 2650 -1450 50  0001 C CNN
+F 3 "" H 2650 -1450 50  0001 C CNN
+	1    2650 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A63C96
+P 3100 -1450
+AR Path="/61776AE3/61A63C96" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C96" Ref="#PWR0293"  Part="1" 
+F 0 "#PWR0293" H 3100 -1600 50  0001 C CNN
+F 1 "+1V5" H 3115 -1277 50  0000 C CNN
+F 2 "" H 3100 -1450 50  0001 C CNN
+F 3 "" H 3100 -1450 50  0001 C CNN
+	1    3100 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63CE4
+P 2550 650
+AR Path="/61A63CE4" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63CE4" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63CE4" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63CE4" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63CE4" Ref="#PWR0294"  Part="1" 
+F 0 "#PWR0294" H 2550 500 50  0001 C CNN
+F 1 "3V3" H 2565 823 50  0000 C CNN
+F 2 "" H 2550 650 50  0000 C CNN
+F 3 "" H 2550 650 50  0000 C CNN
+	1    2550 650 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63CEA
+P 9500 4150
+AR Path="/61A63CEA" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63CEA" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63CEA" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63CEA" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63CEA" Ref="#PWR0295"  Part="1" 
+F 0 "#PWR0295" H 9500 4000 50  0001 C CNN
+F 1 "3V3" H 9515 4323 50  0000 C CNN
+F 2 "" H 9500 4150 50  0000 C CNN
+F 3 "" H 9500 4150 50  0000 C CNN
+	1    9500 4150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L FPGA_Microsemi:A3P125-PQG208 U?
+U 1 1 61A63D03
+P 4350 4250
+AR Path="/61776AE3/61A63D03" Ref="U?"  Part="1" 
+AR Path="/61A0E295/61A63D03" Ref="U11"  Part="1" 
+F 0 "U11" H 6100 400 50  0000 C CNN
+F 1 "A3P125-PQG208" H 2400 400 50  0000 C CNN
+F 2 "Package_QFP:PQFP-208_28x28mm_P0.5mm" H 6050 7950 50  0001 L CIN
+F 3 "http://www.microsemi.com/document-portal/doc_download/130704-proasic3-flash-family-fpgas-datasheet" H 4350 3400 50  0001 C CNN
+	1    4350 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A743A5
+P 3650 -100
+AR Path="/61776AE3/61A743A5" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A743A5" Ref="#PWR0296"  Part="1" 
+F 0 "#PWR0296" H 3650 -250 50  0001 C CNN
+F 1 "+1V5" H 3665 73  50  0000 C CNN
+F 2 "" H 3650 -100 50  0001 C CNN
+F 3 "" H 3650 -100 50  0001 C CNN
+	1    3650 -100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A743AB
+P 3750 150
+AR Path="/61776AE3/61A743AB" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A743AB" Ref="#PWR0297"  Part="1" 
+F 0 "#PWR0297" H 3750 0   50  0001 C CNN
+F 1 "+1V5" H 3765 323 50  0000 C CNN
+F 2 "" H 3750 150 50  0001 C CNN
+F 3 "" H 3750 150 50  0001 C CNN
+	1    3750 150 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61A743B1
+P 3850 -100
+AR Path="/61776AE3/61A743B1" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A743B1" Ref="#PWR0298"  Part="1" 
+F 0 "#PWR0298" H 3850 -250 50  0001 C CNN
+F 1 "+1V5" H 3865 73  50  0000 C CNN
+F 2 "" H 3850 -100 50  0001 C CNN
+F 3 "" H 3850 -100 50  0001 C CNN
+	1    3850 -100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 -100 3650 150 
+Wire Wire Line
+	3850 -100 3850 150 
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63C48
+P 3450 8350
+AR Path="/61776AE3/61A63C48" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63C48" Ref="#PWR0299"  Part="1" 
+F 0 "#PWR0299" H 3450 8100 50  0001 C CNN
+F 1 "GND" H 3455 8177 50  0001 C CNN
+F 2 "" H 3450 8350 50  0001 C CNN
+F 3 "" H 3450 8350 50  0001 C CNN
+	1    3450 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDS #PWR?
+U 1 1 61A63BE2
+P 5450 8350
+AR Path="/61776AE3/61A63BE2" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63BE2" Ref="#PWR0300"  Part="1" 
+F 0 "#PWR0300" H 5450 8100 50  0001 C CNN
+F 1 "GNDS" H 5455 8177 50  0000 C CNN
+F 2 "" H 5450 8350 50  0001 C CNN
+F 3 "" H 5450 8350 50  0001 C CNN
+	1    5450 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDS #PWR?
+U 1 1 61A63BDC
+P 5350 8350
+AR Path="/61776AE3/61A63BDC" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63BDC" Ref="#PWR0301"  Part="1" 
+F 0 "#PWR0301" H 5350 8100 50  0001 C CNN
+F 1 "GNDS" H 5355 8177 50  0000 C CNN
+F 2 "" H 5350 8350 50  0001 C CNN
+F 3 "" H 5350 8350 50  0001 C CNN
+	1    5350 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDS #PWR?
+U 1 1 61A63BD6
+P 5250 8350
+AR Path="/61776AE3/61A63BD6" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63BD6" Ref="#PWR0302"  Part="1" 
+F 0 "#PWR0302" H 5250 8100 50  0001 C CNN
+F 1 "GNDS" H 5255 8177 50  0000 C CNN
+F 2 "" H 5250 8350 50  0001 C CNN
+F 3 "" H 5250 8350 50  0001 C CNN
+	1    5250 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDS #PWR?
+U 1 1 61A63BD0
+P 5150 8350
+AR Path="/61776AE3/61A63BD0" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63BD0" Ref="#PWR0303"  Part="1" 
+F 0 "#PWR0303" H 5150 8100 50  0001 C CNN
+F 1 "GNDS" H 5155 8177 50  0000 C CNN
+F 2 "" H 5150 8350 50  0001 C CNN
+F 3 "" H 5150 8350 50  0001 C CNN
+	1    5150 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A85EBA
+P 3550 8350
+AR Path="/61776AE3/61A85EBA" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A85EBA" Ref="#PWR0304"  Part="1" 
+F 0 "#PWR0304" H 3550 8100 50  0001 C CNN
+F 1 "GND" H 3555 8177 50  0001 C CNN
+F 2 "" H 3550 8350 50  0001 C CNN
+F 3 "" H 3550 8350 50  0001 C CNN
+	1    3550 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A8686F
+P 3650 8350
+AR Path="/61776AE3/61A8686F" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A8686F" Ref="#PWR0305"  Part="1" 
+F 0 "#PWR0305" H 3650 8100 50  0001 C CNN
+F 1 "GND" H 3655 8177 50  0001 C CNN
+F 2 "" H 3650 8350 50  0001 C CNN
+F 3 "" H 3650 8350 50  0001 C CNN
+	1    3650 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A86875
+P 3750 8350
+AR Path="/61776AE3/61A86875" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A86875" Ref="#PWR0306"  Part="1" 
+F 0 "#PWR0306" H 3750 8100 50  0001 C CNN
+F 1 "GND" H 3755 8177 50  0001 C CNN
+F 2 "" H 3750 8350 50  0001 C CNN
+F 3 "" H 3750 8350 50  0001 C CNN
+	1    3750 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A87E84
+P 3850 8350
+AR Path="/61776AE3/61A87E84" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A87E84" Ref="#PWR0307"  Part="1" 
+F 0 "#PWR0307" H 3850 8100 50  0001 C CNN
+F 1 "GND" H 3855 8177 50  0001 C CNN
+F 2 "" H 3850 8350 50  0001 C CNN
+F 3 "" H 3850 8350 50  0001 C CNN
+	1    3850 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A87E8A
+P 3950 8350
+AR Path="/61776AE3/61A87E8A" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A87E8A" Ref="#PWR0308"  Part="1" 
+F 0 "#PWR0308" H 3950 8100 50  0001 C CNN
+F 1 "GND" H 3955 8177 50  0001 C CNN
+F 2 "" H 3950 8350 50  0001 C CNN
+F 3 "" H 3950 8350 50  0001 C CNN
+	1    3950 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A87E90
+P 4050 8350
+AR Path="/61776AE3/61A87E90" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A87E90" Ref="#PWR0309"  Part="1" 
+F 0 "#PWR0309" H 4050 8100 50  0001 C CNN
+F 1 "GND" H 4055 8177 50  0001 C CNN
+F 2 "" H 4050 8350 50  0001 C CNN
+F 3 "" H 4050 8350 50  0001 C CNN
+	1    4050 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A87E96
+P 4150 8350
+AR Path="/61776AE3/61A87E96" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A87E96" Ref="#PWR0340"  Part="1" 
+F 0 "#PWR0340" H 4150 8100 50  0001 C CNN
+F 1 "GND" H 4155 8177 50  0001 C CNN
+F 2 "" H 4150 8350 50  0001 C CNN
+F 3 "" H 4150 8350 50  0001 C CNN
+	1    4150 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89ED3
+P 4250 8350
+AR Path="/61776AE3/61A89ED3" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89ED3" Ref="#PWR0341"  Part="1" 
+F 0 "#PWR0341" H 4250 8100 50  0001 C CNN
+F 1 "GND" H 4255 8177 50  0001 C CNN
+F 2 "" H 4250 8350 50  0001 C CNN
+F 3 "" H 4250 8350 50  0001 C CNN
+	1    4250 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89ED9
+P 4350 8350
+AR Path="/61776AE3/61A89ED9" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89ED9" Ref="#PWR0342"  Part="1" 
+F 0 "#PWR0342" H 4350 8100 50  0001 C CNN
+F 1 "GND" H 4355 8177 50  0001 C CNN
+F 2 "" H 4350 8350 50  0001 C CNN
+F 3 "" H 4350 8350 50  0001 C CNN
+	1    4350 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89EDF
+P 4450 8350
+AR Path="/61776AE3/61A89EDF" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89EDF" Ref="#PWR0343"  Part="1" 
+F 0 "#PWR0343" H 4450 8100 50  0001 C CNN
+F 1 "GND" H 4455 8177 50  0001 C CNN
+F 2 "" H 4450 8350 50  0001 C CNN
+F 3 "" H 4450 8350 50  0001 C CNN
+	1    4450 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89EE5
+P 4550 8350
+AR Path="/61776AE3/61A89EE5" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89EE5" Ref="#PWR0344"  Part="1" 
+F 0 "#PWR0344" H 4550 8100 50  0001 C CNN
+F 1 "GND" H 4555 8177 50  0001 C CNN
+F 2 "" H 4550 8350 50  0001 C CNN
+F 3 "" H 4550 8350 50  0001 C CNN
+	1    4550 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89EEB
+P 4650 8350
+AR Path="/61776AE3/61A89EEB" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89EEB" Ref="#PWR0345"  Part="1" 
+F 0 "#PWR0345" H 4650 8100 50  0001 C CNN
+F 1 "GND" H 4655 8177 50  0001 C CNN
+F 2 "" H 4650 8350 50  0001 C CNN
+F 3 "" H 4650 8350 50  0001 C CNN
+	1    4650 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89EF1
+P 4750 8350
+AR Path="/61776AE3/61A89EF1" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89EF1" Ref="#PWR0346"  Part="1" 
+F 0 "#PWR0346" H 4750 8100 50  0001 C CNN
+F 1 "GND" H 4755 8177 50  0001 C CNN
+F 2 "" H 4750 8350 50  0001 C CNN
+F 3 "" H 4750 8350 50  0001 C CNN
+	1    4750 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89EF7
+P 4850 8350
+AR Path="/61776AE3/61A89EF7" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89EF7" Ref="#PWR0347"  Part="1" 
+F 0 "#PWR0347" H 4850 8100 50  0001 C CNN
+F 1 "GND" H 4855 8177 50  0001 C CNN
+F 2 "" H 4850 8350 50  0001 C CNN
+F 3 "" H 4850 8350 50  0001 C CNN
+	1    4850 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A89EFD
+P 4950 8350
+AR Path="/61776AE3/61A89EFD" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A89EFD" Ref="#PWR0348"  Part="1" 
+F 0 "#PWR0348" H 4950 8100 50  0001 C CNN
+F 1 "GND" H 4955 8177 50  0001 C CNN
+F 2 "" H 4950 8350 50  0001 C CNN
+F 3 "" H 4950 8350 50  0001 C CNN
+	1    4950 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A8EB86
+P 3250 8350
+AR Path="/61776AE3/61A8EB86" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A8EB86" Ref="#PWR0349"  Part="1" 
+F 0 "#PWR0349" H 3250 8100 50  0001 C CNN
+F 1 "GND" H 3255 8177 50  0001 C CNN
+F 2 "" H 3250 8350 50  0001 C CNN
+F 3 "" H 3250 8350 50  0001 C CNN
+	1    3250 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A98983
+P 4450 -100
+AR Path="/61A98983" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A98983" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A98983" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A98983" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A98983" Ref="#PWR0350"  Part="1" 
+F 0 "#PWR0350" H 4450 -250 50  0001 C CNN
+F 1 "3V3" H 4465 73  50  0000 C CNN
+F 2 "" H 4450 -100 50  0000 C CNN
+F 3 "" H 4450 -100 50  0000 C CNN
+	1    4450 -100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 -100 4450 150 
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A9BA84
+P 4950 150
+AR Path="/61A9BA84" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A9BA84" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A9BA84" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A9BA84" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A9BA84" Ref="#PWR0351"  Part="1" 
+F 0 "#PWR0351" H 4950 0   50  0001 C CNN
+F 1 "3V3" H 4965 323 50  0000 C CNN
+F 2 "" H 4950 150 50  0000 C CNN
+F 3 "" H 4950 150 50  0000 C CNN
+	1    4950 150 
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AAB568
+P 3550 -1350
+AR Path="/61776AE3/61AAB568" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AAB568" Ref="C81"  Part="1" 
+F 0 "C81" H 3642 -1304 50  0000 L CNN
+F 1 "100n" H 3642 -1395 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3550 -1350 50  0001 C CNN
+F 3 "~" H 3550 -1350 50  0001 C CNN
+	1    3550 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AAB56E
+P 3550 -1250
+AR Path="/61776AE3/61AAB56E" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AAB56E" Ref="#PWR0352"  Part="1" 
+F 0 "#PWR0352" H 3550 -1500 50  0001 C CNN
+F 1 "GND" H 3555 -1423 50  0001 C CNN
+F 2 "" H 3550 -1250 50  0001 C CNN
+F 3 "" H 3550 -1250 50  0001 C CNN
+	1    3550 -1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AAB574
+P 3950 -1350
+AR Path="/61776AE3/61AAB574" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AAB574" Ref="C82"  Part="1" 
+F 0 "C82" H 4042 -1304 50  0000 L CNN
+F 1 "100n" H 4042 -1395 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3950 -1350 50  0001 C CNN
+F 3 "~" H 3950 -1350 50  0001 C CNN
+	1    3950 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AAB57A
+P 3950 -1250
+AR Path="/61776AE3/61AAB57A" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AAB57A" Ref="#PWR0353"  Part="1" 
+F 0 "#PWR0353" H 3950 -1500 50  0001 C CNN
+F 1 "GND" H 3955 -1423 50  0001 C CNN
+F 2 "" H 3950 -1250 50  0001 C CNN
+F 3 "" H 3950 -1250 50  0001 C CNN
+	1    3950 -1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AAB580
+P 4400 -1350
+AR Path="/61776AE3/61AAB580" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AAB580" Ref="C83"  Part="1" 
+F 0 "C83" H 4492 -1304 50  0000 L CNN
+F 1 "100n" H 4492 -1395 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4400 -1350 50  0001 C CNN
+F 3 "~" H 4400 -1350 50  0001 C CNN
+	1    4400 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AAB586
+P 4400 -1250
+AR Path="/61776AE3/61AAB586" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AAB586" Ref="#PWR0354"  Part="1" 
+F 0 "#PWR0354" H 4400 -1500 50  0001 C CNN
+F 1 "GND" H 4405 -1423 50  0001 C CNN
+F 2 "" H 4400 -1250 50  0001 C CNN
+F 3 "" H 4400 -1250 50  0001 C CNN
+	1    4400 -1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61AAB58C
+P 3550 -1450
+AR Path="/61776AE3/61AAB58C" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AAB58C" Ref="#PWR0355"  Part="1" 
+F 0 "#PWR0355" H 3550 -1600 50  0001 C CNN
+F 1 "+1V5" H 3565 -1277 50  0000 C CNN
+F 2 "" H 3550 -1450 50  0001 C CNN
+F 3 "" H 3550 -1450 50  0001 C CNN
+	1    3550 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61AAB592
+P 3950 -1450
+AR Path="/61776AE3/61AAB592" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AAB592" Ref="#PWR0356"  Part="1" 
+F 0 "#PWR0356" H 3950 -1600 50  0001 C CNN
+F 1 "+1V5" H 3965 -1277 50  0000 C CNN
+F 2 "" H 3950 -1450 50  0001 C CNN
+F 3 "" H 3950 -1450 50  0001 C CNN
+	1    3950 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 61AAB598
+P 4400 -1450
+AR Path="/61776AE3/61AAB598" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AAB598" Ref="#PWR0357"  Part="1" 
+F 0 "#PWR0357" H 4400 -1600 50  0001 C CNN
+F 1 "+1V5" H 4415 -1277 50  0000 C CNN
+F 2 "" H 4400 -1450 50  0001 C CNN
+F 3 "" H 4400 -1450 50  0001 C CNN
+	1    4400 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63CDE
+P 8100 -1350
+AR Path="/61776AE3/61A63CDE" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63CDE" Ref="#PWR0358"  Part="1" 
+F 0 "#PWR0358" H 8100 -1600 50  0001 C CNN
+F 1 "GND" H 8105 -1523 50  0001 C CNN
+F 2 "" H 8100 -1350 50  0001 C CNN
+F 3 "" H 8100 -1350 50  0001 C CNN
+	1    8100 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A63CD8
+P 8100 -1450
+AR Path="/61776AE3/61A63CD8" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A63CD8" Ref="C68"  Part="1" 
+F 0 "C68" H 8192 -1404 50  0000 L CNN
+F 1 "100n" H 8192 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8100 -1450 50  0001 C CNN
+F 3 "~" H 8100 -1450 50  0001 C CNN
+	1    8100 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63CD2
+P 8100 -1550
+AR Path="/61A63CD2" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63CD2" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63CD2" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63CD2" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63CD2" Ref="#PWR0359"  Part="1" 
+F 0 "#PWR0359" H 8100 -1700 50  0001 C CNN
+F 1 "3V3" H 8115 -1377 50  0000 C CNN
+F 2 "" H 8100 -1550 50  0000 C CNN
+F 3 "" H 8100 -1550 50  0000 C CNN
+	1    8100 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63CCC
+P 7700 -1350
+AR Path="/61776AE3/61A63CCC" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63CCC" Ref="#PWR0360"  Part="1" 
+F 0 "#PWR0360" H 7700 -1600 50  0001 C CNN
+F 1 "GND" H 7705 -1523 50  0001 C CNN
+F 2 "" H 7700 -1350 50  0001 C CNN
+F 3 "" H 7700 -1350 50  0001 C CNN
+	1    7700 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A63CC6
+P 7700 -1450
+AR Path="/61776AE3/61A63CC6" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A63CC6" Ref="C67"  Part="1" 
+F 0 "C67" H 7792 -1404 50  0000 L CNN
+F 1 "100n" H 7792 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 -1450 50  0001 C CNN
+F 3 "~" H 7700 -1450 50  0001 C CNN
+	1    7700 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63CC0
+P 7700 -1550
+AR Path="/61A63CC0" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63CC0" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63CC0" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63CC0" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63CC0" Ref="#PWR0361"  Part="1" 
+F 0 "#PWR0361" H 7700 -1700 50  0001 C CNN
+F 1 "3V3" H 7715 -1377 50  0000 C CNN
+F 2 "" H 7700 -1550 50  0000 C CNN
+F 3 "" H 7700 -1550 50  0000 C CNN
+	1    7700 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63A10
+P 7350 -1350
+AR Path="/61776AE3/61A63A10" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A10" Ref="#PWR0362"  Part="1" 
+F 0 "#PWR0362" H 7350 -1600 50  0001 C CNN
+F 1 "GND" H 7355 -1523 50  0001 C CNN
+F 2 "" H 7350 -1350 50  0001 C CNN
+F 3 "" H 7350 -1350 50  0001 C CNN
+	1    7350 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A63A0A
+P 7350 -1450
+AR Path="/61776AE3/61A63A0A" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A63A0A" Ref="C55"  Part="1" 
+F 0 "C55" H 7442 -1404 50  0000 L CNN
+F 1 "100n" H 7442 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7350 -1450 50  0001 C CNN
+F 3 "~" H 7350 -1450 50  0001 C CNN
+	1    7350 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A63A04
+P 7350 -1550
+AR Path="/61A63A04" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A63A04" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A63A04" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A63A04" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A04" Ref="#PWR0363"  Part="1" 
+F 0 "#PWR0363" H 7350 -1700 50  0001 C CNN
+F 1 "3V3" H 7365 -1377 50  0000 C CNN
+F 2 "" H 7350 -1550 50  0000 C CNN
+F 3 "" H 7350 -1550 50  0000 C CNN
+	1    7350 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A639FE
+P 6950 -1350
+AR Path="/61776AE3/61A639FE" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639FE" Ref="#PWR0364"  Part="1" 
+F 0 "#PWR0364" H 6950 -1600 50  0001 C CNN
+F 1 "GND" H 6955 -1523 50  0001 C CNN
+F 2 "" H 6950 -1350 50  0001 C CNN
+F 3 "" H 6950 -1350 50  0001 C CNN
+	1    6950 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A639F8
+P 6950 -1450
+AR Path="/61776AE3/61A639F8" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A639F8" Ref="C54"  Part="1" 
+F 0 "C54" H 7042 -1404 50  0000 L CNN
+F 1 "100n" H 7042 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6950 -1450 50  0001 C CNN
+F 3 "~" H 6950 -1450 50  0001 C CNN
+	1    6950 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A639F2
+P 6950 -1550
+AR Path="/61A639F2" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A639F2" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A639F2" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A639F2" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639F2" Ref="#PWR0365"  Part="1" 
+F 0 "#PWR0365" H 6950 -1700 50  0001 C CNN
+F 1 "3V3" H 6965 -1377 50  0000 C CNN
+F 2 "" H 6950 -1550 50  0000 C CNN
+F 3 "" H 6950 -1550 50  0000 C CNN
+	1    6950 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A639EC
+P 6550 -1350
+AR Path="/61776AE3/61A639EC" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639EC" Ref="#PWR0366"  Part="1" 
+F 0 "#PWR0366" H 6550 -1600 50  0001 C CNN
+F 1 "GND" H 6555 -1523 50  0001 C CNN
+F 2 "" H 6550 -1350 50  0001 C CNN
+F 3 "" H 6550 -1350 50  0001 C CNN
+	1    6550 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A639E6
+P 6550 -1450
+AR Path="/61776AE3/61A639E6" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A639E6" Ref="C41"  Part="1" 
+F 0 "C41" H 6642 -1404 50  0000 L CNN
+F 1 "100n" H 6642 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6550 -1450 50  0001 C CNN
+F 3 "~" H 6550 -1450 50  0001 C CNN
+	1    6550 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A639E0
+P 6550 -1550
+AR Path="/61A639E0" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A639E0" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A639E0" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A639E0" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639E0" Ref="#PWR0367"  Part="1" 
+F 0 "#PWR0367" H 6550 -1700 50  0001 C CNN
+F 1 "3V3" H 6565 -1377 50  0000 C CNN
+F 2 "" H 6550 -1550 50  0000 C CNN
+F 3 "" H 6550 -1550 50  0000 C CNN
+	1    6550 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A639DA
+P 6150 -1350
+AR Path="/61776AE3/61A639DA" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639DA" Ref="#PWR0368"  Part="1" 
+F 0 "#PWR0368" H 6150 -1600 50  0001 C CNN
+F 1 "GND" H 6155 -1523 50  0001 C CNN
+F 2 "" H 6150 -1350 50  0001 C CNN
+F 3 "" H 6150 -1350 50  0001 C CNN
+	1    6150 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61A639D4
+P 6150 -1450
+AR Path="/61776AE3/61A639D4" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61A639D4" Ref="C40"  Part="1" 
+F 0 "C40" H 6242 -1404 50  0000 L CNN
+F 1 "100n" H 6242 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6150 -1450 50  0001 C CNN
+F 3 "~" H 6150 -1450 50  0001 C CNN
+	1    6150 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61A639CE
+P 6150 -1550
+AR Path="/61A639CE" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61A639CE" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61A639CE" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61A639CE" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A639CE" Ref="#PWR0369"  Part="1" 
+F 0 "#PWR0369" H 6150 -1700 50  0001 C CNN
+F 1 "3V3" H 6165 -1377 50  0000 C CNN
+F 2 "" H 6150 -1550 50  0000 C CNN
+F 3 "" H 6150 -1550 50  0000 C CNN
+	1    6150 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AC1EE4
+P 10400 -1350
+AR Path="/61776AE3/61AC1EE4" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1EE4" Ref="#PWR0372"  Part="1" 
+F 0 "#PWR0372" H 10400 -1600 50  0001 C CNN
+F 1 "GND" H 10405 -1523 50  0001 C CNN
+F 2 "" H 10400 -1350 50  0001 C CNN
+F 3 "" H 10400 -1350 50  0001 C CNN
+	1    10400 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AC1EEA
+P 10400 -1450
+AR Path="/61776AE3/61AC1EEA" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AC1EEA" Ref="C74"  Part="1" 
+F 0 "C74" H 10492 -1404 50  0000 L CNN
+F 1 "100n" H 10492 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 10400 -1450 50  0001 C CNN
+F 3 "~" H 10400 -1450 50  0001 C CNN
+	1    10400 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61AC1EF0
+P 10400 -1550
+AR Path="/61AC1EF0" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61AC1EF0" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61AC1EF0" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61AC1EF0" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1EF0" Ref="#PWR0373"  Part="1" 
+F 0 "#PWR0373" H 10400 -1700 50  0001 C CNN
+F 1 "3V3" H 10415 -1377 50  0000 C CNN
+F 2 "" H 10400 -1550 50  0000 C CNN
+F 3 "" H 10400 -1550 50  0000 C CNN
+	1    10400 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AC1EF6
+P 10050 -1350
+AR Path="/61776AE3/61AC1EF6" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1EF6" Ref="#PWR0374"  Part="1" 
+F 0 "#PWR0374" H 10050 -1600 50  0001 C CNN
+F 1 "GND" H 10055 -1523 50  0001 C CNN
+F 2 "" H 10050 -1350 50  0001 C CNN
+F 3 "" H 10050 -1350 50  0001 C CNN
+	1    10050 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AC1EFC
+P 10050 -1450
+AR Path="/61776AE3/61AC1EFC" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AC1EFC" Ref="C73"  Part="1" 
+F 0 "C73" H 10142 -1404 50  0000 L CNN
+F 1 "100n" H 10142 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 10050 -1450 50  0001 C CNN
+F 3 "~" H 10050 -1450 50  0001 C CNN
+	1    10050 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61AC1F02
+P 10050 -1550
+AR Path="/61AC1F02" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61AC1F02" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61AC1F02" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61AC1F02" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1F02" Ref="#PWR0375"  Part="1" 
+F 0 "#PWR0375" H 10050 -1700 50  0001 C CNN
+F 1 "3V3" H 10065 -1377 50  0000 C CNN
+F 2 "" H 10050 -1550 50  0000 C CNN
+F 3 "" H 10050 -1550 50  0000 C CNN
+	1    10050 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AC1F08
+P 9650 -1350
+AR Path="/61776AE3/61AC1F08" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1F08" Ref="#PWR0376"  Part="1" 
+F 0 "#PWR0376" H 9650 -1600 50  0001 C CNN
+F 1 "GND" H 9655 -1523 50  0001 C CNN
+F 2 "" H 9650 -1350 50  0001 C CNN
+F 3 "" H 9650 -1350 50  0001 C CNN
+	1    9650 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AC1F0E
+P 9650 -1450
+AR Path="/61776AE3/61AC1F0E" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AC1F0E" Ref="C72"  Part="1" 
+F 0 "C72" H 9742 -1404 50  0000 L CNN
+F 1 "100n" H 9742 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9650 -1450 50  0001 C CNN
+F 3 "~" H 9650 -1450 50  0001 C CNN
+	1    9650 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61AC1F14
+P 9650 -1550
+AR Path="/61AC1F14" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61AC1F14" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61AC1F14" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61AC1F14" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1F14" Ref="#PWR0377"  Part="1" 
+F 0 "#PWR0377" H 9650 -1700 50  0001 C CNN
+F 1 "3V3" H 9665 -1377 50  0000 C CNN
+F 2 "" H 9650 -1550 50  0000 C CNN
+F 3 "" H 9650 -1550 50  0000 C CNN
+	1    9650 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AC1F1A
+P 9250 -1350
+AR Path="/61776AE3/61AC1F1A" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1F1A" Ref="#PWR0378"  Part="1" 
+F 0 "#PWR0378" H 9250 -1600 50  0001 C CNN
+F 1 "GND" H 9255 -1523 50  0001 C CNN
+F 2 "" H 9250 -1350 50  0001 C CNN
+F 3 "" H 9250 -1350 50  0001 C CNN
+	1    9250 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AC1F20
+P 9250 -1450
+AR Path="/61776AE3/61AC1F20" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AC1F20" Ref="C71"  Part="1" 
+F 0 "C71" H 9342 -1404 50  0000 L CNN
+F 1 "100n" H 9342 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9250 -1450 50  0001 C CNN
+F 3 "~" H 9250 -1450 50  0001 C CNN
+	1    9250 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61AC1F26
+P 9250 -1550
+AR Path="/61AC1F26" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61AC1F26" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61AC1F26" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61AC1F26" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1F26" Ref="#PWR0379"  Part="1" 
+F 0 "#PWR0379" H 9250 -1700 50  0001 C CNN
+F 1 "3V3" H 9265 -1377 50  0000 C CNN
+F 2 "" H 9250 -1550 50  0000 C CNN
+F 3 "" H 9250 -1550 50  0000 C CNN
+	1    9250 -1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61AC1F2C
+P 8850 -1350
+AR Path="/61776AE3/61AC1F2C" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1F2C" Ref="#PWR0380"  Part="1" 
+F 0 "#PWR0380" H 8850 -1600 50  0001 C CNN
+F 1 "GND" H 8855 -1523 50  0001 C CNN
+F 2 "" H 8850 -1350 50  0001 C CNN
+F 3 "" H 8850 -1350 50  0001 C CNN
+	1    8850 -1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:C_Small C?
+U 1 1 61AC1F32
+P 8850 -1450
+AR Path="/61776AE3/61AC1F32" Ref="C?"  Part="1" 
+AR Path="/61A0E295/61AC1F32" Ref="C70"  Part="1" 
+F 0 "C70" H 8942 -1404 50  0000 L CNN
+F 1 "100n" H 8942 -1495 50  0000 L CNN
+F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8850 -1450 50  0001 C CNN
+F 3 "~" H 8850 -1450 50  0001 C CNN
+	1    8850 -1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61AC1F38
+P 8850 -1550
+AR Path="/61AC1F38" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61AC1F38" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61AC1F38" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61AC1F38" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61AC1F38" Ref="#PWR0381"  Part="1" 
+F 0 "#PWR0381" H 8850 -1700 50  0001 C CNN
+F 1 "3V3" H 8865 -1377 50  0000 C CNN
+F 2 "" H 8850 -1550 50  0000 C CNN
+F 3 "" H 8850 -1550 50  0000 C CNN
+	1    8850 -1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 -500 5650 150 
+Wire Wire Line
+	5650 -500 6550 -500
+Text GLabel 2550 4850 0    50   Input ~ 0
+DQ1
+Text GLabel 2550 4950 0    50   Input ~ 0
+DQ2
+Text GLabel 2550 1850 0    50   Input ~ 0
+BA1
+Text GLabel 2550 1950 0    50   Input ~ 0
+BA0
+Text GLabel 2550 2050 0    50   Input ~ 0
+A0
+Text GLabel 2550 2150 0    50   Input ~ 0
+A1
+Text GLabel 2550 2250 0    50   Input ~ 0
+A2
+Text GLabel 2550 6150 0    50   Input ~ 0
+A3
+Text GLabel 2550 1350 0    50   Input ~ 0
+A4
+Text GLabel 2550 1450 0    50   Input ~ 0
+A5
+Text GLabel 2550 1550 0    50   Input ~ 0
+A6
+Text GLabel 2550 7850 0    50   Input ~ 0
+A7
+Text GLabel 2550 7750 0    50   Input ~ 0
+A8
+Text GLabel 2550 7650 0    50   Input ~ 0
+A9
+Text GLabel 2550 6050 0    50   Input ~ 0
+A10
+Text GLabel 2550 7550 0    50   Input ~ 0
+A11
+Text GLabel 2550 7450 0    50   Input ~ 0
+A12
+Text GLabel 2550 5550 0    50   Input ~ 0
+DQML
+Text GLabel 2550 7050 0    50   Input ~ 0
+DGMH
+Text GLabel 2550 4750 0    50   Input ~ 0
+DQ0
+Text GLabel 2550 5050 0    50   Input ~ 0
+DQ3
+Text GLabel 2550 5150 0    50   Input ~ 0
+DQ4
+Text GLabel 2550 5250 0    50   Input ~ 0
+DQ5
+Text GLabel 2550 5350 0    50   Input ~ 0
+DQ6
+Text GLabel 2550 5450 0    50   Input ~ 0
+DQ7
+Text GLabel 2550 6950 0    50   Input ~ 0
+DQ8
+Text GLabel 2550 6850 0    50   Input ~ 0
+DQ9
+Text GLabel 2550 6750 0    50   Input ~ 0
+DQ10
+Text GLabel 2550 6650 0    50   Input ~ 0
+DQ11
+Text GLabel 2550 6550 0    50   Input ~ 0
+DQ12
+Text GLabel 2550 6450 0    50   Input ~ 0
+DQ13
+Text GLabel 2550 6350 0    50   Input ~ 0
+DQ14
+Text GLabel 2550 6250 0    50   Input ~ 0
+DQ15
+Text GLabel 2550 5650 0    50   Input ~ 0
+WE
+Text GLabel 2550 5750 0    50   Input ~ 0
+CAS
+Text GLabel 2550 5850 0    50   Input ~ 0
+RAS
+Text GLabel 2550 5950 0    50   Input ~ 0
+CS
+Text GLabel 2550 7250 0    50   Input ~ 0
+CKE
+Text GLabel 2550 7150 0    50   Input ~ 0
+RAM_CLK
+Text Label 2550 2950 2    50   ~ 0
+led2
+Text Label 2550 3050 2    50   ~ 0
+led1
+Text Label 2550 2850 2    50   ~ 0
+led3
+Text GLabel 9450 5400 0    50   Input ~ 0
+TCK
+Text GLabel 9950 5700 0    50   Input ~ 0
+TMS
+$Comp
+L synkie_symbols:Conn_01x10 J14
+U 1 1 61B30EBC
+P 1450 3950
+F 0 "J14" H 1368 4567 50  0000 C CNN
+F 1 "Conn_01x10" H 1368 4476 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 1450 3950 50  0001 C CNN
+F 3 "~" H 1450 3950 50  0001 C CNN
+	1    1450 3950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61A63A8A
+P 900 5400
+AR Path="/61776AE3/61A63A8A" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61A63A8A" Ref="#PWR0268"  Part="1" 
+F 0 "#PWR0268" H 900 5150 50  0001 C CNN
+F 1 "GND" H 905 5227 50  0001 C CNN
+F 2 "" H 900 5400 50  0001 C CNN
+F 3 "" H 900 5400 50  0001 C CNN
+	1    900  5400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2550 4150 1650 4150
+Wire Wire Line
+	2550 4250 1650 4250
+Wire Wire Line
+	2550 4350 1650 4350
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61B3C0DB
+P 1650 4450
+AR Path="/61776AE3/61B3C0DB" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61B3C0DB" Ref="#PWR0382"  Part="1" 
+F 0 "#PWR0382" H 1650 4200 50  0001 C CNN
+F 1 "GND" H 1655 4277 50  0001 C CNN
+F 2 "" H 1650 4450 50  0001 C CNN
+F 3 "" H 1650 4450 50  0001 C CNN
+	1    1650 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61B3D5E0
+P 1650 3550
+AR Path="/61B3D5E0" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61B3D5E0" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61B3D5E0" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61B3D5E0" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61B3D5E0" Ref="#PWR0383"  Part="1" 
+F 0 "#PWR0383" H 1650 3400 50  0001 C CNN
+F 1 "3V3" H 1665 3723 50  0000 C CNN
+F 2 "" H 1650 3550 50  0000 C CNN
+F 3 "" H 1650 3550 50  0000 C CNN
+	1    1650 3550
+	1    0    0    -1  
+$EndComp
+Text Label 1050 6900 0    50   ~ 0
+switch
+Text Label 2550 2750 2    50   ~ 0
+switch
+$Comp
+L synkie_symbols:SW_Push SW1
+U 1 1 61B43941
+P 900 7600
+F 0 "SW1" H 900 7885 50  0000 C CNN
+F 1 "SW_Push" H 900 7794 50  0000 C CNN
+F 2 "synkie_footprints:Alps_Tactile_Switch" H 900 7800 50  0001 C CNN
+F 3 "" H 900 7800 50  0001 C CNN
+	1    900  7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61B45048
+P 700 7600
+AR Path="/61B45048" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61B45048" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61B45048" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61B45048" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61B45048" Ref="#PWR0384"  Part="1" 
+F 0 "#PWR0384" H 700 7350 50  0001 C CNN
+F 1 "GND" H 705 7427 50  0000 C CNN
+F 2 "" H 700 7600 50  0001 C CNN
+F 3 "" H 700 7600 50  0001 C CNN
+	1    700  7600
+	1    0    0    -1  
+$EndComp
+Text Label 1100 7600 0    50   ~ 0
+btn
+Text Label 2550 3150 2    50   ~ 0
+btn
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61B901EA
+P 5150 150
+AR Path="/61B901EA" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61B901EA" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61B901EA" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61B901EA" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61B901EA" Ref="#PWR0385"  Part="1" 
+F 0 "#PWR0385" H 5150 0   50  0001 C CNN
+F 1 "3V3" H 5165 323 50  0000 C CNN
+F 2 "" H 5150 150 50  0000 C CNN
+F 3 "" H 5150 150 50  0000 C CNN
+	1    5150 150 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:3V3 #PWR?
+U 1 1 61B90684
+P 5350 150
+AR Path="/61B90684" Ref="#PWR?"  Part="1" 
+AR Path="/61949FCF/61B90684" Ref="#PWR?"  Part="1" 
+AR Path="/6168537C/61B90684" Ref="#PWR?"  Part="1" 
+AR Path="/61776AE3/61B90684" Ref="#PWR?"  Part="1" 
+AR Path="/61A0E295/61B90684" Ref="#PWR0386"  Part="1" 
+F 0 "#PWR0386" H 5350 0   50  0001 C CNN
+F 1 "3V3" H 5365 323 50  0000 C CNN
+F 2 "" H 5350 150 50  0000 C CNN
+F 3 "" H 5350 150 50  0000 C CNN
+	1    5350 150 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 4050 2400 4050
+Wire Wire Line
+	2400 4050 2400 3650
+Wire Wire Line
+	2400 3650 2550 3650
+Wire Wire Line
+	1650 3950 2350 3950
+Wire Wire Line
+	2350 3950 2350 3550
+Wire Wire Line
+	2350 3550 2550 3550
+Wire Wire Line
+	1650 3850 2300 3850
+Wire Wire Line
+	2300 3850 2300 3450
+Wire Wire Line
+	2300 3450 2550 3450
+Wire Wire Line
+	1650 3750 2250 3750
+Wire Wire Line
+	2250 3750 2250 3350
+Wire Wire Line
+	2250 3350 2550 3350
+Wire Wire Line
+	1650 3650 2200 3650
+Wire Wire Line
+	2200 3650 2200 3250
+Wire Wire Line
+	2200 3250 2550 3250
+$EndSCHEMATC

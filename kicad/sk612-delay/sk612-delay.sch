@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -588,7 +588,7 @@ $EndSheet
 Text GLabel 1250 1850 0    50   Input ~ 0
 GENLOCK_ADC_IN
 Text GLabel 2950 2600 2    50   Input ~ 0
-SFL_OUT
+GL_SFL_OUT
 Text GLabel 1250 2550 0    50   Input ~ 0
 SDA
 Text GLabel 1250 2650 0    50   Input ~ 0
@@ -603,21 +603,8 @@ Wire Wire Line
 	1250 1600 950  1600
 Wire Wire Line
 	950  850  950  1600
-$Comp
-L Jumper:Jumper_2_Bridged JP2
-U 1 1 616DF783
-P 4750 3100
-F 0 "JP2" H 4750 3295 50  0000 C CNN
-F 1 "Jumper_2_Bridged" H 4750 3204 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm" H 4750 3100 50  0001 C CNN
-F 3 "~" H 4750 3100 50  0001 C CNN
-	1    4750 3100
-	1    0    0    -1  
-$EndComp
 Text GLabel 6450 4400 0    50   Input ~ 0
-SFL_IN
-Text GLabel 4950 3100 2    50   Input ~ 0
-SFL_IN
+DAC_SFL_IN
 Text GLabel 6450 3950 0    50   Input ~ 0
 DAC_RESET
 Text GLabel 6450 3450 0    50   Input ~ 0
@@ -717,7 +704,7 @@ L Device:Crystal_GND24 Y2
 U 1 1 616DBC33
 P 1200 4000
 F 0 "Y2" H 1394 4046 50  0000 L CNN
-F 1 "Crystal_GND24" H 1394 3955 50  0000 L CNN
+F 1 "Crystal??" H 1394 3955 50  0000 L CNN
 F 2 "Crystal:Crystal_SMD_Abracon_ABM8G-4Pin_3.2x2.5mm" H 1200 4000 50  0001 C CNN
 F 3 "~" H 1200 4000 50  0001 C CNN
 	1    1200 4000
@@ -973,10 +960,213 @@ F 3 "~" H 3150 2450 50  0001 C CNN
 	1    3150 2450
 	1    0    0    -1  
 $EndComp
-Text GLabel 4550 3100 0    50   Input ~ 0
-SFL_OUT
 Text GLabel 2950 5750 2    50   Input ~ 0
-ADC_FIELD
+AD_SFL_OUT
 Text GLabel 6450 3800 0    50   Input ~ 0
 DAC_CLK
+Text GLabel 2950 1600 2    50   Input ~ 0
+GL0
+Text GLabel 2950 1700 2    50   Input ~ 0
+GL1
+Text GLabel 2950 1800 2    50   Input ~ 0
+GL2
+Text GLabel 2950 1900 2    50   Input ~ 0
+GL3
+Text GLabel 2950 2000 2    50   Input ~ 0
+GL4
+Text GLabel 2950 2100 2    50   Input ~ 0
+GL5
+Text GLabel 2950 2200 2    50   Input ~ 0
+GL6
+Text GLabel 2950 2300 2    50   Input ~ 0
+GL7
+Text GLabel 2950 2850 2    50   Input ~ 0
+GL_LLC
+$Comp
+L Connector_Generic:Conn_01x01 J6
+U 1 1 61B56AC4
+P 8400 3350
+F 0 "J6" H 8480 3392 50  0000 L CNN
+F 1 "dac2" H 8600 3400 50  0000 L CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 8400 3350 50  0001 C CNN
+F 3 "~" H 8400 3350 50  0001 C CNN
+	1    8400 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J7
+U 1 1 61B56ACA
+P 8400 3500
+F 0 "J7" H 8480 3542 50  0000 L CNN
+F 1 "dac3" H 8600 3550 50  0000 L CNN
+F 2 "synkie_footprints:Solderpad_1mm" H 8400 3500 50  0001 C CNN
+F 3 "~" H 8400 3500 50  0001 C CNN
+	1    8400 3500
+	1    0    0    -1  
+$EndComp
+Text GLabel 4450 1600 2    50   Input ~ 0
+GL0
+Text GLabel 4450 1700 2    50   Input ~ 0
+GL1
+Text GLabel 4450 1800 2    50   Input ~ 0
+GL2
+Text GLabel 4450 1900 2    50   Input ~ 0
+GL3
+Text GLabel 4450 2000 2    50   Input ~ 0
+GL4
+Text GLabel 4450 2100 2    50   Input ~ 0
+GL5
+Text GLabel 4450 2200 2    50   Input ~ 0
+GL6
+Text GLabel 4450 2300 2    50   Input ~ 0
+GL7
+$Comp
+L Connector_Generic:Conn_01x12 J5
+U 1 1 6191C25C
+P 4250 2100
+F 0 "J5" H 4168 2817 50  0000 C CNN
+F 1 "Conn_01x12" H 4168 2726 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical" H 4250 2100 50  0001 C CNN
+F 3 "~" H 4250 2100 50  0001 C CNN
+	1    4250 2100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0135
+U 1 1 6191D402
+P 4450 2400
+F 0 "#PWR0135" H 4450 2150 50  0001 C CNN
+F 1 "GND" V 4455 2272 50  0000 R CNN
+F 2 "" H 4450 2400 50  0001 C CNN
+F 3 "" H 4450 2400 50  0001 C CNN
+	1    4450 2400
+	0    -1   -1   0   
+$EndComp
+Text GLabel 4450 2600 2    50   Input ~ 0
+GL_SFL_OUT
+Text GLabel 4450 2500 2    50   Input ~ 0
+GL_LLC
+$Comp
+L power:GND #PWR0137
+U 1 1 6191EFE9
+P 4450 2700
+F 0 "#PWR0137" H 4450 2450 50  0001 C CNN
+F 1 "GND" V 4455 2572 50  0000 R CNN
+F 2 "" H 4450 2700 50  0001 C CNN
+F 3 "" H 4450 2700 50  0001 C CNN
+	1    4450 2700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x12 J10
+U 1 1 61920ED5
+P 4050 4750
+F 0 "J10" H 3968 5467 50  0000 C CNN
+F 1 "Conn_01x12" H 3968 5376 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical" H 4050 4750 50  0001 C CNN
+F 3 "~" H 4050 4750 50  0001 C CNN
+	1    4050 4750
+	-1   0    0    -1  
+$EndComp
+Text GLabel 4250 4250 2    50   Input ~ 0
+AD0
+Text GLabel 4250 4350 2    50   Input ~ 0
+AD1
+Text GLabel 4250 4450 2    50   Input ~ 0
+AD2
+Text GLabel 4250 4550 2    50   Input ~ 0
+AD3
+Text GLabel 4250 4650 2    50   Input ~ 0
+AD4
+Text GLabel 4250 4750 2    50   Input ~ 0
+AD5
+Text GLabel 4250 4850 2    50   Input ~ 0
+AD6
+Text GLabel 4250 4950 2    50   Input ~ 0
+AD7
+$Comp
+L power:GND #PWR0138
+U 1 1 619222AD
+P 4250 5050
+F 0 "#PWR0138" H 4250 4800 50  0001 C CNN
+F 1 "GND" V 4255 4922 50  0000 R CNN
+F 2 "" H 4250 5050 50  0001 C CNN
+F 3 "" H 4250 5050 50  0001 C CNN
+	1    4250 5050
+	0    -1   -1   0   
+$EndComp
+Text GLabel 4250 5150 2    50   Input ~ 0
+ADC_LLC
+Text GLabel 4250 5250 2    50   Input ~ 0
+AD_SFL_OUT
+$Comp
+L power:GND #PWR0139
+U 1 1 61922A79
+P 4250 5350
+F 0 "#PWR0139" H 4250 5100 50  0001 C CNN
+F 1 "GND" V 4255 5222 50  0000 R CNN
+F 2 "" H 4250 5350 50  0001 C CNN
+F 3 "" H 4250 5350 50  0001 C CNN
+	1    4250 5350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x12 J2
+U 1 1 61923ACD
+P 5750 2050
+F 0 "J2" H 5830 2042 50  0000 L CNN
+F 1 "Conn_01x12" H 5830 1951 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical" H 5750 2050 50  0001 C CNN
+F 3 "~" H 5750 2050 50  0001 C CNN
+	1    5750 2050
+	1    0    0    -1  
+$EndComp
+Text GLabel 5550 1550 0    50   Input ~ 0
+DA0
+Text GLabel 5550 1650 0    50   Input ~ 0
+DA1
+Text GLabel 5550 1750 0    50   Input ~ 0
+DA2
+Text GLabel 5550 1850 0    50   Input ~ 0
+DA3
+Text GLabel 5550 1950 0    50   Input ~ 0
+DA4
+Text GLabel 5550 2050 0    50   Input ~ 0
+DA5
+Text GLabel 5550 2150 0    50   Input ~ 0
+DA6
+Text GLabel 5550 2250 0    50   Input ~ 0
+DA7
+$Comp
+L power:GND #PWR0140
+U 1 1 619258A3
+P 5550 2350
+F 0 "#PWR0140" H 5550 2100 50  0001 C CNN
+F 1 "GND" V 5555 2222 50  0000 R CNN
+F 2 "" H 5550 2350 50  0001 C CNN
+F 3 "" H 5550 2350 50  0001 C CNN
+	1    5550 2350
+	0    1    1    0   
+$EndComp
+Text GLabel 5550 2450 0    50   Input ~ 0
+DAC_RESET
+Text GLabel 5550 2550 0    50   Input ~ 0
+SFL_IN
+$Comp
+L power:GND #PWR0141
+U 1 1 61926B0B
+P 5550 2650
+F 0 "#PWR0141" H 5550 2400 50  0001 C CNN
+F 1 "GND" V 5555 2522 50  0000 R CNN
+F 2 "" H 5550 2650 50  0001 C CNN
+F 3 "" H 5550 2650 50  0001 C CNN
+	1    5550 2650
+	0    1    1    0   
+$EndComp
+$Sheet
+S 5650 5550 700  600 
+U 61A0E295
+F0 "fpga" 50
+F1 "sk612-fpga.sch" 50
+$EndSheet
 $EndSCHEMATC

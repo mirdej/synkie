@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -574,131 +574,6 @@ F 3 "" H 1400 5550 50  0001 C CNN
 	1    1400 5550
 	1    0    0    -1  
 $EndComp
-Text Notes 1650 4700 0    50   ~ 0
-LIKE THIS??
-$Comp
-L power:GND #PWR?
-U 1 1 616AB1D6
-P 2450 5650
-AR Path="/616AB1D6" Ref="#PWR?"  Part="1" 
-AR Path="/6168A2F7/616AB1D6" Ref="#PWR0137"  Part="1" 
-F 0 "#PWR0137" H 2450 5400 50  0001 C CNN
-F 1 "GND" H 2455 5477 50  0000 C CNN
-F 2 "" H 2450 5650 50  0001 C CNN
-F 3 "" H 2450 5650 50  0001 C CNN
-	1    2450 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 616AB5F3
-P 2450 5050
-AR Path="/616AB5F3" Ref="#PWR?"  Part="1" 
-AR Path="/6168A2F7/616AB5F3" Ref="#PWR0138"  Part="1" 
-F 0 "#PWR0138" H 2450 4800 50  0001 C CNN
-F 1 "GND" H 2455 4877 50  0000 C CNN
-F 2 "" H 2450 5050 50  0001 C CNN
-F 3 "" H 2450 5050 50  0001 C CNN
-	1    2450 5050
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3150 3550 3150 1850
-Wire Wire Line
-	3150 1850 3550 1850
-$Comp
-L synkie_symbols:LM1881 U6
-U 1 1 616BC61D
-P 4650 1950
-F 0 "U6" H 4900 2350 50  0000 C CNN
-F 1 "LM1881" H 4400 2350 50  0000 C CNN
-F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 4650 1950 50  0001 C CNN
-F 3 "" H 4650 1950 50  0001 C CNN
-	1    4650 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 616BCE90
-P 3700 1850
-AR Path="/616BCE90" Ref="C?"  Part="1" 
-AR Path="/6168A2F7/616BCE90" Ref="C15"  Part="1" 
-F 0 "C15" V 3448 1850 50  0000 C CNN
-F 1 "100n" V 3539 1850 50  0000 C CNN
-F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3738 1700 50  0001 C CNN
-F 3 "~" H 3700 1850 50  0001 C CNN
-	1    3700 1850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4150 1850 3850 1850
-$Comp
-L power:+5V #PWR?
-U 1 1 616BEAFA
-P 4650 1550
-AR Path="/616BEAFA" Ref="#PWR?"  Part="1" 
-AR Path="/6168A2F7/616BEAFA" Ref="#PWR0139"  Part="1" 
-F 0 "#PWR0139" H 4650 1400 50  0001 C CNN
-F 1 "+5V" H 4665 1723 50  0000 C CNN
-F 2 "" H 4650 1550 50  0001 C CNN
-F 3 "" H 4650 1550 50  0001 C CNN
-	1    4650 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 616BF907
-P 4650 2250
-AR Path="/616BF907" Ref="#PWR?"  Part="1" 
-AR Path="/6168A2F7/616BF907" Ref="#PWR0140"  Part="1" 
-F 0 "#PWR0140" H 4650 2000 50  0001 C CNN
-F 1 "GND" H 4655 2077 50  0000 C CNN
-F 2 "" H 4650 2250 50  0001 C CNN
-F 3 "" H 4650 2250 50  0001 C CNN
-	1    4650 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 616C038B
-P 3350 1250
-AR Path="/616C038B" Ref="C?"  Part="1" 
-AR Path="/6168A2F7/616C038B" Ref="C10"  Part="1" 
-F 0 "C10" V 3098 1250 50  0000 C CNN
-F 1 "100n" V 3189 1250 50  0000 C CNN
-F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3388 1100 50  0001 C CNN
-F 3 "~" H 3350 1250 50  0001 C CNN
-	1    3350 1250
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 616C10E7
-P 3350 1100
-AR Path="/616C10E7" Ref="#PWR?"  Part="1" 
-AR Path="/6168A2F7/616C10E7" Ref="#PWR0141"  Part="1" 
-F 0 "#PWR0141" H 3350 950 50  0001 C CNN
-F 1 "+5V" H 3365 1273 50  0000 C CNN
-F 2 "" H 3350 1100 50  0001 C CNN
-F 3 "" H 3350 1100 50  0001 C CNN
-	1    3350 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 616C1569
-P 3350 1400
-AR Path="/616C1569" Ref="#PWR?"  Part="1" 
-AR Path="/6168A2F7/616C1569" Ref="#PWR0142"  Part="1" 
-F 0 "#PWR0142" H 3350 1150 50  0001 C CNN
-F 1 "GND" H 3355 1227 50  0000 C CNN
-F 2 "" H 3350 1400 50  0001 C CNN
-F 3 "" H 3350 1400 50  0001 C CNN
-	1    3350 1400
-	1    0    0    -1  
-$EndComp
-Text GLabel 5150 2050 2    50   Input ~ 0
-GENLOCK_FIELD
 $Comp
 L synkie_symbols:LMH6643 U5
 U 3 1 616C4B11
@@ -811,8 +686,6 @@ F 3 "" H 8550 3300 50  0001 C CNN
 	1    8550 3300
 	1    0    0    -1  
 $EndComp
-Text Notes 2000 4950 0    50   ~ 0
-NO.
 Connection ~ 3250 5450
 $Comp
 L Device:R R?
@@ -837,4 +710,57 @@ Wire Notes Line
 	800  6400 800  2850
 Text Notes 3200 2800 0    50   ~ 0
 Review. ESD Protection? Do we need input amps ???
+$Comp
+L power:-5V #PWR?
+U 1 1 61B5B159
+P 2450 5650
+AR Path="/61B5B159" Ref="#PWR?"  Part="1" 
+AR Path="/6168A2F7/61B5B159" Ref="#PWR0142"  Part="1" 
+F 0 "#PWR0142" H 2450 5750 50  0001 C CNN
+F 1 "-5V" H 2465 5823 50  0000 C CNN
+F 2 "" H 2450 5650 50  0001 C CNN
+F 3 "" H 2450 5650 50  0001 C CNN
+	1    2450 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 619129FC
+P 2450 5050
+AR Path="/619129FC" Ref="#PWR?"  Part="1" 
+AR Path="/6168A2F7/619129FC" Ref="#PWR0200"  Part="1" 
+F 0 "#PWR0200" H 2450 4900 50  0001 C CNN
+F 1 "+5V" H 2465 5223 50  0000 C CNN
+F 2 "" H 2450 5050 50  0001 C CNN
+F 3 "" H 2450 5050 50  0001 C CNN
+	1    2450 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61914DCC
+P 3550 5600
+AR Path="/61914DCC" Ref="R?"  Part="1" 
+AR Path="/6168A2F7/61914DCC" Ref="R15"  Part="1" 
+F 0 "R15" V 3343 5600 50  0000 C CNN
+F 1 "51" V 3434 5600 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3480 5600 50  0001 C CNN
+F 3 "~" H 3550 5600 50  0001 C CNN
+	1    3550 5600
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61914DD2
+P 3550 5750
+AR Path="/61914DD2" Ref="#PWR?"  Part="1" 
+AR Path="/6168A2F7/61914DD2" Ref="#PWR0201"  Part="1" 
+F 0 "#PWR0201" H 3550 5500 50  0001 C CNN
+F 1 "GND" H 3555 5577 50  0000 C CNN
+F 2 "" H 3550 5750 50  0001 C CNN
+F 3 "" H 3550 5750 50  0001 C CNN
+	1    3550 5750
+	1    0    0    -1  
+$EndComp
+Connection ~ 3550 5450
 $EndSCHEMATC
