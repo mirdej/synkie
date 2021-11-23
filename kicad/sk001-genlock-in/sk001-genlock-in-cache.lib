@@ -243,6 +243,30 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Device_Crystal_GND2
+#
+DEF Device_Crystal_GND2 Y 0 40 Y N 1 F N
+F0 "Y" 0 225 50 H V C CNN
+F1 "Device_Crystal_GND2" 0 150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Crystal*
+$ENDFPLIST
+DRAW
+S -45 100 45 -100 0 1 12 N
+P 2 0 1 0 -100 0 -75 0 N
+P 2 0 1 20 -75 -50 -75 50 N
+P 2 0 1 0 0 -150 0 -140 N
+P 2 0 1 0 75 0 100 0 N
+P 2 0 1 20 75 50 75 -50 N
+P 4 0 1 0 -100 -90 -100 -140 100 -140 100 -90 N
+X 1 1 -150 0 50 R 50 50 1 1 P
+X 2 2 0 -200 50 U 50 50 1 1 P
+X 3 3 150 0 50 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Device_Ferrite_Bead
 #
 DEF Device_Ferrite_Bead FB 0 0 N Y 1 F N
@@ -453,6 +477,25 @@ X Pin_1 1 -200 0 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# synkie_symbols_Conn_01x02
+#
+DEF synkie_symbols_Conn_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "synkie_symbols_Conn_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # synkie_symbols_GND
 #
 DEF synkie_symbols_GND #PWR 0 0 Y Y 1 F P
@@ -488,6 +531,36 @@ X BAL 5 0 300 200 D 50 25 1 1 I
 X STRB 6 100 300 250 D 50 20 1 1 I
 X ~ 7 300 0 100 L 50 50 1 1 C
 X V+ 8 -100 300 150 D 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+# synkie_symbols_LMH6643
+#
+DEF synkie_symbols_LMH6643 U 0 20 Y Y 3 L N
+F0 "U" 0 200 50 H V L CNN
+F1 "synkie_symbols_LMH6643" 0 -200 50 H V L CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ SOIC*3.9x4.9mm*P1.27mm*
+ DIP*W7.62mm*
+ MSOP*3x3mm*P0.65mm*
+ SSOP*2.95x2.8mm*P0.65mm*
+ TSSOP*3x3mm*P0.65mm*
+ VSSOP*P0.5mm*
+ TO?99*
+$ENDFPLIST
+DRAW
+P 4 1 1 10 -200 200 200 0 -200 -200 -200 200 f
+P 4 2 1 10 -200 200 200 0 -200 -200 -200 200 f
+X ~ 1 300 0 100 L 50 50 1 1 O
+X - 2 -300 -100 100 R 50 50 1 1 I
+X + 3 -300 100 100 R 50 50 1 1 I
+X + 5 -300 100 100 R 50 50 2 1 I
+X - 6 -300 -100 100 R 50 50 2 1 I
+X ~ 7 300 0 100 L 50 50 2 1 O
+X V- 4 -100 -300 150 U 50 50 3 1 W
+X V+ 8 -100 300 150 D 50 50 3 1 W
 ENDDRAW
 ENDDEF
 #
@@ -548,6 +621,23 @@ X - 6 -300 -100 100 R 50 50 2 1 I
 X ~ 7 300 0 100 L 50 50 2 1 O
 X V- 4 -100 -300 150 U 50 50 3 1 W
 X V+ 8 -100 300 150 D 50 50 3 1 W
+ENDDRAW
+ENDDEF
+#
+# synkie_symbols_R
+#
+DEF synkie_symbols_R R 0 0 N Y 1 F N
+F0 "R" 80 0 50 V V C CNN
+F1 "synkie_symbols_R" 0 0 50 V V C CNN
+F2 "" -70 0 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ R_*
+$ENDFPLIST
+DRAW
+S -40 -100 40 100 0 1 10 N
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
