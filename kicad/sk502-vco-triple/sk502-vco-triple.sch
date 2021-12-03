@@ -1,0 +1,139 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x03 J1
+U 1 1 5C6ACCC5
+P 1200 1250
+F 0 "J1" H 1300 1250 50  0000 C CNN
+F 1 "Supply" H 1350 1500 50  0000 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 1200 1250 50  0001 C CNN
+F 3 "~" H 1200 1250 50  0001 C CNN
+	1    1200 1250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:Ferrite_Bead FB1
+U 1 1 5C6ACEE4
+P 1550 1150
+F 0 "FB1" V 1300 1050 50  0000 C CNN
+F 1 "Ferrite_Bead" V 1400 1000 50  0000 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1480 1150 50  0001 C CNN
+F 3 "~" H 1550 1150 50  0001 C CNN
+	1    1550 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Ferrite_Bead FB2
+U 1 1 5C6ACF86
+P 1550 1350
+F 0 "FB2" V 1800 1350 50  0000 C CNN
+F 1 "Ferrite_Bead" V 1700 1300 50  0000 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 1480 1350 50  0001 C CNN
+F 3 "~" H 1550 1350 50  0001 C CNN
+	1    1550 1350
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5C6AD007
+P 2000 1250
+F 0 "#PWR02" H 2000 1000 50  0001 C CNN
+F 1 "GND" V 2000 1150 50  0000 R CNN
+F 2 "" H 2000 1250 50  0001 C CNN
+F 3 "" H 2000 1250 50  0001 C CNN
+	1    2000 1250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR01
+U 1 1 5C6AD4FF
+P 2000 950
+F 0 "#PWR01" H 2000 800 50  0001 C CNN
+F 1 "+5V" H 2015 1123 50  0000 C CNN
+F 2 "" H 2000 950 50  0001 C CNN
+F 3 "" H 2000 950 50  0001 C CNN
+	1    2000 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C1
+U 1 1 5C6AD59C
+P 2000 1100
+F 0 "C1" H 2118 1146 50  0000 L CNN
+F 1 "10u" H 2118 1055 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 2038 950 50  0001 C CNN
+F 3 "~" H 2000 1100 50  0001 C CNN
+	1    2000 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C2
+U 1 1 5C6AD7CD
+P 2000 1400
+F 0 "C2" H 2118 1446 50  0000 L CNN
+F 1 "10u" H 2118 1355 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B" H 2038 1250 50  0001 C CNN
+F 3 "~" H 2000 1400 50  0001 C CNN
+	1    2000 1400
+	1    0    0    -1  
+$EndComp
+Connection ~ 2000 1250
+Wire Wire Line
+	1400 1250 2000 1250
+Wire Wire Line
+	1700 1350 1800 1350
+Wire Wire Line
+	1800 1350 1800 1550
+Wire Wire Line
+	1800 1550 2000 1550
+Wire Wire Line
+	1700 1150 1800 1150
+Wire Wire Line
+	1800 1150 1800 950 
+Wire Wire Line
+	1800 950  2000 950 
+Connection ~ 2000 950 
+$Comp
+L power:-5V #PWR03
+U 1 1 5C6AE342
+P 2000 1550
+F 0 "#PWR03" H 2000 1650 50  0001 C CNN
+F 1 "-5V" H 2015 1723 50  0000 C CNN
+F 2 "" H 2000 1550 50  0001 C CNN
+F 3 "" H 2000 1550 50  0001 C CNN
+	1    2000 1550
+	-1   0    0    1   
+$EndComp
+Connection ~ 2000 1550
+$Sheet
+S 4350 1600 850  750 
+U 615448B6
+F0 "vc01" 50
+F1 "sk502-vco.sch" 50
+$EndSheet
+$Sheet
+S 4400 3000 850  750 
+U 6154CD5D
+F0 "sheet6154CD5B" 50
+F1 "sk502-vco.sch" 50
+$EndSheet
+$Sheet
+S 4350 4300 850  750 
+U 6154CE06
+F0 "sheet6154CE04" 50
+F1 "sk502-vco.sch" 50
+$EndSheet
+$EndSCHEMATC
