@@ -106,10 +106,6 @@ F 3 "~" H 4300 4150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4000 4250 4000 4400
-Wire Wire Line
-	8100 4600 8100 4800
-Wire Wire Line
-	8700 4800 8700 4500
 $Comp
 L synkie_symbols:GND #PWR07
 U 1 1 5FEA7A4B
@@ -449,7 +445,7 @@ U 1 1 5C6ACEE4
 P 2650 1900
 F 0 "FB1" V 2400 1800 50  0000 C CNN
 F 1 "Ferrite_Bead" V 2500 1750 50  0000 C CNN
-F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2580 1900 50  0001 C CNN
+F 2 "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2580 1900 50  0001 C CNN
 F 3 "~" H 2650 1900 50  0001 C CNN
 	1    2650 1900
 	0    1    1    0   
@@ -460,7 +456,7 @@ U 1 1 5C6ACF86
 P 2650 2100
 F 0 "FB2" V 2900 2100 50  0000 C CNN
 F 1 "Ferrite_Bead" V 2800 2050 50  0000 C CNN
-F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2580 2100 50  0001 C CNN
+F 2 "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2580 2100 50  0001 C CNN
 F 3 "~" H 2650 2100 50  0001 C CNN
 	1    2650 2100
 	0    1    1    0   
@@ -629,8 +625,6 @@ F 3 "" H 1500 4250 50  0001 C CNN
 	1    1500 4250
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8100 4800 8700 4800
 $Comp
 L Connector_Generic:Conn_01x04 J3
 U 1 1 615A67E9
@@ -656,7 +650,7 @@ U 1 1 615B8C52
 P 9800 4500
 F 0 "J5" H 9880 4542 50  0000 L CNN
 F 1 "OUT" H 9880 4451 50  0000 L CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 9800 4500 50  0001 C CNN
+F 2 "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm" H 9800 4500 50  0001 C CNN
 F 3 "~" H 9800 4500 50  0001 C CNN
 	1    9800 4500
 	1    0    0    -1  
@@ -664,10 +658,10 @@ $EndComp
 Wire Wire Line
 	9000 4500 9600 4500
 $Comp
-L synkie_symbols:GND #PWR?
+L synkie_symbols:GND #PWR0101
 U 1 1 615C19CF
 P 5750 4100
-F 0 "#PWR?" H 5750 3850 50  0001 C CNN
+F 0 "#PWR0101" H 5750 3850 50  0001 C CNN
 F 1 "GND" H 5755 3927 50  0000 C CNN
 F 2 "" H 5750 4100 50  0001 C CNN
 F 3 "" H 5750 4100 50  0001 C CNN
@@ -675,10 +669,10 @@ F 3 "" H 5750 4100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L synkie_symbols:GND #PWR?
+L synkie_symbols:GND #PWR0102
 U 1 1 615C226B
 P 5750 4200
-F 0 "#PWR?" H 5750 3950 50  0001 C CNN
+F 0 "#PWR0102" H 5750 3950 50  0001 C CNN
 F 1 "GND" H 5755 4027 50  0000 C CNN
 F 2 "" H 5750 4200 50  0001 C CNN
 F 3 "" H 5750 4200 50  0001 C CNN
@@ -686,60 +680,60 @@ F 3 "" H 5750 4200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L synkie_symbols:GND #PWR?
+L synkie_symbols:GND #PWR0103
 U 1 1 615C23CB
 P 5750 4900
-F 0 "#PWR?" H 5750 4650 50  0001 C CNN
+F 0 "#PWR0103" H 5750 4650 50  0001 C CNN
 F 1 "GND" H 5755 4727 50  0000 C CNN
 F 2 "" H 5750 4900 50  0001 C CNN
 F 3 "" H 5750 4900 50  0001 C CNN
 	1    5750 4900
 	0    1    1    0   
 $EndComp
-Text Notes 8750 5100 0    50   ~ 0
+Text Notes 8350 5500 0    50   ~ 0
 ADD GAIN OF 1V/0.7V = 1.428
-Text Notes 8750 5200 0    50   ~ 0
+Text Notes 8350 5350 0    50   ~ 0
 So Signal is true 0-1V
 $Comp
-L synkie_symbols:R R?
+L synkie_symbols:R R6
 U 1 1 6154900F
-P 8400 5150
-F 0 "R?" V 8607 5150 50  0000 C CNN
-F 1 "680" V 8516 5150 50  0000 C CNN
-F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8330 5150 50  0001 C CNN
-F 3 "~" H 8400 5150 50  0001 C CNN
-	1    8400 5150
+P 8400 5000
+F 0 "R6" V 8607 5000 50  0000 C CNN
+F 1 "680" V 8516 5000 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8330 5000 50  0001 C CNN
+F 3 "~" H 8400 5000 50  0001 C CNN
+	1    8400 5000
 	0    -1   -1   0   
 $EndComp
 $Comp
-L synkie_symbols:R R?
+L synkie_symbols:R R7
 U 1 1 6154967B
-P 8250 5300
-F 0 "R?" V 8457 5300 50  0000 C CNN
-F 1 "1k6" V 8366 5300 50  0000 C CNN
-F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8180 5300 50  0001 C CNN
-F 3 "~" H 8250 5300 50  0001 C CNN
-	1    8250 5300
+P 8100 5150
+F 0 "R7" V 8307 5150 50  0000 C CNN
+F 1 "1k6" V 8216 5150 50  0000 C CNN
+F 2 "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8030 5150 50  0001 C CNN
+F 3 "~" H 8100 5150 50  0001 C CNN
+	1    8100 5150
 	1    0    0    -1  
 $EndComp
 $Comp
-L synkie_symbols:GND #PWR?
+L synkie_symbols:GND #PWR0104
 U 1 1 61549BEC
-P 8250 5450
-F 0 "#PWR?" H 8250 5200 50  0001 C CNN
-F 1 "GND" H 8255 5277 50  0000 C CNN
-F 2 "" H 8250 5450 50  0001 C CNN
-F 3 "" H 8250 5450 50  0001 C CNN
-	1    8250 5450
+P 8100 5300
+F 0 "#PWR0104" H 8100 5050 50  0001 C CNN
+F 1 "GND" H 8105 5127 50  0000 C CNN
+F 2 "" H 8100 5300 50  0001 C CNN
+F 3 "" H 8100 5300 50  0001 C CNN
+	1    8100 5300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8550 5150 8700 5150
+	8550 5000 8700 5000
 Wire Wire Line
-	8700 5150 8700 4950
+	8250 5000 8100 5000
 Wire Wire Line
-	8250 5150 8100 5150
+	8100 4600 8100 5000
 Wire Wire Line
-	8100 5150 8100 4950
-Connection ~ 8250 5150
+	8700 4500 8700 5000
+Connection ~ 8100 5000
 $EndSCHEMATC
