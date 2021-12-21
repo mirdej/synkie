@@ -1084,7 +1084,7 @@ F 3 "" H 10200 6100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Anyma_Library:LOGO U5
+L synkie_symbols:LOGO U5
 U 1 1 5FCC065D
 P 9650 5850
 F 0 "U5" H 9728 5971 50  0000 L CNN
@@ -1095,7 +1095,7 @@ F 3 "" H 9650 5850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Anyma_Library:LOGO U7
+L synkie_symbols:LOGO U7
 U 1 1 5FCC0D7C
 P 9650 6100
 F 0 "U7" H 9728 6221 50  0000 L CNN
