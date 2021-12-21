@@ -118,17 +118,6 @@ F 3 "~" H 20550 2250 50  0001 C CNN
 	1    20550 2250
 	1    0    0    -1  
 $EndComp
-$Comp
-L synkie_symbols:PWR_FLAG #FLG02
-U 1 1 5E387EE5
-P 20150 1900
-F 0 "#FLG02" H 20150 1975 50  0001 C CNN
-F 1 "PWR_FLAG" H 20050 2050 50  0000 C CNN
-F 2 "" H 20150 1900 50  0001 C CNN
-F 3 "~" H 20150 1900 50  0001 C CNN
-	1    20150 1900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	20500 1600 20500 1650
 Wire Wire Line
@@ -476,7 +465,7 @@ F 1 "LMH6643" H 15650 6024 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 15650 6300 50  0001 C CNN
 F 3 "~" H 15650 6300 50  0001 C CNN
 	1    15650 6300
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	15200 2550 15250 2550
@@ -1143,7 +1132,7 @@ F 1 "LMH6643" H 15000 2400 50  0000 C CNN
 F 2 "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm" H 14900 2550 50  0001 C CNN
 F 3 "~" H 14900 2550 50  0001 C CNN
 	2    14900 2550
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L synkie_symbols:Opamp_Dual_Generic U1
@@ -1489,7 +1478,7 @@ F 3 "" H 5900 5550 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Anyma_Library:AnymaISP U703
+L synkie_symbols:AnymaISP U703
 U 1 1 5FF475BD
 P 9400 6300
 F 0 "U703" H 9728 6496 50  0000 L CNN
@@ -2026,7 +2015,7 @@ Connection ~ 19300 4750
 Wire Wire Line
 	19300 4750 19350 4750
 $Comp
-L Anyma_Library:LOGO U3
+L synkie_symbols:LOGO U3
 U 1 1 600549E8
 P 9250 1650
 F 0 "U3" H 9328 1771 50  0000 L CNN
@@ -2037,7 +2026,7 @@ F 3 "" H 9250 1650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Anyma_Library:LOGO U4
+L synkie_symbols:LOGO U4
 U 1 1 60055995
 P 9200 1950
 F 0 "U4" H 9278 2071 50  0000 L CNN
@@ -2047,4 +2036,8 @@ F 3 "" H 9200 1950 50  0001 C CNN
 	1    9200 1950
 	1    0    0    -1  
 $EndComp
+NoConn ~ 3950 5400
+NoConn ~ 3950 5600
+NoConn ~ 3950 5700
+NoConn ~ 6350 4800
 $EndSCHEMATC
