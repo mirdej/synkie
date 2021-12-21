@@ -27,13 +27,17 @@ In the end , timing signals and a phase corrected color burst is cut back into t
 
 ### sk000-power
 Power distribution to backbone modules and rack. +5V, GND, -5V.
+
 ### sk001-genlock-in
+
 This module takes any standard video signal as input and generates all necessary timing signals for the Synkie system. The input is first backporch-clamped to GND and all active video is cut off. This black image can serve as a genlock for connected sources (cameras). Colorburst is output as a seperate signal and used to syncronise a quartz crystal that generates a continuous 4.4336Mhz subcarrier signal for the rgb modules. A LM1881 generates the digital sync signals: horizontal sync, vertical sync, backporch and odd/even.
 
 ###sk002-input
+
 This modules takes any standard video signal, clamps black level to GND and strips off synctips and colorburst. (still in active debate: me thinks sk002 should apply a gain of 1.43 to bring the 0.7V white level up to 1V)
 
 ###sk003-output
+
 This module takes any signal as its input (from DC to 10Mhz). The scale-bias section controls amplitude and dc-shift. The signal is then clipped hard between 0V and 1V. Finally the resyncer adds synctips and colorburst to make it look loike a standard video signal. 
 When using video as an input to the sk003 any processing beforehand can add some tiny delay - depending on how many modules the signal passes through -  which causes a phase shift in the signal that can alter or completely destroy color. That is why the burst signal from sk001 first goes through a sk004-burstshift (allpass filter) that lets correct the phase error before it gets cut back into the video signal.
 
