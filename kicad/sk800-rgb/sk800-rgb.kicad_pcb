@@ -3,7 +3,7 @@
   (general
     (thickness 1.6)
     (drawings 25)
-    (tracks 662)
+    (tracks 667)
     (zones 0)
     (modules 73)
     (nets 47)
@@ -198,7 +198,7 @@
   )
 
   (module synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder (layer F.Cu) (tedit 5B36C52B) (tstamp 619CF5D9)
-    (at 77.038 127.954)
+    (at 63.413 126.354)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (path /5FEF24AF)
@@ -3246,6 +3246,9 @@
   (segment (start 47.858 119.354) (end 47.838 119.334) (width 0.25) (layer B.Cu) (net 5))
   (segment (start 47.838 119.334) (end 47.838 118.214) (width 0.25) (layer B.Cu) (net 5))
   (segment (start 50.438 119.354) (end 47.858 119.354) (width 0.25) (layer B.Cu) (net 5))
+  (via (at 65.038 124.354) (size 0.8) (drill 0.4) (layers F.Cu B.Cu) (net 5))
+  (segment (start 64.438 124.954) (end 65.038 124.354) (width 0.25) (layer F.Cu) (net 5))
+  (segment (start 64.438 126.354) (end 64.438 124.954) (width 0.25) (layer F.Cu) (net 5))
   (segment (start 62.038 57.8415) (end 62.238 57.6415) (width 1) (layer F.Cu) (net 6))
   (segment (start 62.238 57.6415) (end 62.238 58.354) (width 1) (layer F.Cu) (net 6))
   (segment (start 59.338 62.979) (end 58.263 61.904) (width 0.45) (layer F.Cu) (net 6))
@@ -3401,6 +3404,8 @@
   (segment (start 61.738 123.704) (end 59.413001 126.028999) (width 0.25) (layer B.Cu) (net 9))
   (segment (start 59.233 131.954) (end 59.538 132.259) (width 0.25) (layer F.Cu) (net 9))
   (segment (start 58.038 131.954) (end 59.233 131.954) (width 0.25) (layer F.Cu) (net 9))
+  (segment (start 62.388 124.354) (end 61.738 123.704) (width 0.25) (layer F.Cu) (net 9))
+  (segment (start 62.388 126.354) (end 62.388 124.354) (width 0.25) (layer F.Cu) (net 9))
   (segment (start 65.433 64.079) (end 65.458 64.104) (width 0.25) (layer F.Cu) (net 10))
   (segment (start 65.433 61.254) (end 65.433 64.079) (width 0.25) (layer F.Cu) (net 10))
   (segment (start 62.113 69.654) (end 61.538 69.654) (width 0.25) (layer F.Cu) (net 10))
@@ -3918,6 +3923,16 @@
         (xy 49.34 126.327) (xy 49.36 126.327) (xy 49.36 126.581) (xy 49.34 126.581) (xy 49.34 126.601)
         (xy 49.086 126.601) (xy 49.086 126.581) (xy 49.066 126.581) (xy 49.066 126.327) (xy 49.086 126.327)
         (xy 49.086 126.307) (xy 49.34 126.307)
+      )
+    )
+    (filled_polygon
+      (pts
+        (xy 65.386 122.986181) (xy 65.386 123.248762) (xy 65.386001 123.248772) (xy 65.386001 125.138651) (xy 65.367494 125.123463)
+        (xy 65.25718 125.064498) (xy 65.137482 125.028188) (xy 65.013 125.015928) (xy 64.72375 125.019) (xy 64.565 125.17775)
+        (xy 64.565 126.227) (xy 64.585 126.227) (xy 64.585 126.481) (xy 64.565 126.481) (xy 64.565 126.501)
+        (xy 64.311 126.501) (xy 64.311 126.481) (xy 64.291 126.481) (xy 64.291 126.227) (xy 64.311 126.227)
+        (xy 64.311 125.17775) (xy 64.15225 125.019) (xy 64.01499 125.017542) (xy 64.01499 123.899076) (xy 64.921677 122.99239)
+        (xy 64.921681 122.992385) (xy 65.062064 122.852002)
       )
     )
     (filled_polygon

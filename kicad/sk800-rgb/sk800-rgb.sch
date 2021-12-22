@@ -1828,41 +1828,6 @@ F 3 "" H 3400 4650 50  0001 C CNN
 	1    3400 4650
 	1    0    0    -1  
 $EndComp
-$Comp
-L synkie_symbols:C_Small C7
-U 1 1 619DC4AA
-P 7200 3400
-F 0 "C7" V 6948 3400 50  0000 C CNN
-F 1 "??" V 7039 3400 50  0000 C CNN
-F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7238 3250 50  0001 C CNN
-F 3 "~" H 7200 3400 50  0001 C CNN
-	1    7200 3400
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	7200 2800 7200 3300
-$Comp
-L Device:L L1
-U 1 1 619E1C35
-P 7200 3650
-F 0 "L1" H 7253 3696 50  0000 L CNN
-F 1 "L" H 7253 3605 50  0000 L CNN
-F 2 "synkie_footprints:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7200 3650 50  0001 C CNN
-F 3 "~" H 7200 3650 50  0001 C CNN
-	1    7200 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0112
-U 1 1 619E2481
-P 7200 3800
-F 0 "#PWR0112" H 7200 3550 50  0001 C CNN
-F 1 "GND" H 7205 3627 50  0000 C CNN
-F 2 "" H 7200 3800 50  0001 C CNN
-F 3 "" H 7200 3800 50  0001 C CNN
-	1    7200 3800
-	1    0    0    -1  
-$EndComp
 Text Label 3350 3500 2    50   ~ 0
 porch
 Text Label 7600 4750 0    50   ~ 0
@@ -1956,7 +1921,7 @@ L synkie_symbols:C_Small C18
 U 1 1 61A0E27D
 P 6950 4750
 F 0 "C18" V 6698 4750 50  0000 C CNN
-F 1 "??" V 6789 4750 50  0000 C CNN
+F 1 "100n" V 6789 4750 50  0000 C CNN
 F 2 "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6988 4600 50  0001 C CNN
 F 3 "~" H 6950 4750 50  0001 C CNN
 	1    6950 4750
@@ -2013,6 +1978,4 @@ F 3 "" H 7200 5050 50  0001 C CNN
 	1    7200 5050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7000 2800 7200 2800
 $EndSCHEMATC
