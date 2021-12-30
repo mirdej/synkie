@@ -736,4 +736,33 @@ Wire Wire Line
 Wire Wire Line
 	8700 4500 8700 5000
 Connection ~ 8100 5000
+$Comp
+L synkie_symbols:UMCC J?
+U 1 1 61CCAEAF
+P 1900 3350
+F 0 "J?" H 2428 3303 60  0000 L CNN
+F 1 "UMCC" H 2428 3197 60  0000 L CNN
+F 2 "synkie_footprints:TE_UMCC_2337019-1" H 2300 3190 60  0001 C CNN
+F 3 "" H 1900 3350 60  0000 C CNN
+	1    1900 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L synkie_symbols:GND #PWR?
+U 1 1 61CCBF86
+P 1900 3550
+F 0 "#PWR?" H 1900 3300 50  0001 C CNN
+F 1 "GND" H 1905 3377 50  0000 C CNN
+F 2 "" H 1900 3550 50  0001 C CNN
+F 3 "" H 1900 3550 50  0001 C CNN
+	1    1900 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 3450 1900 3550
+Connection ~ 1900 3550
+Wire Wire Line
+	1900 3350 1750 3350
+Wire Wire Line
+	1750 3350 1750 4050
 $EndSCHEMATC
