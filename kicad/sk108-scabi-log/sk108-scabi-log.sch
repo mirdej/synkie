@@ -173,7 +173,7 @@ U 1 1 5E01B1BA
 P 12900 2050
 F 0 "J2" H 12818 1825 50  0000 C CNN
 F 1 "Bias_In" H 12818 1916 50  0000 C CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 12900 2050 50  0001 C CNN
+F 2 "synkie_footprints:Solderpad-SYNKIEPAD-2mm" H 12900 2050 50  0001 C CNN
 F 3 "~" H 12900 2050 50  0001 C CNN
 	1    12900 2050
 	-1   0    0    1   
@@ -746,7 +746,7 @@ U 1 1 5DD017C6
 P 19900 4750
 F 0 "J5" H 19980 4792 50  0000 L CNN
 F 1 "Out" H 19980 4701 50  0000 L CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 19900 4750 50  0001 C CNN
+F 2 "synkie_footprints:Solderpad-SYNKIEPAD-2mm" H 19900 4750 50  0001 C CNN
 F 3 "~" H 19900 4750 50  0001 C CNN
 	1    19900 4750
 	1    0    0    -1  
@@ -822,7 +822,7 @@ U 1 1 5DD24D57
 P 15850 4550
 F 0 "J4" H 15768 4325 50  0000 C CNN
 F 1 "In" H 15768 4416 50  0000 C CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 15850 4550 50  0001 C CNN
+F 2 "synkie_footprints:Solderpad-SYNKIEPAD-2mm" H 15850 4550 50  0001 C CNN
 F 3 "~" H 15850 4550 50  0001 C CNN
 	1    15850 4550
 	-1   0    0    1   
@@ -1043,7 +1043,7 @@ U 1 1 5DD873C3
 P 13700 6400
 F 0 "J7" H 13618 6175 50  0000 C CNN
 F 1 "Scale_In" H 13618 6266 50  0000 C CNN
-F 2 "synkie_footprints:Solderpad_1mm" H 13700 6400 50  0001 C CNN
+F 2 "synkie_footprints:Solderpad-SYNKIEPAD-2mm" H 13700 6400 50  0001 C CNN
 F 3 "~" H 13700 6400 50  0001 C CNN
 	1    13700 6400
 	-1   0    0    1   
