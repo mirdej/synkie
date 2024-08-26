@@ -286,10 +286,28 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP Conn_Coaxial
+D coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)
+K BNC SMA SMB SMC coaxial connector CINCH RCA
+F  ~
+$ENDCMP
+#
 $CMP D
 D Diode
 K diode
 F ~
+$ENDCMP
+#
+$CMP EPM240T100
+D Altera MAX2 CPLD with 240 LE
+K MAX2 TQFP
+F https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/hb/max2/max2_mii5v1.pdf
+$ENDCMP
+#
+$CMP EPM570T100
+D Altera MAX2 CPLD with 570 LE
+K MAX2 TQFP
+F https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/hb/max2/max2_mii5v1.pdf
 $ENDCMP
 #
 $CMP Ferrite_Bead
@@ -301,6 +319,12 @@ $ENDCMP
 $CMP GND
 D Power symbol creates a global label with name "GND" , ground
 K power-flag
+$ENDCMP
+#
+$CMP LED
+D Light emitting diode
+K LED diode
+F ~
 $ENDCMP
 #
 $CMP LM2901
