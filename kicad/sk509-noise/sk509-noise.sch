@@ -733,4 +733,6 @@ Text Notes 7900 2900 0    50   ~ 0
 schema updated to match prototype, board needs re-routing
 Text Notes 7900 3550 0    50   ~ 0
 to do:\n- try lmh66443 instead of LM833\n- try different values for R1 and R4\n- try lower low cutoff (higher C3)\n  but needs better power supply filtering\n- R2: needed? Value?\n- chain both op amps?
+Text Notes 3850 5400 0    50   ~ 0
+to try:\n- reduce R2 / increase R4 to increase Q1 gain\n- increase R5 to reduce power supply load\n- then check if we can do supply filtering separately for transistor part
 $EndSCHEMATC
