@@ -3445,6 +3445,17 @@
 		)
 		(uuid "08519831-60f8-42e5-98fc-a88880dd3cac")
 	)
+	(text "experimental board notes:\n- R4/R6 and R7/R22 pairs are for selecting which supply filter to power Q3 from.\n  Only use one of each and let the other open!\n- R5 can be used to bypass Q3 amp. If used, R4, R6, R7, R22, Q3 should be removed!\n- OpAmps have all the provisions for chaining and negative / positive input use.\n  Place resistors as appropriate."
+		(exclude_from_sim no)
+		(at 64.77 134.366 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2704b105-c116-4664-a2de-927315e34617")
+	)
 	(text "to try:\n- reduce R3 / increase R2 to increase Q2 gain\n- increase R7 to reduce power supply load\n- then check if we can do supply filtering separately for transistor part"
 		(exclude_from_sim no)
 		(at 209.296 83.566 0)
