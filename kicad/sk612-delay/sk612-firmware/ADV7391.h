@@ -35,6 +35,7 @@ class ADV7391{
         uint8_t     read(uint8_t register_address);
         void        write(uint8_t register_address, uint8_t data);
         void        enable_sync_out(bool enable = true);
+        void        external_sync(bool enable = true);
         uint8_t     read_pixelport();
         uint8_t     read_controlport();
         void        color_bars(bool enable=true);

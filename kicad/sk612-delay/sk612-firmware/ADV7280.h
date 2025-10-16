@@ -2,7 +2,7 @@
  *
  *  @file ADV7280.h
  *
- *  This is a library for the Analog Devices ADV7280 Video ADC
+ *  This is a rudimentary library for the Analog Devices ADV7280 Video ADC
  *
  *  Written by Michael Egger, [ a n y m a ].
  *
@@ -35,14 +35,15 @@ a scan of the i2c bus reveals these are completely wrong... old revision of the 
 class ADV7280{
     public:
         ADV7280(TwoWire *theWire = &Wire);
-        void        begin(int reset_pin);
+        void        begin(int reset_pin, uint8_t address = ADV7280_I2C_ADDRESS);
         void        register_dump(int count = 241);
         void        print_status(void);
         uint8_t     read(uint8_t register_address);
         void        write(uint8_t register_address, uint8_t data);
         
     private:
-        TwoWire * _wire;
+        TwoWire *   _wire;
+        uint8_t     _address;
         void        set_bit(uint8_t register_address, uint8_t bit);
         void        clear_bit(uint8_t register_address, uint8_t bit);
 

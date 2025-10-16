@@ -138,9 +138,11 @@ int read_veml(byte code) {
 
 void setup() {
     Serial.begin(115200);
+    delay(3000);
     Serial.println("Hello");
     
     pinMode(PIN_DAC_CS,OUTPUT);
+    
     SPI.begin();
 	power_on_dac();
 
@@ -161,11 +163,12 @@ void loop() {
     ad_idx %= 4;
 
     ad_value[ad_idx] = 1023-analogRead(ad_pin[ad_idx]);
-    dac_value[ad_idx] = read_veml( veml_code[ad_idx]);
+    dac_value[ad_idx] = 4 * read_veml( veml_code[ad_idx]);
     dac_value[ad_idx] = constrain(dac_value[ad_idx]  , ad_value[0], ad_value[1]);
     dac_value[ad_idx] = map(dac_value[ad_idx]   , ad_value[0], ad_value[1], ad_value[2], ad_value[3]);
-    dac_send(ad_idx, dac_value[ad_idx]);
 
+    dac_send(ad_idx, dac_value[ad_idx]);
+//delay(2);
     Serial.printf("%d %d %d %d\n",  dac_value[0],dac_value[1],dac_value[2],dac_value[3]);
     //Serial.printf("%d %d %d %d\n",  ad_value[0], ad_value[1], ad_value[2], ad_value[3]);
 //delay(10);

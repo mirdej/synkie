@@ -528,25 +528,25 @@ F 3 "" H 1400 2800 50  0001 C CNN
 	1    1400 2800
 	1    0    0    -1  
 $EndComp
-Text GLabel 2700 3750 0    50   Input ~ 0
+Text GLabel 2700 3050 0    50   Input ~ 0
 MISO
 Text GLabel 2700 4800 0    50   Input ~ 0
 MOSI
-Text GLabel 2700 4700 0    50   Input ~ 0
+Text GLabel 2700 3250 0    50   Input ~ 0
 SCK
-Text GLabel 2700 3550 0    50   Input ~ 0
+Text GLabel 2700 3150 0    50   Input ~ 0
 SSEL
 Text GLabel 2700 4600 0    50   Input ~ 0
 FPGA_RESET
-Text GLabel 2700 3150 0    50   Input ~ 0
+Text GLabel 2700 3750 0    50   Input ~ 0
 TDI
-Text GLabel 2700 3250 0    50   Input ~ 0
+Text GLabel 2700 3550 0    50   Input ~ 0
 TMS
-Text GLabel 2700 3350 0    50   Input ~ 0
+Text GLabel 2700 4400 0    50   Input ~ 0
 TDO
-Text GLabel 2700 3450 0    50   Input ~ 0
+Text GLabel 2700 4700 0    50   Input ~ 0
 TRST
-Text GLabel 2700 3050 0    50   Input ~ 0
+Text GLabel 2700 3650 0    50   Input ~ 0
 TCK
 Wire Wire Line
 	2700 2750 1850 2750
@@ -566,12 +566,6 @@ Wire Wire Line
 	1950 2950 1950 3650
 Wire Wire Line
 	1950 3650 1500 3650
-Wire Wire Line
-	2700 4400 1950 4400
-Wire Wire Line
-	1950 4400 1950 3750
-Wire Wire Line
-	1950 3750 1500 3750
 Wire Wire Line
 	2700 4500 1900 4500
 Wire Wire Line
@@ -619,4 +613,12 @@ F 3 "" H 1700 3350 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	1700 3350 1500 3350
+Text Notes 1200 2000 0    50   ~ 0
+TODO: Rearrange JTAG Pins in consecutive block. for faster manipulation
+Wire Wire Line
+	2700 3450 2000 3450
+Wire Wire Line
+	2000 3450 2000 3750
+Wire Wire Line
+	2000 3750 1500 3750
 $EndSCHEMATC

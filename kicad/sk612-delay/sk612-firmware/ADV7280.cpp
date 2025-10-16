@@ -8,7 +8,8 @@ ADV7280::ADV7280(TwoWire *theWire) {
 
 //----------------------------------------------------------------------------------------
 
-void ADV7280::begin(int reset_pin) {
+void ADV7280::begin(int reset_pin, uint8_t address) {
+    _address = address;
     pinMode(reset_pin,OUTPUT);
     digitalWrite(reset_pin,HIGH);
     delay(20);
@@ -39,10 +40,10 @@ void ADV7280::begin(int reset_pin) {
 
 uint8_t ADV7280::read(uint8_t register_address) {
     uint8_t data;
-    _wire->beginTransmission(ADV7280_I2C_ADDRESS);
+    _wire->beginTransmission(_address);
     _wire->write(register_address);
     _wire->endTransmission(false);
-    _wire->requestFrom(ADV7280_I2C_ADDRESS,1);                                        
+    _wire->requestFrom(_address,1);                                        
     data = _wire->read(); 
     _wire->endTransmission();
     return data;
@@ -52,7 +53,7 @@ uint8_t ADV7280::read(uint8_t register_address) {
 //----------------------------------------------------------------------------------------
 
 void ADV7280::write(uint8_t register_address, uint8_t data) {
-     _wire->beginTransmission(ADV7280_I2C_ADDRESS);
+     _wire->beginTransmission(_address);
     _wire->write(register_address);
     _wire->write(data);
     _wire->endTransmission();
@@ -87,11 +88,11 @@ void ADV7280::register_dump(int count) {
     Serial.println(F("ADV7280 Register Dump:"));
     Serial.println();
     
-    _wire->beginTransmission(ADV7280_I2C_ADDRESS);
+    _wire->beginTransmission(_address);
     _wire->write(0x00);
     _wire->endTransmission(false);
     
-    _wire->requestFrom(ADV7280_I2C_ADDRESS,count);   
+    _wire->requestFrom(_address,count);   
     int i = 0;                                     
     while(_wire->available()) {
         Serial.print("Reg ");

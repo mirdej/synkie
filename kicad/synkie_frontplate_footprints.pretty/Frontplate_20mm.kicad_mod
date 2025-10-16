@@ -4,9 +4,10 @@
 	(generator_version "8.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at 0 63.75 0)
+		(at 2 129.6 0)
 		(unlocked yes)
 		(layer "F.SilkS")
+		(hide yes)
 		(uuid "17b49eb0-615f-41ef-ba37-30b408b6ec5f")
 		(effects
 			(font
@@ -16,7 +17,7 @@
 		)
 	)
 	(property "Value" "Frontplate_20mm"
-		(at 0 65.25 0)
+		(at 13.5 129.6 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "1412f78c-9888-45e8-98a9-50375f0a34a1")
@@ -130,7 +131,7 @@
 		(start 0 0)
 		(end 20 128.5)
 		(stroke
-			(width 0.12)
+			(width 0.00001)
 			(type default)
 		)
 		(fill none)
@@ -454,18 +455,18 @@
 			)
 		)
 	)
-	(pad "" np_thru_hole circle
+	(pad "" np_thru_hole oval
 		(at 7.5 3)
-		(size 1.524 1.524)
+		(size 5 3)
 		(drill oval 5 3)
-		(layers "F&B.Cu" "*.Mask")
+		(layers "F&B.Cu")
 		(uuid "995f251b-fe11-41a5-a255-3580fef36da2")
 	)
-	(pad "" np_thru_hole circle
+	(pad "" np_thru_hole oval
 		(at 7.5 125.5)
-		(size 1.524 1.524)
+		(size 5 3)
 		(drill oval 5 3)
-		(layers "F&B.Cu" "*.Mask")
+		(layers "*.Mask")
 		(uuid "907d9fe7-948c-44b0-ae86-ba3b154e0fd1")
 	)
 )

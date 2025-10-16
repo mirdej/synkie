@@ -169,6 +169,17 @@
 	(attr smd)
 	(fp_circle
 		(center 0 0)
+		(end 2.5 0)
+		(stroke
+			(width 0.00001)
+			(type default)
+		)
+		(fill none)
+		(layer "Edge.Cuts")
+		(uuid "ace02bd5-b1cb-4546-8751-c92024741278")
+	)
+	(fp_circle
+		(center 0 0)
 		(end 3.5 0)
 		(stroke
 			(width 0.12)
@@ -177,13 +188,5 @@
 		(fill none)
 		(layer "F.CrtYd")
 		(uuid "1527c8d9-7717-4ff5-a349-404289386045")
-	)
-	(pad "1" thru_hole circle
-		(at 0 0)
-		(size 5 5)
-		(drill 5)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(uuid "4b079913-597f-4ba6-bd58-c7a5ff913b12")
 	)
 )

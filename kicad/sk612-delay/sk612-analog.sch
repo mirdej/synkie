@@ -665,17 +665,6 @@ F 3 "~" H 8750 4300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0338
-U 1 1 617A35A6
-P 8550 3500
-F 0 "#PWR0338" H 8550 3250 50  0001 C CNN
-F 1 "GND" H 8555 3327 50  0000 C CNN
-F 2 "" H 8550 3500 50  0001 C CNN
-F 3 "" H 8550 3500 50  0001 C CNN
-	1    8550 3500
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0339
 U 1 1 617A39E4
 P 8550 3300
@@ -763,4 +752,10 @@ F 3 "" H 3550 5750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 3550 5450
+Wire Wire Line
+	8550 3500 8550 3750
+Wire Wire Line
+	8550 3750 9150 3750
+Wire Wire Line
+	9150 3750 9150 3400
 $EndSCHEMATC

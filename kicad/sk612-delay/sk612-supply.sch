@@ -935,7 +935,7 @@ F 1 "Supply" H 1350 6250 50  0000 C CNN
 F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 1200 6000 50  0001 C CNN
 F 3 "~" H 1200 6000 50  0001 C CNN
 	1    1200 6000
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:Ferrite_Bead FB?

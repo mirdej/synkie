@@ -115,6 +115,21 @@ void ADV7391::enable_sync_out(bool enable){
 
 //----------------------------------------------------------------------------------------
 
+void ADV7391::external_sync(bool enable){
+    if (enable) {
+        clear_bit(0x8A,2);
+        set_bit(0x8A,1);
+        clear_bit(0x8A,0);
+    } else {
+        clear_bit(0x8A, 2);
+        clear_bit(0x8A,1);
+        clear_bit(0x8A,0);
+    }
+}
+
+
+//----------------------------------------------------------------------------------------
+
 uint8_t ADV7391::read_pixelport(){
     return read(0x13);
 }
