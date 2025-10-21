@@ -676,119 +676,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "synkie_symbols:Conn_01x01"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x01"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x01_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -1.27)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "synkie_symbols:GND"
 			(power)
 			(pin_names
@@ -1853,6 +1740,17 @@
 		)
 		(uuid "84f60515-4e0a-48ef-b888-4d39361bd845")
 	)
+	(hierarchical_label "in"
+		(shape input)
+		(at 66.04 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d3fac53b-1bd4-4ce8-8640-0130d49cc3db")
+	)
 	(hierarchical_label "black"
 		(shape input)
 		(at 101.6 49.53 90)
@@ -1989,7 +1887,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 144.78 55.88 0)
 			(effects
 				(font
@@ -2094,7 +1992,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 110.49 68.58 0)
 			(effects
 				(font
@@ -2181,7 +2079,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 129.54 73.66 0)
 			(effects
 				(font
@@ -2271,7 +2169,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 69.088 68.58 90)
 			(effects
 				(font
@@ -2359,7 +2257,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 72.39 65.278 90)
 			(effects
 				(font
@@ -2447,7 +2345,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 153.67 55.372 90)
 			(effects
 				(font
@@ -2624,7 +2522,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 99.822 55.88 90)
 			(effects
 				(font
@@ -2800,7 +2698,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 117.602 74.93 90)
 			(effects
 				(font
@@ -2890,7 +2788,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 94.488 68.58 90)
 			(effects
 				(font
@@ -2980,7 +2878,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 103.378 68.58 90)
 			(effects
 				(font
@@ -3070,7 +2968,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+		(property "Footprint" "synkie_footprints:SOT-23"
 			(at 76.835 61.595 0)
 			(effects
 				(font
@@ -3335,7 +3233,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 129.54 52.07 0)
 			(effects
 				(font
@@ -3509,7 +3407,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 87.63 65.278 90)
 			(effects
 				(font
@@ -3823,91 +3721,6 @@
 				)
 				(path "/c20bfda0-2fd4-4091-93fd-9bc87f5d854d/e946eb42-9a38-40d8-9379-85e2df340a96"
 					(reference "#PWR026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synkie_symbols:Conn_01x01")
-		(at 60.96 63.5 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ebb97bee-4f4d-4688-9350-3bd7b65dc374")
-		(property "Reference" "J4"
-			(at 60.96 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CH1_In"
-			(at 60.96 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 60.96 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 60.96 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 60.96 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d5fbe29e-9b94-4ca7-8804-d5b6d8c7348f")
-		)
-		(instances
-			(project "mixer"
-				(path "/c20bfda0-2fd4-4091-93fd-9bc87f5d854d/55f5968e-d78f-4f2e-b2dc-47a0ad6dc7fc"
-					(reference "J5")
-					(unit 1)
-				)
-				(path "/c20bfda0-2fd4-4091-93fd-9bc87f5d854d/58419355-791e-47d0-a4e3-3408a7f95a60"
-					(reference "J6")
-					(unit 1)
-				)
-				(path "/c20bfda0-2fd4-4091-93fd-9bc87f5d854d/82cdebfd-7b72-4026-82f0-7f95d9722179"
-					(reference "J8")
-					(unit 1)
-				)
-				(path "/c20bfda0-2fd4-4091-93fd-9bc87f5d854d/a393d0ee-0594-48a9-8215-fb884552e446"
-					(reference "J7")
-					(unit 1)
-				)
-				(path "/c20bfda0-2fd4-4091-93fd-9bc87f5d854d/c958690d-6c32-48d0-92dc-cae30c469c99"
-					(reference "J9")
-					(unit 1)
-				)
-				(path "/c20bfda0-2fd4-4091-93fd-9bc87f5d854d/e946eb42-9a38-40d8-9379-85e2df340a96"
-					(reference "J4")
 					(unit 1)
 				)
 			)
