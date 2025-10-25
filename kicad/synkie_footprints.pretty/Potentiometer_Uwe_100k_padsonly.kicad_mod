@@ -1,0 +1,114 @@
+(footprint "Potentiometer_Uwe_100k_padsonly"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Potentiometer_Uwe_100k")
+	(tags "Potentiometer Uwe 100k")
+	(property "Reference" "REF**"
+		(at 0 -14.25 0)
+		(layer "F.SilkS")
+		(uuid "8439f99f-1158-47c4-9981-6696759a7a4e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Potentiometer_Uwe_100k_padsonly"
+		(at 0 4.25 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8f785b2d-b348-467a-b64d-0de411cbdc6d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "94635ac6-b5f1-459a-8dfd-6e6c3d1f694d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "61664fe9-4237-4eb2-9433-c3e50a5af76e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3ee323f5-b1e4-44c2-bee2-d31354abf8fe")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_text user "${REFERENCE}"
+		(at -2.25 -5 0)
+		(layer "F.Fab")
+		(uuid "439366aa-b3c4-4c7a-a71d-b6378e2f35d9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 3 3)
+		(drill 1.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dd4d2ca9-3322-4b26-80f9-e1471617ca41")
+	)
+	(pad "2" thru_hole circle
+		(at 0 -5)
+		(size 3 3)
+		(drill 1.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ddb17493-fee8-42e7-8de4-2c7c6450b598")
+	)
+	(pad "3" thru_hole circle
+		(at 0 -10)
+		(size 3 3)
+		(drill 1.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "c7ef0d7b-b14b-4d16-b280-1dafdec385e2")
+	)
+	(model "${KISYS3DMOD}/Potentiometer_THT.3dshapes/Potentiometer_Piher_T-16H_Single_Horizontal.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

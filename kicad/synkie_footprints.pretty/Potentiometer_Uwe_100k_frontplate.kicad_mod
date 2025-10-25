@@ -1,0 +1,147 @@
+(footprint "Potentiometer_Uwe_100k_frontplate"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Potentiometer_Uwe_100k")
+	(tags "Potentiometer Uwe 100k")
+	(property "Reference" "REF**"
+		(at 11 -9.25 90)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "8439f99f-1158-47c4-9981-6696759a7a4e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Potentiometer_Uwe_100k_frontplate"
+		(at 11 9.25 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8f785b2d-b348-467a-b64d-0de411cbdc6d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 11 5 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "61664fe9-4237-4eb2-9433-c3e50a5af76e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 11 5 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3ee323f5-b1e4-44c2-bee2-d31354abf8fe")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 12.954 -7.112)
+		(end 12.954 7.112)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "673e5610-58a2-4ed4-9f3d-5040fd98ab64")
+	)
+	(fp_line
+		(start 13.032 -7.192)
+		(end 4.142 -7.192)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "979be861-4de9-4c66-8520-d7a4abb44d27")
+	)
+	(fp_line
+		(start 13.032 7.032)
+		(end 4.142 7.032)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "0f2a40c8-5f15-425f-9c1b-a29f7bdcb718")
+	)
+	(fp_circle
+		(center 0.078 -0.08)
+		(end 7.698 2.714)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "61490099-0a0d-48f2-bbc1-e281a8151f42")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 8.75 0 0)
+		(layer "F.Fab")
+		(uuid "439366aa-b3c4-4c7a-a71d-b6378e2f35d9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 2 2)
+		(drill oval 8 6.3)
+		(layers "F&B.Cu" "*.Mask")
+		(thermal_bridge_angle 90)
+		(uuid "4fd95f8e-f846-47da-a7cc-e99d6cab0574")
+	)
+	(pad "1" smd oval
+		(at 12 5)
+		(size 4 3)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "dd4d2ca9-3322-4b26-80f9-e1471617ca41")
+	)
+	(pad "2" smd oval
+		(at 12 0)
+		(size 4 3)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "ddb17493-fee8-42e7-8de4-2c7c6450b598")
+	)
+	(pad "3" smd oval
+		(at 12 -5)
+		(size 4 3)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "c7ef0d7b-b14b-4d16-b280-1dafdec385e2")
+	)
+	(embedded_fonts no)
+	(model "/Users/me/Documents/KiCad/9.0/3dmodels/uwepoti.wrl"
+		(offset
+			(xyz 0 0 -2)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -180)
+		)
+	)
+)
