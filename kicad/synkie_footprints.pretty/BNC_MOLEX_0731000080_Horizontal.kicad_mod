@@ -1,7 +1,7 @@
 (footprint "BNC_MOLEX_0731000080_Horizontal"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(descr "https://www.molex.com/pdm_docs/sd/731000080_sd.pdf")
 	(tags "BNC Amphenol Horizontal")
@@ -23,18 +23,6 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "edd34aa2-b590-4c6b-9f75-23b7b3a59ec9")
-		(effects
-			(font
-				(size 1.27 1.27)
 				(thickness 0.15)
 			)
 		)
@@ -341,7 +329,7 @@
 			(width 0.1)
 			(type solid)
 		)
-		(fill none)
+		(fill no)
 		(layer "F.Fab")
 		(uuid "56fe87aa-d903-4c7a-ac9b-7e29d302d615")
 	)
@@ -388,15 +376,16 @@
 		(remove_unused_layers no)
 		(uuid "cc771a30-9c2c-4384-a9e8-2faef54763f8")
 	)
-	(model "/Users/me/Documents/KiCad/8.0/3dmodels/BNC_MOLEX-073100.wrl"
+	(embedded_fonts no)
+	(model "${SYNKIE_KICAD}/synkie_footprint_models/BNC_MOLEX-073100.wrl"
 		(offset
-			(xyz 0 12.5 0)
+			(xyz 0 13 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz -0 -0 -0)
 		)
 	)
 )
