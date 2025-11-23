@@ -1,0 +1,76 @@
+(footprint "CrocodileGroundPad"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "THT pad as test Point Crocodile Connector")
+	(tags "test point THT pad")
+	(property "Reference" "REF**"
+		(at 0 -2.898 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "c337edf6-c2eb-4339-9475-aaa8fcf8ca72")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SolderPad-OSZIPAD"
+		(at 0 3.1 0)
+		(layer "F.Fab")
+		(uuid "a950c934-39d0-46bb-8abd-026b15492bf9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bf5be21a-f773-4829-8788-add80eba267b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "616c3742-b823-4893-b4a3-3377e3dd9463")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr exclude_from_pos_files exclude_from_bom)
+	(fp_text user "${REFERENCE}"
+		(at 0 -2.9 0)
+		(layer "F.Fab")
+		(uuid "ed156b05-1b8b-4658-97f5-d8ef745a3bff")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole oval
+		(at 0 -0.1 90)
+		(size 3 5)
+		(drill oval 2 4)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b6ed2077-14cf-4893-ba35-44b0c2eaa65f")
+	)
+	(embedded_fonts no)
+)
