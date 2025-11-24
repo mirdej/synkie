@@ -2277,6 +2277,16 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 97.79) (xy 186.69 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cce8b1c1-04f5-4791-b071-9ae7fa9802e1")
+	)
+	(wire
+		(pts
 			(xy 77.47 39.37) (xy 77.47 57.15)
 		)
 		(stroke
@@ -4181,6 +4191,71 @@
 			(project "sk162-herd-mixer"
 				(path "/6cc3491c-fe3c-45ac-8ce0-7259b7b28f34"
 					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:Conn_01x01")
+		(at 180.34 97.79 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "97138bc8-a68b-43a9-89cf-f6c83d6de7d5")
+		(property "Reference" "J15"
+			(at 180.34 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Croco"
+			(at 180.34 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "synkie_footprints:CrocodileGroundPad"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99909a9d-c2b0-4511-902e-0bd6d0f475e4")
+		)
+		(instances
+			(project ""
+				(path "/6cc3491c-fe3c-45ac-8ce0-7259b7b28f34"
+					(reference "J15")
 					(unit 1)
 				)
 			)
