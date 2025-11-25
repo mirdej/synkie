@@ -1560,12 +1560,6 @@
 		(uuid "211a954d-872a-407a-8654-9e26688d67dd")
 	)
 	(junction
-		(at 154.94 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "277be30d-75ac-4fa5-a6ee-973dee0d8170")
-	)
-	(junction
 		(at 133.35 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1750,6 +1744,16 @@
 			(type default)
 		)
 		(uuid "175b35f8-ab9b-4a07-b6e3-101bde9d9081")
+	)
+	(wire
+		(pts
+			(xy 156.21 41.91) (xy 157.48 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17774993-51d4-4190-8c55-3af09082e917")
 	)
 	(wire
 		(pts
@@ -2033,6 +2037,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 41.91) (xy 157.48 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86f624c1-8361-4008-8037-08ad44e49818")
+	)
+	(wire
+		(pts
 			(xy 133.35 111.76) (xy 133.35 114.3)
 		)
 		(stroke
@@ -2053,7 +2067,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 50.8) (xy 157.48 50.8)
+			(xy 152.4 50.8) (xy 157.48 50.8)
 		)
 		(stroke
 			(width 0)
@@ -2263,13 +2277,13 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 49.53) (xy 154.94 50.8)
+			(xy 185.42 97.79) (xy 186.69 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c40d65fa-5094-46fd-aae2-02d3d002bfb3")
+		(uuid "cce8b1c1-04f5-4791-b071-9ae7fa9802e1")
 	)
 	(wire
 		(pts
@@ -2353,16 +2367,6 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 50.8) (xy 154.94 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec72b00f-6b4e-4d4b-a812-cdf7a4c00921")
-	)
-	(wire
-		(pts
 			(xy 134.62 71.12) (xy 135.89 71.12)
 		)
 		(stroke
@@ -2390,16 +2394,6 @@
 			(type default)
 		)
 		(uuid "f83ee354-1a76-44c3-8758-a3e3c30cd004")
-	)
-	(wire
-		(pts
-			(xy 154.94 41.91) (xy 148.59 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb84c238-6433-4c0f-8f01-e88f4c7d0e5b")
 	)
 	(wire
 		(pts
@@ -2731,6 +2725,72 @@
 			(project "sk162-herd-mixer"
 				(path "/6cc3491c-fe3c-45ac-8ce0-7259b7b28f34"
 					(reference "FB2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:GND")
+		(at 157.48 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "083157a9-9651-40ed-a4ad-0d1fd3377227")
+		(property "Reference" "#PWR052"
+			(at 157.48 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 157.48 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f9621aac-02d3-43ef-88a7-fe8bb5eaaaae")
+		)
+		(instances
+			(project "sk162-herd-mixer"
+				(path "/6cc3491c-fe3c-45ac-8ce0-7259b7b28f34"
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -3745,7 +3805,7 @@
 	)
 	(symbol
 		(lib_id "synkie_symbols:R")
-		(at 154.94 45.72 0)
+		(at 152.4 41.91 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3753,7 +3813,7 @@
 		(dnp no)
 		(uuid "75de29b5-d32a-4bac-ad80-60d619058ef0")
 		(property "Reference" "R2"
-			(at 156.464 44.196 0)
+			(at 150.876 40.386 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3761,8 +3821,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "560"
-			(at 156.464 46.228 0)
+		(property "Value" "220"
+			(at 152.908 40.386 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3771,7 +3831,7 @@
 			)
 		)
 		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
-			(at 153.162 45.72 90)
+			(at 152.4 43.688 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3780,7 +3840,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 154.94 45.72 0)
+			(at 152.4 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3789,7 +3849,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 154.94 45.72 0)
+			(at 152.4 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4137,6 +4197,71 @@
 		)
 	)
 	(symbol
+		(lib_id "synkie_symbols:Conn_01x01")
+		(at 180.34 97.79 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "97138bc8-a68b-43a9-89cf-f6c83d6de7d5")
+		(property "Reference" "J15"
+			(at 180.34 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Croco"
+			(at 180.34 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "synkie_footprints:CrocodileGroundPad"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99909a9d-c2b0-4511-902e-0bd6d0f475e4")
+		)
+		(instances
+			(project ""
+				(path "/6cc3491c-fe3c-45ac-8ce0-7259b7b28f34"
+					(reference "J15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "synkie_symbols:GND")
 		(at 186.69 97.79 0)
 		(unit 1)
@@ -4271,7 +4396,6 @@
 	(symbol
 		(lib_id "synkie_symbols:Conn_01x03")
 		(at 213.36 97.79 0)
-		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4279,7 +4403,7 @@
 		(dnp no)
 		(uuid "9c22bfeb-244c-471b-8792-06fa7c6bfe96")
 		(property "Reference" "J8"
-			(at 211.2772 89.535 0)
+			(at 211.2772 106.045 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4287,7 +4411,7 @@
 			)
 		)
 		(property "Value" "Power"
-			(at 211.2772 91.8464 0)
+			(at 211.2772 103.7336 0)
 			(effects
 				(font
 					(size 1.27 1.27)
