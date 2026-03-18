@@ -2854,6 +2854,28 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "BASS:	<500Hz\nattack:	1ms\nrelease:	23ms"
+		(exclude_from_sim no)
+		(at 220.98 59.055 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "5a4afaac-bb84-45a0-97ff-932e57e07b58")
+	)
+	(text "Treble:	<500Hz\nattack:	220us\nrelease:	12ms\n"
+		(exclude_from_sim no)
+		(at 219.075 119.38 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "6f84e37b-be30-48d6-b455-01ae44cba85f")
+	)
 	(text "SK53c_Synkie Audio to CV Module "
 		(exclude_from_sim no)
 		(at 231.775 174.625 0)
@@ -2874,7 +2896,7 @@
 		)
 		(uuid "fabe7f87-0f68-4c42-bcea-8d7c0e9168fb")
 	)
-	(text_box "Revision history:\n\n220410	intital release flo protel98 layout\nxxxx16	eagle remake?? \n170226	kikad neu. werte ausmessen muster"
+	(text_box "Revision history:\n\n220410	intital release flo protel98 layout\nxxxx16	eagle remake?? \n170226	kikad neu. werte ausmessen muster\n180326	proto aufbau. werte anpassen. filter und Rkapsel \n"
 		(exclude_from_sim no)
 		(at 185.928 145.923 0)
 		(size 62.738 18.415)
@@ -2893,6 +2915,26 @@
 			(justify left top)
 		)
 		(uuid "16e4d11f-3b9b-4619-af45-a766b98a60cc")
+	)
+	(text_box "bass:	R20 =10k 	<500Hz\n		C20	=100nF\n		R21	=220k\nattack	=1ms\nrelease=23ms\n\ntreble:	R20 =10k		>500hz \n		C20	=22nF\n		R21	=100k\nattack	=220us\nrelease= 12ms\n\n"
+		(exclude_from_sim no)
+		(at 141.605 29.845 0)
+		(size 66.675 28.575)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "8e4c53e4-b1fc-49b3-b424-352cbb3d278a")
 	)
 	(junction
 		(at 151.765 89.535)
@@ -9313,7 +9355,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3k3"
+		(property "Value" "10k"
 			(at 33.02 40.259 90)
 			(effects
 				(font
@@ -9940,7 +9982,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10n"
+		(property "Value" "22n"
 			(at 164.846 101.346 0)
 			(effects
 				(font
@@ -11262,7 +11304,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "100k"
 			(at 176.53 98.171 90)
 			(effects
 				(font
@@ -12343,7 +12385,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1n"
+		(property "Value" "100n"
 			(at 167.386 75.946 0)
 			(effects
 				(font
