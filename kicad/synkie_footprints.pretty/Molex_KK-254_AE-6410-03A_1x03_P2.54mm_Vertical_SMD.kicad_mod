@@ -1,7 +1,7 @@
 (footprint "Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical_SMD"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(descr "Molex KK-254 Interconnect System, old/engineering part number: AE-6410-03A example for new part number: 22-27-2031, 3 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator")
 	(tags "connector Molex KK-254 side entry")
@@ -23,18 +23,6 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "bd80e6cd-f2ea-401f-a93a-8ab0126d31c3")
-		(effects
-			(font
-				(size 1.27 1.27)
 				(thickness 0.15)
 			)
 		)
@@ -398,33 +386,34 @@
 	(pad "1" smd roundrect
 		(at 0 -0.5)
 		(size 1.74 3.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.143678)
 		(uuid "5032c1b1-f3b6-4015-a8bc-adc50c0e8c47")
 	)
 	(pad "2" smd roundrect
 		(at 2.54 -0.5)
 		(size 1.74 3.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.143678)
 		(uuid "9205a2f2-cfad-4d12-9de2-f0f88860d598")
 	)
 	(pad "3" smd roundrect
 		(at 5.08 -0.5)
 		(size 1.74 3.6)
-		(layers "F.Cu" "F.Paste" "F.Mask")
+		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.143678)
 		(uuid "3317d953-edbd-45d0-9f53-212578dfe060")
 	)
+	(embedded_fonts no)
 	(model "${KISYS3DMOD}/Connector_Molex.3dshapes/Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical.wrl"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 0 2)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz -0 -0 -0)
 		)
 	)
 )
