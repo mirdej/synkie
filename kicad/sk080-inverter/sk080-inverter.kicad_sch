@@ -127,6 +127,285 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:Ferrite_Bead"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "FB"
+				(at -3.81 0.635 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Device_Ferrite_Bead"
+				(at 3.81 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Inductor_* L_* *Ferrite*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Ferrite_Bead_0_1"
+				(polyline
+					(pts
+						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 1.2954)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 -1.2192)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Ferrite_Bead_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -1642,137 +1921,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "synkie_symbols:C_Small"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.254 1.778 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "synkie_symbols_C_Small"
-				(at 0.254 -2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "C_Small_0_1"
-				(polyline
-					(pts
-						(xy -1.524 0.508) (xy 1.524 0.508)
-					)
-					(stroke
-						(width 0.3048)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 -0.508) (xy 1.524 -0.508)
-					)
-					(stroke
-						(width 0.3302)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_Small_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "synkie_symbols:Conn_01x03"
 			(pin_names
 				(offset 1.016)
@@ -1925,146 +2073,6 @@
 						)
 					)
 					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "synkie_symbols:Ferrite_Bead"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "FB"
-				(at -3.81 0.635 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "synkie_symbols_Ferrite_Bead"
-				(at 3.81 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Inductor_* L_* *Ferrite*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Ferrite_Bead_0_1"
-				(polyline
-					(pts
-						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 1.2954)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 -1.2192)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Ferrite_Bead_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2535,22 +2543,10 @@
 		(uuid "314543de-ca93-4d61-bf60-0421d167a4d4")
 	)
 	(junction
-		(at 137.414 171.704)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "64690cda-98c0-4a78-aebc-c700ea836b16")
-	)
-	(junction
 		(at 125.73 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "72383169-8424-4fca-9a8d-8de50400e7f1")
-	)
-	(junction
-		(at 134.62 50.292)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7c4372b7-f087-451d-92d4-1778a056b771")
 	)
 	(junction
 		(at 109.22 92.71)
@@ -2565,28 +2561,16 @@
 		(uuid "957370b5-5b55-4085-a90f-a5261ccce44e")
 	)
 	(junction
-		(at 139.7 42.672)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9cae18ce-48c8-4f3a-b477-e474255af704")
-	)
-	(junction
-		(at 137.414 176.784)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d3245c42-bb15-44c0-be74-ae5e2cdefaf0")
-	)
-	(junction
 		(at 149.86 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ebb311e1-f4e7-4ccf-afcf-da1ef6d5d916")
 	)
 	(junction
-		(at 139.7 57.912)
+		(at 123.825 47.625)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ef4512b5-4360-436d-bb5a-e757dfc17362")
+		(uuid "f38fc02f-a0fa-4349-b5d7-5e95e75b51c2")
 	)
 	(junction
 		(at 142.494 174.244)
@@ -2716,13 +2700,13 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 49.022) (xy 134.62 50.292)
+			(xy 120.65 176.53) (xy 125.095 176.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3ef28d69-830b-46d7-be96-d18d08edcec1")
+		(uuid "4b04ea56-c4a5-4931-b1e7-77bd2793a3dd")
 	)
 	(wire
 		(pts
@@ -2736,33 +2720,13 @@
 	)
 	(wire
 		(pts
-			(xy 120.904 176.784) (xy 129.794 176.784)
+			(xy 120.65 171.45) (xy 125.095 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5dcee087-753d-4afb-b407-eb23d0f419a3")
-	)
-	(wire
-		(pts
-			(xy 139.7 42.672) (xy 134.62 42.672)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "66ecac78-aa85-420d-b8fe-7f96ec59ac15")
-	)
-	(wire
-		(pts
-			(xy 120.904 174.244) (xy 142.494 174.244)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "737c57fd-3115-4a93-a497-939c32fe8608")
+		(uuid "5bd45431-798a-4923-9491-be824c8e4adb")
 	)
 	(wire
 		(pts
@@ -2786,16 +2750,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 57.912) (xy 134.62 56.642)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c1b36c3-0b33-4c19-a9f0-a280718d0235")
-	)
-	(wire
-		(pts
 			(xy 133.35 103.505) (xy 149.86 103.505)
 		)
 		(stroke
@@ -2803,16 +2757,6 @@
 			(type default)
 		)
 		(uuid "a205ed3f-a906-4418-a3ee-614278f52092")
-	)
-	(wire
-		(pts
-			(xy 134.62 43.942) (xy 134.62 42.672)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6919fa7-06b9-41ee-8b84-16560f8d74e6")
 	)
 	(wire
 		(pts
@@ -2866,33 +2810,23 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 50.292) (xy 134.62 51.562)
+			(xy 108.585 176.53) (xy 113.03 176.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ddcebe49-5ac3-4213-9d73-c54f3761da52")
+		(uuid "ece7fe3d-2447-471f-ac64-9344b70e0803")
 	)
 	(wire
 		(pts
-			(xy 139.7 57.912) (xy 134.62 57.912)
+			(xy 113.03 171.45) (xy 108.585 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e72f932c-d4d9-4542-98d2-c120378423f8")
-	)
-	(wire
-		(pts
-			(xy 129.794 171.704) (xy 120.904 171.704)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea63c79e-9f0d-4216-9707-0e05f11d0670")
+		(uuid "edc6089b-8d80-4eb6-a2e3-05bc49b21c63")
 	)
 	(symbol
 		(lib_id "Diode:BAT54S")
@@ -2948,6 +2882,15 @@
 				)
 			)
 		)
+		(property "LCSC" "C8592"
+			(at 120.65 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "561a9777-3ee1-4e18-9853-7c8cfa786cbd")
 		)
@@ -2983,7 +2926,7 @@
 				)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "75"
 			(at 129.54 89.7636 90)
 			(effects
 				(font
@@ -2991,7 +2934,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 129.54 90.932 90)
 			(effects
 				(font
@@ -3017,6 +2960,15 @@
 				)
 			)
 		)
+		(property "LCSC" "C4275"
+			(at 129.54 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "30a7e7cf-ec2e-441d-9689-e20ca3cd3546")
 		)
@@ -3034,16 +2986,16 @@
 	)
 	(symbol
 		(lib_id "synkie_symbols:Conn_01x03")
-		(at 115.824 174.244 0)
+		(at 103.505 173.99 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005dcab59d")
 		(property "Reference" "J2"
-			(at 117.9068 182.499 0)
+			(at 105.5878 182.245 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3051,7 +3003,7 @@
 			)
 		)
 		(property "Value" "Power"
-			(at 117.9068 180.1876 0)
+			(at 105.5878 179.9336 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3059,7 +3011,7 @@
 			)
 		)
 		(property "Footprint" "synkie_footprints:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical_SMD"
-			(at 115.824 174.244 0)
+			(at 103.505 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3068,7 +3020,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 115.824 174.244 0)
+			(at 103.505 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3077,7 +3029,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 115.824 174.244 0)
+			(at 103.505 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3128,7 +3080,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 139.954 171.704 0)
 			(effects
 				(font
@@ -3152,6 +3104,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 139.954 171.704 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3164,140 +3125,6 @@
 			(project "sk080-inverter"
 				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
 					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synkie_symbols:Ferrite_Bead")
-		(at 133.604 171.704 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005dcac6da")
-		(property "Reference" "FB1"
-			(at 133.604 164.7444 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "330u"
-			(at 133.604 167.0558 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
-			(at 133.604 169.926 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 133.604 171.704 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 133.604 171.704 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bcfd8263-d541-49e8-a8b4-9f92596cdd83")
-		)
-		(pin "2"
-			(uuid "195f027e-b367-4337-a1fe-6599b863df5d")
-		)
-		(instances
-			(project "sk080-inverter"
-				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
-					(reference "FB1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synkie_symbols:Ferrite_Bead")
-		(at 133.604 176.784 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005dcad10d")
-		(property "Reference" "FB2"
-			(at 133.604 180.594 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "330u"
-			(at 133.604 183.134 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "synkie_footprints:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
-			(at 133.604 175.006 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 133.604 176.784 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 133.604 176.784 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1f77059b-7df4-4eaa-a3a4-e5ef9321d3e2")
-		)
-		(pin "2"
-			(uuid "dfe894b5-0d77-4110-9538-7824e882258d")
-		)
-		(instances
-			(project "sk080-inverter"
-				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
-					(reference "FB2")
 					(unit 1)
 				)
 			)
@@ -3329,7 +3156,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 139.954 176.784 0)
 			(effects
 				(font
@@ -3353,6 +3180,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 139.954 176.784 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3566,6 +3402,81 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Ferrite_Bead")
+		(at 116.84 171.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "00000000-0000-0000-0000-00005fa99feb")
+		(property "Reference" "FB2"
+			(at 116.84 164.4904 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Ferrite_Bead"
+			(at 116.205 167.005 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
+			(at 116.84 173.228 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1017"
+			(at 116.84 171.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7719c72a-5dd8-4174-bc90-7846d89b1348")
+		)
+		(pin "2"
+			(uuid "3640d719-e6f1-4d31-8702-91565c1315fa")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "FB2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "synkie_symbols:Opamp_Dual_Generic")
 		(at 173.99 92.71 0)
 		(unit 1)
@@ -3590,7 +3501,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 173.99 92.71 0)
 			(effects
 				(font
@@ -3614,6 +3525,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C478382"
+			(at 173.99 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -3675,7 +3595,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 140.97 95.25 0)
 			(effects
 				(font
@@ -3699,6 +3619,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C478382"
+			(at 140.97 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -3761,7 +3690,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 158.242 86.36 90)
 			(effects
 				(font
@@ -3785,6 +3714,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 160.02 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3891,7 +3829,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 161.29 93.472 90)
 			(effects
 				(font
@@ -3915,6 +3853,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 161.29 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3957,7 +3904,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 173.99 98.552 90)
 			(effects
 				(font
@@ -3981,6 +3928,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 173.99 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4025,7 +3981,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "synkie_footprints:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 142.24 50.292 0)
 			(effects
 				(font
@@ -4049,6 +4005,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C478382"
+			(at 142.24 50.292 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -4080,142 +4045,6 @@
 				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
 					(reference "U1")
 					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synkie_symbols:C_Small")
-		(at 134.62 46.482 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005fc7f951")
-		(property "Reference" "C1"
-			(at 131.699 47.6504 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100n"
-			(at 131.699 45.339 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 133.6548 42.672 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 134.62 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 134.62 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "21e4634c-10e2-4529-af2a-5f5b09ccefe4")
-		)
-		(pin "2"
-			(uuid "50e3dedb-7bbc-45a8-a13e-d83cbda3c67a")
-		)
-		(instances
-			(project "sk080-inverter"
-				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synkie_symbols:C_Small")
-		(at 134.62 54.102 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005fc7f957")
-		(property "Reference" "C2"
-			(at 131.699 55.2704 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100n"
-			(at 131.699 52.959 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "synkie_footprints:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 133.6548 50.292 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 134.62 54.102 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 134.62 54.102 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ad40b8ba-6b88-47f4-9574-c2a0edbb0afc")
-		)
-		(pin "2"
-			(uuid "48974ffc-4902-43f7-a1bf-6603645ae5bb")
-		)
-		(instances
-			(project "sk080-inverter"
-				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
-					(reference "C2")
-					(unit 1)
 				)
 			)
 		)
@@ -4350,7 +4179,7 @@
 	)
 	(symbol
 		(lib_id "synkie_symbols:GND")
-		(at 134.62 50.292 270)
+		(at 123.825 47.625 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4358,7 +4187,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005fc7f96d")
 		(property "Reference" "#PWR04"
-			(at 128.27 50.292 0)
+			(at 117.475 47.625 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4367,7 +4196,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 130.2258 50.419 0)
+			(at 119.4308 47.752 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4375,7 +4204,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 134.62 50.292 0)
+			(at 123.825 47.625 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4384,7 +4213,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 134.62 50.292 0)
+			(at 123.825 47.625 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4393,7 +4222,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 134.62 50.292 0)
+			(at 123.825 47.625 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4430,7 +4259,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "50k"
+		(property "Value" "49.9k"
 			(at 166.878 105.283 0)
 			(effects
 				(font
@@ -4439,7 +4268,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 163.322 104.14 90)
 			(effects
 				(font
@@ -4463,6 +4292,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C23184"
+			(at 165.1 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4539,6 +4377,161 @@
 			(project "sk080-inverter"
 				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 123.825 43.815 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "02c5b00d-cf31-4222-8aa4-d518da1a6248")
+		(property "Reference" "C8"
+			(at 126.746 42.6028 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 126.746 45.0271 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 124.7902 47.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.825 43.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 123.825 43.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 123.825 43.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "890aaaaa-f353-4dc8-a6fc-aaf90d4e6133")
+		)
+		(pin "2"
+			(uuid "eb4770de-4ed2-4bb0-8db7-b7ea116d9a05")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Ferrite_Bead")
+		(at 116.84 176.53 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "139aa6e3-f6e8-45aa-b346-556af1cbbf34")
+		(property "Reference" "FB1"
+			(at 116.205 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Ferrite_Bead"
+			(at 116.205 180.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
+			(at 116.84 178.308 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1017"
+			(at 116.84 176.53 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c2e5416b-d704-4355-a29b-fbf39fc12dcd")
+		)
+		(pin "2"
+			(uuid "2ecb96e4-7bea-4470-813f-b62d2ec9be64")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "FB1")
 					(unit 1)
 				)
 			)
@@ -4633,7 +4626,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 187.96 90.932 90)
 			(effects
 				(font
@@ -4657,6 +4650,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC" "C4275"
+			(at 187.96 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4691,7 +4693,7 @@
 				)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "75"
 			(at 113.03 89.7636 90)
 			(effects
 				(font
@@ -4699,7 +4701,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 113.03 90.932 90)
 			(effects
 				(font
@@ -4725,6 +4727,15 @@
 				)
 			)
 		)
+		(property "LCSC" "C4275"
+			(at 113.03 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "eff3c657-ffe8-45c6-a578-ea1ae08d0068")
 		)
@@ -4745,7 +4756,7 @@
 		(at 200.66 92.71 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -4823,7 +4834,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "49.9k"
 			(at 110.998 97.663 0)
 			(effects
 				(font
@@ -4832,7 +4843,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "synkie_footprints:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 110.998 96.52 90)
 			(effects
 				(font
@@ -4858,6 +4869,15 @@
 				)
 			)
 		)
+		(property "LCSC" "C23184"
+			(at 109.22 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "874562c2-1b15-46f5-96c5-bb054b0d922d")
 		)
@@ -4874,11 +4894,141 @@
 		)
 	)
 	(symbol
+		(lib_id "synkie_symbols:GND")
+		(at 108.585 173.99 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4444705d-53f3-471b-8984-90f7feefad42")
+		(property "Reference" "#PWR014"
+			(at 114.935 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 112.9792 174.117 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 108.585 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 108.585 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 108.585 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c19eff91-5626-4a63-8035-e67ff30de294")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:-5V")
+		(at 125.095 176.53 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a1f1423-872b-4295-b794-8ccbb2f94406")
+		(property "Reference" "#PWR016"
+			(at 125.095 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-5V"
+			(at 125.095 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 125.095 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.095 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 125.095 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "45211f03-8ff0-473b-ad92-24d91bd3d046")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
 		(at 93.98 92.71 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "52c73fda-b188-412b-ad03-978ac563c602")
@@ -5066,11 +5216,204 @@
 		)
 	)
 	(symbol
+		(lib_id "synkie_symbols:+5V")
+		(at 123.825 40.005 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8473a5f5-2572-471c-9a11-fd96630a1f2d")
+		(property "Reference" "#PWR013"
+			(at 123.825 43.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 124.206 35.6108 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.825 40.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.825 40.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.825 40.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3a6ed584-bfbc-4f44-a4bb-8c96f3d5fc7d")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:-5V")
+		(at 123.825 55.245 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cab20ae8-3bd3-47a9-8805-ccbad11d6a0c")
+		(property "Reference" "#PWR012"
+			(at 123.825 57.785 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-5V"
+			(at 123.444 59.6392 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.825 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.825 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.825 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "548b2528-9876-4e09-ae5e-0bc1df9fbd09")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:+5V")
+		(at 125.095 171.45 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4142794-31c2-425c-9b05-9e5a91830494")
+		(property "Reference" "#PWR015"
+			(at 125.095 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 125.095 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 125.095 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.095 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 125.095 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "600f3861-fdf1-438c-b647-4fd62c2a6fa8")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:Housing")
 		(at 43.18 87.884 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -5124,6 +5467,86 @@
 			(project ""
 				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
 					(reference "N1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 123.825 51.435 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f65f0257-b54e-4131-b87a-c824036a87cc")
+		(property "Reference" "C1"
+			(at 126.746 50.2228 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 126.746 52.6471 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 124.7902 55.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.825 51.435 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 123.825 51.435 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 123.825 51.435 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e05e692-2cd4-41d5-99c3-86aae882fce1")
+		)
+		(pin "2"
+			(uuid "e665d1a8-fe42-4ff5-8e54-2f3298ed1f81")
+		)
+		(instances
+			(project "sk080-inverter"
+				(path "/5c24f762-6d77-4ba6-9aa7-32785cde7be3"
+					(reference "C1")
 					(unit 1)
 				)
 			)
