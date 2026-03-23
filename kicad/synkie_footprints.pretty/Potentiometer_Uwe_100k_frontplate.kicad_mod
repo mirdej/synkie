@@ -95,6 +95,19 @@
 		(layer "Dwgs.User")
 		(uuid "61490099-0a0d-48f2-bbc1-e281a8151f42")
 	)
+	(fp_text user "L"
+		(at 8.8 -4.25 0)
+		(unlocked yes)
+		(layer "Eco1.User")
+		(uuid "726fc454-ecc2-4659-8d96-a7800462e1fb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
 	(fp_text user "${REFERENCE}"
 		(at 8.75 0 0)
 		(layer "F.Fab")
@@ -115,10 +128,10 @@
 		(uuid "4fd95f8e-f846-47da-a7cc-e99d6cab0574")
 	)
 	(pad "1" smd oval
-		(at 12 5)
+		(at 12 -5)
 		(size 4 3)
 		(layers "B.Cu" "B.Mask" "B.Paste")
-		(uuid "dd4d2ca9-3322-4b26-80f9-e1471617ca41")
+		(uuid "c7ef0d7b-b14b-4d16-b280-1dafdec385e2")
 	)
 	(pad "2" smd oval
 		(at 12 0)
@@ -127,10 +140,10 @@
 		(uuid "ddb17493-fee8-42e7-8de4-2c7c6450b598")
 	)
 	(pad "3" smd oval
-		(at 12 -5)
+		(at 12 5)
 		(size 4 3)
 		(layers "B.Cu" "B.Mask" "B.Paste")
-		(uuid "c7ef0d7b-b14b-4d16-b280-1dafdec385e2")
+		(uuid "dd4d2ca9-3322-4b26-80f9-e1471617ca41")
 	)
 	(embedded_fonts no)
 	(model "${SYNKIE_KICAD}/synkie_footprint_models/uwepoti_backwards.wrl"
