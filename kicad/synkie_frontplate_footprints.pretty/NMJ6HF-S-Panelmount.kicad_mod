@@ -1,0 +1,111 @@
+(footprint "NMJ6HF-S-Panelmount"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "c2f677b2-5bb7-4684-b1b4-7c2c8e578391")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "NMJ6HF-S-Panelmount"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "58f0a8c5-78ac-4ad5-ad36-e3d1057c2c5a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8d39ffca-8469-4cab-ae5d-b161eec2e4da")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5f07ffca-92b3-40e0-86b4-bad87d749bdd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_circle
+		(center 0 0)
+		(end 9 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "Eco2.User")
+		(uuid "930afaae-6b52-45f2-8ab0-381e0abcefad")
+	)
+	(fp_poly
+		(pts
+			(xy -5.08 -7.62) (xy 5.08 -7.62) (xy 8.89 0) (xy 5.08 7.62) (xy -5.08 7.62) (xy -8.89 0)
+		)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "Eco2.User")
+		(uuid "9cbf1a16-4fdc-4856-a92d-2eb4b49a1ad5")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1c386353-e5e7-4d48-806b-fb6204aa1443")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole oval
+		(at 0 0)
+		(size 6 4)
+		(drill 11.5)
+		(layers "F&B.Cu" "*.Mask")
+		(uuid "e7eeef69-9e19-4b78-a0b0-c72616366297")
+	)
+	(embedded_fonts no)
+	(model "${SYNKIE_KICAD}/synkie_footprint_models/NMJ6HFD2.stp"
+		(offset
+			(xyz 0 0 -1)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 90 -0)
+		)
+	)
+)
