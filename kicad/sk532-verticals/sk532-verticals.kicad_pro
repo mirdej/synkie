@@ -68,7 +68,7 @@
         "annular_width": "error",
         "clearance": "error",
         "connection_width": "warning",
-        "copper_edge_clearance": "ignore",
+        "copper_edge_clearance": "error",
         "copper_sliver": "warning",
         "courtyards_overlap": "error",
         "creepage": "error",
@@ -195,7 +195,9 @@
       ],
       "track_widths": [
         0.0,
-        0.5
+        0.25,
+        0.5,
+        0.8
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -486,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "sk128-counter.kicad_pro",
+    "filename": "sk532-verticals.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -605,18 +607,6 @@
         },
         {
           "group_by": false,
-          "label": "Sim.Device",
-          "name": "Sim.Device",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Field6",
-          "name": "Field6",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Description",
           "name": "Description",
           "show": false
@@ -671,58 +661,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "sk128-counter.kicad_sch",
+        "filename": "sk532-verticals.kicad_sch",
         "name": "Root",
-        "uuid": "5e9c1011-5161-4d76-b12f-fba31756fc1d"
+        "uuid": "091a59e9-5990-46d3-bbc2-fa68c9931003"
       }
     ],
-    "used_designators": "",
+    "used_designators": "TP4-6",
     "variants": []
   },
   "sheets": [
     [
-      "5e9c1011-5161-4d76-b12f-fba31756fc1d",
+      "091a59e9-5990-46d3-bbc2-fa68c9931003",
       "Root"
-    ],
-    [
-      "3c2796b5-a105-4fc7-a287-2fd7378ac386",
-      "Output"
-    ],
-    [
-      "22b846c6-9f4c-4404-ad81-e4c94fa1db71",
-      "Output1"
-    ],
-    [
-      "3c6074f9-4fff-4328-b0dc-36fd7ed17592",
-      "Output3"
-    ],
-    [
-      "d584df7b-2802-4ac6-a64e-51c9c491a9f9",
-      "Output2"
-    ],
-    [
-      "055fe07b-2460-46e0-9cd9-ad89116c8da4",
-      "Output4"
-    ],
-    [
-      "77b0b6ff-5856-41f1-b507-6f780c6f4f96",
-      "Output5"
-    ],
-    [
-      "f0b4c6d4-aae3-46c2-8659-0865a9c81024",
-      "Output6"
-    ],
-    [
-      "3b67b206-9e0a-4965-a1a6-46ab0b58007a",
-      "Output7"
-    ],
-    [
-      "d352e31b-cdc9-4f0d-9197-23dba7f472e2",
-      "Output8"
-    ],
-    [
-      "5db4cda1-70cc-491e-9f06-9cdd15740baf",
-      "Output9"
     ]
   ],
   "text_variables": {},
