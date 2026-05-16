@@ -152,7 +152,7 @@
         "min_via_diameter": 0.4,
         "solder_mask_clearance": 0.051,
         "solder_mask_min_width": 0.25,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "solder_paste_clearance": 0.0,
         "solder_paste_margin_ratio": -0.0,
         "use_height_for_length_calcs": true
@@ -582,6 +582,12 @@
           "show": true
         },
         {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": true
+        },
+        {
           "group_by": true,
           "label": "DNP",
           "name": "${DNP}",
@@ -610,14 +616,38 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Field6",
+          "name": "Field6",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "Footprint"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -665,13 +695,18 @@
       {
         "filename": "sk002-input-clamp.kicad_sch",
         "name": "sk002-input-clamp",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "e941c26d-8cec-4f69-925e-cde54e6981bd"
       }
     ],
     "used_designators": "",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "e941c26d-8cec-4f69-925e-cde54e6981bd",
+      "sk002-input-clamp"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
