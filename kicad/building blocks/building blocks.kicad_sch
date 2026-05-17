@@ -1714,6 +1714,183 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C_Polarized"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794) (xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "C_Polarized_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:D_Schottky"
 			(pin_numbers
 				(hide yes)
@@ -6096,12 +6273,6 @@
 		(uuid "ba5f1c41-59d6-453b-b5f2-de689a67852f")
 	)
 	(junction
-		(at -302.26 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bab87f92-e55b-4942-88b6-55eb5419e478")
-	)
-	(junction
 		(at -260.35 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6160,12 +6331,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e4c1e6ef-b979-46d8-890d-ceb48e1d7d00")
-	)
-	(junction
-		(at -149.225 38.735)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e9bbe056-a1e9-4cbc-9354-40dab9c82b00")
 	)
 	(junction
 		(at 147.32 104.14)
@@ -7024,16 +7189,6 @@
 			(type default)
 		)
 		(uuid "5fe66d82-445d-40b4-acc4-8141af4041d4")
-	)
-	(wire
-		(pts
-			(xy -302.26 37.465) (xy -302.26 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "60c3c49e-636f-4540-bcb0-6184c5528f7a")
 	)
 	(wire
 		(pts
@@ -8077,16 +8232,6 @@
 	)
 	(wire
 		(pts
-			(xy -149.225 35.56) (xy -149.225 38.735)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "de7893a0-a5d2-431c-a64e-de7e66c67232")
-	)
-	(wire
-		(pts
 			(xy 220.345 -49.53) (xy 220.345 -46.99)
 		)
 		(stroke
@@ -8949,7 +9094,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_footprints:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical_SMD"
+		(property "Footprint" "synkie_footprints:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical"
 			(at 191.135 -46.99 0)
 			(hide yes)
 			(show_name no)
@@ -9407,7 +9552,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -67.945 145.415 0)
 			(hide yes)
 			(show_name no)
@@ -9974,7 +10119,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 92.075 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -10320,7 +10465,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -91.44 248.285 0)
 			(hide yes)
 			(show_name no)
@@ -10547,6 +10692,83 @@
 		)
 	)
 	(symbol
+		(lib_id "synkie_symbols:-5V")
+		(at 165.1 -21.59 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0a2761cc-fec7-46cc-aac7-a91a0487c9f7")
+		(property "Reference" "#PWR0113"
+			(at 165.1 -19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "-5V"
+			(at 165.1 -17.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.1 -21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 -21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 165.1 -21.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0a7a1e45-0270-4ae9-b494-7608f30f6a0b")
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(reference "#PWR0113")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "synkie_symbols:GND")
 		(at 36.195 -39.37 90)
 		(mirror x)
@@ -10766,7 +10988,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 73.66 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -10918,7 +11140,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 118.745 132.715 0)
 			(hide yes)
 			(show_name no)
@@ -12590,7 +12812,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -43.815 222.885 0)
 			(hide yes)
 			(show_name no)
@@ -14536,97 +14758,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at -198.12 35.56 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3d576cb4-d4ef-4edd-bad9-695b07e87a6e")
-		(property "Reference" "TP18"
-			(at -199.517 31.0458 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TP"
-			(at -199.517 33.4701 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at -203.2 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -203.2 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at -198.12 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" ""
-			(at -198.12 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "79dc02dd-7075-42ae-ab87-3b7c409862df")
-		)
-		(instances
-			(project "building blocks"
-				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
-					(reference "TP18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at -86.36 -38.735 270)
 		(unit 1)
@@ -15090,7 +15221,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 116.205 174.625 0)
 			(hide yes)
 			(show_name no)
@@ -15370,7 +15501,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 224.155 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -15421,6 +15552,99 @@
 			(project "building blocks"
 				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
 					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:Conn_01x03")
+		(at 160.02 -24.13 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4a0864b6-ed97-4001-a60e-06f33b221fce")
+		(property "Reference" "J33"
+			(at 162.1028 -15.875 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Power"
+			(at 162.1028 -18.1864 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "synkie_footprints:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical"
+			(at 160.02 -24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 -24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 -24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C293633"
+			(at 160.02 -24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "732cffcf-7b5b-4e0e-90e5-fc5512148896")
+		)
+		(pin "2"
+			(uuid "c20e9fec-aace-40fd-86d6-369d8eb605e3")
+		)
+		(pin "3"
+			(uuid "d0f13f8c-f3af-4a58-abfb-d62eab20103f")
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(reference "J33")
 					(unit 1)
 				)
 			)
@@ -16058,7 +16282,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 148.59 169.545 0)
 			(hide yes)
 			(show_name no)
@@ -16858,97 +17082,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at -45.085 33.655 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "58c46f8c-a17e-44e9-8af1-c9f5e7ee48ce")
-		(property "Reference" "TP16"
-			(at -46.482 29.1408 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TP"
-			(at -46.482 31.5651 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at -50.165 33.655 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -50.165 33.655 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at -45.085 33.655 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" ""
-			(at -45.085 33.655 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "12a75b62-2ac4-43e5-b0bb-ae43edf29d07")
-		)
-		(instances
-			(project "building blocks"
-				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
-					(reference "TP16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "synkie_symbols:-5V")
 		(at -228.6 77.47 180)
 		(unit 1)
@@ -17145,7 +17278,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -193.04 38.735 0)
 			(hide yes)
 			(show_name no)
@@ -17569,7 +17702,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 73.66 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -17645,7 +17778,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -307.34 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -17841,7 +17974,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 261.62 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -18216,7 +18349,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 175.26 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -18873,7 +19006,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 261.62 41.275 0)
 			(hide yes)
 			(show_name no)
@@ -19527,7 +19660,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -29.845 131.445 0)
 			(hide yes)
 			(show_name no)
@@ -20231,96 +20364,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at -149.225 35.56 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "88e6f41d-7030-4bb9-8ca6-7ca842497834")
-		(property "Reference" "TP15"
-			(at -147.828 31.0458 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TP"
-			(at -147.828 33.4701 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at -144.145 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -144.145 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at -149.225 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" ""
-			(at -149.225 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4db4b4ae-9978-4048-be4b-1af1bce8712d")
-		)
-		(instances
-			(project "building blocks"
-				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
-					(reference "TP15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 137.16 127.635 90)
 		(unit 1)
@@ -20509,6 +20552,84 @@
 			(project "building blocks"
 				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
 					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 66.04 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ba74278-354c-4bdc-9e08-25dc28328ab3")
+		(property "Reference" "#PWR0101"
+			(at 66.04 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 66.04 113.3531 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 66.04 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3af6c23b-56a5-4f12-b437-86807c74e6cc")
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -21006,7 +21127,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -40.005 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -22717,6 +22838,83 @@
 			(project "building blocks"
 				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
 					(reference "#PWR067")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:+5V")
+		(at 165.1 -26.67 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a370ac41-2439-4a31-9f8e-00473282866c")
+		(property "Reference" "#PWR0103"
+			(at 165.1 -22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 165.1 -30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.1 -26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 -26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 165.1 -26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b9bef622-bf29-4293-8d0e-00c45db56ce2")
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -26170,6 +26368,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 66.04 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c8e1c8ad-6706-4594-9913-7c52e8905765")
+		(property "Reference" "C22"
+			(at 68.961 103.3088 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uTantal"
+			(at 68.961 105.7331 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A"
+			(at 67.0052 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor"
+			(at 66.04 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7171"
+			(at 66.04 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "56c060ca-68ee-4af6-a0c6-f8d172362f81")
+		)
+		(pin "2"
+			(uuid "8ac8f726-0bec-45ce-a3ee-962d016f4484")
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 247.65 37.465 0)
 		(unit 1)
@@ -26351,6 +26642,83 @@
 		)
 	)
 	(symbol
+		(lib_id "synkie_symbols:GND")
+		(at 165.1 -24.13 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cbd319bc-e355-4418-9f43-4f290e8aabe7")
+		(property "Reference" "#PWR0105"
+			(at 171.45 -24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 169.4942 -24.003 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.1 -24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 -24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 165.1 -24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "139f887e-3279-448f-a51d-1293c8f3a071")
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x01_Socket")
 		(at -29.845 153.035 0)
 		(unit 1)
@@ -26381,7 +26749,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -29.845 153.035 0)
 			(hide yes)
 			(show_name no)
@@ -27038,7 +27406,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -91.44 225.425 0)
 			(hide yes)
 			(show_name no)
@@ -27107,6 +27475,7 @@
 		(uuid "d4746ac9-19b2-4a33-a1d9-f63c618b0785")
 		(property "Reference" "J22"
 			(at -153.67 36.83 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -27125,7 +27494,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -154.305 38.735 0)
 			(hide yes)
 			(show_name no)
@@ -28014,7 +28383,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 174.625 135.255 0)
 			(hide yes)
 			(show_name no)
@@ -28686,7 +29055,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 175.895 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -29388,6 +29757,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 66.04 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e66531e0-7e0f-401b-bcb4-1f144d786b0e")
+		(property "Reference" "#PWR0100"
+			(at 66.04 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 66.421 98.3488 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 66.04 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "586d1213-3bac-4954-8f9c-b39fc76fdf3f")
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(reference "#PWR0100")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at -86.36 229.235 180)
 		(unit 1)
@@ -29620,7 +30067,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -67.945 123.825 0)
 			(hide yes)
 			(show_name no)
@@ -29980,7 +30427,7 @@
 				)
 			)
 		)
-		(property "Footprint" "synkie_frontplate_footprints:Banana2mm-Löthülse"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 102.235 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -30341,7 +30788,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at 73.66 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -30782,96 +31229,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at -302.26 37.465 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fb964f20-1335-4834-99db-b2f92e62e78a")
-		(property "Reference" "TP17"
-			(at -300.863 32.9508 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TP"
-			(at -300.863 35.3751 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at -297.18 37.465 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at -297.18 37.465 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at -302.26 37.465 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" ""
-			(at -302.26 37.465 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "11ddb400-4968-427f-b415-454ddc67df83")
-		)
-		(instances
-			(project "building blocks"
-				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
-					(reference "TP17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Amplifier_Operational:NE5532")
 		(at -45.72 274.32 0)
 		(unit 3)
@@ -31015,7 +31372,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "synkie_footprints:TestPoint_THTPad_D4.0mm_Drill2.0mm"
 			(at -43.815 245.745 0)
 			(hide yes)
 			(show_name no)
@@ -31178,6 +31535,21 @@
 			"66c340d3-903c-4c10-ae03-6001be4e0551" "6ec2e9c4-5410-4f87-90b6-11623e878367"
 			"af58f223-9597-44cc-9b9f-ed85e5373abc" "e428596d-0014-425a-a764-f77ec1bac865"
 			"f1530a87-f2c3-4f78-8c1e-1adcbe524e5e"
+		)
+	)
+	(group "connector-big-bus-v2"
+		(uuid "1fc69213-fd9a-4351-8f63-231a9d804030")
+		(lib_id "SynkieDesignBlocks:connector-big-bus-v2")
+		(members "01f8229f-4bad-4117-a9d3-513d74856587" "1697e5df-bf0c-4b20-a914-5558d2fc491a"
+			"22b203a6-f7de-4aba-b05f-c4172d4f0adc" "32097e83-4052-4bbe-bf52-032548a16c1d"
+			"3693cf8f-276a-4c36-a94f-354bd82cf79e" "53b76e18-6064-4341-84b8-0b57b57b487e"
+			"56df9f80-2cb8-47c3-b639-eb479b54f06d" "585951fe-cf18-4c83-bfd3-476f1fee1548"
+			"590cc5af-6496-4805-8282-978b984733cc" "72cd1073-152e-47cc-bac4-8e1eab54061e"
+			"7ec898bf-477d-4182-b35c-1dfce6bef69b" "7fef4c98-e636-4a50-b004-ae66fbeea410"
+			"9b1cb037-c01b-4381-ad12-8b161497aada" "9e4e61e3-daf6-4ef5-acdb-1ecccc8de69f"
+			"af22b27c-dc8e-49b5-b3e4-89eb01896211" "afd38a64-2221-4005-ab07-59e87b6b9db3"
+			"d0b2ffe6-2086-4af6-a178-adc38fb3d953" "d9f0dc74-b94b-48e4-80c8-f99063d5ec8a"
+			"e3ffab9a-0e80-4b2c-9510-536f3ae265fd" "ea654391-69f0-49fb-8455-42f211430989"
 		)
 	)
 	(group "output-buffer-10mhz-basic"
@@ -31400,6 +31772,52 @@
 			"ebf073d0-7801-4110-95d6-07876d6d2829" "edbbd3d3-6dc4-49fe-803e-57ce26b9e075"
 			"ee2c1887-9349-428d-a58a-5e88133b1416" "f005db23-0f78-46b6-bdd0-f64ed32a818e"
 			"f2c9c64e-b804-42a9-a5d7-54ea7ec38c78" "f830b61c-1088-4d8b-ac42-db720f108943"
+		)
+	)
+	(sheet
+		(at 293.37 -51.435)
+		(size 106.045 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "cbfa8561-0b60-4f89-ac74-76e1c61823a6")
+		(property "Sheetname" "HardclipBudget"
+			(at 293.37 -52.1466 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "hardclip.kicad_sch"
+			(at 293.37 -30.5304 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "building blocks"
+				(path "/315310ca-349e-4286-aa2d-3360fae0b680"
+					(page "2")
+				)
+			)
 		)
 	)
 	(sheet_instances
