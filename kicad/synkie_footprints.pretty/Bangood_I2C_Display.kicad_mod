@@ -1,13 +1,13 @@
 (footprint "Bangood_I2C_Display"
-	(version 20241229)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
 		(at -0.635 6.985 0)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "6acb403a-2dac-43db-aefd-206e7b8274fb")
+		(uuid "2c065094-b4e2-4866-85ff-725a5f74e15c")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 	(property "Value" "Bangood_I2C_Display"
 		(at 0 -12.7 0)
 		(layer "F.Fab")
-		(uuid "1f88fc8a-4fbb-4dd0-b853-c7874e49f40d")
+		(uuid "5604d70a-5c07-4658-8200-6ded7a909a88")
 		(effects
 			(font
 				(size 1 1)
@@ -30,7 +30,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "d7cab21b-988d-4a89-9589-632ff04302b2")
+		(uuid "e65f9c59-10fa-4d85-8dad-bb6efe645131")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,7 +42,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a24d4b34-fb1e-4540-a4ed-217b2153ccfe")
+		(uuid "ec0e6720-fe59-4732-99c5-4ba98a569fe4")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51,17 +51,7 @@
 		)
 	)
 	(attr through_hole)
-	(fp_rect
-		(start -12 -6.5)
-		(end 12 6.5)
-		(stroke
-			(width 0.12)
-			(type default)
-		)
-		(fill no)
-		(layer "F.SilkS")
-		(uuid "797f603c-d483-44c8-a8d0-648bf6b48db4")
-	)
+	(duplicate_pad_numbers_are_jumpers no)
 	(fp_rect
 		(start -13 -13)
 		(end 13 13)
@@ -71,7 +61,7 @@
 		)
 		(fill no)
 		(layer "Eco1.User")
-		(uuid "59cfdb7b-75eb-4e19-935c-4660f8be82ce")
+		(uuid "4bbf7c2f-b754-4812-9c6d-a2e598af36f9")
 	)
 	(fp_rect
 		(start -12 -6.5)
@@ -82,7 +72,18 @@
 		)
 		(fill no)
 		(layer "Eco1.User")
-		(uuid "81502a23-673e-4c88-b96b-cb06d1afd509")
+		(uuid "66b548e6-6935-44a6-97dd-9516a8fa7b2d")
+	)
+	(fp_rect
+		(start -12 -6.5)
+		(end 12 6.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "Eco2.User")
+		(uuid "ffb7ee18-72fb-4a12-8566-57e9d29bc15f")
 	)
 	(pad "1" thru_hole oval
 		(at -3.81 -10.16)
@@ -90,7 +91,7 @@
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "c984b33e-7a6d-493d-9fd3-e511b459c3e7")
+		(uuid "2ea14c04-5b84-4139-b1d9-57a8dbe651a2")
 	)
 	(pad "2" thru_hole oval
 		(at -1.27 -10.16)
@@ -98,7 +99,7 @@
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "c6b7834a-76c2-425c-bd7f-78efe734bc89")
+		(uuid "7dcef204-fbfa-4e7e-9be3-574a870e9b29")
 	)
 	(pad "3" thru_hole oval
 		(at 1.27 -10.16)
@@ -106,7 +107,7 @@
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "00d6caa5-3fc9-455b-9457-a68a8674fa13")
+		(uuid "2d91ced5-c0b5-41e3-8103-61d5a88f7ea6")
 	)
 	(pad "4" thru_hole oval
 		(at 3.81 -10.16)
@@ -114,7 +115,7 @@
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "ee9b57f5-11f7-4395-94b0-3742431d4abb")
+		(uuid "b487ab33-7e8d-49ba-9571-8614aebbe7e1")
 	)
 	(embedded_fonts no)
 	(model "/Users/me/Documents/KiCad/9.0/3dmodels/oleddisplay.wrl"
