@@ -1,7 +1,7 @@
 (footprint "Potentiometer_Alps_RK09K_Single_Vertical"
-	(version 20241229)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(layer "F.Cu")
 	(descr "Potentiometer, vertical, Alps RK09K Single, http://www.alps.com/prod/info/E/HTML/Potentiometer/RotaryPotentiometers/RK09K/RK09K_list.html")
 	(tags "Potentiometer vertical Alps RK09K Single")
@@ -9,7 +9,7 @@
 		(at 6.05 -10.15 0)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "351d3e43-1abb-4b44-a620-bb7fce94a0ce")
+		(uuid "6dddfc78-586f-47e9-93d4-48f700fa7546")
 		(effects
 			(font
 				(size 1 1)
@@ -18,9 +18,9 @@
 		)
 	)
 	(property "Value" "Potentiometer_Alps_RK09K_Single_Vertical"
-		(at 6.05 5.15 0)
+		(at 1 12 0)
 		(layer "F.Fab")
-		(uuid "865e6a7f-7ca2-4dd3-bb46-86b04ddc5423")
+		(uuid "c29d95c5-bfa8-4b8a-b7ec-ccb92fd861c2")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "ffbce0b1-0554-4e62-8135-6bd71bf211b9")
+		(uuid "640a6306-e8ca-4da8-ad2f-1eae23ee05b2")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -44,7 +44,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "96f50a73-9e5b-4829-8156-effa076cdf9c")
+		(uuid "65c4d859-b488-4153-8901-25436922cc23")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -53,64 +53,95 @@
 		)
 	)
 	(attr through_hole)
-	(fp_line
-		(start -1.15 -9.15)
-		(end -1.15 4.15)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -7 -5)
+		(end 5 5)
 		(stroke
-			(width 0.05)
+			(width 0.12)
 			(type solid)
 		)
-		(layer "F.CrtYd")
-		(uuid "55bc0a1a-87f6-47e4-8696-63d188be4eca")
+		(fill no)
+		(layer "B.CrtYd")
+		(uuid "88dbc0a1-b662-4aba-9e05-08711e6377fd")
 	)
-	(fp_line
-		(start -1.15 4.15)
-		(end 13.25 4.15)
+	(fp_rect
+		(start -7 -5)
+		(end 5 5)
 		(stroke
-			(width 0.05)
+			(width 0.12)
 			(type solid)
 		)
+		(fill no)
 		(layer "F.CrtYd")
-		(uuid "b279faf8-2d1f-47ea-a098-72778755e542")
+		(uuid "9d8af91c-4514-429b-b00f-45370818caa7")
 	)
-	(fp_line
-		(start 13.25 -9.15)
-		(end -1.15 -9.15)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "F.CrtYd")
-		(uuid "eb03b959-dc40-4d47-8fa6-947d24f36f5d")
-	)
-	(fp_line
-		(start 13.25 4.15)
-		(end 13.25 -9.15)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "F.CrtYd")
-		(uuid "edd57117-7bbd-4953-a567-a19378ba6d6d")
-	)
-	(fp_circle
-		(center 7.5 -2.5)
-		(end 10.5 -2.5)
+	(fp_rect
+		(start -6.4 -4.75)
+		(end 4.85 4.75)
 		(stroke
 			(width 0.1)
 			(type solid)
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "f54729db-0d93-4af8-9e09-7bf06e94b6e5")
+		(uuid "ad13f681-0513-446f-8f2f-2d1d049223d0")
 	)
-	(pad "" np_thru_hole roundrect
-		(at 7.5 -2.5)
-		(size 2.54 1.27)
+	(fp_circle
+		(center 0 0)
+		(end 3 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "70d29fc2-aad1-435b-a146-2f5ad87fa23d")
+	)
+	(fp_line
+		(start -8.1 -7.25)
+		(end -8.1 7.75)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "User.2")
+		(uuid "b09c5aac-b537-4791-b054-2212c6b0cb71")
+	)
+	(fp_line
+		(start -6.5 -7.25)
+		(end -6.5 7.75)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "User.2")
+		(uuid "445fe839-2c6c-4a3a-9af3-f2a0b23bd668")
+	)
+	(pad "" np_thru_hole oval
+		(at -6 0)
+		(size 0.8 2)
+		(drill oval 0.8 2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "f87ad8db-d3e4-4079-947d-1a2e892bb45a")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 7 7)
 		(drill 7)
-		(layers)
-		(roundrect_rratio 0.15)
-		(uuid "9ec5abb0-35b8-401f-8618-8245e0832455")
+		(layers "*.Cu" "*.Mask")
+		(uuid "7cedc87f-3f65-45c5-b2b3-c0f8944a6374")
 	)
 	(embedded_fonts no)
+	(model "${SYNKIE_KICAD}/synkie_footprint_models/RK09L112003P.stp"
+		(offset
+			(xyz 0 0 -4)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -180 90)
+		)
+	)
 )
