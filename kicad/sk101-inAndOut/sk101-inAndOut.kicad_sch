@@ -3742,10 +3742,12 @@
 	)
 	(text "Standard video: 0V = Black, 0.714V = White\nSynkie video:   0V = Black, 1.000V = White -> 1.4 x Standard"
 		(exclude_from_sim no)
-		(at 179.705 118.11 0)
+		(at 173.99 113.03 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 2.032 2.032)
+				(thickness 0.4064)
+				(bold yes)
 			)
 			(justify left)
 		)
@@ -3753,7 +3755,7 @@
 	)
 	(text "Notes August 2026\n- changed input pulldown to 12k\n- siff/sinc through flipflop\n- bring back old clipper BUT WITHOUT Third amp"
 		(exclude_from_sim no)
-		(at 229.87 41.91 0)
+		(at 260.35 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3761,9 +3763,9 @@
 		)
 		(uuid "514706e2-d894-41cf-a5ff-a4521442e464")
 	)
-	(text "per new design Genlock signal internally has a gain of 1.48 (same as siff-signal)\nso that resynchers can multiplex the signals 1:1, \notherwise synctip and colorburst would not have the correct amplitude\nkeep that in mind if you want to provide genlock to the outside world!"
+	(text "(per new design Genlock signal internally has a gain of 1.48 (same as siff-signal)\nso that resynchers can multiplex the signals 1:1, \notherwise synctip and colorburst would not have the correct amplitude\nkeep that in mind if you want to provide genlock to the outside world!)"
 		(exclude_from_sim no)
-		(at 139.065 132.08 0)
+		(at 208.28 129.54 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3773,13 +3775,23 @@
 	)
 	(text "Note Mai 2026:"
 		(exclude_from_sim no)
-		(at 130.81 125.73 0)
+		(at 204.47 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "9522cd53-3e8a-4eee-88d4-f9a04cd71700")
+	)
+	(text "NOTE AUG 2026\nchange behavior, override below:\nClipper clips 0.8V, so we reduce Siff to 0-0.7 BEFORE Clipping, \nthus mixing real-level video and real level genlock.\n\nFIXES: \n- Remove R32 -> Genlock gain of 1\n- change R46 to 12K -> final gain of 2\n- cut trace, add 5k1 between Siff In and R42\n"
+		(exclude_from_sim no)
+		(at 204.47 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b6e45880-ab85-46b9-a1a8-00416b09b5f2")
 	)
 	(junction
 		(at 120.65 62.865)
