@@ -2797,7 +2797,7 @@
 		(at 173.99 111.125)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "69614085-9d1a-4fb2-80bb-b72d3dc4283e")
+		(uuid "59f67c44-f200-494e-9da4-19585a95393a")
 	)
 	(junction
 		(at 69.215 135.89)
@@ -2816,12 +2816,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9556e078-e0da-46d2-bb8c-567b49470f9e")
-	)
-	(junction
-		(at 158.75 123.825)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a2407435-29e7-428a-bf9a-941902522fc2")
 	)
 	(junction
 		(at 107.95 45.085)
@@ -2866,6 +2860,16 @@
 			(type default)
 		)
 		(uuid "06ec82d7-6c36-4862-b3e2-d9e691fdc1c6")
+	)
+	(wire
+		(pts
+			(xy 158.75 120.015) (xy 158.75 113.665)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "084e9318-f6c5-4afd-be68-cd0d24534238")
 	)
 	(wire
 		(pts
@@ -2929,6 +2933,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 111.125) (xy 173.99 120.015)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e03fa24-5a70-498c-824f-6218f0a410da")
+	)
+	(wire
+		(pts
 			(xy 220.98 125.095) (xy 210.82 125.095)
 		)
 		(stroke
@@ -2956,16 +2970,6 @@
 			(type default)
 		)
 		(uuid "39acb9d8-4ed1-4b36-aab0-e695f6aa141f")
-	)
-	(wire
-		(pts
-			(xy 170.18 123.825) (xy 173.99 123.825)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3a7c199b-7575-4a7e-b036-d169f7afcf1b")
 	)
 	(wire
 		(pts
@@ -3079,16 +3083,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 123.825) (xy 158.75 123.825)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7dc85e7a-5d72-476a-b95d-f47945fb4d9d")
-	)
-	(wire
-		(pts
 			(xy 161.29 71.755) (xy 123.825 71.755)
 		)
 		(stroke
@@ -3096,6 +3090,16 @@
 			(type default)
 		)
 		(uuid "80c37672-ec4b-4060-8d6b-36ad1e11da01")
+	)
+	(wire
+		(pts
+			(xy 173.355 111.125) (xy 173.99 111.125)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "853bd971-bc69-4b09-aa44-f0bcd03cbfdc")
 	)
 	(wire
 		(pts
@@ -3209,16 +3213,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 111.125) (xy 173.99 123.825)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1a413ae-cc47-41de-8166-735efba2e0b8")
-	)
-	(wire
-		(pts
 			(xy 76.2 101.6) (xy 85.09 101.6)
 		)
 		(stroke
@@ -3239,16 +3233,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 113.665) (xy 158.75 123.825)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca06bad8-8fc0-4333-b9b9-ca78b1a96891")
-	)
-	(wire
-		(pts
 			(xy 76.835 57.785) (xy 76.835 86.36)
 		)
 		(stroke
@@ -3256,6 +3240,16 @@
 			(type default)
 		)
 		(uuid "d13436e1-639e-47d7-aa65-64dd8037bdbd")
+	)
+	(wire
+		(pts
+			(xy 173.99 120.015) (xy 158.75 120.015)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d35e54f2-ca7e-4ac6-956d-1eea8ce0f2ff")
 	)
 	(wire
 		(pts
@@ -6383,117 +6377,6 @@
 		)
 	)
 	(symbol
-		(lib_id "synkie_symbols:R")
-		(at 158.75 127.635 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "cd2b2885-2b42-47b6-9728-bfc2c609f521")
-		(property "Reference" "R32"
-			(at 164.0078 127.635 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "6k8"
-			(at 161.6964 127.635 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 156.972 127.635 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 158.75 127.635 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 158.75 127.635 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C23212"
-			(at 158.75 127.635 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field8" ""
-			(at 158.75 127.635 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 158.75 127.635 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "df512ae2-93d7-43fe-b616-4bca74fe0d24")
-		)
-		(pin "2"
-			(uuid "1d32b575-5fae-43bb-9da7-99abbf357f3a")
-		)
-		(instances
-			(project "sk101-inAndOut"
-				(path "/65078ef2-1253-4ae9-a848-3d72584795a0/5669bbaf-27e1-40d1-bc41-afccda5f8c8f"
-					(reference "R32")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "-5V_3")
 		(lib_id "synkie_symbols:-5V")
 		(at 104.14 135.89 180)
@@ -6767,117 +6650,6 @@
 	)
 	(symbol
 		(lib_id "synkie_symbols:R")
-		(at 166.37 123.825 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "de341be7-9a38-4ff7-94ca-fb4cefb469ca")
-		(property "Reference" "R33"
-			(at 166.37 118.5672 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2k7"
-			(at 166.37 120.8786 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 166.37 125.603 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 166.37 123.825 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 166.37 123.825 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C13167"
-			(at 166.37 123.825 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field8" ""
-			(at 166.37 123.825 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 166.37 123.825 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "47162769-cc27-40a7-a173-69c64e1dbf48")
-		)
-		(pin "2"
-			(uuid "15c2cbf8-9e5d-49c7-ae62-3be3e58a4f25")
-		)
-		(instances
-			(project "sk101-inAndOut"
-				(path "/65078ef2-1253-4ae9-a848-3d72584795a0/5669bbaf-27e1-40d1-bc41-afccda5f8c8f"
-					(reference "R33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synkie_symbols:R")
 		(at 161.29 90.805 0)
 		(unit 1)
 		(body_style 1)
@@ -7096,82 +6868,6 @@
 			(project "sk101-inAndOut"
 				(path "/65078ef2-1253-4ae9-a848-3d72584795a0/5669bbaf-27e1-40d1-bc41-afccda5f8c8f"
 					(reference "C38")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synkie_symbols:GND")
-		(at 158.75 131.445 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ee1b3983-0d0c-4c3e-a997-507dedb3b688")
-		(property "Reference" "#PWR0150"
-			(at 158.75 137.795 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 158.877 135.8392 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 158.75 131.445 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 158.75 131.445 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 158.75 131.445 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2e6c75eb-b9b5-458d-a0f1-c371af4814e7")
-		)
-		(instances
-			(project "sk101-inAndOut"
-				(path "/65078ef2-1253-4ae9-a848-3d72584795a0/5669bbaf-27e1-40d1-bc41-afccda5f8c8f"
-					(reference "#PWR0150")
 					(unit 1)
 				)
 			)
