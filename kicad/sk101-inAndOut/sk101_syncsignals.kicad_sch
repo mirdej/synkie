@@ -2601,12 +2601,6 @@
 		(uuid "8b5701c4-20ec-463b-ac18-ebaaf28ba277")
 	)
 	(junction
-		(at 158.115 145.415)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "06261e11-2b83-4c12-8a52-298319023bd8")
-	)
-	(junction
 		(at 118.11 160.655)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2927,6 +2921,16 @@
 			(type default)
 		)
 		(uuid "1ee53e24-501d-4dcc-ae70-333668342997")
+	)
+	(wire
+		(pts
+			(xy 165.735 175.26) (xy 168.275 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f6c6fd8-4a2b-471e-9275-c4335f783603")
 	)
 	(wire
 		(pts
@@ -3310,16 +3314,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.115 145.415) (xy 158.115 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aff7e1ad-c632-4705-a30c-1655bf8442b2")
-	)
-	(wire
-		(pts
 			(xy 91.44 107.95) (xy 91.44 118.11)
 		)
 		(stroke
@@ -3689,6 +3683,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+	)
+	(global_label "siff~{sync}-BUS"
+		(shape input)
+		(at 168.275 175.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "48dff42b-8e8b-4497-899f-ea5c73a5483f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.306 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6195,6 +6213,139 @@
 			(project "sk101-inAndOut"
 				(path "/65078ef2-1253-4ae9-a848-3d72584795a0/00b1032f-3875-494b-85ab-5eedb0596440"
 					(reference "R56")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 161.925 175.26 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "34e0086a-49d1-4045-881a-573881f4db87")
+		(property "Reference" "R60"
+			(at 161.925 175.26 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "75"
+			(at 161.925 173.355 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 161.925 173.482 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 161.925 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 161.925 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C4275 "
+			(at 161.925 175.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 161.925 175.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field8" ""
+			(at 161.925 175.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 161.925 175.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field6" ""
+			(at 161.925 175.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8b409cb-3757-4439-94af-296b9e4b7d24")
+		)
+		(pin "2"
+			(uuid "135d0522-778d-4401-b1e3-fea641eb7d09")
+		)
+		(instances
+			(project "sk101-inAndOut"
+				(path "/65078ef2-1253-4ae9-a848-3d72584795a0/00b1032f-3875-494b-85ab-5eedb0596440"
+					(reference "R60")
 					(unit 1)
 				)
 			)
