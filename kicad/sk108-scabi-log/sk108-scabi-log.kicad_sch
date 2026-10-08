@@ -1467,7 +1467,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "synkie_symbols:Conn_01x03"
+		(symbol "synkie_symbols:Conn_01x03_MP"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -1488,7 +1488,7 @@
 				)
 			)
 			(property "Value" "Conn_01x03"
-				(at 0 -5.08 0)
+				(at 0 -7.874 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1508,7 +1508,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1552,7 +1552,7 @@
 					)
 				)
 			)
-			(symbol "Conn_01x03_1_1"
+			(symbol "Conn_01x03_MP_1_1"
 				(rectangle
 					(start -1.27 3.81)
 					(end 1.27 -3.81)
@@ -1644,6 +1644,24 @@
 						)
 					)
 					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 1.27 -6.35 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5647,98 +5665,6 @@
 		(uuid "78e53487-f72a-4461-96c4-4f438e062160")
 	)
 	(symbol
-		(lib_id "synkie_symbols:Conn_01x03")
-		(at 274.32 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005dc96043")
-		(property "Reference" "J1"
-			(at 272.2372 47.625 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Power"
-			(at 272.2372 45.3136 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "synkie_footprints:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical_SMD"
-			(at 274.32 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 274.32 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 274.32 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 274.32 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b63dafce-7143-4660-8418-889290faaa02")
-		)
-		(pin "2"
-			(uuid "f74eac04-7213-49b7-ad80-3a73d1894438")
-		)
-		(pin "3"
-			(uuid "b9c51c35-703a-469b-99fe-b12bfabd805d")
-		)
-		(instances
-			(project "sk108-scabi-log"
-				(path "/ae930e80-deb1-4ffd-b4f2-8003ee2db719"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "synkie_symbols:CP_Small")
 		(at 252.73 36.83 270)
 		(mirror x)
@@ -6157,7 +6083,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -7716,7 +7642,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "15k"
 			(at 147.828 110.363 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7759,7 +7685,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25819"
+		(property "LCSC" "C22809"
 			(at 146.05 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -8520,7 +8446,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25804"
 			(at 58.42 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -8975,7 +8901,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "15k"
 			(at 67.818 147.193 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9018,7 +8944,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25819"
+		(property "LCSC" "C22809"
 			(at 66.04 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -9548,8 +9474,8 @@
 	)
 	(symbol
 		(lib_id "synkie_symbols:Opamp_Dual_Generic")
-		(at 114.3 54.61 0)
-		(mirror x)
+		(at 163.83 133.35 0)
+		(mirror y)
 		(unit 2)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9559,7 +9485,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005dde9fe1")
 		(property "Reference" "U1"
-			(at 115.57 58.42 0)
+			(at 162.56 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9569,7 +9495,7 @@
 			)
 		)
 		(property "Value" "LMH6643"
-			(at 116.84 50.8 0)
+			(at 161.29 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9579,7 +9505,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
-			(at 114.3 54.61 0)
+			(at 163.83 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9590,7 +9516,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 114.3 54.61 0)
+			(at 163.83 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9601,7 +9527,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 54.61 0)
+			(at 163.83 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9611,7 +9537,7 @@
 			)
 		)
 		(property "LCSC" "C478382"
-			(at 114.3 54.61 0)
+			(at 163.83 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10532,7 +10458,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "15k"
 			(at 72.898 46.863 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10575,7 +10501,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25819"
+		(property "LCSC" "C22809"
 			(at 71.12 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -11080,7 +11006,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25804"
 			(at 73.66 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -11537,7 +11463,7 @@
 				)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "15k"
 			(at 92.71 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11579,7 +11505,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25819"
+		(property "LCSC" "C22809"
 			(at 92.71 67.31 90)
 			(hide yes)
 			(show_name no)
@@ -12477,7 +12403,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C22809"
 			(at 133.35 151.13 90)
 			(hide yes)
 			(show_name no)
@@ -12566,7 +12492,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C21190"
 			(at 147.32 133.35 90)
 			(hide yes)
 			(show_name no)
@@ -13334,9 +13260,86 @@
 		)
 	)
 	(symbol
-		(lib_id "synkie_symbols:LMH6643")
-		(at 163.83 133.35 0)
+		(lib_id "synkie_symbols:GND")
+		(at 275.59 45.72 0)
 		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4ff70a86-f012-40fe-a288-3af467b6dff8")
+		(property "Reference" "#PWR014"
+			(at 275.59 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 275.463 50.1142 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 275.59 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 275.59 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 275.59 45.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fe0545eb-bd91-4361-95ba-5a4e07e22272")
+		)
+		(instances
+			(project "sk108-scabi-log"
+				(path "/ae930e80-deb1-4ffd-b4f2-8003ee2db719"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:LMH6643")
+		(at 114.3 54.61 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13346,7 +13349,7 @@
 		(dnp no)
 		(uuid "569926cc-2eb8-498c-aacc-6a94cca295b4")
 		(property "Reference" "U5"
-			(at 161.29 136.652 0)
+			(at 116.84 51.308 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13356,7 +13359,7 @@
 			)
 		)
 		(property "Value" "LMH6643"
-			(at 163.322 139.192 0)
+			(at 114.808 48.768 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13366,7 +13369,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
-			(at 163.83 133.35 0)
+			(at 114.3 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13377,7 +13380,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 163.83 133.35 0)
+			(at 114.3 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13388,7 +13391,18 @@
 			)
 		)
 		(property "Description" "Dual operational amplifier"
-			(at 163.83 133.35 0)
+			(at 114.3 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C478382"
+			(at 114.3 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13743,6 +13757,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C478382"
+			(at 212.09 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "f83eaf09-5b5c-4a86-9498-1c3f302b06fe")
 		)
@@ -13830,6 +13855,17 @@
 			)
 		)
 		(property "Description" "Dual operational amplifier"
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C478382"
 			(at 147.32 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -14025,7 +14061,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C22978"
 			(at 161.29 45.72 90)
 			(hide yes)
 			(show_name no)
@@ -14046,6 +14082,105 @@
 			(project "sk108-scabi-log"
 				(path "/ae930e80-deb1-4ffd-b4f2-8003ee2db719"
 					(reference "R30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synkie_symbols:Conn_01x03_MP")
+		(at 274.32 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b26f9563-6a5c-467f-a9d6-776dcfacb86f")
+		(property "Reference" "J6"
+			(at 276.352 38.1578 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 276.352 40.5821 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-SM4-TB_1x03-1MP_P2.00mm_Vertical"
+			(at 274.32 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 274.32 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 274.32 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C18077900"
+			(at 274.32 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "830edf83-8107-4a8e-80a3-d3011d1cfc2c")
+		)
+		(pin "MP"
+			(uuid "6e8bb272-465f-488e-8798-183a9edce042")
+		)
+		(pin "1"
+			(uuid "dcb32657-4dac-41e3-b74f-e43ce9bf8411")
+		)
+		(pin "2"
+			(uuid "1dbc070a-6b4f-4a52-a99c-fa3906f1026a")
+		)
+		(instances
+			(project "sk108-scabi-log"
+				(path "/ae930e80-deb1-4ffd-b4f2-8003ee2db719"
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -14114,7 +14249,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C14858"
 			(at 153.67 139.7 90)
 			(hide yes)
 			(show_name no)
